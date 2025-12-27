@@ -1,0 +1,9 @@
+data_dir: data/geolife_eps20/processed
+dataset: geolife
+dataset_prefix: geolife_eps20_prev7
+experiment_root: experiments
+model_name: markov1st
+order: 1
+seed: 42
+total_loc_num: 1187
+total_user_num: 46

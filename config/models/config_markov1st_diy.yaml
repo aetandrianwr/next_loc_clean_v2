@@ -1,0 +1,25 @@
+# 1st-Order Markov Chain Model Configuration for DIY Dataset
+# Dataset: diy_eps50
+# This is a baseline model using first-order Markov chain for next location prediction
+#
+# Usage:
+#   python src/training/calc_prob_markov1st.py --config config/models/config_markov1st_diy.yaml
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+
+# Model settings
+model:
+  model_name: markov1st
+  order: 1
+
+# Dataset info (from metadata)
+dataset_info:
+  total_loc_num: 7038
+  total_user_num: 693

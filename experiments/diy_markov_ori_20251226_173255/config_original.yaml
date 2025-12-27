@@ -1,0 +1,20 @@
+# 1st-Order Markov Chain Model (Original Implementation) - DIY Dataset
+# This is a faithful reproduction of location-prediction-ori-freeze/baselines/markov.py
+#
+# Usage:
+#   python src/models/baseline/markov_ori/run_markov_ori.py --config config/models/config_markov_ori_diy.yaml
+
+# Data settings
+data:
+  dataset: diy
+  # Use intermediate CSV and generate valid_ids from preprocessed data
+  data_csv: data/diy_eps50/interim/intermediate_eps50.csv
+  # No valid_ids_file - will be generated from preprocessed data
+  processed_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  experiment_root: experiments
+
+# Model settings
+model:
+  model_name: markov_ori
+  markov_order: 1

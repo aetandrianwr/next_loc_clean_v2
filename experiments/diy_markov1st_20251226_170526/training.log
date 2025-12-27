@@ -1,0 +1,58 @@
+============================================================
+1st-Order Markov Chain Model Training Log
+============================================================
+
+Dataset: diy
+Number of locations: 7038
+Config: config/models/config_markov1st_diy.yaml
+Seed: 42
+Experiment directory: experiments/diy_markov1st_20251226_170526
+============================================================
+
+Data loaded:
+  Train: 151421 samples
+  Val:   10160 samples
+  Test:  12368 samples
+
+============================================================
+Training 1st-Order Markov Chain Model
+============================================================
+
+Training completed in 6.63s
+Total parameters (unique transitions): 47200
+
+============================================================
+Evaluation
+============================================================
+
+Evaluating on validation set (10160 samples)...
+Validation Results:
+  Acc@1:  50.73%
+  Acc@5:  73.94%
+  Acc@10: 77.61%
+  MRR:    60.64%
+  NDCG:   64.57%
+  F1:     44.86%
+  Total:  10160
+  Evaluation time: 3.91s
+
+Evaluating on test set (12368 samples)...
+Test Results:
+  Acc@1:  50.60%
+  Acc@5:  72.99%
+  Acc@10: 76.61%
+  MRR:    60.31%
+  NDCG:   64.02%
+  F1:     45.72%
+  Total:  12368
+  Evaluation time: 4.70s
+
+============================================================
+FINAL SUMMARY
+============================================================
+Test Acc@1: 50.60%
+Test MRR:   60.31%
+Test NDCG:  64.02%
+Test F1:    45.72%
+
+=== Training Complete ===

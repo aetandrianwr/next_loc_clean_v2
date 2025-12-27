@@ -1,0 +1,18 @@
+# 1st-Order Markov Chain Model (Original Implementation) - GeoLife Dataset
+# This is a faithful reproduction of location-prediction-ori-freeze/baselines/markov.py
+#
+# Usage:
+#   python src/models/baseline/markov_ori/run_markov_ori.py --config config/models/config_markov_ori_geolife.yaml
+
+# Data settings
+data:
+  dataset: geolife
+  interim_csv: data/geolife_eps20/interim/intermediate_eps20.csv
+  processed_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  experiment_root: experiments
+
+# Model settings
+model:
+  model_name: markov_ori
+  markov_order: 1

@@ -1,0 +1,10 @@
+Training MHSA model
+Dataset: diy
+Config: config/hyperparameter_tuning/diy_mhsa_emb128_layers4_ff512.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=2365, val=159, test=194
+Total trainable parameters: 1389452
+
+=== Epoch 1 ===

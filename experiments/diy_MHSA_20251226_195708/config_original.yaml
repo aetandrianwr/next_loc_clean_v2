@@ -1,0 +1,53 @@
+# MHSA Hyperparameter Tuning - DIY Scaled
+# Larger model: emb=128, layers=4, ff=512 (~2.75M params)
+
+seed: 42
+
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+
+training:
+  if_embed_user: true
+  if_embed_poi: false
+  if_embed_time: true
+  if_embed_duration: true
+  previous_day: 7
+  verbose: true
+  debug: false
+  batch_size: 256
+  print_step: 10
+  num_workers: 0
+  day_selection: default
+
+dataset_info:
+  total_loc_num: 7038
+  total_user_num: 693
+
+embedding:
+  base_emb_size: 128
+  poi_original_size: 16
+  time_emb_size: 16
+
+model:
+  networkName: transformer
+  num_encoder_layers: 4
+  nhead: 8
+  dim_feedforward: 512
+  fc_dropout: 0.2
+
+optimiser:
+  optimizer: Adam
+  max_epoch: 50
+  lr: 0.001
+  weight_decay: 0.000001
+  beta1: 0.9
+  beta2: 0.999
+  momentum: 0.98
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1

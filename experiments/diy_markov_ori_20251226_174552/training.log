@@ -1,0 +1,40 @@
+============================================================
+1st-Order Markov Chain Model - Original Implementation
+============================================================
+
+Dataset: diy
+Config: config/models/config_markov_ori_diy.yaml
+Markov order: 1
+Experiment directory: experiments/diy_markov_ori_20251226_174552
+============================================================
+
+Loaded 265621 records from data/diy_eps50/interim/intermediate_eps50.csv
+After split: train=(160766, 9), vali=(52565, 9), test=(52290, 9)
+Generated valid_ids from preprocessed data
+Valid IDs: 139061
+After filtering: train=(84313, 9), vali=(27184, 9), test=(27564, 9)
+
+============================================================
+Training and Evaluation
+============================================================
+
+Training finished. Time: 44.85s
+Total parameters: 366338
+
+Validation Results:
+  Acc@1:  48.10%
+  Acc@5:  67.24%
+  Acc@10: 69.48%
+  MRR:    56.30%
+  F1:     46.01%
+  NDCG:   59.51%
+
+Test Results:
+  Acc@1:  44.13%
+  Acc@5:  62.56%
+  Acc@10: 64.80%
+  MRR:    52.13%
+  F1:     42.68%
+  NDCG:   55.22%
+
+=== Training Complete ===

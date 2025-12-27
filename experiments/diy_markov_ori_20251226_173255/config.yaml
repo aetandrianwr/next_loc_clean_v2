@@ -1,0 +1,7 @@
+data_csv: data/diy_eps50/interim/intermediate_eps50.csv
+dataset: diy
+dataset_prefix: diy_eps50_prev7
+experiment_root: experiments
+markov_order: 1
+model_name: markov_ori
+processed_dir: data/diy_eps50/processed

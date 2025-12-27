@@ -1,0 +1,33 @@
+# Geolife Configuration - Optimized with 3 layers but smaller dimensions
+# d_model=64, num_layers=3, dim_feedforward=128
+# Expected params: ~286K (limit: 500K)
+# Hypothesis: 3 layers with lower LR might generalize better
+
+seed: 42
+
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+
+model:
+  d_model: 64
+  nhead: 4
+  num_layers: 3
+  dim_feedforward: 128
+  dropout: 0.18
+
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.0005
+  weight_decay: 0.02
+  label_smoothing: 0.03
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 5
+  use_amp: true
+  min_lr: 0.000001

@@ -1,0 +1,25 @@
+# 1st-Order Markov Chain Model Configuration for GeoLife Dataset
+# Dataset: geolife_eps20
+# This is a baseline model using first-order Markov chain for next location prediction
+#
+# Usage:
+#   python src/training/calc_prob_markov1st.py --config config/models/config_markov1st_geolife.yaml
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+
+# Model settings
+model:
+  model_name: markov1st
+  order: 1
+
+# Dataset info (from metadata)
+dataset_info:
+  total_loc_num: 1187
+  total_user_num: 46

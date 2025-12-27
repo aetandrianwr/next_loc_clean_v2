@@ -1,0 +1,39 @@
+============================================================
+1st-Order Markov Chain Model - Original Implementation
+============================================================
+
+Dataset: geolife
+Config: config/models/config_markov_ori_geolife.yaml
+Markov order: 1
+Experiment directory: experiments/geolife_markov_ori_20251226_173101
+============================================================
+
+Loaded 19191 records from data/geolife_eps20/interim/intermediate_eps20.csv
+After split: train=(10095, 9), vali=(4184, 9), test=(4912, 9)
+Valid IDs: 7747
+After filtering: train=(4697, 9), vali=(1477, 9), test=(1573, 9)
+
+============================================================
+Training and Evaluation
+============================================================
+
+Training finished. Time: 2.39s
+Total parameters: 47372
+
+Validation Results:
+  Acc@1:  32.65%
+  Acc@5:  51.34%
+  Acc@10: 54.36%
+  MRR:    41.29%
+  F1:     28.74%
+  NDCG:   44.41%
+
+Test Results:
+  Acc@1:  31.24%
+  Acc@5:  51.59%
+  Acc@10: 53.79%
+  MRR:    40.38%
+  F1:     27.68%
+  NDCG:   43.60%
+
+=== Training Complete ===

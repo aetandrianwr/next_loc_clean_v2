@@ -1,0 +1,53 @@
+# LSTM Hyperparameter Tuning - DIY v3
+# Larger model with 3 layers, optimized for better accuracy
+# Config: base_emb=80, hidden=192, layers=3, ~2.87M params
+
+seed: 42
+
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+
+training:
+  if_embed_user: true
+  if_embed_poi: false
+  if_embed_time: true
+  if_embed_duration: true
+  previous_day: 7
+  verbose: true
+  debug: false
+  batch_size: 256
+  print_step: 10
+  num_workers: 0
+  day_selection: default
+
+dataset_info:
+  total_loc_num: 7038
+  total_user_num: 693
+
+embedding:
+  base_emb_size: 80
+  poi_original_size: 16
+
+model:
+  networkName: lstm
+  lstm_hidden_size: 192
+  lstm_num_layers: 3
+  lstm_dropout: 0.2
+  fc_dropout: 0.15
+
+optimiser:
+  optimizer: Adam
+  max_epoch: 50
+  lr: 0.001
+  weight_decay: 0.00001
+  beta1: 0.9
+  beta2: 0.999
+  momentum: 0.98
+  num_warmup_epochs: 3
+  num_training_epochs: 50
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1

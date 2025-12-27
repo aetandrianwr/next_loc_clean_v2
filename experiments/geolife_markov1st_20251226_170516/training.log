@@ -1,0 +1,58 @@
+============================================================
+1st-Order Markov Chain Model Training Log
+============================================================
+
+Dataset: geolife
+Number of locations: 1187
+Config: config/models/config_markov1st_geolife.yaml
+Seed: 42
+Experiment directory: experiments/geolife_markov1st_20251226_170516
+============================================================
+
+Data loaded:
+  Train: 7424 samples
+  Val:   3334 samples
+  Test:  3502 samples
+
+============================================================
+Training 1st-Order Markov Chain Model
+============================================================
+
+Training completed in 0.23s
+Total parameters (unique transitions): 3579
+
+============================================================
+Evaluation
+============================================================
+
+Evaluating on validation set (3334 samples)...
+Validation Results:
+  Acc@1:  38.06%
+  Acc@5:  59.03%
+  Acc@10: 63.11%
+  MRR:    46.51%
+  NDCG:   49.48%
+  F1:     32.30%
+  Total:  3334
+  Evaluation time: 0.59s
+
+Evaluating on test set (3502 samples)...
+Test Results:
+  Acc@1:  27.64%
+  Acc@5:  49.49%
+  Acc@10: 53.14%
+  MRR:    36.80%
+  NDCG:   39.68%
+  F1:     22.26%
+  Total:  3502
+  Evaluation time: 0.69s
+
+============================================================
+FINAL SUMMARY
+============================================================
+Test Acc@1: 27.64%
+Test MRR:   36.80%
+Test NDCG:  39.68%
+Test F1:    22.26%
+
+=== Training Complete ===

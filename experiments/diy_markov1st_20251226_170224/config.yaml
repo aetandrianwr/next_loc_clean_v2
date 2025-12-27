@@ -1,0 +1,9 @@
+data_dir: data/diy_eps50/processed
+dataset: diy
+dataset_prefix: diy_eps50_prev7
+experiment_root: experiments
+model_name: markov1st
+order: 1
+seed: 42
+total_loc_num: 7038
+total_user_num: 693

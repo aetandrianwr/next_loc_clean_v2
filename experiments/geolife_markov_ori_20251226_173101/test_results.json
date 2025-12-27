@@ -1,0 +1,18 @@
+{
+  "total_samples": 1543,
+  "correct@1": 482,
+  "correct@5": 796,
+  "correct@10": 830,
+  "acc@1": 31.23784834737524,
+  "acc@5": 51.58781594296824,
+  "acc@10": 53.79131561892417,
+  "mrr": 40.37950123850796,
+  "f1": 27.67859887257485,
+  "recall": 31.23784834737524,
+  "ndcg": 43.59854345232596,
+  "dataset": "geolife",
+  "markov_order": 1,
+  "total_parameters": 47372,
+  "training_time_seconds": 2.3862714767456055,
+  "num_users": 30
+}

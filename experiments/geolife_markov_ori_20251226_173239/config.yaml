@@ -1,0 +1,6 @@
+data_csv: data/geolife_eps20/markov_ori_data/dataset_geolife.csv
+dataset: geolife
+experiment_root: experiments
+markov_order: 1
+model_name: markov_ori
+valid_ids_file: data/geolife_eps20/markov_ori_data/valid_ids_geolife.pk
