@@ -1,0 +1,160 @@
+{
+  "geolife": [
+    {
+      "activity_level": "Low Activity",
+      "num_samples": 139,
+      "num_users": 12,
+      "avg_visits": 22.0,
+      "avg_diversity": 7.833333333333333,
+      "correct@1": 77.0,
+      "correct@3": 104.0,
+      "correct@5": 107.0,
+      "correct@10": 108.0,
+      "rr": 90.31346893310547,
+      "ndcg": 68.05406212806702,
+      "f1": 0.49978410479722113,
+      "total": 139.0,
+      "acc@1": 55.39568066596985,
+      "acc@5": 76.9784152507782,
+      "acc@10": 77.69784331321716,
+      "mrr": 64.97371792793274,
+      "loss": 2.8901272127739817
+    },
+    {
+      "activity_level": "Medium Activity",
+      "num_samples": 1000,
+      "num_users": 21,
+      "avg_visits": 132.57142857142858,
+      "avg_diversity": 25.238095238095237,
+      "correct@1": 464.0,
+      "correct@3": 711.0,
+      "correct@5": 780.0,
+      "correct@10": 817.0,
+      "rr": 598.3653564453125,
+      "ndcg": 65.02361297607422,
+      "f1": 0.41358867617577144,
+      "total": 1000.0,
+      "acc@1": 46.39999866485596,
+      "acc@5": 77.99999713897705,
+      "acc@10": 81.69999718666077,
+      "mrr": 59.83653664588928,
+      "loss": 2.8241586071401836
+    },
+    {
+      "activity_level": "High Activity",
+      "num_samples": 2363,
+      "num_users": 12,
+      "avg_visits": 656.5,
+      "avg_diversity": 99.91666666666667,
+      "correct@1": 1349.0,
+      "correct@3": 1856.0,
+      "correct@5": 1953.0,
+      "correct@10": 2030.0,
+      "rr": 1616.4171142578125,
+      "ndcg": 72.55493998527527,
+      "f1": 0.5285017742133882,
+      "total": 2363.0,
+      "acc@1": 57.088446617126465,
+      "acc@5": 82.64917731285095,
+      "acc@10": 85.90774536132812,
+      "mrr": 68.40529441833496,
+      "loss": 2.289031171916629
+    }
+  ],
+  "diy": [
+    {
+      "activity_level": "Low Activity",
+      "num_samples": 1093,
+      "num_users": 174,
+      "avg_visits": 69.43103448275862,
+      "avg_diversity": 12.620689655172415,
+      "correct@1": 699.0,
+      "correct@3": 859.0,
+      "correct@5": 886.0,
+      "correct@10": 915.0,
+      "rr": 783.9481811523438,
+      "ndcg": 74.54676628112793,
+      "f1": 0.574328239853023,
+      "total": 1093.0,
+      "acc@1": 63.95242214202881,
+      "acc@5": 81.06129765510559,
+      "acc@10": 83.7145447731018,
+      "mrr": 71.72444462776184,
+      "loss": 2.382571830493479
+    },
+    {
+      "activity_level": "Medium Activity",
+      "num_samples": 4733,
+      "num_users": 342,
+      "avg_visits": 197.7280701754386,
+      "avg_diversity": 24.763157894736842,
+      "correct@1": 2661.0,
+      "correct@3": 3660.0,
+      "correct@5": 3896.0,
+      "correct@10": 4079.0,
+      "rr": 3202.55517578125,
+      "ndcg": 72.0945954322815,
+      "f1": 0.514904281091754,
+      "total": 4733.0,
+      "acc@1": 56.22227191925049,
+      "acc@5": 82.31565356254578,
+      "acc@10": 86.18212342262268,
+      "mrr": 67.66437888145447,
+      "loss": 2.403227767566864
+    },
+    {
+      "activity_level": "High Activity",
+      "num_samples": 6542,
+      "num_users": 176,
+      "avg_visits": 477.7556818181818,
+      "avg_diversity": 46.85795454545455,
+      "correct@1": 3673.0,
+      "correct@3": 5037.0,
+      "correct@5": 5387.0,
+      "correct@10": 5659.0,
+      "rr": 4420.2548828125,
+      "ndcg": 72.06172943115234,
+      "f1": 0.507638739749583,
+      "total": 6542.0,
+      "acc@1": 56.14491105079651,
+      "acc@5": 82.34484791755676,
+      "acc@10": 86.50259971618652,
+      "mrr": 67.56733059883118,
+      "loss": 2.360259759392178
+    }
+  ],
+  "geolife_stats": {
+    "Low Activity": {
+      "num_users": 12,
+      "avg_visits": 22.0,
+      "avg_diversity": 7.833333333333333
+    },
+    "Medium Activity": {
+      "num_users": 21,
+      "avg_visits": 132.57142857142858,
+      "avg_diversity": 25.238095238095237
+    },
+    "High Activity": {
+      "num_users": 12,
+      "avg_visits": 656.5,
+      "avg_diversity": 99.91666666666667
+    }
+  },
+  "diy_stats": {
+    "Low Activity": {
+      "num_users": 174,
+      "avg_visits": 69.43103448275862,
+      "avg_diversity": 12.620689655172415
+    },
+    "Medium Activity": {
+      "num_users": 342,
+      "avg_visits": 197.7280701754386,
+      "avg_diversity": 24.763157894736842
+    },
+    "High Activity": {
+      "num_users": 176,
+      "avg_visits": 477.7556818181818,
+      "avg_diversity": 46.85795454545455
+    }
+  }
+}

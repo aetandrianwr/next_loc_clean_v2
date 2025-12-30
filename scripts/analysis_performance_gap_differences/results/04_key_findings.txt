@@ -1,0 +1,18 @@
+User Behavior Key Findings
+==================================================
+
+1. Per-User Target-in-History Rate:
+   - Geolife: 70.3% average
+   - DIY: 81.8% average
+   - Difference: -11.5% (Geolife lower)
+2. Location Entropy (normalized, lower=more concentrated):
+   - Geolife: 0.631
+   - DIY: 0.555
+3. Top-1 Location Concentration:
+   - Geolife: 39.5%
+   - DIY: 46.1%
+4. Transition Predictability:
+   - Geolife: 0.582
+   - DIY: 0.675
+
+INTERPRETATION:

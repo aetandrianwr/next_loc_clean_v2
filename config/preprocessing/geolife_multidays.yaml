@@ -1,0 +1,40 @@
+# Geolife Dataset Configuration
+# Parameters: epsilon (for DBSCAN), previous_day (list, for sequence generation)
+
+dataset:
+  name: "geolife"
+  epsilon: 20  # DBSCAN epsilon for location clustering (in meters)
+  previous_day: [3, 10, 14, 17, 21]  # List of previous days for sequence generation
+
+preprocessing:
+  # Staypoint detection parameters
+  staypoint:
+    gap_threshold: 1440  # 24 hours in minutes
+    dist_threshold: 200  # Distance threshold in meters
+    time_threshold: 30   # Time threshold in minutes
+    activity_time_threshold: 25  # Activity flag threshold in minutes
+  
+  # Location clustering parameters
+  location:
+    num_samples: 2  # Minimum samples for DBSCAN
+    distance_metric: "haversine"
+    agg_level: "dataset"
+  
+  # User quality filter
+  quality_filter:
+    day_filter: 50  # Minimum tracking days
+    window_size: 10  # Sliding window size for quality calculation
+  
+  # Duration truncation (in minutes)
+  max_duration: 2880  # 2 days (60 * 24 * 2)
+  
+  # Sequence generation
+#   min_sequence_length: 3  # Minimum sequence length (history + target) # static set to 3 as the original paper
+  
+  # Train/validation/test split ratios (per user)
+  split:
+    train: 0.6
+    val: 0.2
+    test: 0.2
+
+random_seed: 42

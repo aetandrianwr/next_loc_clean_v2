@@ -1,0 +1,3 @@
+Dataset,Train Sequences,Test Sequences,Total Users,Total Locations,Samples per User,Seq Len Mean,Seq Len Median,Seq Len Max,Target in History (%),Target Entropy (bits),Unique Test Targets
+Geolife,7424,3502,46,1187,161.3913043478261,17.97265625,16.0,51,83.80925185608223,5.10545611372059,315
+DIY,151421,12368,693,7038,218.5007215007215,23.066939196016406,20.0,100,84.12031047865459,7.245219949560832,1713

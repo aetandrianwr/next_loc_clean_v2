@@ -1,0 +1,26 @@
+{
+  "dataset": "geolife",
+  "test_size": 3502,
+  "pointer_coverage": {
+    "target_in_history_count": 2935,
+    "target_in_history_pct": 83.80925185608223,
+    "not_in_history_count": 567,
+    "not_in_history_pct": 16.190748143917773
+  },
+  "pointer_difficulty": {
+    "mean_target_position": 3.331175468483816,
+    "median_target_position": 2.0,
+    "mean_occurrences_in_history": 7.391482112436115,
+    "position_1_pct": 32.43611584327087,
+    "position_2_5_pct": 55.5366269165247,
+    "position_6_10_pct": 6.473594548551959,
+    "position_gt_10_pct": 5.5536626916524705,
+    "single_occurrence_pct": 9.778534923339013,
+    "multi_occurrence_pct": 90.22146507666099
+  },
+  "sequence_length": {
+    "mean_all": 18.3703597944032,
+    "mean_copyable": 18.797614991482114,
+    "max_all": 46
+  }
+}

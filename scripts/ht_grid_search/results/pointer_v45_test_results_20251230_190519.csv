@@ -1,0 +1,2 @@
+timestamp,model,dataset,prev_day,config_path,experiment_path,d_model,nhead,num_layers,dim_feedforward,lr,correct@1,correct@3,correct@5,correct@10,total,rr,ndcg,f1,acc@1,acc@5,acc@10,mrr,loss
+20251230_191741,pointer_v45,diy,3,/data/next_loc_clean_v2/config/ht_grid_search/optuna_pointer_v45_diy_prev3_d64_h2_l4_ff512_lr0.0006_t0.yaml,experiments/diy_pointer_v45_20251230_190522,64,2,4,512,0.0006,9594.0,13274.0,14154.0,14770.0,17447.0,11577.310546875,70.71559429168701,0.4984086786287095,54.98939752578735,81.12569451332092,84.65638756752014,66.35702848434448,2.7897830435829443

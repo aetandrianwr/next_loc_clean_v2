@@ -1,0 +1,16 @@
+Training DeepMove model
+Dataset: geolife
+Config: config/models/config_deepmove_geolife.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data: train=7424, val=3334, test=3502
+Total trainable parameters: 211897
+
+=== Training ===
+Epoch 1/50 - Train Loss: 4.0607, Acc@1: 35.52%, Acc@5: 61.40%
+         Val   Loss: 4.0764, Acc@1: 39.68%, Acc@5: 61.58%, Acc@10: 65.09%
+Epoch 2/50 - Train Loss: 3.3696, Acc@1: 41.57%, Acc@5: 68.36%
+         Val   Loss: 4.0060, Acc@1: 42.53%, Acc@5: 63.35%, Acc@10: 66.80%
+Epoch 3/50 - Train Loss: 3.1696, Acc@1: 43.78%, Acc@5: 70.12%
+         Val   Loss: 3.9277, Acc@1: 42.86%, Acc@5: 64.16%, Acc@10: 67.43%

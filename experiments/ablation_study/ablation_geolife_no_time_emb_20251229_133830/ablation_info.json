@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_time_emb",
+  "description": "Without Time-of-Day Embedding",
+  "ablation_config": {
+    "use_time_emb": false
+  }
+}

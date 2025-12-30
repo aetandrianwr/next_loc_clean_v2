@@ -1,0 +1,157 @@
+nohup: ignoring input
+============================================================
+PREV DAYS ANALYSIS - PointerNetworkV45
+============================================================
+Total jobs: 66
+Previous days: [3, 7, 10, 14, 17, 21]
+GeoLife configs: 6
+DIY configs: 5
+Max epochs: 50
+Parallel workers: 3
+Start delay: 5.0s
+============================================================
+
+Val results: /data/next_loc_clean_v2/results/analysis_prev_days/prev_days_analysis_val_20251228_185914.csv
+Test results: /data/next_loc_clean_v2/results/analysis_prev_days/prev_days_analysis_test_20251228_185914.csv
+
+Starting training...
+
+[Job 1] Starting: geolife prev3 baseline_d64_L2
+[Job 2] Starting: geolife prev3 d80_L3_deeper
+[Job 3] Starting: geolife prev3 d64_L2_ff192_highLR
+[Job 1] SUCCESS: geolife prev3 baseline_d64_L2 (34.8s)
+[Job 4] Starting: geolife prev3 d64_L3_lowLR_highDrop
+[Job 3] SUCCESS: geolife prev3 d64_L2_ff192_highLR (30.0s)
+[Job 5] Starting: geolife prev3 d64_L2_lowDropout
+[Job 2] SUCCESS: geolife prev3 d80_L3_deeper (38.3s)
+[Job 6] Starting: geolife prev3 d72_L2
+[Job 4] SUCCESS: geolife prev3 d64_L3_lowLR_highDrop (42.6s)
+[Job 7] Starting: diy prev3 baseline_d128_L3
+[Job 5] SUCCESS: geolife prev3 d64_L2_lowDropout (37.7s)
+[Job 8] Starting: diy prev3 d128_L4_deeper
+[Job 6] SUCCESS: geolife prev3 d72_L2 (38.3s)
+[Job 9] Starting: diy prev3 d128_L3_highLR
+[Job 9] SUCCESS: diy prev3 d128_L3_highLR (842.6s)
+[Job 10] Starting: diy prev3 d144_L3_largerEmb
+[Job 7] FAILED: diy prev3 baseline_d128_L3 (909.6s)
+[Job 11] Starting: diy prev3 d128_L3_lowerLR
+[Job 8] SUCCESS: diy prev3 d128_L4_deeper (1020.2s)
+[Job 12] Starting: geolife prev7 baseline_d64_L2
+[Job 12] SUCCESS: geolife prev7 baseline_d64_L2 (71.6s)
+[Job 13] Starting: geolife prev7 d80_L3_deeper
+[Job 13] SUCCESS: geolife prev7 d80_L3_deeper (62.3s)
+[Job 14] Starting: geolife prev7 d64_L2_ff192_highLR
+[Job 14] SUCCESS: geolife prev7 d64_L2_ff192_highLR (51.3s)
+[Job 15] Starting: geolife prev7 d64_L3_lowLR_highDrop
+[Job 15] SUCCESS: geolife prev7 d64_L3_lowLR_highDrop (65.4s)
+[Job 16] Starting: geolife prev7 d64_L2_lowDropout
+[Job 16] SUCCESS: geolife prev7 d64_L2_lowDropout (70.6s)
+[Job 17] Starting: geolife prev7 d72_L2
+[Job 17] SUCCESS: geolife prev7 d72_L2 (52.6s)
+[Job 18] Starting: diy prev7 baseline_d128_L3
+[Job 10] SUCCESS: diy prev3 d144_L3_largerEmb (999.7s)
+[Job 19] Starting: diy prev7 d128_L4_deeper
+[Job 11] SUCCESS: diy prev3 d128_L3_lowerLR (1018.4s)
+[Job 20] Starting: diy prev7 d128_L3_highLR
+[Job 18] SUCCESS: diy prev7 baseline_d128_L3 (1054.8s)
+[Job 21] Starting: diy prev7 d144_L3_largerEmb
+[Job 20] SUCCESS: diy prev7 d128_L3_highLR (1116.2s)
+[Job 22] Starting: diy prev7 d128_L3_lowerLR
+[Job 19] SUCCESS: diy prev7 d128_L4_deeper (1312.1s)
+[Job 23] Starting: geolife prev10 baseline_d64_L2
+[Job 23] SUCCESS: geolife prev10 baseline_d64_L2 (81.4s)
+[Job 24] Starting: geolife prev10 d80_L3_deeper
+[Job 24] SUCCESS: geolife prev10 d80_L3_deeper (66.8s)
+[Job 25] Starting: geolife prev10 d64_L2_ff192_highLR
+[Job 25] SUCCESS: geolife prev10 d64_L2_ff192_highLR (69.0s)
+[Job 26] Starting: geolife prev10 d64_L3_lowLR_highDrop
+[Job 26] SUCCESS: geolife prev10 d64_L3_lowLR_highDrop (75.9s)
+[Job 27] Starting: geolife prev10 d64_L2_lowDropout
+[Job 27] SUCCESS: geolife prev10 d64_L2_lowDropout (74.9s)
+[Job 28] Starting: geolife prev10 d72_L2
+[Job 21] SUCCESS: diy prev7 d144_L3_largerEmb (1095.6s)
+[Job 29] Starting: diy prev10 baseline_d128_L3
+[Job 28] SUCCESS: geolife prev10 d72_L2 (62.1s)
+[Job 30] Starting: diy prev10 d128_L4_deeper
+[Job 22] SUCCESS: diy prev7 d128_L3_lowerLR (1280.7s)
+[Job 31] Starting: diy prev10 d128_L3_highLR
+[Job 29] SUCCESS: diy prev10 baseline_d128_L3 (1123.6s)
+[Job 32] Starting: diy prev10 d144_L3_largerEmb
+[Job 30] SUCCESS: diy prev10 d128_L4_deeper (1204.9s)
+[Job 33] Starting: diy prev10 d128_L3_lowerLR
+[Job 31] SUCCESS: diy prev10 d128_L3_highLR (1034.9s)
+[Job 34] Starting: geolife prev14 baseline_d64_L2
+[Job 34] SUCCESS: geolife prev14 baseline_d64_L2 (70.6s)
+[Job 35] Starting: geolife prev14 d80_L3_deeper
+[Job 35] SUCCESS: geolife prev14 d80_L3_deeper (75.1s)
+[Job 36] Starting: geolife prev14 d64_L2_ff192_highLR
+[Job 36] SUCCESS: geolife prev14 d64_L2_ff192_highLR (75.8s)
+[Job 37] Starting: geolife prev14 d64_L3_lowLR_highDrop
+[Job 37] SUCCESS: geolife prev14 d64_L3_lowLR_highDrop (84.3s)
+[Job 38] Starting: geolife prev14 d64_L2_lowDropout
+[Job 32] SUCCESS: diy prev10 d144_L3_largerEmb (997.4s)
+[Job 39] Starting: geolife prev14 d72_L2
+[Job 38] FAILED: geolife prev14 d64_L2_lowDropout (62.9s)
+[Job 40] Starting: diy prev14 baseline_d128_L3
+[Job 39] SUCCESS: geolife prev14 d72_L2 (84.5s)
+[Job 41] Starting: diy prev14 d128_L4_deeper
+[Job 33] SUCCESS: diy prev10 d128_L3_lowerLR (1056.2s)
+[Job 42] Starting: diy prev14 d128_L3_highLR
+[Job 40] SUCCESS: diy prev14 baseline_d128_L3 (1001.3s)
+[Job 43] Starting: diy prev14 d144_L3_largerEmb
+[Job 41] SUCCESS: diy prev14 d128_L4_deeper (989.9s)
+[Job 44] Starting: diy prev14 d128_L3_lowerLR
+[Job 42] SUCCESS: diy prev14 d128_L3_highLR (1088.6s)
+[Job 45] Starting: geolife prev17 baseline_d64_L2
+[Job 45] SUCCESS: geolife prev17 baseline_d64_L2 (75.0s)
+[Job 46] Starting: geolife prev17 d80_L3_deeper
+[Job 46] SUCCESS: geolife prev17 d80_L3_deeper (76.2s)
+[Job 47] Starting: geolife prev17 d64_L2_ff192_highLR
+[Job 47] SUCCESS: geolife prev17 d64_L2_ff192_highLR (61.3s)
+[Job 48] Starting: geolife prev17 d64_L3_lowLR_highDrop
+[Job 48] SUCCESS: geolife prev17 d64_L3_lowLR_highDrop (70.8s)
+[Job 49] Starting: geolife prev17 d64_L2_lowDropout
+[Job 49] SUCCESS: geolife prev17 d64_L2_lowDropout (88.3s)
+[Job 50] Starting: geolife prev17 d72_L2
+[Job 50] SUCCESS: geolife prev17 d72_L2 (92.7s)
+[Job 51] Starting: diy prev17 baseline_d128_L3
+[Job 44] SUCCESS: diy prev14 d128_L3_lowerLR (942.1s)
+[Job 52] Starting: diy prev17 d128_L4_deeper
+[Job 43] SUCCESS: diy prev14 d144_L3_largerEmb (975.1s)
+[Job 53] Starting: diy prev17 d128_L3_highLR
+[Job 51] SUCCESS: diy prev17 baseline_d128_L3 (837.4s)
+[Job 54] Starting: diy prev17 d144_L3_largerEmb
+[Job 53] SUCCESS: diy prev17 d128_L3_highLR (840.9s)
+[Job 55] Starting: diy prev17 d128_L3_lowerLR
+[Job 52] SUCCESS: diy prev17 d128_L4_deeper (925.2s)
+[Job 56] Starting: geolife prev21 baseline_d64_L2
+[Job 56] SUCCESS: geolife prev21 baseline_d64_L2 (77.7s)
+[Job 57] Starting: geolife prev21 d80_L3_deeper
+[Job 57] SUCCESS: geolife prev21 d80_L3_deeper (76.4s)
+[Job 58] Starting: geolife prev21 d64_L2_ff192_highLR
+[Job 58] SUCCESS: geolife prev21 d64_L2_ff192_highLR (89.3s)
+[Job 59] Starting: geolife prev21 d64_L3_lowLR_highDrop
+[Job 59] SUCCESS: geolife prev21 d64_L3_lowLR_highDrop (81.4s)
+[Job 60] Starting: geolife prev21 d64_L2_lowDropout
+[Job 60] SUCCESS: geolife prev21 d64_L2_lowDropout (76.7s)
+[Job 61] Starting: geolife prev21 d72_L2
+[Job 54] SUCCESS: diy prev17 d144_L3_largerEmb (788.1s)
+[Job 62] Starting: diy prev21 baseline_d128_L3
+[Job 61] SUCCESS: geolife prev21 d72_L2 (92.9s)
+[Job 63] Starting: diy prev21 d128_L4_deeper
+[Job 55] SUCCESS: diy prev17 d128_L3_lowerLR (756.9s)
+[Job 64] Starting: diy prev21 d128_L3_highLR
+[Job 62] SUCCESS: diy prev21 baseline_d128_L3 (376.3s)
+[Job 65] Starting: diy prev21 d144_L3_largerEmb
+[Job 63] SUCCESS: diy prev21 d128_L4_deeper (448.1s)
+[Job 66] Starting: diy prev21 d128_L3_lowerLR
+[Job 64] SUCCESS: diy prev21 d128_L3_highLR (412.5s)
+[Job 65] SUCCESS: diy prev21 d144_L3_largerEmb (382.1s)
+[Job 66] SUCCESS: diy prev21 d128_L3_lowerLR (343.4s)
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+Val results saved to: /data/next_loc_clean_v2/results/analysis_prev_days/prev_days_analysis_val_20251228_185914.csv
+Test results saved to: /data/next_loc_clean_v2/results/analysis_prev_days/prev_days_analysis_test_20251228_185914.csv
+============================================================

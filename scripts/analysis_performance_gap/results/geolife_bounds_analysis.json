@@ -1,0 +1,24 @@
+{
+  "dataset": "geolife",
+  "bounds": {
+    "seen_in_training_pct": 76.35636778983438,
+    "target_in_history_pct": 83.80925185608223,
+    "oracle_pct": 97.54426042261565
+  },
+  "performance": {
+    "mhsa_acc1": 33.18,
+    "pointer_acc1": 53.97,
+    "improvement": 20.79
+  },
+  "copy_utilization": {
+    "mhsa_utilization_pct": 39.589901192504264,
+    "pointer_utilization_pct": 64.39623168654175,
+    "mhsa_gap": 50.62925185608223,
+    "pointer_gap": 29.839251856082228
+  },
+  "improvement_analysis": {
+    "potential_improvement": 50.62925185608223,
+    "actual_improvement": 20.79,
+    "efficiency_pct": 41.06321787866285
+  }
+}

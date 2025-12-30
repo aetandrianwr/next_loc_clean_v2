@@ -1,0 +1,57 @@
+{
+  "geolife": {
+    "dataset": "geolife",
+    "bounds": {
+      "seen_in_training_pct": 76.35636778983438,
+      "target_in_history_pct": 83.80925185608223,
+      "oracle_pct": 97.54426042261565
+    },
+    "performance": {
+      "mhsa_acc1": 33.18,
+      "pointer_acc1": 53.97,
+      "improvement": 20.79
+    },
+    "copy_utilization": {
+      "mhsa_utilization_pct": 39.589901192504264,
+      "pointer_utilization_pct": 64.39623168654175,
+      "mhsa_gap": 50.62925185608223,
+      "pointer_gap": 29.839251856082228
+    },
+    "improvement_analysis": {
+      "potential_improvement": 50.62925185608223,
+      "actual_improvement": 20.79,
+      "efficiency_pct": 41.06321787866285
+    }
+  },
+  "diy": {
+    "dataset": "diy",
+    "bounds": {
+      "seen_in_training_pct": 95.86028460543338,
+      "target_in_history_pct": 84.12031047865459,
+      "oracle_pct": 98.97315653298836
+    },
+    "performance": {
+      "mhsa_acc1": 53.17,
+      "pointer_acc1": 56.85,
+      "improvement": 3.6799999999999997
+    },
+    "copy_utilization": {
+      "mhsa_utilization_pct": 63.20708958093042,
+      "pointer_utilization_pct": 67.58177623990773,
+      "mhsa_gap": 30.950310478654586,
+      "pointer_gap": 27.270310478654586
+    },
+    "improvement_analysis": {
+      "potential_improvement": 30.950310478654586,
+      "actual_improvement": 3.6799999999999997,
+      "efficiency_pct": 11.890026119569868
+    }
+  },
+  "key_finding": {
+    "geolife_mhsa_utilization": 39.589901192504264,
+    "diy_mhsa_utilization": 63.20708958093042,
+    "geolife_gap": 50.62925185608223,
+    "diy_gap": 30.950310478654586,
+    "explanation": "MHSA baseline in DIY already captures 63.2% of copy potential vs Geolife's 39.6%, leaving less room for Pointer mechanism improvement."
+  }
+}

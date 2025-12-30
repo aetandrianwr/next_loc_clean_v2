@@ -1,0 +1,44 @@
+{
+  "dataset": "geolife",
+  "test_size": 3502,
+  "generation_coverage": {
+    "generation_required_count": 567,
+    "generation_required_pct": 16.19074814391776,
+    "pointer_possible_count": 2935,
+    "pointer_possible_pct": 83.80925185608224
+  },
+  "generation_difficulty": {
+    "gen_required_by_tier": {
+      "moderate": 325,
+      "very_common": 58,
+      "common": 98,
+      "unseen": 86
+    },
+    "all_test_by_tier": {
+      "moderate": 449,
+      "unseen": 828,
+      "very_common": 1615,
+      "common": 610
+    }
+  },
+  "generation_advantage": {
+    "generation_exclusive": 567,
+    "generation_exclusive_pct": 16.19074814391776,
+    "generation_could_help": 2069,
+    "generation_could_help_pct": 59.08052541404911
+  },
+  "training_richness": {
+    "unique_train_targets": 1093,
+    "test_covered_by_train_pct": 76.35636778983438,
+    "entropy": 7.193006485664137,
+    "max_entropy": 10.094077685671905,
+    "normalized_entropy": 0.7125967036962961
+  },
+  "topk_coverage": {
+    "top1": 9.05197030268418,
+    "top5": 22.872644203312394,
+    "top10": 35.80810965162764,
+    "top50": 57.19588806396345,
+    "top100": 64.10622501427756
+  }
+}

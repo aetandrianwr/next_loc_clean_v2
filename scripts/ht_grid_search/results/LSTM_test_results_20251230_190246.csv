@@ -1,0 +1,2 @@
+timestamp,model,dataset,prev_day,config_path,experiment_path,base_emb_size,lstm_hidden_size,lstm_num_layers,dim_feedforward,lr,correct@1,correct@3,correct@5,correct@10,total,rr,ndcg,f1,acc@1,acc@5,acc@10,mrr,loss
+20251230_190359,LSTM,diy,3,/data/next_loc_clean_v2/config/ht_grid_search/optuna_LSTM_diy_prev3_emb64_h32_l4_ff512_lr0.001_t0.yaml,experiments/diy_LSTM_20251230_190249,64,32,4,512,0.001,5885.0,7165.0,7662.0,8557.0,17447.0,6830.6416015625,40.91545641422272,0.19114501484780308,33.730727434158325,43.91585886478424,49.045681953430176,39.15080726146698,

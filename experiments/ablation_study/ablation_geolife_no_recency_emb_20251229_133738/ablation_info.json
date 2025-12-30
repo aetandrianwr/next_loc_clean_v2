@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_recency_emb",
+  "description": "Without Recency Embedding",
+  "ablation_config": {
+    "use_recency_emb": false
+  }
+}

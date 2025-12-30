@@ -1,0 +1,8 @@
+2025-12-28 18:29:09,284 - INFO - ============================================================
+2025-12-28 18:29:09,285 - INFO - POINTER V45 - Training Started
+2025-12-28 18:29:09,285 - INFO - ============================================================
+2025-12-28 18:29:09,285 - INFO - Model config: {'d_model': 144, 'nhead': 4, 'num_layers': 3, 'dim_feedforward': 288, 'dropout': 0.15}
+2025-12-28 18:29:09,285 - INFO - Training config: {'batch_size': 128, 'num_epochs': 2, 'learning_rate': 0.0007, 'weight_decay': 0.015, 'label_smoothing': 0.03, 'grad_clip': 0.8, 'patience': 5, 'min_epochs': 8, 'warmup_epochs': 5, 'use_amp': True, 'min_lr': 1e-06}
+2025-12-28 18:29:09,285 - INFO - ============================================================
+2025-12-28 18:29:09,285 - INFO - Training for 2 epochs
+2025-12-28 18:29:09,285 - INFO - Model parameters: 2,768,282

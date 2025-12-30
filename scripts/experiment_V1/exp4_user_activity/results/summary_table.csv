@@ -1,0 +1,7 @@
+Dataset,Activity Level,Users,Samples,Avg Visits,Avg Diversity,Acc@1,Acc@5,Acc@10,MRR,NDCG,F1
+Geolife,Low Activity,12,139,22.0,7.8,55.40,76.98,77.70,64.97,68.05,49.98
+Geolife,Medium Activity,21,1000,132.6,25.2,46.40,78.00,81.70,59.84,65.02,41.36
+Geolife,High Activity,12,2363,656.5,99.9,57.09,82.65,85.91,68.41,72.55,52.85
+DIY,Low Activity,174,1093,69.4,12.6,63.95,81.06,83.71,71.72,74.55,57.43
+DIY,Medium Activity,342,4733,197.7,24.8,56.22,82.32,86.18,67.66,72.09,51.49
+DIY,High Activity,176,6542,477.8,46.9,56.14,82.34,86.50,67.57,72.06,50.76

@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_pos_from_end",
+  "description": "Without Position-from-End Embedding",
+  "ablation_config": {
+    "use_pos_from_end_emb": false
+  }
+}

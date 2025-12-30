@@ -1,0 +1,21 @@
+Location Frequency Distribution Key Findings
+==================================================
+
+1. Vocabulary Concentration:
+   - Geolife: Top 10 locations cover 68.7% of targets
+   - DIY: Top 10 locations cover 42.2% of targets
+2. Gini Coefficient (higher = more unequal):
+   - Geolife: 0.849
+   - DIY: 0.753
+3. Normalized Entropy (higher = more spread):
+   - Geolife: 0.615
+   - DIY: 0.674
+4. User-Exclusive Locations:
+   - Geolife: 50.7% of locations visited by only 1 user
+   - DIY: 47.1% of locations visited by only 1 user
+
+INTERPRETATION:
+  - Geolife has more concentrated distribution (fewer locations dominate)
+  - This makes it easier for pointer to focus on frequent locations
+  - Geolife users have more personalized location sets
+  - Personal history is more predictive in Geolife

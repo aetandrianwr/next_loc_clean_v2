@@ -1,0 +1,39 @@
+{
+  "dataset": "geolife",
+  "test_size": 3502,
+  "baselines": {
+    "last_location_acc": 27.184466019417474,
+    "target_in_history_rate": 83.80925185608223,
+    "most_frequent_history_acc": 44.203312392918335
+  },
+  "distribution": {
+    "unique_locations": 1116,
+    "locs_for_1pct": 1,
+    "locs_for_10pct": 1,
+    "locs_for_25pct": 3,
+    "locs_for_50pct": 13,
+    "locs_for_75pct": 57,
+    "locs_for_90pct": 411
+  },
+  "head_tail": {
+    "head_size": 13,
+    "head_targets": 2296,
+    "head_in_history_rate": 95.25261324041811,
+    "tail_size": 1103,
+    "tail_targets": 1206,
+    "tail_in_history_rate": 62.02321724709784
+  },
+  "repetition": {
+    "mean_streak_length": 1.2103826474404484,
+    "max_streak_length": 40,
+    "same_as_last_rate": 18.17682591982427,
+    "unique_transitions": 3385
+  },
+  "user_diversity": {
+    "total_users": 45,
+    "mean_unique_locs_per_user": 47.044444444444444,
+    "median_unique_locs_per_user": 27.0,
+    "mean_seqs_per_user": 242.8,
+    "overlap_with_global_top50": 22.647362395694344
+  }
+}

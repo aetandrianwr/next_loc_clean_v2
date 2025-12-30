@@ -1,0 +1,16 @@
+Category,Metric,Geolife,DIY,Ratio (DIY/Geo),Impact on Improvement
+Scale,Training Sequences,7424.0,151421.0,20.396147629310345,Neutral
+Scale,Test Sequences,3502.0,12368.0,3.531696173615077,Neutral
+Scale,Total Users,46.0,693.0,15.065217391304348,Reduces DIY improvement
+Scale,Total Locations,1187.0,7038.0,5.929233361415333,Reduces DIY improvement
+Complexity,Target Entropy (bits),5.11,7.25,1.42,"DIY harder, but MHSA handles it"
+Complexity,Unique Test Targets,315.0,1713.0,5.438095238095238,Neutral
+Pattern Learnability,1st-Order Markov Acc (%),21.25,34.49,1.62,KEY: DIY more predictable for MHSA
+Pattern Learnability,Unseen Transitions (%),22.99,4.04,0.18,KEY: Geolife harder for MHSA
+Pointer Applicability,Target in History (%),83.81,84.12,1.0,Similar - both ~84%
+Pointer Applicability,Target = Last Location (%),27.18,18.56,0.68,Geolife stronger last-position pattern
+Model Performance,MHSA Acc@1 (%),33.18,53.17,1.6,KEY: DIY MHSA baseline much higher
+Model Performance,Pointer V45 Acc@1 (%),53.97,56.85,1.05,Both reach similar absolute levels
+Model Performance,Improvement (pp),20.79,3.68,0.18,RESULT: Geolife 5.6x larger improvement
+Model Performance,Theoretical Max (%),89.18,92.56,1.04,Similar theoretical ceilings
+Model Performance,MHSA Utilization of Potential (%),37.2,57.4,1.54,KEY ROOT CAUSE: DIY MHSA already good

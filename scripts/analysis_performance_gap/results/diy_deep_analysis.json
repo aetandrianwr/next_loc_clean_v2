@@ -1,0 +1,39 @@
+{
+  "dataset": "diy",
+  "test_size": 12368,
+  "baselines": {
+    "last_location_acc": 18.55595084087969,
+    "target_in_history_rate": 84.12031047865459,
+    "most_frequent_history_acc": 41.98738680465718
+  },
+  "distribution": {
+    "unique_locations": 6886,
+    "locs_for_1pct": 1,
+    "locs_for_10pct": 1,
+    "locs_for_25pct": 1,
+    "locs_for_50pct": 70,
+    "locs_for_75pct": 404,
+    "locs_for_90pct": 1356
+  },
+  "head_tail": {
+    "head_size": 70,
+    "head_targets": 6613,
+    "head_in_history_rate": 93.30107364282473,
+    "tail_size": 6816,
+    "tail_targets": 5755,
+    "tail_in_history_rate": 73.57080799304953
+  },
+  "repetition": {
+    "mean_streak_length": 1.2903799201135981,
+    "max_streak_length": 82,
+    "same_as_last_rate": 18.576949612000806,
+    "unique_transitions": 37953
+  },
+  "user_diversity": {
+    "total_users": 692,
+    "mean_unique_locs_per_user": 29.790462427745666,
+    "median_unique_locs_per_user": 24.0,
+    "mean_seqs_per_user": 236.68930635838151,
+    "overlap_with_global_top50": 19.68626528034389
+  }
+}

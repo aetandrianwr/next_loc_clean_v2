@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_pointer",
+  "description": "Without Pointer Mechanism (Generation Only)",
+  "ablation_config": {
+    "use_pointer": false
+  }
+}

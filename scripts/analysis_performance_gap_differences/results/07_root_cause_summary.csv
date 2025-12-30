@@ -1,0 +1,13 @@
+Metric,Geolife,DIY
+Test Sequences,"3,502","12,368"
+Training Sequences,"7,424","151,421"
+Users,45,692
+Target in History (%),83.8,84.1
+Targets Seen in Train (%),76.4,95.9
+Avg Targets per User,42.6,27.5
+Most Freq Heuristic Acc (%),44.2,42.0
+MHSA Baseline (%),33.18,53.17
+PointerV45 (%),53.96,56.88
+Actual Improvement (%),+20.78,+3.71
+Improvement Potential (%),50.6,31.0
+Realization Rate (%),41.0,12.0

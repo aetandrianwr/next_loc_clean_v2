@@ -1,0 +1,134 @@
+{
+  "dataset_name": "geolife",
+  "metadata": {
+    "dataset_name": "geolife",
+    "output_dataset_name": "geolife_eps20_prev7",
+    "epsilon": 20,
+    "previous_day": 7,
+    "total_user_num": 46,
+    "total_loc_num": 1187,
+    "unique_users": 45,
+    "unique_locations": 1185,
+    "total_staypoints": 16600,
+    "valid_staypoints": 15978,
+    "train_staypoints": 8380,
+    "val_staypoints": 4018,
+    "test_staypoints": 4202,
+    "train_sequences": 7424,
+    "val_sequences": 3334,
+    "test_sequences": 3502,
+    "total_sequences": 14260,
+    "split_ratios": {
+      "train": 0.6,
+      "val": 0.2,
+      "test": 0.2
+    },
+    "max_duration_minutes": 2880
+  },
+  "basic": {
+    "total_sequences": 14260,
+    "train_sequences": 7424,
+    "val_sequences": 3334,
+    "test_sequences": 3502,
+    "total_users": 46,
+    "total_locations": 1187
+  },
+  "sequence_length": {
+    "mean": 18.129663394109397,
+    "median": 15.0,
+    "std": 10.718314968467494,
+    "min": 3,
+    "max": 54,
+    "q25": 10.0,
+    "q75": 25.0
+  },
+  "location_repetition": {
+    "target_in_history_count": 10802,
+    "target_in_history_rate": 75.75035063113604,
+    "mean_unique_locs_per_seq": 6.8335904628331,
+    "median_unique_locs_per_seq": 6.0,
+    "target_position_mean": 12.133875828812538,
+    "target_position_median": 10.0
+  },
+  "location_frequency": {
+    "unique_targets": 1136,
+    "entropy": 6.626505145302726,
+    "max_entropy": 10.149747119504681,
+    "normalized_entropy": 0.6528739157026512,
+    "top10_coverage_percent": 50.21739130434783,
+    "top50_coverage_percent": 75.69424964936886,
+    "most_common_10": [
+      [
+        7,
+        1471
+      ],
+      [
+        1,
+        1389
+      ],
+      [
+        14,
+        1220
+      ],
+      [
+        1019,
+        762
+      ],
+      [
+        582,
+        543
+      ],
+      [
+        9,
+        409
+      ],
+      [
+        811,
+        386
+      ],
+      [
+        1151,
+        349
+      ],
+      [
+        4,
+        331
+      ],
+      [
+        372,
+        301
+      ]
+    ]
+  },
+  "user_behavior": {
+    "mean_sequences_per_user": 316.8888888888889,
+    "median_sequences_per_user": 181.0,
+    "std_sequences_per_user": 433.46378663157975,
+    "mean_unique_targets_per_user": 47.48888888888889,
+    "median_unique_targets_per_user": 25.0
+  },
+  "user_target_repetition": {
+    "mean_rate": 70.06284788286916,
+    "median_rate": 76.05042016806722,
+    "std_rate": 15.913855402353269,
+    "min_rate": 26.31578947368421,
+    "max_rate": 92.0
+  },
+  "temporal": {
+    "weekday_distribution": {
+      "0": 38425,
+      "1": 38473,
+      "2": 37912,
+      "3": 38478,
+      "4": 39114,
+      "5": 32440,
+      "6": 33687
+    },
+    "num_time_slots": 1415
+  },
+  "duration": {
+    "mean": 357.9790197618062,
+    "median": 220.0,
+    "std": 334.01764752788563
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_generation",
+  "description": "Without Generation Head (Pointer Only)",
+  "ablation_config": {
+    "use_generation": false
+  }
+}

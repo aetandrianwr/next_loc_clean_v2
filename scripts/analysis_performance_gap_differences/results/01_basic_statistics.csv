@@ -1,0 +1,10 @@
+Metric,Geolife,DIY,Ratio (DIY/Geolife)
+Total Users (processed),45,692,15.38x
+Total Locations (processed),1185,7036,5.94x
+Train Sequences,7424,151421,20.40x
+Val Sequences,3334,10160,3.05x
+Test Sequences,3502,12368,3.53x
+Total Sequences,14260,173949,12.20x
+Avg Staypoints/User (interim),210.89,203.39,0.96x
+Avg Days Tracked,307.67,128.57,0.42x
+Locations per User,26.33,10.17,0.39x

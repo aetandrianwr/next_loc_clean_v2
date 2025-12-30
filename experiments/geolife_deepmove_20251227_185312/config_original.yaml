@@ -1,0 +1,55 @@
+# DeepMove Model Configuration for GeoLife Dataset
+# Paper: DeepMove: Predicting Human Mobility with Attentional Recurrent Networks (WWW'18)
+# Dataset: geolife_eps20
+# Target: ~184K parameters, Acc@1 26.1±0.8, Acc@5 54.2±0.8, Acc@10 58.7±0.6
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+
+# Training settings
+training:
+  verbose: true
+  debug: false
+  history_mode: avg  # Options: avg, max, whole
+
+# Dataset info (from metadata)
+dataset_info:
+  total_loc_num: 1187
+  total_user_num: 46
+
+# Model architecture - DeepMove specific parameters
+# Using attn_avg_long_user model (main DeepMove architecture)
+# 
+# Parameter calculation for ~184K params:
+# With loc_emb_size=40, hidden_size=45: ~184K params
+
+model:
+  model_mode: attn_avg_long_user  # Options: simple, simple_long, attn_avg_long_user, attn_local_long
+  rnn_type: GRU                    # Options: GRU, LSTM, RNN
+  attn_type: dot                   # Options: dot, general, concat
+  
+  # Embedding sizes
+  loc_emb_size: 40
+  tim_emb_size: 10
+  uid_emb_size: 10
+  tim_size: 48                     # 48 half-hour slots per day
+  
+  # Model dimensions
+  hidden_size: 45
+  dropout_p: 0.3
+
+# Optimizer settings
+optimiser:
+  lr: 0.001
+  L2: 0.00001
+  lr_step: 3
+  lr_decay: 0.1
+  clip: 5.0
+  epoch_max: 50
+  patience: 7

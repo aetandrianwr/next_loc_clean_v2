@@ -1,0 +1,134 @@
+{
+  "dataset_name": "diy",
+  "metadata": {
+    "dataset_name": "diy",
+    "output_dataset_name": "diy_eps50_prev7",
+    "epsilon": 50,
+    "previous_day": 7,
+    "total_user_num": 693,
+    "total_loc_num": 7038,
+    "unique_users": 692,
+    "unique_locations": 7036,
+    "total_staypoints": 206450,
+    "valid_staypoints": 217689,
+    "train_staypoints": 162521,
+    "val_staypoints": 20869,
+    "test_staypoints": 23060,
+    "train_sequences": 151421,
+    "val_sequences": 10160,
+    "test_sequences": 12368,
+    "total_sequences": 173949,
+    "split_ratios": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "max_duration_minutes": 2880
+  },
+  "basic": {
+    "total_sequences": 173949,
+    "train_sequences": 151421,
+    "val_sequences": 10160,
+    "test_sequences": 12368,
+    "total_users": 693,
+    "total_locations": 7038
+  },
+  "sequence_length": {
+    "mean": 23.151435190774308,
+    "median": 20.0,
+    "std": 15.10301828200552,
+    "min": 3,
+    "max": 105,
+    "q25": 12.0,
+    "q75": 30.0
+  },
+  "location_repetition": {
+    "target_in_history_count": 143642,
+    "target_in_history_rate": 82.57707718929112,
+    "mean_unique_locs_per_seq": 6.323543107462532,
+    "median_unique_locs_per_seq": 5.0,
+    "target_position_mean": 18.098365582449084,
+    "target_position_median": 14.0
+  },
+  "location_frequency": {
+    "unique_targets": 6895,
+    "entropy": 8.159901148517468,
+    "max_entropy": 12.751334836401343,
+    "normalized_entropy": 0.63992525121553,
+    "top10_coverage_percent": 35.68919625867352,
+    "top50_coverage_percent": 46.92582308607695,
+    "most_common_10": [
+      [
+        17,
+        51677
+      ],
+      [
+        187,
+        1582
+      ],
+      [
+        32,
+        1474
+      ],
+      [
+        74,
+        1235
+      ],
+      [
+        70,
+        1215
+      ],
+      [
+        21,
+        1123
+      ],
+      [
+        721,
+        1019
+      ],
+      [
+        188,
+        985
+      ],
+      [
+        172,
+        960
+      ],
+      [
+        370,
+        811
+      ]
+    ]
+  },
+  "user_behavior": {
+    "mean_sequences_per_user": 251.371387283237,
+    "median_sequences_per_user": 198.0,
+    "std_sequences_per_user": 195.92490581568413,
+    "mean_unique_targets_per_user": 28.65751445086705,
+    "median_unique_targets_per_user": 22.0
+  },
+  "user_target_repetition": {
+    "mean_rate": 81.73928980728743,
+    "median_rate": 83.44656917885264,
+    "std_rate": 10.945226570224543,
+    "min_rate": 24.516129032258064,
+    "max_rate": 100.0
+  },
+  "temporal": {
+    "weekday_distribution": {
+      "0": 592376,
+      "1": 558421,
+      "4": 588183,
+      "2": 587243,
+      "3": 589906,
+      "5": 573912,
+      "6": 537128
+    },
+    "num_time_slots": 1440
+  },
+  "duration": {
+    "mean": 376.078493601833,
+    "median": 171.0,
+    "std": 493.72048140765804
+  }
+}

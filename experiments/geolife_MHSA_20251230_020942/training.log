@@ -1,0 +1,49 @@
+Training MHSA model
+Dataset: geolife
+Config: /data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff256_lr0.002.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=224, val=104, test=109
+Total trainable parameters: 129187
+
+=== Epoch 1 ===
+Epoch 1, 8.9%	 loss: 7.082 acc@1: 0.00 mrr: 0.64, ndcg: 0.39, took: 1.00s
+Epoch 1, 17.9%	 loss: 7.107 acc@1: 0.00 mrr: 0.79, ndcg: 0.50, took: 0.42s
+Epoch 1, 26.8%	 loss: 7.083 acc@1: 0.16 mrr: 0.86, ndcg: 0.49, took: 0.41s
+Epoch 1, 35.7%	 loss: 7.058 acc@1: 1.09 mrr: 1.97, ndcg: 1.66, took: 0.42s
+Epoch 1, 44.6%	 loss: 7.039 acc@1: 0.47 mrr: 1.63, ndcg: 1.38, took: 0.42s
+Epoch 1, 53.6%	 loss: 7.034 acc@1: 0.94 mrr: 2.52, ndcg: 2.70, took: 0.41s
+Epoch 1, 62.5%	 loss: 7.000 acc@1: 2.03 mrr: 4.10, ndcg: 4.30, took: 0.43s
+Epoch 1, 71.4%	 loss: 6.949 acc@1: 6.25 mrr: 9.12, ndcg: 9.66, took: 0.44s
+Epoch 1, 80.4%	 loss: 6.828 acc@1: 8.75 mrr: 13.23, ndcg: 14.49, took: 0.44s
+Epoch 1, 89.3%	 loss: 6.673 acc@1: 15.00 mrr: 19.80, ndcg: 21.33, took: 0.45s
+Epoch 1, 98.2%	 loss: 6.508 acc@1: 14.84 mrr: 21.43, ndcg: 23.89, took: 0.47s
+Validation - loss: 6.3501, acc@1: 14.37%, f1: 8.57%, mrr: 24.51%, ndcg: 28.77%
+Current learning rate: 0.001000
+
+=== Epoch 2 ===
+Epoch 2, 8.9%	 loss: 6.167 acc@1: 17.34 mrr: 26.30, ndcg: 29.58, took: 0.47s
+Epoch 2, 17.9%	 loss: 5.857 acc@1: 18.28 mrr: 27.86, ndcg: 31.86, took: 0.48s
+Epoch 2, 26.8%	 loss: 5.782 acc@1: 18.44 mrr: 26.71, ndcg: 30.00, took: 0.46s
+Epoch 2, 35.7%	 loss: 5.434 acc@1: 17.66 mrr: 28.20, ndcg: 32.59, took: 0.45s
+Epoch 2, 44.6%	 loss: 5.399 acc@1: 19.06 mrr: 28.33, ndcg: 31.68, took: 0.48s
+Epoch 2, 53.6%	 loss: 5.042 acc@1: 22.03 mrr: 32.00, ndcg: 36.58, took: 0.49s
+Epoch 2, 62.5%	 loss: 5.064 acc@1: 19.22 mrr: 28.40, ndcg: 32.39, took: 0.56s
+Epoch 2, 71.4%	 loss: 4.835 acc@1: 21.56 mrr: 31.82, ndcg: 36.01, took: 0.55s
+Epoch 2, 80.4%	 loss: 4.568 acc@1: 21.72 mrr: 33.27, ndcg: 38.39, took: 0.54s
+Epoch 2, 89.3%	 loss: 4.682 acc@1: 21.56 mrr: 32.69, ndcg: 37.44, took: 0.58s
+Epoch 2, 98.2%	 loss: 4.429 acc@1: 23.12 mrr: 34.95, ndcg: 39.98, took: 0.61s
+Validation - loss: 5.1014, acc@1: 20.51%, f1: 11.78%, mrr: 32.90%, ndcg: 38.45%
+Current learning rate: 0.000000
+
+=== Test Results ===
+Test Results:
+  acc@1: 17.90%
+  acc@5: 37.85%
+  acc@10: 48.55%
+  mrr: 27.65%
+  ndcg: 31.98%
+  f1: 8.68%
+
+=== Training Complete ===

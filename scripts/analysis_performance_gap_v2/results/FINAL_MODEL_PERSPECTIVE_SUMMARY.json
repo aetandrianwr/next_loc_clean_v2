@@ -1,0 +1,56 @@
+{
+  "analysis_date": "2025-12-29T06:08:57.168626",
+  "focus": "Pointer V45 Model Component Analysis",
+  "research_question": "Why does Pointer V45 achieve +20.79% improvement in Geolife but only +3.68% in DIY?",
+  "performance": {
+    "geolife": {
+      "mhsa": 33.18,
+      "pointer": 53.97,
+      "improvement": 20.79
+    },
+    "diy": {
+      "mhsa": 53.17,
+      "pointer": 56.85,
+      "improvement": 3.68
+    }
+  },
+  "component_analysis": {
+    "pointer_mechanism": {
+      "geolife_coverage": 83.80925185608223,
+      "diy_coverage": 84.12031047865459,
+      "geolife_position_1": 32.43611584327087,
+      "diy_position_1": 22.058823529411764,
+      "findings": [
+        "DIY has higher pointer coverage (84.1% vs 83.8%)",
+        "Geolife has easier copies (more at position 1: 32.4% vs 22.1%)",
+        "Geolife has less ambiguity (fewer multi-occurrence: 90.2% vs 91.4%)"
+      ]
+    },
+    "generation_head": {
+      "geolife_gen_required": 16.19074814391776,
+      "diy_gen_required": 15.879689521345409,
+      "findings": []
+    },
+    "gate": {
+      "geolife_pointer_favorable": 39.3489434608795,
+      "diy_pointer_favorable": 52.13454075032341,
+      "findings": [
+        "DIY has MORE pointer-favorable scenarios (52.1% vs 39.3%)",
+        "\u2192 But baseline MHSA already captures these in DIY!"
+      ]
+    },
+    "position_bias": {
+      "geolife_pos1_accuracy": 0.9880749574105622,
+      "diy_pos1_accuracy": 0.7016532103037294,
+      "findings": [
+        "Geolife benefits more from position bias (1.0% vs 0.7%)"
+      ]
+    }
+  },
+  "root_causes": [
+    "Baseline saturation: MHSA already performs well in DIY (53.17% vs 33.18%)",
+    "Pattern complexity: Geolife has complex patterns MHSA cannot learn implicitly",
+    "Improvement ceiling: Less room for improvement in DIY (31% vs 51%)"
+  ],
+  "key_insight": "The Pointer V45 model excels when baseline MHSA struggles with implicit copy learning. In DIY, simple patterns allow MHSA to capture copy behavior implicitly, reducing Pointer V45's additional value."
+}

@@ -1,0 +1,193 @@
+Training MHSA model
+Dataset: geolife
+Config: experiments/geolife_MHSA_20251226_202405/config_original.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=232, val=105, test=110
+Total trainable parameters: 593315
+
+=== Epoch 1 ===
+Epoch 1, 8.6%	 loss: 7.229 acc@1: 0.00 mrr: 0.39, ndcg: 0.05, took: 0.86s
+Epoch 1, 17.2%	 loss: 7.181 acc@1: 0.00 mrr: 0.57, ndcg: 0.30, took: 0.34s
+Epoch 1, 25.9%	 loss: 7.137 acc@1: 0.31 mrr: 0.91, ndcg: 0.67, took: 0.34s
+Epoch 1, 34.5%	 loss: 7.079 acc@1: 0.00 mrr: 1.03, ndcg: 0.83, took: 0.34s
+Epoch 1, 43.1%	 loss: 7.052 acc@1: 1.72 mrr: 2.85, ndcg: 2.63, took: 0.34s
+Epoch 1, 51.7%	 loss: 7.006 acc@1: 2.81 mrr: 4.45, ndcg: 4.43, took: 0.34s
+Epoch 1, 60.3%	 loss: 6.888 acc@1: 6.09 mrr: 8.57, ndcg: 9.14, took: 0.34s
+Epoch 1, 69.0%	 loss: 6.640 acc@1: 12.66 mrr: 15.57, ndcg: 16.14, took: 0.34s
+Epoch 1, 77.6%	 loss: 6.462 acc@1: 13.75 mrr: 17.48, ndcg: 18.36, took: 0.33s
+Epoch 1, 86.2%	 loss: 6.220 acc@1: 16.72 mrr: 22.93, ndcg: 24.48, took: 0.33s
+Epoch 1, 94.8%	 loss: 5.793 acc@1: 20.00 mrr: 27.98, ndcg: 30.65, took: 0.33s
+Validation - loss: 5.3031, acc@1: 18.93%, f1: 11.03%, mrr: 30.89%, ndcg: 35.72%
+Current learning rate: 0.000500
+
+=== Epoch 2 ===
+Epoch 2, 8.6%	 loss: 5.356 acc@1: 22.34 mrr: 32.13, ndcg: 35.84, took: 0.33s
+Epoch 2, 17.2%	 loss: 5.142 acc@1: 23.91 mrr: 34.16, ndcg: 38.30, took: 0.33s
+Epoch 2, 25.9%	 loss: 5.078 acc@1: 23.59 mrr: 34.06, ndcg: 38.28, took: 0.33s
+Epoch 2, 34.5%	 loss: 4.900 acc@1: 24.69 mrr: 36.01, ndcg: 40.81, took: 0.33s
+Epoch 2, 43.1%	 loss: 4.722 acc@1: 29.06 mrr: 38.49, ndcg: 41.95, took: 0.34s
+Epoch 2, 51.7%	 loss: 4.621 acc@1: 27.50 mrr: 37.95, ndcg: 41.93, took: 0.34s
+Epoch 2, 60.3%	 loss: 4.177 acc@1: 31.41 mrr: 42.87, ndcg: 47.26, took: 0.34s
+Epoch 2, 69.0%	 loss: 4.142 acc@1: 29.38 mrr: 41.88, ndcg: 46.45, took: 0.35s
+Epoch 2, 77.6%	 loss: 3.957 acc@1: 31.88 mrr: 44.81, ndcg: 49.38, took: 0.34s
+Epoch 2, 86.2%	 loss: 4.172 acc@1: 30.62 mrr: 42.19, ndcg: 46.51, took: 0.34s
+Epoch 2, 94.8%	 loss: 3.891 acc@1: 33.28 mrr: 45.65, ndcg: 50.11, took: 0.33s
+Validation - loss: 4.2527, acc@1: 33.65%, f1: 21.37%, mrr: 44.58%, ndcg: 48.17%
+Current learning rate: 0.001000
+
+=== Epoch 3 ===
+Epoch 3, 8.6%	 loss: 3.774 acc@1: 33.91 mrr: 46.05, ndcg: 50.46, took: 0.34s
+Epoch 3, 17.2%	 loss: 3.753 acc@1: 33.91 mrr: 45.78, ndcg: 49.74, took: 0.34s
+Epoch 3, 25.9%	 loss: 3.556 acc@1: 35.47 mrr: 48.28, ndcg: 52.81, took: 0.34s
+Epoch 3, 34.5%	 loss: 3.650 acc@1: 36.88 mrr: 47.87, ndcg: 51.86, took: 0.34s
+Epoch 3, 43.1%	 loss: 3.363 acc@1: 40.16 mrr: 52.11, ndcg: 56.11, took: 0.34s
+Epoch 3, 51.7%	 loss: 3.391 acc@1: 39.38 mrr: 51.55, ndcg: 56.06, took: 0.35s
+Epoch 3, 60.3%	 loss: 3.543 acc@1: 38.91 mrr: 50.38, ndcg: 54.00, took: 0.35s
+Epoch 3, 69.0%	 loss: 3.500 acc@1: 39.22 mrr: 50.55, ndcg: 54.50, took: 0.34s
+Epoch 3, 77.6%	 loss: 3.472 acc@1: 38.12 mrr: 50.33, ndcg: 54.96, took: 0.34s
+Epoch 3, 86.2%	 loss: 3.628 acc@1: 35.78 mrr: 48.52, ndcg: 53.04, took: 0.35s
+Epoch 3, 94.8%	 loss: 3.382 acc@1: 39.69 mrr: 51.42, ndcg: 55.63, took: 0.36s
+Validation - loss: 4.2494, acc@1: 38.90%, f1: 27.64%, mrr: 48.58%, ndcg: 52.22%
+Current learning rate: 0.000979
+
+=== Epoch 4 ===
+Epoch 4, 8.6%	 loss: 3.075 acc@1: 42.81 mrr: 54.34, ndcg: 58.45, took: 0.38s
+Epoch 4, 17.2%	 loss: 3.029 acc@1: 43.91 mrr: 55.70, ndcg: 59.61, took: 0.37s
+Epoch 4, 25.9%	 loss: 2.979 acc@1: 41.25 mrr: 54.20, ndcg: 58.74, took: 0.40s
+Epoch 4, 34.5%	 loss: 3.161 acc@1: 38.44 mrr: 51.67, ndcg: 56.46, took: 0.40s
+Epoch 4, 43.1%	 loss: 2.993 acc@1: 41.56 mrr: 54.42, ndcg: 59.12, took: 0.41s
+Epoch 4, 51.7%	 loss: 3.132 acc@1: 41.72 mrr: 53.12, ndcg: 57.06, took: 0.43s
+Epoch 4, 60.3%	 loss: 3.035 acc@1: 43.28 mrr: 54.94, ndcg: 59.33, took: 0.42s
+Epoch 4, 69.0%	 loss: 3.014 acc@1: 42.03 mrr: 54.11, ndcg: 58.42, took: 0.42s
+Epoch 4, 77.6%	 loss: 3.059 acc@1: 44.22 mrr: 55.73, ndcg: 59.58, took: 0.42s
+Epoch 4, 86.2%	 loss: 3.066 acc@1: 42.19 mrr: 54.50, ndcg: 59.01, took: 0.42s
+Epoch 4, 94.8%	 loss: 2.877 acc@1: 44.38 mrr: 56.94, ndcg: 61.35, took: 0.43s
+Validation - loss: 4.2171, acc@1: 41.21%, f1: 31.24%, mrr: 50.35%, ndcg: 53.70%
+Current learning rate: 0.000958
+
+=== Epoch 5 ===
+Epoch 5, 8.6%	 loss: 2.672 acc@1: 46.25 mrr: 58.84, ndcg: 63.21, took: 0.41s
+Epoch 5, 17.2%	 loss: 2.493 acc@1: 47.97 mrr: 60.80, ndcg: 65.71, took: 0.41s
+Epoch 5, 25.9%	 loss: 2.684 acc@1: 45.78 mrr: 57.91, ndcg: 61.93, took: 0.41s
+Epoch 5, 34.5%	 loss: 2.741 acc@1: 46.09 mrr: 57.76, ndcg: 62.25, took: 0.40s
+Epoch 5, 43.1%	 loss: 2.843 acc@1: 43.75 mrr: 56.03, ndcg: 60.26, took: 0.42s
+Epoch 5, 51.7%	 loss: 2.745 acc@1: 44.53 mrr: 57.51, ndcg: 62.23, took: 0.41s
+Epoch 5, 60.3%	 loss: 2.620 acc@1: 47.97 mrr: 60.18, ndcg: 64.45, took: 0.41s
+Epoch 5, 69.0%	 loss: 2.737 acc@1: 48.28 mrr: 58.97, ndcg: 62.88, took: 0.41s
+Epoch 5, 77.6%	 loss: 2.774 acc@1: 45.47 mrr: 57.81, ndcg: 62.27, took: 0.41s
+Epoch 5, 86.2%	 loss: 2.719 acc@1: 44.22 mrr: 57.14, ndcg: 62.27, took: 0.41s
+Epoch 5, 94.8%	 loss: 2.660 acc@1: 45.16 mrr: 57.84, ndcg: 62.62, took: 0.40s
+Validation - loss: 4.2954, acc@1: 42.17%, f1: 32.73%, mrr: 51.05%, ndcg: 54.19%
+Current learning rate: 0.000937
+
+=== Epoch 6 ===
+Epoch 6, 8.6%	 loss: 2.244 acc@1: 52.66 mrr: 64.98, ndcg: 69.25, took: 0.43s
+Epoch 6, 17.2%	 loss: 2.376 acc@1: 50.00 mrr: 62.62, ndcg: 67.34, took: 0.45s
+Epoch 6, 25.9%	 loss: 2.362 acc@1: 51.41 mrr: 62.65, ndcg: 67.07, took: 0.44s
+Epoch 6, 34.5%	 loss: 2.210 acc@1: 55.16 mrr: 66.05, ndcg: 69.99, took: 0.46s
+Epoch 6, 43.1%	 loss: 2.383 acc@1: 50.78 mrr: 62.74, ndcg: 67.06, took: 0.44s
+Epoch 6, 51.7%	 loss: 2.264 acc@1: 51.41 mrr: 63.59, ndcg: 68.21, took: 0.45s
+Epoch 6, 60.3%	 loss: 2.463 acc@1: 50.31 mrr: 61.81, ndcg: 66.34, took: 0.47s
+Epoch 6, 69.0%	 loss: 2.375 acc@1: 52.97 mrr: 63.70, ndcg: 67.66, took: 0.47s
+Epoch 6, 77.6%	 loss: 2.389 acc@1: 48.59 mrr: 61.16, ndcg: 66.10, took: 0.46s
+Epoch 6, 86.2%	 loss: 2.451 acc@1: 49.69 mrr: 61.23, ndcg: 65.48, took: 0.46s
+Epoch 6, 94.8%	 loss: 2.317 acc@1: 51.09 mrr: 63.30, ndcg: 67.77, took: 0.47s
+Validation - loss: 4.4510, acc@1: 40.01%, f1: 31.83%, mrr: 49.68%, ndcg: 53.30%
+Current learning rate: 0.000917
+
+=== Epoch 7 ===
+Epoch 7, 8.6%	 loss: 2.017 acc@1: 54.69 mrr: 66.93, ndcg: 72.06, took: 0.48s
+Epoch 7, 17.2%	 loss: 2.021 acc@1: 54.69 mrr: 66.80, ndcg: 71.96, took: 0.46s
+Epoch 7, 25.9%	 loss: 2.029 acc@1: 56.56 mrr: 67.96, ndcg: 72.66, took: 0.45s
+Epoch 7, 34.5%	 loss: 2.073 acc@1: 53.75 mrr: 66.08, ndcg: 71.07, took: 0.44s
+Epoch 7, 43.1%	 loss: 2.025 acc@1: 56.25 mrr: 67.81, ndcg: 72.19, took: 0.45s
+Epoch 7, 51.7%	 loss: 2.111 acc@1: 54.22 mrr: 66.27, ndcg: 71.26, took: 0.46s
+Epoch 7, 60.3%	 loss: 2.022 acc@1: 55.94 mrr: 68.03, ndcg: 72.85, took: 0.47s
+Epoch 7, 69.0%	 loss: 2.209 acc@1: 53.44 mrr: 64.85, ndcg: 68.87, took: 0.46s
+Epoch 7, 77.6%	 loss: 2.150 acc@1: 52.50 mrr: 64.97, ndcg: 69.69, took: 0.48s
+Epoch 7, 86.2%	 loss: 2.023 acc@1: 54.69 mrr: 67.11, ndcg: 72.06, took: 0.51s
+Epoch 7, 94.8%	 loss: 2.113 acc@1: 53.44 mrr: 66.03, ndcg: 70.57, took: 0.49s
+Validation - loss: 4.4799, acc@1: 41.03%, f1: 33.33%, mrr: 50.22%, ndcg: 53.70%
+Current learning rate: 0.000896
+
+=== Epoch 8 ===
+Epoch 8, 8.6%	 loss: 1.621 acc@1: 63.75 mrr: 74.91, ndcg: 79.55, took: 0.50s
+Epoch 8, 17.2%	 loss: 1.691 acc@1: 59.22 mrr: 71.59, ndcg: 76.66, took: 0.48s
+Epoch 8, 25.9%	 loss: 1.949 acc@1: 53.12 mrr: 66.85, ndcg: 72.48, took: 0.50s
+Epoch 8, 34.5%	 loss: 1.886 acc@1: 56.41 mrr: 68.11, ndcg: 73.02, took: 0.51s
+Epoch 8, 43.1%	 loss: 1.746 acc@1: 58.91 mrr: 71.24, ndcg: 76.10, took: 0.49s
+Epoch 8, 51.7%	 loss: 1.791 acc@1: 57.66 mrr: 70.12, ndcg: 75.20, took: 0.52s
+Epoch 8, 60.3%	 loss: 1.752 acc@1: 56.09 mrr: 69.81, ndcg: 75.08, took: 0.53s
+Epoch 8, 69.0%	 loss: 1.774 acc@1: 57.97 mrr: 70.08, ndcg: 75.03, took: 0.54s
+Epoch 8, 77.6%	 loss: 1.878 acc@1: 56.25 mrr: 68.91, ndcg: 73.70, took: 0.56s
+Epoch 8, 86.2%	 loss: 1.905 acc@1: 57.19 mrr: 69.10, ndcg: 73.76, took: 0.54s
+Epoch 8, 94.8%	 loss: 1.876 acc@1: 59.69 mrr: 69.89, ndcg: 74.13, took: 0.56s
+Validation - loss: 4.5866, acc@1: 41.18%, f1: 33.74%, mrr: 50.65%, ndcg: 54.00%
+Current learning rate: 0.000875
+
+=== Epoch 9 ===
+Epoch 9, 8.6%	 loss: 1.388 acc@1: 67.19 mrr: 78.14, ndcg: 82.48, took: 0.59s
+Epoch 9, 17.2%	 loss: 1.468 acc@1: 62.97 mrr: 75.19, ndcg: 80.22, took: 0.56s
+Epoch 9, 25.9%	 loss: 1.538 acc@1: 60.31 mrr: 73.32, ndcg: 78.89, took: 0.55s
+Epoch 9, 34.5%	 loss: 1.561 acc@1: 62.34 mrr: 73.87, ndcg: 78.87, took: 0.56s
+Epoch 9, 43.1%	 loss: 1.473 acc@1: 65.62 mrr: 76.21, ndcg: 80.27, took: 0.55s
+Epoch 9, 51.7%	 loss: 1.525 acc@1: 60.00 mrr: 73.25, ndcg: 78.55, took: 0.57s
+Epoch 9, 60.3%	 loss: 1.560 acc@1: 62.66 mrr: 74.01, ndcg: 78.92, took: 0.52s
+Epoch 9, 69.0%	 loss: 1.617 acc@1: 61.25 mrr: 72.97, ndcg: 77.83, took: 0.57s
+Epoch 9, 77.6%	 loss: 1.535 acc@1: 64.38 mrr: 74.86, ndcg: 79.34, took: 0.54s
+Epoch 9, 86.2%	 loss: 1.581 acc@1: 60.78 mrr: 73.58, ndcg: 78.85, took: 0.54s
+Epoch 9, 94.8%	 loss: 1.630 acc@1: 60.47 mrr: 72.77, ndcg: 77.35, took: 0.56s
+Validation - loss: 4.6083, acc@1: 41.15%, f1: 34.46%, mrr: 50.33%, ndcg: 53.63%
+Current learning rate: 0.000085
+
+=== Epoch 10 ===
+Epoch 10, 8.6%	 loss: 2.670 acc@1: 42.66 mrr: 56.49, ndcg: 61.53, took: 0.55s
+Epoch 10, 17.2%	 loss: 2.720 acc@1: 46.72 mrr: 58.22, ndcg: 62.15, took: 0.54s
+Epoch 10, 25.9%	 loss: 2.757 acc@1: 43.12 mrr: 56.21, ndcg: 60.93, took: 0.55s
+Epoch 10, 34.5%	 loss: 2.583 acc@1: 48.28 mrr: 59.67, ndcg: 63.88, took: 0.54s
+Epoch 10, 43.1%	 loss: 2.580 acc@1: 48.44 mrr: 60.12, ndcg: 64.35, took: 0.56s
+Epoch 10, 51.7%	 loss: 2.468 acc@1: 51.56 mrr: 62.37, ndcg: 66.08, took: 0.54s
+Epoch 10, 60.3%	 loss: 2.682 acc@1: 48.28 mrr: 59.17, ndcg: 63.03, took: 0.53s
+Epoch 10, 69.0%	 loss: 2.586 acc@1: 46.88 mrr: 59.12, ndcg: 63.67, took: 0.53s
+Epoch 10, 77.6%	 loss: 2.663 acc@1: 47.97 mrr: 59.27, ndcg: 63.14, took: 0.55s
+Epoch 10, 86.2%	 loss: 2.531 acc@1: 49.06 mrr: 60.85, ndcg: 65.23, took: 0.54s
+Epoch 10, 94.8%	 loss: 2.343 acc@1: 52.66 mrr: 64.10, ndcg: 68.44, took: 0.55s
+Validation - loss: 4.2346, acc@1: 41.93%, f1: 32.15%, mrr: 50.88%, ndcg: 54.11%
+Current learning rate: 0.000085
+
+=== Epoch 11 ===
+Epoch 11, 8.6%	 loss: 2.396 acc@1: 50.16 mrr: 62.54, ndcg: 66.92, took: 0.53s
+Epoch 11, 17.2%	 loss: 2.358 acc@1: 49.69 mrr: 62.61, ndcg: 67.38, took: 0.53s
+Epoch 11, 25.9%	 loss: 2.609 acc@1: 49.53 mrr: 60.27, ndcg: 63.80, took: 0.53s
+Epoch 11, 34.5%	 loss: 2.456 acc@1: 52.03 mrr: 62.89, ndcg: 66.76, took: 0.55s
+Epoch 11, 43.1%	 loss: 2.617 acc@1: 47.19 mrr: 59.32, ndcg: 63.69, took: 0.53s
+Epoch 11, 51.7%	 loss: 2.563 acc@1: 49.22 mrr: 60.31, ndcg: 64.68, took: 0.54s
+Epoch 11, 60.3%	 loss: 2.543 acc@1: 48.75 mrr: 60.20, ndcg: 64.15, took: 0.57s
+Epoch 11, 69.0%	 loss: 2.497 acc@1: 51.41 mrr: 62.06, ndcg: 66.04, took: 0.54s
+Epoch 11, 77.6%	 loss: 2.464 acc@1: 46.88 mrr: 59.84, ndcg: 64.66, took: 0.53s
+Epoch 11, 86.2%	 loss: 2.538 acc@1: 47.34 mrr: 60.09, ndcg: 64.42, took: 0.53s
+Epoch 11, 94.8%	 loss: 2.588 acc@1: 46.88 mrr: 59.54, ndcg: 64.01, took: 0.51s
+Validation - loss: 4.2322, acc@1: 41.78%, f1: 32.31%, mrr: 50.79%, ndcg: 54.05%
+Current learning rate: 0.000085
+
+=== Epoch 12 ===
+Epoch 12, 8.6%	 loss: 2.534 acc@1: 46.72 mrr: 59.75, ndcg: 64.42, took: 0.53s
+Epoch 12, 17.2%	 loss: 2.527 acc@1: 50.16 mrr: 60.81, ndcg: 64.63, took: 0.52s
+Epoch 12, 25.9%	 loss: 2.404 acc@1: 50.62 mrr: 62.24, ndcg: 66.49, took: 0.47s
+Epoch 12, 34.5%	 loss: 2.421 acc@1: 50.78 mrr: 62.65, ndcg: 66.99, took: 0.50s
+Epoch 12, 43.1%	 loss: 2.524 acc@1: 49.69 mrr: 61.13, ndcg: 65.48, took: 0.48s
+Epoch 12, 51.7%	 loss: 2.405 acc@1: 52.19 mrr: 63.21, ndcg: 67.08, took: 0.46s
+Epoch 12, 60.3%	 loss: 2.549 acc@1: 48.59 mrr: 59.66, ndcg: 63.70, took: 0.46s
+Epoch 12, 69.0%	 loss: 2.534 acc@1: 50.47 mrr: 61.57, ndcg: 65.51, took: 0.43s
+Epoch 12, 77.6%	 loss: 2.419 acc@1: 50.94 mrr: 62.42, ndcg: 66.83, took: 0.40s
+Epoch 12, 86.2%	 loss: 2.303 acc@1: 53.12 mrr: 64.89, ndcg: 68.90, took: 0.39s
+Epoch 12, 94.8%	 loss: 2.431 acc@1: 50.16 mrr: 62.02, ndcg: 66.20, took: 0.39s
+Validation - loss: 4.2339, acc@1: 41.93%, f1: 32.64%, mrr: 50.88%, ndcg: 54.11%
+Current learning rate: 0.000085
+
+=== Epoch 13 ===
+Epoch 13, 8.6%	 loss: 2.429 acc@1: 50.62 mrr: 62.32, ndcg: 66.82, took: 0.37s
+Epoch 13, 17.2%	 loss: 2.300 acc@1: 52.34 mrr: 64.36, ndcg: 68.79, took: 0.35s
+Epoch 13, 25.9%	 loss: 2.390 acc@1: 52.34 mrr: 62.92, ndcg: 66.63, took: 0.34s

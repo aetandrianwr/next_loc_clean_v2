@@ -1,0 +1,64 @@
+# DeepMove Model Configuration for DIY Dataset
+# Paper: DeepMove: Predicting Human Mobility with Attentional Recurrent Networks (WWW'18)
+# Dataset: diy_eps50
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+
+# Training settings
+training:
+  verbose: true
+  debug: false
+  history_mode: avg  # Options: avg, max, whole
+
+# Dataset info (from metadata)
+dataset_info:
+  total_loc_num: 7038
+  total_user_num: 693
+
+# Model architecture - DeepMove specific parameters
+# Using attn_avg_long_user model (main DeepMove architecture)
+# 
+# For DIY dataset with larger location vocabulary:
+# Adjusted to keep similar parameter ratio
+# 
+# loc_emb_size: 50, hidden_size: 50, tim_emb_size: 10, uid_emb_size: 10
+# - loc_emb: 7038 * 50 = 351,900
+# - tim_emb: 48 * 10 = 480
+# - uid_emb: 693 * 10 = 6,930
+# - fc_attn: 60 * 50 = 3,000
+# - Attention (general): 50 * 50 = 2,500
+# - GRU: 3 * (60 * 50 + 50^2 + 100) = 16,800
+# - fc_final: (100 + 10) * 7038 = 774,180
+# Total: ~1.15M params (larger due to larger vocabulary)
+
+model:
+  model_mode: attn_avg_long_user  # Options: simple, simple_long, attn_avg_long_user, attn_local_long
+  rnn_type: GRU                    # Options: GRU, LSTM, RNN
+  attn_type: dot                   # Options: dot, general, concat
+  
+  # Embedding sizes
+  loc_emb_size: 50
+  tim_emb_size: 10
+  uid_emb_size: 10
+  tim_size: 48                     # 48 half-hour slots per day
+  
+  # Model dimensions
+  hidden_size: 50
+  dropout_p: 0.3
+
+# Optimizer settings
+optimiser:
+  lr: 0.001
+  L2: 0.00001
+  lr_step: 3
+  lr_decay: 0.1
+  clip: 5.0
+  epoch_max: 50
+  patience: 7

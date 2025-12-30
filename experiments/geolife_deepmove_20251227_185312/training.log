@@ -1,0 +1,46 @@
+Training DeepMove model
+Dataset: geolife
+Config: config/models/config_deepmove_geolife.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data: train=7379, val=3334, test=3502
+Total trainable parameters: 183697
+
+=== Training ===
+Epoch 1/50 - Train Loss: 4.0591, Acc@1: 28.91%, Acc@5: 47.86%
+         Val   Loss: 3.9871, Acc@1: 28.65%, Acc@5: 47.38%, Acc@10: 52.62%
+Epoch 2/50 - Train Loss: 3.3900, Acc@1: 32.62%, Acc@5: 57.02%
+         Val   Loss: 3.9714, Acc@1: 31.08%, Acc@5: 50.83%, Acc@10: 55.91%
+Epoch 3/50 - Train Loss: 3.2055, Acc@1: 36.12%, Acc@5: 59.55%
+         Val   Loss: 3.9544, Acc@1: 31.28%, Acc@5: 54.11%, Acc@10: 56.67%
+Epoch 4/50 - Train Loss: 3.0960, Acc@1: 38.12%, Acc@5: 62.83%
+         Val   Loss: 3.8726, Acc@1: 32.92%, Acc@5: 54.75%, Acc@10: 57.14%
+Epoch 5/50 - Train Loss: 3.0173, Acc@1: 37.13%, Acc@5: 64.17%
+         Val   Loss: 3.8615, Acc@1: 32.28%, Acc@5: 55.62%, Acc@10: 57.87%
+Epoch 6/50 - Train Loss: 2.9507, Acc@1: 40.76%, Acc@5: 64.61%
+         Val   Loss: 3.8915, Acc@1: 31.57%, Acc@5: 55.82%, Acc@10: 58.54%
+Epoch 7/50 - Train Loss: 2.9022, Acc@1: 40.75%, Acc@5: 65.01%
+         Val   Loss: 3.9352, Acc@1: 32.83%, Acc@5: 55.13%, Acc@10: 57.84%
+Epoch 8/50 - Train Loss: 2.8767, Acc@1: 39.71%, Acc@5: 66.68%
+         Val   Loss: 3.9389, Acc@1: 32.93%, Acc@5: 54.69%, Acc@10: 57.56%
+Epoch 9/50 - Train Loss: 2.6002, Acc@1: 46.37%, Acc@5: 68.87%
+         Val   Loss: 3.8634, Acc@1: 33.70%, Acc@5: 55.17%, Acc@10: 57.67%
+Epoch 10/50 - Train Loss: 2.5778, Acc@1: 47.76%, Acc@5: 68.96%
+         Val   Loss: 3.8765, Acc@1: 33.20%, Acc@5: 55.34%, Acc@10: 57.63%
+Epoch 11/50 - Train Loss: 2.5913, Acc@1: 44.99%, Acc@5: 68.86%
+         Val   Loss: 3.8668, Acc@1: 32.92%, Acc@5: 55.26%, Acc@10: 57.48%
+Epoch 12/50 - Train Loss: 2.5679, Acc@1: 46.59%, Acc@5: 69.44%
+         Val   Loss: 3.8724, Acc@1: 33.05%, Acc@5: 55.34%, Acc@10: 57.47%
+Early stopping at epoch 12
+
+=== Test Results ===
+Test Results:
+  Acc@1:  30.88%
+  Acc@5:  51.88%
+  Acc@10: 58.90%
+  MRR:    45.62%
+  NDCG:   48.74%
+  F1:     26.66%
+
+=== Training Complete ===

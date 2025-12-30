@@ -1,0 +1,33 @@
+{
+  "dataset": "diy",
+  "total_test_sequences": 12368,
+  "test_breakdown": {
+    "in_history_rare": 6448,
+    "in_history_rare_pct": 52.13454075032341,
+    "in_history_common": 3956,
+    "in_history_common_pct": 31.985769728331174,
+    "not_in_history_rare": 1909,
+    "not_in_history_rare_pct": 15.434993531694696,
+    "not_in_history_common": 55,
+    "not_in_history_common_pct": 0.44469598965071155
+  },
+  "zones": {
+    "pointer_advantage_pct": 52.13454075032341,
+    "generation_advantage_pct": 0.44469598965071155,
+    "competitive_zone_pct": 47.42076326002587
+  },
+  "position_analysis": {
+    "mean_closest_position": 3.3668781237985392,
+    "median_closest_position": 2.0,
+    "mean_occurrences": 9.255094194540561,
+    "most_recent_pct": 22.058823529411764,
+    "within_5_pct": 87.48558246828144,
+    "within_10_pct": 95.21337946943483
+  },
+  "user_level": {
+    "mean_pointer_advantage_rate": 47.44926804884994,
+    "std_pointer_advantage_rate": 29.96636440059348,
+    "min": 0.0,
+    "max": 100.0
+  }
+}

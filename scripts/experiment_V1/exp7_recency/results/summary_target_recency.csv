@@ -1,0 +1,11 @@
+Dataset,Recency Bin,Samples,Acc@1,Acc@5,MRR
+Geolife,Target: Same Day (0),827,64.69,96.01,78.43
+Geolife,Target: 1 Day Ago,1294,75.89,98.76,86.12
+Geolife,Target: 2-3 Days Ago,485,53.61,95.26,71.01
+Geolife,Target: 4-7 Days Ago,329,34.04,77.81,51.83
+Geolife,Target: Not in History,567,0.18,8.82,4.80
+DIY,Target: Same Day (0),3796,71.39,97.89,82.91
+DIY,Target: 1 Day Ago,3823,72.95,98.14,83.96
+DIY,Target: 2-3 Days Ago,1957,63.36,95.61,76.91
+DIY,Target: 4-7 Days Ago,828,33.94,81.04,53.64
+DIY,Target: Not in History,1964,0.66,8.10,5.10

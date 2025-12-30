@@ -1,0 +1,54 @@
+# MHSA Hyperparameter Tuning - GeoLife emb128 layers2
+# Try 2 layers with emb128 to balance depth and width
+# ~400K params to stay within limit
+
+seed: 42
+
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+
+training:
+  if_embed_user: true
+  if_embed_poi: false
+  if_embed_time: true
+  if_embed_duration: true
+  previous_day: 7
+  verbose: true
+  debug: false
+  batch_size: 32
+  print_step: 20
+  num_workers: 0
+  day_selection: default
+
+dataset_info:
+  total_loc_num: 1187
+  total_user_num: 46
+
+embedding:
+  base_emb_size: 128
+  poi_original_size: 16
+  time_emb_size: 16
+
+model:
+  networkName: transformer
+  num_encoder_layers: 2
+  nhead: 8
+  dim_feedforward: 128
+  fc_dropout: 0.2
+
+optimiser:
+  optimizer: Adam
+  max_epoch: 50
+  lr: 0.001
+  weight_decay: 0.000001
+  beta1: 0.9
+  beta2: 0.999
+  momentum: 0.98
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1

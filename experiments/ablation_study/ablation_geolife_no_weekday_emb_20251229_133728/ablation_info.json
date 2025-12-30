@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_weekday_emb",
+  "description": "Without Weekday Embedding",
+  "ablation_config": {
+    "use_weekday_emb": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "geolife": {
+    "dataset": "geolife",
+    "test_size": 3502,
+    "scenarios": {
+      "pointer_only": {
+        "count": 866,
+        "pct": 24.728726442033125
+      },
+      "pointer_preferred": {
+        "count": 512,
+        "pct": 14.620217018846374
+      },
+      "balanced": {
+        "count": 1557,
+        "pct": 44.460308395202745
+      },
+      "generation_preferred": {
+        "count": 88,
+        "pct": 2.5128498001142203
+      },
+      "generation_only": {
+        "count": 479,
+        "pct": 13.677898343803541
+      }
+    },
+    "pointer_favorable": {
+      "count": 1378,
+      "pct": 39.3489434608795
+    },
+    "generation_favorable": {
+      "count": 88,
+      "pct": 2.5128498001142203
+    },
+    "difficult": {
+      "count": 479,
+      "pct": 13.677898343803541
+    },
+    "gate_flexibility": {
+      "pointer_dominant_pct": 83.80925185608223,
+      "generation_dominant_pct": 16.19074814391776,
+      "balance_ratio": 0.19318568994889268
+    },
+    "user_consistency": {
+      "mean_pointer_rate": 75.10190722253665,
+      "std_pointer_rate": 19.11280766489039,
+      "min_pointer_rate": 0.0,
+      "max_pointer_rate": 100.0
+    }
+  },
+  "diy": {
+    "dataset": "diy",
+    "test_size": 12368,
+    "scenarios": {
+      "pointer_only": {
+        "count": 3799,
+        "pct": 30.716364812419144
+      },
+      "pointer_preferred": {
+        "count": 2649,
+        "pct": 21.41817593790427
+      },
+      "balanced": {
+        "count": 3956,
+        "pct": 31.985769728331174
+      },
+      "generation_preferred": {
+        "count": 181,
+        "pct": 1.4634540750323417
+      },
+      "generation_only": {
+        "count": 1783,
+        "pct": 14.416235446313067
+      }
+    },
+    "pointer_favorable": {
+      "count": 6448,
+      "pct": 52.13454075032341
+    },
+    "generation_favorable": {
+      "count": 181,
+      "pct": 1.4634540750323417
+    },
+    "difficult": {
+      "count": 1783,
+      "pct": 14.416235446313067
+    },
+    "gate_flexibility": {
+      "pointer_dominant_pct": 84.12031047865459,
+      "generation_dominant_pct": 15.879689521345409,
+      "balance_ratio": 0.18877354863514034
+    },
+    "user_consistency": {
+      "mean_pointer_rate": 82.41647210277443,
+      "std_pointer_rate": 19.44018237848803,
+      "min_pointer_rate": 0.0,
+      "max_pointer_rate": 100.0
+    }
+  }
+}

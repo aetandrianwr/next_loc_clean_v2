@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_sinusoidal_pos",
+  "description": "Without Sinusoidal Positional Encoding",
+  "ablation_config": {
+    "use_sinusoidal_pos": false
+  }
+}

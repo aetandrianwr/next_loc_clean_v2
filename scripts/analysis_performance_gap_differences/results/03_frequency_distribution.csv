@@ -1,0 +1,11 @@
+Metric,Geolife Train,Geolife Test,DIY Train,DIY Test
+Unique Target Locations,1093,315,6866,1713
+Total Targets,7424,3502,151421,12368
+Avg Visits per Location,6.79,11.12,22.05,7.22
+Median Visits per Location,2.0,1.0,3.0,2.0
+Top 10 Locations Cover (%),43.8%,68.7%,36.1%,42.2%
+Top 50 Locations Cover (%),69.3%,88.3%,47.0%,52.6%
+Locations for 50% Coverage (%),1.4%,1.3%,1.0%,2.2%
+Entropy (bits),7.19,5.11,8.18,7.25
+Normalized Entropy,0.713,0.615,0.642,0.674
+Gini Coefficient,0.769,0.849,0.860,0.753

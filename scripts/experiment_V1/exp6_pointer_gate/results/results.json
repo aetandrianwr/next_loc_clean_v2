@@ -1,0 +1,112 @@
+{
+  "geolife": {
+    "range_results": [
+      {
+        "gate_range": "Low Pointer (0-0.3)",
+        "num_samples": 236,
+        "acc@1": 47.45762711864407,
+        "avg_gate": 0.19835901247747875,
+        "target_in_history_rate": 66.94915254237289,
+        "avg_seq_length": 13.177966101694915
+      },
+      {
+        "gate_range": "Medium Pointer (0.3-0.5)",
+        "num_samples": 434,
+        "acc@1": 48.8479262672811,
+        "avg_gate": 0.40764997995668845,
+        "target_in_history_rate": 78.3410138248848,
+        "avg_seq_length": 16.089861751152075
+      },
+      {
+        "gate_range": "Balanced (0.5-0.7)",
+        "num_samples": 968,
+        "acc@1": 49.48347107438016,
+        "avg_gate": 0.6169158737521526,
+        "target_in_history_rate": 82.12809917355372,
+        "avg_seq_length": 19.49380165289256
+      },
+      {
+        "gate_range": "High Pointer (0.7-1.0)",
+        "num_samples": 1864,
+        "acc@1": 58.31545064377682,
+        "avg_gate": 0.8175900503993034,
+        "target_in_history_rate": 88.0901287553648,
+        "avg_seq_length": 18.97532188841202
+      }
+    ],
+    "in_history_stats": {
+      "condition": "Target in History",
+      "num_samples": 2935,
+      "avg_gate": 0.6845960621495162,
+      "acc@1": 64.36115843270869
+    },
+    "not_in_history_stats": {
+      "condition": "Target NOT in History",
+      "num_samples": 567,
+      "avg_gate": 0.591897346690376,
+      "acc@1": 0.1763668430335097
+    },
+    "gate_stats": {
+      "mean": 0.6695874465968799,
+      "std": 0.20001517350620213,
+      "min": 0.021349510177969933,
+      "max": 0.9880302548408508,
+      "median": 0.7160804271697998
+    }
+  },
+  "diy": {
+    "range_results": [
+      {
+        "gate_range": "Low Pointer (0-0.3)",
+        "num_samples": 160,
+        "acc@1": 20.625,
+        "avg_gate": 0.2255185900721699,
+        "target_in_history_rate": 46.875,
+        "avg_seq_length": 11.81875
+      },
+      {
+        "gate_range": "Medium Pointer (0.3-0.5)",
+        "num_samples": 686,
+        "acc@1": 29.591836734693878,
+        "avg_gate": 0.42436197460914143,
+        "target_in_history_rate": 58.89212827988338,
+        "avg_seq_length": 20.100583090379008
+      },
+      {
+        "gate_range": "Balanced (0.5-0.7)",
+        "num_samples": 2336,
+        "acc@1": 44.99143835616438,
+        "avg_gate": 0.6155516014064419,
+        "target_in_history_rate": 75.81335616438356,
+        "avg_seq_length": 21.90625
+      },
+      {
+        "gate_range": "High Pointer (0.7-1.0)",
+        "num_samples": 9186,
+        "acc@1": 62.55170912257783,
+        "avg_gate": 0.8487932083525223,
+        "target_in_history_rate": 88.76551273677336,
+        "avg_seq_length": 25.01066840844764
+      }
+    ],
+    "in_history_stats": {
+      "condition": "Target in History",
+      "num_samples": 10404,
+      "avg_gate": 0.7917083591510646,
+      "acc@1": 67.47404844290658
+    },
+    "not_in_history_stats": {
+      "condition": "Target NOT in History",
+      "num_samples": 1964,
+      "avg_gate": 0.6747476951107231,
+      "acc@1": 0.6619144602851323
+    },
+    "gate_stats": {
+      "mean": 0.7731353688393545,
+      "std": 0.15542208918163014,
+      "min": 0.07048529386520386,
+      "max": 0.978886604309082,
+      "median": 0.8152174949645996
+    }
+  }
+}

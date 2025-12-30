@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_duration_emb",
+  "description": "Without Duration Embedding",
+  "ablation_config": {
+    "use_duration_emb": false
+  }
+}

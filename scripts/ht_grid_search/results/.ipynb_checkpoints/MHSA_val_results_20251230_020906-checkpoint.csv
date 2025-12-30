@@ -1,0 +1,6 @@
+config_path,experiment_path,dataset,prev_days,base_emb_size,n_head,num_layer,ff_dim,lr,num_params,correct@1,correct@3,correct@5,correct@10,total,rr,ndcg,f1,acc@1,acc@5,acc@10,mrr,loss
+/data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff256_lr0.001.yaml,experiments/geolife_MHSA_20251230_020937,geolife,3,32,2,2,256,0.001,129187,,,,,,,33.33,,17.62,,,28.06,
+/data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff256_lr0.002.yaml,experiments/geolife_MHSA_20251230_020942,geolife,3,32,2,2,256,0.002,129187,,,,,,,38.45,,20.51,,,32.9,
+/data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff256_lr0.0005.yaml,experiments/geolife_MHSA_20251230_020947,geolife,3,32,2,2,256,0.0005,129187,,,,,,,28.01,,15.36,,,24.46,
+/data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff128_lr0.001.yaml,experiments/geolife_MHSA_20251230_020952,geolife,3,32,2,2,128,0.001,112547,,,,,,,37.04,,19.55,,,31.84,
+/data/next_loc_clean_v2/config/ht_grid_search/MHSA_geolife_prev3_emb32_h2_l2_ff128_lr0.002.yaml,experiments/geolife_MHSA_20251230_020957,geolife,3,32,2,2,128,0.002,112547,,,,,,,42.35,,25.15,,,37.36,

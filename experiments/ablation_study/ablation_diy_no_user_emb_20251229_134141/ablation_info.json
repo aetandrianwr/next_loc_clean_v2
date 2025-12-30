@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_user_emb",
+  "description": "Without User Embedding",
+  "ablation_config": {
+    "use_user_emb": false
+  }
+}

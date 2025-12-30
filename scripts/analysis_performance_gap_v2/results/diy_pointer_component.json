@@ -1,0 +1,26 @@
+{
+  "dataset": "diy",
+  "test_size": 12368,
+  "pointer_coverage": {
+    "target_in_history_count": 10404,
+    "target_in_history_pct": 84.12031047865459,
+    "not_in_history_count": 1964,
+    "not_in_history_pct": 15.879689521345412
+  },
+  "pointer_difficulty": {
+    "mean_target_position": 3.3668781237985392,
+    "median_target_position": 2.0,
+    "mean_occurrences_in_history": 9.255094194540561,
+    "position_1_pct": 22.058823529411764,
+    "position_2_5_pct": 65.42675893886967,
+    "position_6_10_pct": 7.7277970011534025,
+    "position_gt_10_pct": 4.786620530565167,
+    "single_occurrence_pct": 8.60246059207997,
+    "multi_occurrence_pct": 91.39753940792002
+  },
+  "sequence_length": {
+    "mean_all": 23.98132276843467,
+    "mean_copyable": 24.59948096885813,
+    "max_all": 99
+  }
+}

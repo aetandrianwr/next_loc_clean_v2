@@ -1,0 +1,2 @@
+config_path,experiment_path,dataset,prev_days,d_model,n_head,num_layer,ff_dim,lr,num_params,correct@1,correct@3,correct@5,correct@10,total,rr,ndcg,f1,acc@1,acc@5,acc@10,mrr,loss
+/data/next_loc_clean_v2/config/ht_grid_search/pointer_v45_geolife_prev3_d32_h2_l2_ff128_lr0.0006.yaml,experiments/geolife_pointer_v45_20251230_020601,geolife,3,32,2,2,128,0.0006,112196,1385.0,2247.0,2436.0,2526.0,3320.0,1840.787353515625,60.450005531311035,0.36588457683101605,41.71686768531799,73.37349653244019,76.08433961868286,55.44540286064148,3.3508909390522885

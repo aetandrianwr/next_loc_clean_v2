@@ -1,0 +1,18 @@
+{
+  "paradox": "DIY has higher pointer zone but lower improvement",
+  "root_causes": [
+    "DIY's higher same-as-last rate (18.6% vs 18.2%) creates patterns easily learned without explicit pointer.",
+    "Geolife users visit more unique locations (47.0 vs 29.8), making pointer's copy mechanism more valuable."
+  ],
+  "key_insight": "The pointer mechanism helps most when patterns are COMPLEX and user-specific, not when targets are simply 'rare' in global distribution",
+  "geolife_characteristics": {
+    "user_behavior": "Diverse, user-specific location patterns",
+    "prediction_challenge": "Complex - generation head cannot memorize user preferences",
+    "pointer_value": "HIGH - copying from history captures user-specific patterns"
+  },
+  "diy_characteristics": {
+    "user_behavior": "Repetitive, shared location patterns",
+    "prediction_challenge": "Simple - stay-at-same-location dominates",
+    "pointer_value": "LOW - MHSA already captures simple patterns effectively"
+  }
+}

@@ -1,0 +1,2 @@
+timestamp,model,dataset,prev_day,config_path,experiment_path,base_emb_size,nhead,num_encoder_layers,dim_feedforward,lr,correct@1,correct@3,correct@5,correct@10,total,rr,ndcg,f1,acc@1,acc@5,acc@10,mrr,loss
+20251230_190153,MHSA,diy,3,/data/next_loc_clean_v2/config/ht_grid_search/optuna_MHSA_diy_prev3_emb64_h2_l4_ff512_lr0.0005_t0.yaml,experiments/diy_MHSA_20251230_190038,64,2,4,512,0.0005,5468.0,5938.0,6290.0,6907.0,17447.0,5954.02099609375,34.831225872039795,0.17760322935238737,31.34063184261322,36.05204224586487,39.58846926689148,34.12633240222931,

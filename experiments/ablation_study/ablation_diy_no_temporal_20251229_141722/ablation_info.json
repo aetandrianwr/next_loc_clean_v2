@@ -1,0 +1,10 @@
+{
+  "ablation_name": "no_temporal",
+  "description": "Without All Temporal Features",
+  "ablation_config": {
+    "use_time_emb": false,
+    "use_weekday_emb": false,
+    "use_recency_emb": false,
+    "use_duration_emb": false
+  }
+}

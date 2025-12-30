@@ -1,0 +1,18 @@
+{
+  "geolife": {
+    "target_entropy_mean": 3.0570895825272966,
+    "top1_coverage_mean": 37.99330415601453,
+    "home_work_ratio": 59.37587720690314,
+    "high_conc_users": 13.636363636363635,
+    "bigram_acc": 46.137653304045394,
+    "top1_freq_acc": 10.067728354384037
+  },
+  "diy": {
+    "target_entropy_mean": 2.501412579714624,
+    "top1_coverage_mean": 47.024318513689934,
+    "home_work_ratio": 68.75578116729459,
+    "high_conc_users": 27.153284671532845,
+    "bigram_acc": 43.22878825806373,
+    "top1_freq_acc": 29.74436622728022
+  }
+}

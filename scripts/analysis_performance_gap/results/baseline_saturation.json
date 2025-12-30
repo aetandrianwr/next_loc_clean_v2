@@ -1,0 +1,66 @@
+{
+  "geolife": {
+    "mhsa_acc": 33.18,
+    "pointer_acc": 53.96,
+    "freq_baseline": {
+      "global_baseline": 9.05197030268418,
+      "user_baseline": 23.44374643061108
+    },
+    "hist_freq": 44.203312392918335,
+    "recency": 27.184466019417474,
+    "headroom": {
+      "mhsa_acc": 33.18,
+      "pointer_acc": 53.96,
+      "improvement": 20.78,
+      "pointer_oracle": 83.80925185608223,
+      "headroom": 66.82,
+      "pointer_headroom": 50.62925185608223
+    },
+    "concentration": {
+      "num_unique": 1116,
+      "gini": -0.8106863572931489,
+      "top_k_coverage": {
+        "1": 10.067728354384037,
+        "5": 33.90993959362987,
+        "10": 46.229178107267074,
+        "20": 60.21416803953872,
+        "50": 73.54017938861432,
+        "100": 79.82793336994325
+      },
+      "entropy": 6.859956989429956,
+      "normalized_entropy": 0.6775854198245008
+    }
+  },
+  "diy": {
+    "mhsa_acc": 53.17,
+    "pointer_acc": 56.88,
+    "freq_baseline": {
+      "global_baseline": 32.43046571798189,
+      "user_baseline": 42.480595084087966
+    },
+    "hist_freq": 41.98738680465718,
+    "recency": 18.55595084087969,
+    "headroom": {
+      "mhsa_acc": 53.17,
+      "pointer_acc": 56.88,
+      "improvement": 3.710000000000001,
+      "pointer_oracle": 84.12031047865459,
+      "headroom": 46.83,
+      "pointer_headroom": 30.950310478654586
+    },
+    "concentration": {
+      "num_unique": 6886,
+      "gini": -0.8606229657342681,
+      "top_k_coverage": {
+        "1": 29.74436622728022,
+        "5": 32.90636123304984,
+        "10": 35.733779435737446,
+        "20": 39.754806488836245,
+        "50": 46.86151084627173,
+        "100": 53.988363076885506
+      },
+      "entropy": 8.159286678533027,
+      "normalized_entropy": 0.6399716364691407
+    }
+  }
+}

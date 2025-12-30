@@ -1,0 +1,65 @@
+nohup: ignoring input
+================================================================================
+COMPREHENSIVE ABLATION STUDY FOR POINTER NETWORK V45
+Nature Journal Standard Ablation Analysis
+================================================================================
+Timestamp: 20251229_133652
+Parallel Jobs: 3
+Delay Between Jobs: 5s
+Seed: 42, Patience: 5
+================================================================================
+
+================================================================================
+Running ablation study on GEOLIFE dataset
+================================================================================
+Config: config/models/config_pointer_v45_geolife.yaml
+Expected Full Model Acc@1: 53.96%
+Ablation Experiments: 13
+
+Starting 13 experiments with 3 parallel workers...
+[Job 0] Starting: full_model
+[Job 1] Starting: no_user_emb
+[Job 2] Starting: no_time_emb
+[Job 1] Completed: no_user_emb (28.7s)
+[Job 3] Starting: no_weekday_emb
+[Job 0] Completed: full_model (38.6s)
+[Job 4] Starting: no_recency_emb
+[Job 2] Completed: no_time_emb (36.6s)
+[Job 5] Starting: no_duration_emb
+[Job 3] Completed: no_weekday_emb (26.9s)
+[Job 6] Starting: no_pos_from_end
+[Job 4] Completed: no_recency_emb (39.0s)
+[Job 7] Starting: no_sinusoidal_pos
+[Job 5] Completed: no_duration_emb (36.4s)
+[Job 6] Completed: no_pos_from_end (34.4s)
+[Job 9] Starting: no_pointer
+[Job 8] Starting: no_temporal
+[Job 7] Completed: no_sinusoidal_pos (51.4s)
+[Job 10] Starting: no_generation
+[Job 9] Completed: no_pointer (50.7s)
+[Job 8] Completed: no_temporal (44.0s)
+[Job 12] Starting: single_layer
+[Job 11] Starting: no_gate
+[Job 10] Completed: no_generation (37.6s)
+[Job 12] Completed: single_layer (36.5s)
+[Job 11] Completed: no_gate (40.9s)
+
+Collecting results for geolife...
+Collected 13 ablation results
+
+================================================================================
+GENERATING SUMMARY REPORT
+================================================================================
+
+Report saved to: /data/next_loc_clean_v2/experiments/ablation_study/reports/ablation_study_report_20251229_134009.txt
+
+================================================================================
+ABLATION STUDY COMPLETE
+================================================================================
+
+GEOLIFE Full Model Results:
+  Acc@1:  53.97%
+  Acc@5:  81.10%
+  Acc@10: 84.38%
+  MRR:    65.82%
+  NDCG:   70.23%

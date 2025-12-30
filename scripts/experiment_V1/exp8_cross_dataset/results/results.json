@@ -1,0 +1,110 @@
+{
+  "geolife": {
+    "stats": {
+      "num_users": 46,
+      "num_locations": 1187,
+      "train_samples": 7424,
+      "val_samples": 3334,
+      "test_samples": 3502,
+      "total_samples": 14260,
+      "avg_visits_per_user": 316.8888888888889,
+      "std_visits_per_user": 433.46378663157975,
+      "avg_user_diversity": 52.51111111111111,
+      "std_user_diversity": 55.649946479847365,
+      "avg_visits_per_location": 233.75235646958012,
+      "std_visits_per_location": 1658.4246511131873,
+      "avg_seq_length": 18.129663394109397,
+      "std_seq_length": 10.718314968467494,
+      "min_seq_length": 3,
+      "max_seq_length": 54,
+      "target_in_history_rate": 83.80925185608223
+    },
+    "metrics": {
+      "correct@1": 1890.0,
+      "correct@3": 2671.0,
+      "correct@5": 2840.0,
+      "correct@10": 2955.0,
+      "rr": 2305.095703125,
+      "ndcg": 70.22586464881897,
+      "f1": 0.49784439384930784,
+      "total": 3502.0,
+      "acc@1": 53.969162702560425,
+      "acc@5": 81.09651803970337,
+      "acc@10": 84.38035249710083,
+      "mrr": 65.82226157188416,
+      "loss": 2.465695873819832
+    },
+    "errors": {
+      "total": 3502,
+      "correct": 1890,
+      "wrong": 1612,
+      "target_in_hist_correct": 1889,
+      "target_in_hist_wrong": 1046,
+      "target_not_in_hist_correct": 1,
+      "target_not_in_hist_wrong": 566,
+      "wrong_but_in_top10": 1065,
+      "wrong_and_not_in_top10": 547
+    },
+    "model_config": {
+      "d_model": 64,
+      "dim_feedforward": 128,
+      "dropout": 0.15,
+      "nhead": 4,
+      "num_layers": 2
+    }
+  },
+  "diy": {
+    "stats": {
+      "num_users": 693,
+      "num_locations": 7038,
+      "train_samples": 151421,
+      "val_samples": 10160,
+      "test_samples": 12368,
+      "total_samples": 173949,
+      "avg_visits_per_user": 251.371387283237,
+      "std_visits_per_user": 195.92490581568413,
+      "avg_user_diversity": 31.862716763005782,
+      "std_user_diversity": 24.79721100333774,
+      "avg_visits_per_location": 598.0239145907474,
+      "std_visits_per_location": 14834.24055477759,
+      "avg_seq_length": 23.151435190774308,
+      "std_seq_length": 15.10301828200552,
+      "min_seq_length": 3,
+      "max_seq_length": 105,
+      "target_in_history_rate": 84.12031047865459
+    },
+    "metrics": {
+      "correct@1": 7033.0,
+      "correct@3": 9556.0,
+      "correct@5": 10169.0,
+      "correct@10": 10653.0,
+      "rr": 8406.828125,
+      "ndcg": 72.293621301651,
+      "f1": 0.5193066881120416,
+      "total": 12368.0,
+      "acc@1": 56.86448812484741,
+      "acc@5": 82.22024440765381,
+      "acc@10": 86.13356947898865,
+      "mrr": 67.97241568565369,
+      "loss": 2.378674594473237
+    },
+    "errors": {
+      "total": 12368,
+      "correct": 7033,
+      "wrong": 5335,
+      "target_in_hist_correct": 7020,
+      "target_in_hist_wrong": 3384,
+      "target_not_in_hist_correct": 13,
+      "target_not_in_hist_wrong": 1951,
+      "wrong_but_in_top10": 3620,
+      "wrong_and_not_in_top10": 1715
+    },
+    "model_config": {
+      "d_model": 128,
+      "dim_feedforward": 256,
+      "dropout": 0.15,
+      "nhead": 4,
+      "num_layers": 3
+    }
+  }
+}

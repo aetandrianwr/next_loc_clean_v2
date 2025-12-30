@@ -1,0 +1,7 @@
+{
+  "ablation_name": "no_gate",
+  "description": "Without Pointer-Generation Gate",
+  "ablation_config": {
+    "use_gate": false
+  }
+}

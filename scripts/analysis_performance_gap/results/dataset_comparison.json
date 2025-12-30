@@ -1,0 +1,35 @@
+{
+  "geolife": {
+    "Total sequences": 14260,
+    "Total users": 46,
+    "Total locations": 1187,
+    "Mean seq length": 18.129663394109397,
+    "Target in history rate (%)": 75.75035063113604,
+    "Mean unique locs per seq": 6.8335904628331,
+    "Normalized entropy": 0.6528739157026512,
+    "Top 10 coverage (%)": 50.21739130434783,
+    "Top 50 coverage (%)": 75.69424964936886,
+    "Mean seqs per user": 316.8888888888889,
+    "Mean unique targets/user": 47.48888888888889
+  },
+  "diy": {
+    "Total sequences": 173949,
+    "Total users": 693,
+    "Total locations": 7038,
+    "Mean seq length": 23.151435190774308,
+    "Target in history rate (%)": 82.57707718929112,
+    "Mean unique locs per seq": 6.323543107462532,
+    "Normalized entropy": 0.63992525121553,
+    "Top 10 coverage (%)": 35.68919625867352,
+    "Top 50 coverage (%)": 46.92582308607695,
+    "Mean seqs per user": 251.371387283237,
+    "Mean unique targets/user": 28.65751445086705
+  },
+  "analysis": {
+    "insights": [
+      "Higher target-in-history rate in DIY (82.6% vs 75.8%) means baseline MHSA already captures repetition patterns well, reducing Pointer V45's advantage.",
+      "Lower entropy in DIY (0.6399 vs 0.6529) indicates more predictable targets, making generation head more effective.",
+      "Lower location diversity in DIY sequences means simpler patterns that standard attention can already learn."
+    ]
+  }
+}

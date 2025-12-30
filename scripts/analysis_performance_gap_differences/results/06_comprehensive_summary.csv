@@ -1,0 +1,15 @@
+Category,Metric,Geolife,DIY,Interpretation
+Scale,Test Sequences,"3,502","12,368",DIY is ~3.5x larger
+Scale,Unique Users,45,692,DIY has ~15x more users
+Scale,Unique Locations,"1,185","7,036",DIY has ~6x more locations
+Pointer Relevance,Target in History Rate (Test),83.8%,84.1%,HIGHER in Geolife → Pointer more useful
+Pointer Relevance,Target is Most Frequent (Test),44.2%,42.0%,Higher = easier for pointer attention
+Pointer Relevance,Most Frequent Heuristic Acc,44.2%,42.0%,Simple pointer baseline
+Complexity,Sequence Diversity,0.340,0.313,LOWER = more repetitive patterns
+Complexity,Gini Coefficient,0.849,0.753,Higher = more concentrated distribution
+Complexity,Top-10 Location Coverage,67.1%,41.8%,Higher = more concentrated
+Model Results,MHSA Baseline Acc@1,33.18%,53.17%,DIY baseline already higher
+Model Results,PointerV45 Acc@1,53.96%,56.88%,Final performance
+Model Results,Improvement,+20.78%,+3.71%,THE KEY DIFFERENCE
+Analysis,Max Improvement Potential,50.6%,31.0%,Oracle - Baseline
+Analysis,Improvement Realization,41.0%,12.0%,How much potential was realized

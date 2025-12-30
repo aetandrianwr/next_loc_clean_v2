@@ -1,0 +1,25 @@
+seed: 42
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev14
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+model:
+  d_model: 64
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 128
+  dropout: 0.15
+training:
+  batch_size: 128
+  num_epochs: 2
+  learning_rate: 0.0006
+  weight_decay: 0.015
+  label_smoothing: 0.03
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 5
+  use_amp: true
+  min_lr: 1.0e-06

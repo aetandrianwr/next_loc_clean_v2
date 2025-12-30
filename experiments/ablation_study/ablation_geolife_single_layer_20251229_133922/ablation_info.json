@@ -1,0 +1,7 @@
+{
+  "ablation_name": "single_layer",
+  "description": "Single Transformer Layer",
+  "ablation_config": {
+    "num_transformer_layers": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "dataset": "diy",
+  "test_size": 12368,
+  "generation_coverage": {
+    "generation_required_count": 1964,
+    "generation_required_pct": 15.879689521345409,
+    "pointer_possible_count": 10404,
+    "pointer_possible_pct": 84.12031047865459
+  },
+  "generation_difficulty": {
+    "gen_required_by_tier": {
+      "rare": 970,
+      "common": 351,
+      "moderate": 461,
+      "unseen": 127,
+      "very_common": 55
+    },
+    "all_test_by_tier": {
+      "moderate": 3249,
+      "very_common": 4011,
+      "common": 3000,
+      "rare": 1596,
+      "unseen": 512
+    }
+  },
+  "generation_advantage": {
+    "generation_exclusive": 1964,
+    "generation_exclusive_pct": 15.879689521345409,
+    "generation_could_help": 6605,
+    "generation_could_help_pct": 53.403945666235444
+  },
+  "training_richness": {
+    "unique_train_targets": 6866,
+    "test_covered_by_train_pct": 95.86028460543338,
+    "entropy": 8.178384464633961,
+    "max_entropy": 12.745254141957256,
+    "normalized_entropy": 0.6416807678797708
+  },
+  "topk_coverage": {
+    "top1": 32.43046571798189,
+    "top5": 35.61610608020699,
+    "top10": 37.71021992238033,
+    "top50": 46.183699870633895,
+    "top100": 53.096701164294956
+  }
+}
