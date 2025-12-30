@@ -14,7 +14,7 @@ Usage:
     python scripts/ht_grid_search/run_optuna_ht.py --model all --n_jobs 4
     
     
-    python scripts/ht_grid_search/run_optuna_ht.py --model pointer_v45 --n_jobs 4
+    python scripts/ht_grid_search/run_optuna_ht.py --model pointer_v45 --n_jobs 4 --n_trials 10 --max_epochs 6
 
 Hyperparameter tuning configuration:
 - Objective: Maximize Acc@1 on Validation Set

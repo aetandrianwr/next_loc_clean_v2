@@ -1,0 +1,73 @@
+2025-12-30 12:25:17,712 - INFO - ============================================================
+2025-12-30 12:25:17,712 - INFO - POINTER V45 - Training Started
+2025-12-30 12:25:17,712 - INFO - ============================================================
+2025-12-30 12:25:17,712 - INFO - Model config: {'d_model': 128, 'dim_feedforward': 512, 'dropout': 0.15, 'nhead': 4, 'num_layers': 4}
+2025-12-30 12:25:17,712 - INFO - Training config: {'batch_size': 128, 'grad_clip': 0.8, 'label_smoothing': 0.03, 'learning_rate': 0.0007, 'min_epochs': 3, 'min_lr': 1e-06, 'num_epochs': 6, 'patience': 5, 'use_amp': True, 'warmup_epochs': 5, 'weight_decay': 0.015}
+2025-12-30 12:25:17,712 - INFO - ============================================================
+2025-12-30 12:25:17,712 - INFO - Training for 6 epochs
+2025-12-30 12:25:17,713 - INFO - Model parameters: 2,876,768
+2025-12-30 12:25:17,823 - INFO - ============================================================
+2025-12-30 12:25:17,824 - INFO - POINTER V45 - Training Started
+2025-12-30 12:25:17,824 - INFO - ============================================================
+2025-12-30 12:25:17,824 - INFO - Model config: {'d_model': 64, 'dim_feedforward': 512, 'dropout': 0.15, 'nhead': 8, 'num_layers': 8}
+2025-12-30 12:25:17,824 - INFO - Training config: {'batch_size': 128, 'grad_clip': 0.8, 'label_smoothing': 0.03, 'learning_rate': 0.00065, 'min_epochs': 3, 'min_lr': 1e-06, 'num_epochs': 6, 'patience': 5, 'use_amp': True, 'warmup_epochs': 5, 'weight_decay': 0.015}
+2025-12-30 12:25:17,824 - INFO - ============================================================
+2025-12-30 12:25:17,824 - INFO - Training for 6 epochs
+2025-12-30 12:25:17,825 - INFO - Model parameters: 1,686,048
+2025-12-30 12:25:17,889 - INFO - ============================================================
+2025-12-30 12:25:17,889 - INFO - POINTER V45 - Training Started
+2025-12-30 12:25:17,889 - INFO - ============================================================
+2025-12-30 12:25:17,889 - INFO - Model config: {'d_model': 64, 'dim_feedforward': 256, 'dropout': 0.15, 'nhead': 4, 'num_layers': 8}
+2025-12-30 12:25:17,889 - INFO - Training config: {'batch_size': 128, 'grad_clip': 0.8, 'label_smoothing': 0.03, 'learning_rate': 0.0007, 'min_epochs': 3, 'min_lr': 1e-06, 'num_epochs': 6, 'patience': 5, 'use_amp': True, 'warmup_epochs': 5, 'weight_decay': 0.015}
+2025-12-30 12:25:17,890 - INFO - ============================================================
+2025-12-30 12:25:17,890 - INFO - Training for 6 epochs
+2025-12-30 12:25:17,890 - INFO - Model parameters: 1,421,856
+2025-12-30 12:25:17,949 - INFO - ============================================================
+2025-12-30 12:25:17,950 - INFO - POINTER V45 - Training Started
+2025-12-30 12:25:17,950 - INFO - ============================================================
+2025-12-30 12:25:17,950 - INFO - Model config: {'d_model': 128, 'dim_feedforward': 512, 'dropout': 0.15, 'nhead': 8, 'num_layers': 8}
+2025-12-30 12:25:17,950 - INFO - Training config: {'batch_size': 128, 'grad_clip': 0.8, 'label_smoothing': 0.03, 'learning_rate': 0.00065, 'min_epochs': 3, 'min_lr': 1e-06, 'num_epochs': 6, 'patience': 5, 'use_amp': True, 'warmup_epochs': 5, 'weight_decay': 0.015}
+2025-12-30 12:25:17,950 - INFO - ============================================================
+2025-12-30 12:25:17,950 - INFO - Training for 6 epochs
+2025-12-30 12:25:17,950 - INFO - Model parameters: 3,669,856
+2025-12-30 12:26:54,560 - INFO - Epoch 1/6 | LR: 1.40e-04 | Train: 3.2824 | Val: 3.1881 | Acc@1: 51.34%
+2025-12-30 12:26:54,633 - INFO -   ✓ New best (Acc@1: 51.34%)
+2025-12-30 12:27:22,591 - INFO - Epoch 1/6 | LR: 1.30e-04 | Train: 3.3192 | Val: 3.1969 | Acc@1: 50.20%
+2025-12-30 12:27:22,612 - INFO - Epoch 1/6 | LR: 1.30e-04 | Train: 3.3904 | Val: 3.1799 | Acc@1: 50.98%
+2025-12-30 12:27:22,649 - INFO - Epoch 1/6 | LR: 1.40e-04 | Train: 3.3864 | Val: 3.2071 | Acc@1: 50.26%
+2025-12-30 12:27:22,681 - INFO -   ✓ New best (Acc@1: 50.20%)
+2025-12-30 12:27:22,727 - INFO -   ✓ New best (Acc@1: 50.26%)
+2025-12-30 12:27:22,730 - INFO -   ✓ New best (Acc@1: 50.98%)
+2025-12-30 12:28:28,145 - INFO - Epoch 2/6 | LR: 2.80e-04 | Train: 3.0459 | Val: 3.0851 | Acc@1: 52.96%
+2025-12-30 12:28:28,229 - INFO -   ✓ New best (Acc@1: 52.96%)
+2025-12-30 12:29:26,589 - INFO - Epoch 2/6 | LR: 2.60e-04 | Train: 3.0931 | Val: 3.1064 | Acc@1: 53.05%
+2025-12-30 12:29:26,700 - INFO -   ✓ New best (Acc@1: 53.05%)
+2025-12-30 12:29:26,804 - INFO - Epoch 2/6 | LR: 2.80e-04 | Train: 3.0959 | Val: 3.1237 | Acc@1: 52.62%
+2025-12-30 12:29:26,824 - INFO - Epoch 2/6 | LR: 2.60e-04 | Train: 3.0883 | Val: 3.1194 | Acc@1: 52.88%
+2025-12-30 12:29:26,883 - INFO -   ✓ New best (Acc@1: 52.62%)
+2025-12-30 12:29:26,891 - INFO -   ✓ New best (Acc@1: 52.88%)
+2025-12-30 12:30:00,295 - INFO - Epoch 3/6 | LR: 4.20e-04 | Train: 2.9055 | Val: 2.9838 | Acc@1: 54.00%
+2025-12-30 12:30:00,375 - INFO -   ✓ New best (Acc@1: 54.00%)
+2025-12-30 12:31:29,548 - INFO - Epoch 3/6 | LR: 3.90e-04 | Train: 2.9767 | Val: 3.0370 | Acc@1: 53.92%
+2025-12-30 12:31:29,659 - INFO -   ✓ New best (Acc@1: 53.92%)
+2025-12-30 12:31:29,763 - INFO - Epoch 3/6 | LR: 3.90e-04 | Train: 3.0013 | Val: 3.0810 | Acc@1: 53.82%
+2025-12-30 12:31:29,841 - INFO -   ✓ New best (Acc@1: 53.82%)
+2025-12-30 12:31:30,085 - INFO - Epoch 3/6 | LR: 4.20e-04 | Train: 3.0012 | Val: 3.0643 | Acc@1: 53.49%
+2025-12-30 12:31:30,158 - INFO -   ✓ New best (Acc@1: 53.49%)
+2025-12-30 12:31:31,527 - INFO - Epoch 4/6 | LR: 5.60e-04 | Train: 2.7646 | Val: 2.9263 | Acc@1: 54.47%
+2025-12-30 12:31:31,605 - INFO -   ✓ New best (Acc@1: 54.47%)
+2025-12-30 12:33:05,260 - INFO - Epoch 5/6 | LR: 7.00e-04 | Train: 2.6838 | Val: 2.8703 | Acc@1: 54.34%
+2025-12-30 12:33:05,340 - INFO -   ✓ New best (Acc@1: 54.34%)
+2025-12-30 12:33:31,585 - INFO - Epoch 4/6 | LR: 5.20e-04 | Train: 2.8569 | Val: 2.9505 | Acc@1: 53.91%
+2025-12-30 12:33:31,696 - INFO -   ✓ New best (Acc@1: 53.91%)
+2025-12-30 12:33:32,197 - INFO - Epoch 4/6 | LR: 5.20e-04 | Train: 2.9224 | Val: 3.0175 | Acc@1: 53.91%
+2025-12-30 12:33:32,273 - INFO -   ✓ New best (Acc@1: 53.91%)
+2025-12-30 12:33:32,598 - INFO - Epoch 4/6 | LR: 5.60e-04 | Train: 2.9141 | Val: 3.0033 | Acc@1: 53.61%
+2025-12-30 12:33:32,669 - INFO -   ✓ New best (Acc@1: 53.61%)
+2025-12-30 12:34:38,220 - INFO - Epoch 6/6 | LR: 7.00e-04 | Train: 2.5818 | Val: 2.8789 | Acc@1: 54.20%
+2025-12-30 12:35:33,522 - INFO - Epoch 5/6 | LR: 6.50e-04 | Train: 2.7554 | Val: 2.9038 | Acc@1: 53.88%
+2025-12-30 12:35:33,633 - INFO -   ✓ New best (Acc@1: 53.88%)
+2025-12-30 12:35:34,392 - INFO - Epoch 5/6 | LR: 6.50e-04 | Train: 2.8354 | Val: 2.9578 | Acc@1: 54.14%
+2025-12-30 12:35:34,466 - INFO -   ✓ New best (Acc@1: 54.14%)
+2025-12-30 12:35:34,853 - INFO - Epoch 5/6 | LR: 7.00e-04 | Train: 2.8244 | Val: 2.9449 | Acc@1: 54.50%
+2025-12-30 12:35:34,920 - INFO -   ✓ New best (Acc@1: 54.50%)
