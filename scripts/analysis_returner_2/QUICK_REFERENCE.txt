@@ -1,0 +1,150 @@
+================================================================================
+QUICK REFERENCE CARD
+Zipf Plot - Location Visit Frequency Analysis
+================================================================================
+
+LOCATION
+--------
+/data/next_loc_clean_v2/scripts/analysis_returner_2/
+
+MAIN SCRIPT
+-----------
+zipf_location_frequency_analysis.py
+
+USAGE
+-----
+# Activate environment
+source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+
+# Run with defaults (n_L = 5, 10, 30, 50)
+cd /data/next_loc_clean_v2
+python scripts/analysis_returner_2/zipf_location_frequency_analysis.py
+
+# Run with custom parameters
+python scripts/analysis_returner_2/zipf_location_frequency_analysis.py \
+    --target-n 5 10 20 40 \
+    --bin-widths 1 2 4 5 \
+    --fit-range 3 12 \
+    --output-dir scripts/analysis_returner_2
+
+# Create comparison plot
+cd scripts/analysis_returner_2
+python compare_datasets.py
+
+# Run everything
+./run_analysis.sh
+
+KEY FILES
+---------
+Scripts:
+  • zipf_location_frequency_analysis.py - Main analysis (580 lines)
+  • compare_datasets.py - Dataset comparison (133 lines)
+  • run_analysis.sh - Automated runner
+
+Documentation:
+  • README.md - User guide
+  • TECHNICAL_DETAILS.md - Implementation details
+  • RESULTS_SUMMARY.txt - Analysis results
+  • QUICK_REFERENCE.txt - This file
+
+Geolife Results:
+  • geolife_zipf_location_frequency.png - Plot (log-log + inset)
+  • geolife_zipf_data_stats.csv - Group statistics (rank, P(L), SE)
+  • geolife_zipf_data_user_groups.csv - User group assignments
+  • geolife_zipf_data.csv - Detailed probabilities per user
+
+DIY Results:
+  • diy_zipf_location_frequency.png - Plot (log-log + inset)
+  • diy_zipf_data_stats.csv - Group statistics
+  • diy_zipf_data_user_groups.csv - User group assignments
+  • diy_zipf_data.csv - Detailed probabilities per user
+
+Comparison:
+  • comparison_zipf_location_frequency.png - Side-by-side plots
+
+RESULTS SUMMARY
+---------------
+Geolife (eps=20):
+  Groups: 5 loc (4 users), 10 loc (13), 30 loc (13), 50 loc (3)
+  Top location P(1): 31-52% of visits
+  Reference line: P(L) = 0.222 · L^(-1)
+
+DIY (eps=50):
+  Groups: 5 loc (95 users), 10 loc (230), 30 loc (190), 50 loc (65)
+  Top location P(1): 41-64% of visits
+  Reference line: P(L) = 0.150 · L^(-1)
+
+KEY FINDINGS
+------------
+✓ Both datasets follow Zipf's law: P(L) ∝ L^(-1)
+✓ Top location accounts for 30-65% of all visits
+✓ Top 3 locations account for 60-80% of all visits
+✓ Users with fewer locations concentrate more on top
+✓ DIY shows stronger concentration than Geolife
+
+VALIDATION
+----------
+✓ Probability conservation: Σ P(L) = 1.0000 for all users
+✓ Rank ordering: P(1) ≥ P(2) ≥ P(3) ≥ ... for all users
+✓ Zipf fit: R² > 0.85 (good to excellent)
+✓ All files generated successfully
+✓ Data consistency checks passed
+
+DEPENDENCIES
+------------
+• Python 3.x
+• pandas
+• numpy
+• matplotlib
+
+All available in mlenv conda environment.
+
+DATA SOURCE
+-----------
+Intermediate CSV files from preprocessing pipeline:
+  • data/geolife_eps20/interim/intermediate_eps20.csv
+  • data/diy_eps50/interim/intermediate_eps50.csv
+
+Columns used: user_id, location_id (each row = one visit)
+
+ALGORITHM
+---------
+1. For each user:
+   - Count visits per location
+   - Rank locations by count (L=1 is most visited)
+   - Compute P(L) = visits_to_rank_L / total_visits
+2. Group users by n_unique_locations (with binning)
+3. For each group G and rank L:
+   - Compute mean P_G(L) across users
+   - Compute standard error SE_G(L)
+4. Fit reference line: P(L) = c · L^(-1)
+5. Plot log-log with linear inset
+
+PLOT DESCRIPTION
+----------------
+Main panel (log-log):
+  - X: Rank L (log scale)
+  - Y: Probability P(L) (log scale)
+  - Curves: 4 groups (5, 10, 30, 50 locations)
+  - Reference: Black dashed line (L^(-1))
+  - Legend: Lower left
+
+Inset (linear):
+  - Shows ranks 1-6 only
+  - Linear axes with error bars
+  - Highlights top location concentration
+  - Position: Upper right corner
+
+REFERENCE
+---------
+González, M. C., Hidalgo, C. A., & Barabási, A.-L. (2008).
+Understanding individual human mobility patterns.
+Nature, 453(7196), 779-782.
+doi:10.1038/nature06958
+
+CONTACT
+-------
+For questions or issues, contact the data science team.
+
+Last updated: December 31, 2025
+================================================================================

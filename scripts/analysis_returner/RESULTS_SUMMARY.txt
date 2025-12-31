@@ -1,0 +1,236 @@
+================================================================================
+RETURN PROBABILITY DISTRIBUTION ANALYSIS - RESULTS SUMMARY
+Reproducing González et al. (2008) Figure 2c
+================================================================================
+
+Date: December 31, 2025
+Author: Data Scientist
+Environment: mlenv (conda)
+
+================================================================================
+1. OVERVIEW
+================================================================================
+
+This analysis computes the first-return time distribution for users in two
+mobility datasets: Geolife and DIY. For each user, we identify their first
+observed location (L₀) and measure the time until they first return to that
+location.
+
+Reference:
+González, M. C., Hidalgo, C. A., & Barabási, A.-L. (2008). Understanding 
+individual human mobility patterns. Nature, 453(7196), 779-782.
+
+================================================================================
+2. DATA SOURCES
+================================================================================
+
+Geolife Dataset:
+  - File: data/geolife_eps20/interim/intermediate_eps20.csv
+  - Epsilon: 20 meters (DBSCAN clustering parameter)
+  - Total events: 19,191
+  - Total users: 91
+  - Unique locations: 2,049
+  - Time span: 0.02h to 46,376.43h (~5.3 years)
+
+DIY Dataset:
+  - File: data/diy_eps50/interim/intermediate_eps50.csv
+  - Epsilon: 50 meters (DBSCAN clustering parameter)
+  - Total events: 265,621
+  - Total users: 1,306
+  - Unique locations: 8,439
+  - Time span: 0.02h to 5,464.22h (~7.6 months)
+
+================================================================================
+3. METHODOLOGY
+================================================================================
+
+Parameters:
+  - Bin width: 2.0 hours
+  - Maximum time: 240 hours (10 days)
+
+Algorithm:
+  1. Sort events by user_id and timestamp
+  2. For each user, identify first location L₀ at time t₀
+  3. Find first later event where location == L₀ (time t₁ > t₀)
+  4. Compute Δt = t₁ - t₀ in hours
+  5. Create histogram with 2-hour bins
+  6. Normalize to probability density: F_pt(t) = count / (N_returns × bin_width)
+
+Implementation:
+  - Fully vectorized using pandas/numpy (no per-row loops)
+  - Time complexity: O(N log N)
+  - Validated: Probability mass conservation (∫F_pt(t)dt = 1.0) ✓
+
+================================================================================
+4. RESULTS - GEOLIFE DATASET
+================================================================================
+
+Return Statistics:
+  - Users with returns: 49 (53.85%)
+  - Users without returns: 42 (46.15%)
+  
+Return Time Distribution:
+  - Mean: 58.96 hours (~2.5 days)
+  - Median: 35.28 hours (~1.5 days)
+  - Std dev: 65.62 hours
+  - Min: 1.25 hours
+  - Max: 239.98 hours (~10 days)
+  - 25th percentile: 15.00 hours
+  - 75th percentile: 83.17 hours
+
+Probability Density:
+  - Max F_pt(t): 0.051020
+  - Peak at: t = 3 hours
+  - F_pt(24h): 0.020408
+
+Validation:
+  - Probability mass: ∫F_pt(t)dt = 1.0000 ✓
+
+================================================================================
+5. RESULTS - DIY DATASET
+================================================================================
+
+Return Statistics:
+  - Users with returns: 1,091 (83.54%)
+  - Users without returns: 215 (16.46%)
+  
+Return Time Distribution:
+  - Mean: 60.02 hours (~2.5 days)
+  - Median: 42.77 hours (~1.8 days)
+  - Std dev: 54.48 hours
+  - Min: 0.65 hours
+  - Max: 238.63 hours (~10 days)
+  - 25th percentile: 20.75 hours
+  - 75th percentile: 82.78 hours
+
+Probability Density:
+  - Max F_pt(t): 0.024290
+  - Peak at: t = 23 hours (~1 day)
+  - F_pt(24h): 0.024290
+
+Validation:
+  - Probability mass: ∫F_pt(t)dt = 1.0000 ✓
+
+================================================================================
+6. COMPARISON: GEOLIFE vs DIY
+================================================================================
+
+Metric                    Geolife          DIY            Difference
+--------------------------------------------------------------------------------
+Users with returns        49 (53.85%)      1,091 (83.54%) +29.69%
+Mean return time          58.96h           60.02h         +1.06h
+Median return time        35.28h           42.77h         +7.49h
+Std dev                   65.62h           54.48h         -11.14h
+Min return time           1.25h            0.65h          -0.60h
+Max return time           239.98h          238.63h        -1.35h
+Max F_pt(t)               0.051020         0.024290       -0.026730
+Peak at                   3h               23h            +20h
+
+Key Observations:
+  1. DIY has higher return rate (83.54% vs 53.85%)
+  2. Similar mean return times (~60 hours)
+  3. Geolife peak at 3 hours (early returns)
+  4. DIY peak at 23 hours (daily cycle)
+  5. DIY has more consistent return times (lower std dev)
+
+Interpretation:
+  - DIY dataset shows stronger daily periodicity (24-hour cycle)
+  - Geolife shows more variability in return patterns
+  - Both datasets exhibit mean return times around 2.5 days
+  - The difference may reflect dataset characteristics:
+    * Geolife: Research study with selected participants
+    * DIY: More naturalistic user behavior
+
+================================================================================
+7. OUTPUT FILES
+================================================================================
+
+Generated files in scripts/analysis_returner/:
+
+Main Analysis Script:
+  ✓ return_probability_analysis.py (367 lines)
+
+Supporting Scripts:
+  ✓ compare_datasets.py (93 lines)
+  ✓ run_analysis.sh (executable shell script)
+
+Documentation:
+  ✓ README.md (148 lines)
+  ✓ TECHNICAL_DETAILS.md (detailed implementation notes)
+  ✓ RESULTS_SUMMARY.txt (this file)
+
+Geolife Results:
+  ✓ geolife_return_probability.png (2358×1771 pixels, 177KB)
+  ✓ geolife_return_probability_data.csv (121 rows: t_hours, F_pt)
+  ✓ geolife_return_probability_data_returns.csv (49 rows: user_id, delta_t_hours)
+
+DIY Results:
+  ✓ diy_return_probability.png (2358×1771 pixels, 186KB)
+  ✓ diy_return_probability_data.csv (121 rows: t_hours, F_pt)
+  ✓ diy_return_probability_data_returns.csv (1091 rows: user_id, delta_t_hours)
+
+Comparison:
+  ✓ comparison_return_probability.png (2358×1771 pixels, 263KB)
+
+================================================================================
+8. USAGE INSTRUCTIONS
+================================================================================
+
+Quick Start:
+  source ~/miniconda3/etc/profile.d/conda.sh
+  conda activate mlenv
+  cd /data/next_loc_clean_v2
+  python scripts/analysis_returner/return_probability_analysis.py
+
+Custom Parameters:
+  python scripts/analysis_returner/return_probability_analysis.py \
+      --bin-width 1.0 \
+      --max-hours 120 \
+      --output-dir scripts/analysis_returner/custom
+
+Create Comparison Plot:
+  cd scripts/analysis_returner
+  python compare_datasets.py
+
+Run Everything:
+  ./scripts/analysis_returner/run_analysis.sh
+
+================================================================================
+9. VALIDATION CHECKS
+================================================================================
+
+✓ All 12 output files generated successfully
+✓ Probability conservation: Both datasets integrate to 1.0000
+✓ No negative return times
+✓ No negative probability densities
+✓ Return times within [0, 240] hours range
+✓ Plots generated successfully (300 DPI, PNG format)
+✓ Data consistency checks passed
+✓ Statistical summaries consistent with raw data
+
+================================================================================
+10. RECOMMENDATIONS
+================================================================================
+
+For Publication:
+  - Use bin_width=1.0 for higher resolution
+  - Consider extending max_hours to 480 (20 days)
+  - Add confidence intervals (bootstrap method)
+  - Fit theoretical distributions (exponential, power-law)
+
+For Further Analysis:
+  - Stratify by user characteristics (if available)
+  - Analyze time-of-day patterns (circadian rhythms)
+  - Location-specific return times
+  - Compare with null models (random mobility)
+  - Seasonal variations
+
+For Reproducibility:
+  - All raw data preserved in *_returns.csv files
+  - Exact parameters documented
+  - Vectorized implementation (deterministic)
+  - No random seeds needed
+
+================================================================================
+END OF SUMMARY
+================================================================================

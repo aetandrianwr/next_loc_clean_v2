@@ -1,0 +1,123 @@
+================================================================================
+QUICK REFERENCE CARD
+Return Probability Distribution Analysis
+================================================================================
+
+LOCATION
+--------
+/data/next_loc_clean_v2/scripts/analysis_returner/
+
+MAIN SCRIPT
+-----------
+return_probability_analysis.py
+
+USAGE
+-----
+# Activate environment
+source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+
+# Run with defaults (bin_width=2h, max_hours=240)
+cd /data/next_loc_clean_v2
+python scripts/analysis_returner/return_probability_analysis.py
+
+# Run with custom parameters
+python scripts/analysis_returner/return_probability_analysis.py \
+    --bin-width 1.0 \
+    --max-hours 240 \
+    --output-dir scripts/analysis_returner
+
+# Create comparison plot
+cd scripts/analysis_returner
+python compare_datasets.py
+
+# Run everything
+./run_analysis.sh
+
+KEY FILES
+---------
+Scripts:
+  • return_probability_analysis.py - Main analysis (367 lines)
+  • compare_datasets.py - Dataset comparison (93 lines)
+  • run_analysis.sh - Automated runner
+
+Documentation:
+  • README.md - User guide
+  • TECHNICAL_DETAILS.md - Implementation details
+  • RESULTS_SUMMARY.txt - Analysis results
+  • QUICK_REFERENCE.txt - This file
+
+Geolife Results:
+  • geolife_return_probability.png - Plot
+  • geolife_return_probability_data.csv - PDF data (t_hours, F_pt)
+  • geolife_return_probability_data_returns.csv - Return times per user
+
+DIY Results:
+  • diy_return_probability.png - Plot
+  • diy_return_probability_data.csv - PDF data (t_hours, F_pt)
+  • diy_return_probability_data_returns.csv - Return times per user
+
+Comparison:
+  • comparison_return_probability.png - Both datasets on one plot
+
+RESULTS SUMMARY
+---------------
+Geolife (eps=20):
+  Users with returns: 49 (53.85%)
+  Mean return time: 58.96 hours
+  Median return time: 35.28 hours
+  Peak at: 3 hours
+
+DIY (eps=50):
+  Users with returns: 1,091 (83.54%)
+  Mean return time: 60.02 hours
+  Median return time: 42.77 hours
+  Peak at: 23 hours
+
+VALIDATION
+----------
+✓ Probability mass conservation: ∫F_pt(t)dt = 1.0000
+✓ No negative values
+✓ All files generated successfully
+✓ Data consistency checks passed
+
+DEPENDENCIES
+------------
+• Python 3.x
+• pandas
+• numpy
+• matplotlib
+
+All available in mlenv conda environment.
+
+DATA SOURCE
+-----------
+Intermediate CSV files from preprocessing pipeline:
+  • data/geolife_eps20/interim/intermediate_eps20.csv
+  • data/diy_eps50/interim/intermediate_eps50.csv
+
+Columns used: user_id, location_id, start_day, start_min
+
+ALGORITHM
+---------
+1. Load intermediate data
+2. Sort by user_id, timestamp
+3. For each user:
+   - Get first location L₀ at time t₀
+   - Find first return to L₀ at time t₁ > t₀
+   - Compute Δt = t₁ - t₀
+4. Create histogram (bin_width=2h)
+5. Normalize to PDF: F_pt(t) = count / (N_returns × bin_width)
+
+REFERENCE
+---------
+González, M. C., Hidalgo, C. A., & Barabási, A.-L. (2008).
+Understanding individual human mobility patterns.
+Nature, 453(7196), 779-782.
+doi:10.1038/nature06958
+
+CONTACT
+-------
+For questions or issues, contact the data science team.
+
+Last updated: December 31, 2025
+================================================================================

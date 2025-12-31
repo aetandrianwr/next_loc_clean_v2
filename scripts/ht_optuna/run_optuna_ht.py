@@ -3,7 +3,7 @@
 Hyperparameter Tuning Script using Optuna with TPE Sampler and Hyperband Pruner.
 
 This script performs hyperparameter optimization for:
-- Pointer V45 (proposed model)
+- Pointer V45 (proposed model) 
 - MHSA (Multi-Head Self-Attention)
 - LSTM
 
@@ -12,8 +12,8 @@ Usage:
     source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
     
     # Run hyperparameter tuning:
-    python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 4
-    python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 4
+    python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 10
+    python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 10
     python scripts/ht_optuna/run_optuna_ht.py --model LSTM --n_jobs 4
     python scripts/ht_optuna/run_optuna_ht.py --model all --n_jobs 4
 
@@ -744,13 +744,13 @@ def main():
     parser.add_argument(
         "--n_jobs",
         type=int,
-        default=4,
+        default=10,
         help="Number of parallel jobs for Optuna (default: 1)",
     )
     parser.add_argument(
         "--n_trials",
         type=int,
-        default=10,
+        default=20,
         help="Number of trials per dataset/prev_day combination (default: 50)",
     )
     

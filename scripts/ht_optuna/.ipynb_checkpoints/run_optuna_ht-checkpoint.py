@@ -3,7 +3,7 @@
 Hyperparameter Tuning Script using Optuna with TPE Sampler and Hyperband Pruner.
 
 This script performs hyperparameter optimization for:
-- Pointer V45 (proposed model)
+- Pointer V45 (proposed model) 
 - MHSA (Multi-Head Self-Attention)
 - LSTM
 
@@ -12,8 +12,8 @@ Usage:
     source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
     
     # Run hyperparameter tuning:
-    python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 4
-    python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 4
+    python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 10
+    python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 10
     python scripts/ht_optuna/run_optuna_ht.py --model LSTM --n_jobs 4
     python scripts/ht_optuna/run_optuna_ht.py --model all --n_jobs 4
 
@@ -144,9 +144,16 @@ def create_pointer_v45_config(
     trial_id: int,
 ) -> str:
     """Create a config file for Pointer V45 model."""
+    import uuid
+    
     metadata = load_metadata(dataset, prev_day)
     dataset_info = DATASETS[dataset]
     prefix = dataset_info["dataset_prefix_template"].format(prev_day=prev_day)
+    
+    # Generate unique experiment root to avoid checkpoint conflicts in parallel execution
+    timestamp = get_timestamp()
+    unique_id = str(uuid.uuid4())[:8]
+    experiment_root = f"experiments/ht_optuna_{timestamp}_{unique_id}"
     
     config = {
         "seed": SEED,
@@ -154,7 +161,7 @@ def create_pointer_v45_config(
             "data_dir": dataset_info["data_dir"],
             "dataset_prefix": prefix,
             "dataset": dataset,
-            "experiment_root": "experiments",
+            "experiment_root": experiment_root,
             "num_workers": 0,
         },
         "model": {
@@ -179,9 +186,8 @@ def create_pointer_v45_config(
         },
     }
     
-    # Generate config filename with timestamp to avoid conflicts
-    timestamp = get_timestamp()
-    config_name = f"optuna_pointer_v45_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}.yaml"
+    # Generate config filename with timestamp and uuid to avoid conflicts
+    config_name = f"optuna_pointer_v45_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}_{unique_id}.yaml"
     config_path = CONFIG_DIR / config_name
     
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -202,6 +208,8 @@ def create_mhsa_config(
     trial_id: int,
 ) -> str:
     """Create a config file for MHSA model."""
+    import uuid
+    
     metadata = load_metadata(dataset, prev_day)
     dataset_info = DATASETS[dataset]
     prefix = dataset_info["dataset_prefix_template"].format(prev_day=prev_day)
@@ -210,13 +218,18 @@ def create_mhsa_config(
     batch_size = 256 if dataset == "diy" else 32
     print_step = 10 if dataset == "diy" else 20
     
+    # Generate unique experiment root to avoid checkpoint conflicts in parallel execution
+    timestamp = get_timestamp()
+    unique_id = str(uuid.uuid4())[:8]
+    experiment_root = f"experiments/ht_optuna_{timestamp}_{unique_id}"
+    
     config = {
         "seed": SEED,
         "data": {
             "data_dir": dataset_info["data_dir"],
             "dataset_prefix": prefix,
             "dataset": dataset,
-            "experiment_root": "experiments",
+            "experiment_root": experiment_root,
         },
         "training": {
             "if_embed_user": True,
@@ -262,9 +275,8 @@ def create_mhsa_config(
         },
     }
     
-    # Generate config filename with timestamp to avoid conflicts
-    timestamp = get_timestamp()
-    config_name = f"optuna_MHSA_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}.yaml"
+    # Generate config filename with timestamp and uuid to avoid conflicts
+    config_name = f"optuna_MHSA_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}_{unique_id}.yaml"
     config_path = CONFIG_DIR / config_name
     
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -285,6 +297,8 @@ def create_lstm_config(
     trial_id: int,
 ) -> str:
     """Create a config file for LSTM model."""
+    import uuid
+    
     metadata = load_metadata(dataset, prev_day)
     dataset_info = DATASETS[dataset]
     prefix = dataset_info["dataset_prefix_template"].format(prev_day=prev_day)
@@ -293,13 +307,18 @@ def create_lstm_config(
     batch_size = 256 if dataset == "diy" else 32
     print_step = 10 if dataset == "diy" else 20
     
+    # Generate unique experiment root to avoid checkpoint conflicts in parallel execution
+    timestamp = get_timestamp()
+    unique_id = str(uuid.uuid4())[:8]
+    experiment_root = f"experiments/ht_optuna_{timestamp}_{unique_id}"
+    
     config = {
         "seed": SEED,
         "data": {
             "data_dir": dataset_info["data_dir"],
             "dataset_prefix": prefix,
             "dataset": dataset,
-            "experiment_root": "experiments",
+            "experiment_root": experiment_root,
         },
         "training": {
             "if_embed_user": True,
@@ -345,9 +364,8 @@ def create_lstm_config(
         },
     }
     
-    # Generate config filename with timestamp to avoid conflicts
-    timestamp = get_timestamp()
-    config_name = f"optuna_LSTM_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}.yaml"
+    # Generate config filename with timestamp and uuid to avoid conflicts
+    config_name = f"optuna_LSTM_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}_{unique_id}.yaml"
     config_path = CONFIG_DIR / config_name
     
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -726,13 +744,13 @@ def main():
     parser.add_argument(
         "--n_jobs",
         type=int,
-        default=4,
+        default=10,
         help="Number of parallel jobs for Optuna (default: 1)",
     )
     parser.add_argument(
         "--n_trials",
         type=int,
-        default=10,
+        default=20,
         help="Number of trials per dataset/prev_day combination (default: 50)",
     )
     

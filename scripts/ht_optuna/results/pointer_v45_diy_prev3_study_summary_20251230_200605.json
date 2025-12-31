@@ -1,0 +1,16 @@
+{
+  "model": "pointer_v45",
+  "dataset": "diy",
+  "prev_day": 3,
+  "n_trials": 10,
+  "n_jobs": 4,
+  "best_value": 54.83977198600769,
+  "best_params": {
+    "d_model": 64,
+    "nhead": 8,
+    "num_layers": 2,
+    "dim_feedforward": 128,
+    "lr": 0.00065
+  },
+  "best_trial_number": 6
+}

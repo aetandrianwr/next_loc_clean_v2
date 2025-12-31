@@ -1,0 +1,16 @@
+{
+  "model": "MHSA",
+  "dataset": "diy",
+  "prev_day": 14,
+  "n_trials": 20,
+  "n_jobs": 10,
+  "best_value": 51.48136615753174,
+  "best_params": {
+    "base_emb_size": 128,
+    "nhead": 2,
+    "num_encoder_layers": 8,
+    "dim_feedforward": 512,
+    "lr": 0.0005
+  },
+  "best_trial_number": 7
+}
