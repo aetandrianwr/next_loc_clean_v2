@@ -1,0 +1,12 @@
+2025-12-30 16:41:55,772 - INFO - ============================================================
+2025-12-30 16:41:55,772 - INFO - POINTER V45 - Training Started
+2025-12-30 16:41:55,772 - INFO - ============================================================
+2025-12-30 16:41:55,773 - INFO - Model config: {'d_model': 128, 'dim_feedforward': 512, 'dropout': 0.15, 'nhead': 8, 'num_layers': 2}
+2025-12-30 16:41:55,773 - INFO - Training config: {'batch_size': 128, 'grad_clip': 0.8, 'label_smoothing': 0.03, 'learning_rate': 0.0007, 'min_epochs': 3, 'min_lr': 1e-06, 'num_epochs': 50, 'patience': 5, 'use_amp': True, 'warmup_epochs': 5, 'weight_decay': 0.015}
+2025-12-30 16:41:55,773 - INFO - ============================================================
+2025-12-30 16:41:55,773 - INFO - Training for 50 epochs
+2025-12-30 16:41:55,773 - INFO - Model parameters: 2,480,224
+2025-12-30 16:43:45,396 - INFO - Epoch 1/50 | LR: 1.40e-04 | Train: 3.2309 | Val: 3.1594 | Acc@1: 51.27%
+2025-12-30 16:43:45,480 - INFO -   ✓ New best (Acc@1: 51.27%)
+2025-12-30 16:45:27,866 - INFO - Epoch 2/50 | LR: 2.80e-04 | Train: 3.0244 | Val: 3.0778 | Acc@1: 53.42%
+2025-12-30 16:45:27,934 - INFO -   ✓ New best (Acc@1: 53.42%)

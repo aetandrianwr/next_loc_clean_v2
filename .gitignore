@@ -1,10 +1,7 @@
 # Data directories
 data/
 
-# Experiment checkpoints and results
-experiments/
-
-# Model files
+# Model checkpoint files only
 *.pt
 *.pth
 *.ckpt

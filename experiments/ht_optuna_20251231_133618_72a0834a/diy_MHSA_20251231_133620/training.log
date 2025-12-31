@@ -1,0 +1,11 @@
+Training MHSA model
+Dataset: diy
+Config: /data/next_loc_clean_v2/config/ht_optuna/optuna_MHSA_diy_prev10_t14_20251231_133618_72a0834a.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=470, val=25, test=32
+Total trainable parameters: 2795438
+
+=== Epoch 1 ===
+Epoch 1, 2.1%	 loss: 8.764 acc@1: 0.00 mrr: 0.10, ndcg: 0.04, took: 10.09s
