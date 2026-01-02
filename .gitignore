@@ -9,6 +9,12 @@ data/
 # PDF files
 *.pdf
 
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
 # Results and outputs
 results/*
 *.csv
