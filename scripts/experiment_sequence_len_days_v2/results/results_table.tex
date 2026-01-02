@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Impact of Sequence Length on Next Location Prediction Performance}
+\label{tab:sequence_length_results}
+\begin{tabular}{llcccccc}
+\toprule
+Dataset & Prev Days & Acc@1 & Acc@5 & Acc@10 & MRR & NDCG & F1 \\
+\midrule
+DIY & 1 & 50.00 & 72.55 & 74.65 & 59.97 & 63.47 & 46.73 \\
+DIY & 2 & 53.72 & 77.37 & 79.52 & 64.09 & 67.80 & 49.82 \\
+DIY & 3 & 55.19 & 79.22 & 81.82 & 65.72 & 69.60 & 50.87 \\
+DIY & 4 & 55.93 & 80.41 & 83.13 & 66.62 & 70.60 & 51.48 \\
+DIY & 5 & 56.20 & 81.12 & 83.89 & 67.10 & 71.15 & 51.51 \\
+DIY & 6 & 56.51 & 81.81 & 84.69 & 67.49 & 71.64 & 51.81 \\
+DIY & 7 & 56.58 & 82.18 & 85.16 & 67.67 & 71.88 & 51.91 \\
+\midrule
+GeoLife & 1 & 47.84 & 70.00 & 74.32 & 57.83 & 61.60 & 45.51 \\
+GeoLife & 2 & 48.97 & 73.81 & 77.72 & 60.10 & 64.21 & 46.41 \\
+GeoLife & 3 & 49.02 & 76.92 & 80.48 & 61.34 & 65.87 & 45.71 \\
+GeoLife & 4 & 50.59 & 78.23 & 81.85 & 62.83 & 67.34 & 46.68 \\
+GeoLife & 5 & 50.31 & 79.14 & 82.91 & 63.01 & 67.75 & 46.40 \\
+GeoLife & 6 & 50.96 & 80.19 & 83.68 & 63.89 & 68.61 & 46.68 \\
+GeoLife & 7 & 51.40 & 81.18 & 85.04 & 64.55 & 69.46 & 46.97 \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}

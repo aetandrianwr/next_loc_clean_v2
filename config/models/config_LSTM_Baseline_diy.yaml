@@ -1,0 +1,67 @@
+# LSTM Baseline Model Configuration for DIY Dataset
+# Dataset: diy_eps50
+#
+# This configuration follows the paper's baseline setup:
+#   - Same input features as MHSA (location, time, weekday, duration, user)
+#   - Batch size of 256 for DIY dataset (larger dataset)
+#   - Embedding dimension of 96 (as per paper Table S1 for GC/larger datasets)
+#
+# Usage:
+#   python src/training/train_LSTM_Baseline.py --config config/models/config_LSTM_Baseline_diy.yaml
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+
+# Training settings
+training:
+  if_embed_user: true
+  if_embed_poi: false
+  if_embed_time: true
+  if_embed_duration: true
+  
+  previous_day: 7
+  verbose: true
+  debug: false
+  batch_size: 256
+  print_step: 10
+  num_workers: 0
+  day_selection: default
+
+# Dataset info (from metadata)
+dataset_info:
+  total_loc_num: 7038
+  total_user_num: 693
+
+# Embedding settings (matching paper Table S1 for larger datasets)
+embedding:
+  base_emb_size: 96
+
+# Model architecture
+# LSTM baseline following the paper's setup
+# Scaled up for larger DIY dataset
+model:
+  hidden_size: 128
+  num_layers: 2
+  lstm_dropout: 0.1
+  fc_dropout: 0.1
+
+# Optimizer settings (matching MHSA training setup for fair comparison)
+optimiser:
+  optimizer: Adam
+  max_epoch: 100
+  lr: 0.001
+  weight_decay: 0.000001
+  beta1: 0.9
+  beta2: 0.999
+  momentum: 0.98
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1

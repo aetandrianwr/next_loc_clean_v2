@@ -6,6 +6,9 @@ data/
 *.pth
 *.ckpt
 
+# PDF files
+*.pdf
+
 # Results and outputs
 results/*
 *.csv

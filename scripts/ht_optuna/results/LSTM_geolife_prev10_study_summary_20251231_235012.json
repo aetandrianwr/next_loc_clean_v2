@@ -1,0 +1,16 @@
+{
+  "model": "LSTM",
+  "dataset": "geolife",
+  "prev_day": 10,
+  "n_trials": 20,
+  "n_jobs": 8,
+  "best_value": 36.21019124984741,
+  "best_params": {
+    "base_emb_size": 64,
+    "lstm_hidden_size": 64,
+    "lstm_num_layers": 8,
+    "dim_feedforward": 256,
+    "lr": 0.0015
+  },
+  "best_trial_number": 11
+}

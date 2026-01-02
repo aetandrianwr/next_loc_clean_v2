@@ -1,0 +1,52 @@
+# RNN Baseline Model Configuration for DIY Dataset
+# Dataset: diy_eps50_prev7
+# 
+# This baseline is designed to show the advantage of Pointer V45's design:
+# - RNN uses only location and user embeddings (no temporal features)
+# - Vanilla RNN (Elman RNN) - simplest recurrent baseline
+#
+# The vanilla RNN is expected to perform WORSE than LSTM due to:
+# - Vanishing gradient problem
+# - Limited long-term dependency modeling
+# - No gating mechanism
+#
+# Expected performance: Acc@1 ~42-47% (lower than LSTM and much lower than Pointer V45)
+#
+# Usage:
+#   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+#   python scripts/baseline_lstm_rnn/train_baseline.py --config scripts/baseline_lstm_rnn/config_rnn_diy.yaml
+
+seed: 42
+
+model_type: rnn
+
+# Data settings (same as Pointer V45)
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture
+# Standard RNN with location + user embeddings only
+# RNN expected to perform worse than LSTM due to vanishing gradients
+model:
+  d_model: 64          # Embedding dimension
+  hidden_size: 128     # RNN hidden dimension
+  num_layers: 2        # Number of RNN layers
+  dropout: 0.25        # Dropout rate
+
+# Training settings
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.001    # Standard learning rate
+  weight_decay: 0.01
+  label_smoothing: 0.03
+  grad_clip: 1.0
+  patience: 5             # REQUIRED: patience=5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 0.000001

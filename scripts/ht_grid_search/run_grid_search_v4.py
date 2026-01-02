@@ -22,10 +22,10 @@ Usage:
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --model LSTM  # Only LSTM
     
     A100
-    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 32 --model pointer_v45 --delay 1
+    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 20 --model pointer_v45 --delay 1
     
     A100
-    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 32 --model MHSA --delay 1
+    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 20 --model MHSA --delay 1
     
     A100
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 32 --model LSTM --delay 1

@@ -1,0 +1,39 @@
+# Pointer V45 Model Configuration for DIY Dataset
+# Dataset: diy_eps50
+# 
+# Expected performance: Acc@1 ~56.87% on test set
+#
+# Usage:
+#   python src/training/train_pointer_v45.py --config config/models/config_pointer_v45_diy.yaml
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 3
+  dim_feedforward: 256
+  dropout: 0.15
+
+# Training settings
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.0007  # Key: Higher LR for better performance
+  weight_decay: 0.015
+  label_smoothing: 0.03
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 5
+  use_amp: true
+  min_lr: 0.000001

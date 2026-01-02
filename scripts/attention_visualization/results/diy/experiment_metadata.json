@@ -1,0 +1,19 @@
+{
+  "dataset": "diy",
+  "dataset_name": "DIY",
+  "seed": 42,
+  "num_samples": 12368,
+  "accuracy": 0.5658150064683053,
+  "gate_mean": 0.7871916651928178,
+  "gate_std": 0.13658507346339768,
+  "pointer_entropy_mean": 2.335801124572754,
+  "timestamp": "2026-01-02T10:52:11.815842",
+  "model_config": {
+    "d_model": 64,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.2
+  },
+  "num_layers": 2
+}

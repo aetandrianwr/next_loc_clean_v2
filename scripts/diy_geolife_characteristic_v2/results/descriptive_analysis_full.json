@@ -1,0 +1,118 @@
+{
+  "diy": {
+    "target_in_history": {
+      "dataset": "DIY",
+      "total_samples": 12368,
+      "target_in_history": 10404,
+      "target_in_history_rate": 84.12031047865459,
+      "target_in_last_1": 18.55595084087969,
+      "target_in_last_3": 64.89327296248383,
+      "target_in_last_5": 73.59314359637776,
+      "target_in_last_7": 77.23156532988357
+    },
+    "repetition": {
+      "dataset": "DIY",
+      "avg_unique_ratio": 0.3134540221886985,
+      "std_unique_ratio": 0.17558326092341928,
+      "avg_repetition_rate": 0.6865459778113014,
+      "std_repetition_rate": 0.17558326092341928,
+      "avg_consecutive_repetition": 0.17938619489083152
+    },
+    "vocabulary": {
+      "dataset": "DIY",
+      "unique_locs_in_sequences": 2346,
+      "unique_targets": 1713,
+      "train_vocabulary_size": 7017,
+      "top_10_seq_coverage": 42.60538568649465,
+      "top_50_seq_coverage": 56.7809953439132,
+      "top_10_target_coverage": 41.752910737386806,
+      "top_50_target_coverage": 52.42561448900388,
+      "seq_distribution_entropy": 4.95608952181882,
+      "target_distribution_entropy": 5.022003780574808
+    },
+    "user_patterns": {
+      "dataset": "DIY",
+      "num_users": 692,
+      "avg_samples_per_user": 17.872832369942195,
+      "std_samples_per_user": 18.94797543677838,
+      "avg_unique_locs_per_user": 7.063583815028902,
+      "avg_location_diversity": 0.09582860475645176,
+      "avg_target_revisit_rate": 0.9738030011322962
+    },
+    "sequence": {
+      "dataset": "DIY",
+      "avg_seq_length": 23.98132276843467,
+      "std_seq_length": 15.76837693982042,
+      "min_seq_length": "3",
+      "max_seq_length": "99",
+      "median_seq_length": 21.0
+    },
+    "temporal": {
+      "dataset": "DIY",
+      "morning_ratio": 34.48100309843865,
+      "afternoon_ratio": 30.813449718645586,
+      "evening_ratio": 18.070067194648704,
+      "night_ratio": 16.635479988267065,
+      "avg_duration_min": 357.60330207922425,
+      "avg_recency_days": 3.6217477351728418
+    }
+  },
+  "geolife": {
+    "target_in_history": {
+      "dataset": "GeoLife",
+      "total_samples": 3502,
+      "target_in_history": 2935,
+      "target_in_history_rate": 83.80925185608223,
+      "target_in_last_1": 27.184466019417474,
+      "target_in_last_3": 65.53398058252428,
+      "target_in_last_5": 73.72929754426042,
+      "target_in_last_7": 77.07024557395773
+    },
+    "repetition": {
+      "dataset": "GeoLife",
+      "avg_unique_ratio": 0.34041277893711963,
+      "std_unique_ratio": 0.16184768168833735,
+      "avg_repetition_rate": 0.6595872210628804,
+      "std_repetition_rate": 0.16184768168833738,
+      "avg_consecutive_repetition": 0.2686984758439079
+    },
+    "vocabulary": {
+      "dataset": "GeoLife",
+      "unique_locs_in_sequences": 347,
+      "unique_targets": 315,
+      "train_vocabulary_size": 1156,
+      "top_10_seq_coverage": 69.33766496199463,
+      "top_50_seq_coverage": 90.03155456764024,
+      "top_10_target_coverage": 67.1330668189606,
+      "top_50_target_coverage": 88.14962878355226,
+      "seq_distribution_entropy": 3.376049550713026,
+      "target_distribution_entropy": 3.5388325106979597
+    },
+    "user_patterns": {
+      "dataset": "GeoLife",
+      "num_users": 45,
+      "avg_samples_per_user": 77.82222222222222,
+      "std_samples_per_user": 112.15923925158798,
+      "avg_unique_locs_per_user": 12.555555555555555,
+      "avg_location_diversity": 0.1039078742748821,
+      "avg_target_revisit_rate": 0.9584037862789881
+    },
+    "sequence": {
+      "dataset": "GeoLife",
+      "avg_seq_length": 18.3703597944032,
+      "std_seq_length": 11.08106574697168,
+      "min_seq_length": "3",
+      "max_seq_length": "46",
+      "median_seq_length": 14.0
+    },
+    "temporal": {
+      "dataset": "GeoLife",
+      "morning_ratio": 36.39034399141964,
+      "afternoon_ratio": 25.714641008502635,
+      "evening_ratio": 8.774656863507065,
+      "night_ratio": 29.12035813657066,
+      "avg_duration_min": 355.3666392053845,
+      "avg_recency_days": 3.6845475883294734
+    }
+  }
+}

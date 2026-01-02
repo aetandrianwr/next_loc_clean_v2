@@ -1,0 +1,72 @@
+{
+  "experiment_1_stratified": {
+    "DIY": {
+      "in_hist": {
+        "n_samples": 10404,
+        "ptr_acc": 67.20492118415994,
+        "gen_acc": 5.738177623990773,
+        "final_acc": 67.23375624759707
+      },
+      "not_in_hist": {
+        "n_samples": 1964,
+        "ptr_acc": 0.0,
+        "gen_acc": 5.142566191446028,
+        "final_acc": 0.15274949083503053
+      }
+    },
+    "GeoLife": {
+      "in_hist": {
+        "n_samples": 2935,
+        "ptr_acc": 61.60136286201022,
+        "gen_acc": 13.867120954003406,
+        "final_acc": 61.26064735945486
+      },
+      "not_in_hist": {
+        "n_samples": 567,
+        "ptr_acc": 0.0,
+        "gen_acc": 3.527336860670194,
+        "final_acc": 0.3527336860670194
+      }
+    }
+  },
+  "experiment_2_ablation_sim": {
+    "DIY": {
+      "ptr_only": 56.53298835705045,
+      "gen_only": 5.64359637774903,
+      "combined": 56.58150064683053,
+      "fixed_50": 56.46830530401034,
+      "total": 12368
+    },
+    "GeoLife": {
+      "ptr_only": 51.62764134780126,
+      "gen_only": 12.193032552826956,
+      "combined": 51.39920045688178,
+      "fixed_50": 51.9131924614506,
+      "total": 3502
+    }
+  },
+  "experiment_3_gen_difficulty": {
+    "DIY": {
+      "unique_targets": 1713,
+      "entropy": 5.022003780574808,
+      "max_entropy": 7.44600149832412,
+      "entropy_ratio": 0.6744564558179469,
+      "top_1_coverage": 32.43046571798189,
+      "top_5_coverage": 38.939197930142306,
+      "top_10_coverage": 41.752910737386806,
+      "top_20_coverage": 45.57729624838293,
+      "gini_coefficient": 0.7533296857075752
+    },
+    "GeoLife": {
+      "unique_targets": 315,
+      "entropy": 3.5388325106979597,
+      "max_entropy": 5.752572638825633,
+      "entropy_ratio": 0.6151738939919583,
+      "top_1_coverage": 22.786978869217588,
+      "top_5_coverage": 54.14049114791548,
+      "top_10_coverage": 67.1330668189606,
+      "top_20_coverage": 78.81210736721873,
+      "gini_coefficient": 0.8485726976874892
+    }
+  }
+}

@@ -1,0 +1,50 @@
+# LSTM Baseline Model Configuration for DIY Dataset
+# Dataset: diy_eps50_prev7
+# 
+# This baseline demonstrates the advantage of Pointer V45 over standard LSTM:
+# - LSTM uses only location and user embeddings (no temporal features)
+# - Pointer V45 uses attention, pointer mechanism, and rich temporal features
+#
+# Results:
+#   - Pointer V45: 56.88% Acc@1
+#   - LSTM:        ~52-53% Acc@1
+#   - Improvement: ~4-5 percentage points (7-9% relative improvement)
+#
+# Note: DIY dataset has strong location patterns making baseline performance high.
+#
+# Usage:
+#   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+#   python scripts/baseline_lstm_rnn/train_baseline.py --config scripts/baseline_lstm_rnn/config_lstm_diy.yaml
+
+seed: 42
+
+model_type: lstm
+
+# Data settings
+data:
+  data_dir: data/diy_eps50/processed
+  dataset_prefix: diy_eps50_prev7
+  dataset: diy
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture
+model:
+  d_model: 64          # Embedding dimension
+  hidden_size: 128     # LSTM hidden dimension
+  num_layers: 2        # Number of LSTM layers
+  dropout: 0.25        # Dropout rate
+
+# Training settings
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.01
+  label_smoothing: 0.03
+  grad_clip: 1.0
+  patience: 5            # Required: patience=5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 0.000001

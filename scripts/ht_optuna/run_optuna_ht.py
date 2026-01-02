@@ -14,7 +14,7 @@ Usage:
     # Run hyperparameter tuning:
     python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 10
     python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 10
-    python scripts/ht_optuna/run_optuna_ht.py --model LSTM --n_jobs 4
+    python scripts/ht_optuna/run_optuna_ht.py --model LSTM --n_jobs 8
     python scripts/ht_optuna/run_optuna_ht.py --model all --n_jobs 4
 
 Hyperparameter tuning configuration:

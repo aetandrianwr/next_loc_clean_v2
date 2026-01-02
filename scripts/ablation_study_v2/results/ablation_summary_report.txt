@@ -1,0 +1,59 @@
+================================================================================
+COMPREHENSIVE ABLATION STUDY REPORT
+Pointer Network V45 - Next Location Prediction
+================================================================================
+
+Generated: 2026-01-02 17:04:06 (GMT+7)
+Random Seed: 42
+Early Stopping Patience: 5
+
+
+======================================================================
+ABLATION STUDY SUMMARY - GEOLIFE DATASET
+======================================================================
+Baseline (Full Model) Test Acc@1: 51.43%
+
+Component Impact Ranking (by Acc@1 drop):
+--------------------------------------------------
+1. w/o Pointer Mechanism: -24.01% (46.7% relative drop)
+2. w/o Temporal Embeddings: -4.03% (7.8% relative drop)
+3. w/o User Embedding: -2.31% (4.5% relative drop)
+4. w/o Position-from-End: -2.08% (4.1% relative drop)
+5. w/o Adaptive Gate (Fixed 0.5): -1.88% (3.7% relative drop)
+6. w/o Position Bias: --0.06% (-0.1% relative drop)
+7. Single Transformer Layer: --0.26% (-0.5% relative drop)
+8. w/o Generation Head: --0.43% (-0.8% relative drop)
+
+Key Insights:
+--------------------------------------------------
+• Most Critical Component: w/o Pointer Mechanism
+  - Removing it causes 24.01% Acc@1 drop
+• Redundant Component: w/o Generation Head
+  - Removing it actually improves Acc@1 by 0.43%
+
+======================================================================
+ABLATION STUDY SUMMARY - DIY DATASET
+======================================================================
+Baseline (Full Model) Test Acc@1: 56.57%
+
+Component Impact Ranking (by Acc@1 drop):
+--------------------------------------------------
+1. w/o Pointer Mechanism: -4.67% (8.3% relative drop)
+2. w/o Temporal Embeddings: -0.62% (1.1% relative drop)
+3. w/o Adaptive Gate (Fixed 0.5): -0.49% (0.9% relative drop)
+4. w/o User Embedding: -0.31% (0.5% relative drop)
+5. w/o Position Bias: --0.08% (-0.1% relative drop)
+6. Single Transformer Layer: --0.08% (-0.1% relative drop)
+7. w/o Position-from-End: --0.16% (-0.3% relative drop)
+8. w/o Generation Head: --0.84% (-1.5% relative drop)
+
+Key Insights:
+--------------------------------------------------
+• Most Critical Component: w/o Pointer Mechanism
+  - Removing it causes 4.67% Acc@1 drop
+• Redundant Component: w/o Generation Head
+  - Removing it actually improves Acc@1 by 0.84%
+
+================================================================================
+END OF REPORT
+================================================================================

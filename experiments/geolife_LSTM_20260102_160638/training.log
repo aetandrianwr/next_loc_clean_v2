@@ -1,0 +1,19 @@
+Training LSTM model
+Dataset: geolife
+Config: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/temp_final_lstm_geolife_run0.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=116, val=53, test=55
+Total trainable parameters: 467683
+
+=== Epoch 1 ===
+Epoch 1, 17.2%	 loss: 7.265 acc@1: 0.39 mrr: 1.16, ndcg: 1.03, took: 1.32s
+Epoch 1, 34.5%	 loss: 6.732 acc@1: 6.72 mrr: 9.54, ndcg: 9.97, took: 0.66s
+Epoch 1, 51.7%	 loss: 5.738 acc@1: 17.66 mrr: 25.08, ndcg: 27.46, took: 0.64s
+Epoch 1, 69.0%	 loss: 4.939 acc@1: 24.61 mrr: 35.10, ndcg: 39.06, took: 0.66s
+Epoch 1, 86.2%	 loss: 4.396 acc@1: 28.75 mrr: 40.33, ndcg: 44.79, took: 0.62s
+Validation - loss: 4.4067, acc@1: 32.87%, f1: 20.19%, mrr: 43.71%, ndcg: 47.56%
+Current learning rate: 0.002000
+
+=== Epoch 2 ===

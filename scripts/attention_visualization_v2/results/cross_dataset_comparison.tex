@@ -1,0 +1,24 @@
+\begin{table}
+\caption{Cross-Dataset Attention Mechanism Comparison}
+\label{tab:cross_dataset_comparison}
+\begin{tabular}{lll}
+\toprule
+Metric & DIY & Geolife \\
+\midrule
+Dataset & DIY Check-in & GeoLife GPS \\
+Test Samples & 12368.000000 & 3502.000000 \\
+Model Parameters & 1081280 & 443328 \\
+Prediction Accuracy (%) & 56.580000 & 51.400000 \\
+Mean Gate Value & 0.787200 & 0.626700 \\
+Gate Std Dev & 0.136600 & 0.228900 \\
+Gate (Correct) & 0.816800 & 0.646400 \\
+Gate (Incorrect) & 0.748600 & 0.605900 \\
+Mean Pointer Entropy & 2.335800 & 1.976400 \\
+Pointer Entropy Std Dev & 0.750300 & 0.692800 \\
+Most Recent Position Attention & 0.045800 & 0.060500 \\
+d_model & 64 & 96 \\
+num_heads & 4 & 2 \\
+num_layers & 2 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Ablation Study Results on GEOLIFE Dataset. Baseline Acc@1: 51.43\%. $\Delta$Acc@1 shows performance change relative to the full model.}}
+\label{tab:ablation_geolife}
+\begin{tabular}{l|ccccc|c}
+\toprule
+\textbf{Model Variant} & \textbf{Acc@1} & \textbf{Acc@5} & \textbf{Acc@10} & \textbf{MRR} & \textbf{NDCG} & \textbf{$\Delta$Acc@1} \\
+\midrule
+w/o Generation Head & 51.86 & 82.41 & 85.38 & 64.95 & 69.58 & +0.43 \\
+Single Transformer Layer & 51.68 & 81.70 & 85.01 & 64.96 & 69.81 & +0.26 \\
+w/o Position Bias & 51.48 & 81.21 & 84.98 & 64.61 & 69.49 & +0.06 \\
+\textbf{Complete model (baseline)} & \textbf{51.43} & 81.18 & 85.04 & 64.57 & 69.48 & — \\
+w/o Adaptive Gate (Fixed 0.5) & 49.54 & 81.64 & 84.67 & 63.57 & 68.67 & -1.88 \\
+w/o Position-from-End & 49.34 & 80.87 & 84.75 & 63.38 & 68.53 & -2.08 \\
+w/o User Embedding & 49.11 & 81.10 & 84.12 & 63.27 & 68.33 & -2.31 \\
+w/o Temporal Embeddings & 47.40 & 81.47 & 85.09 & 62.56 & 68.03 & -4.03 \\
+w/o Pointer Mechanism & 27.41 & 54.14 & 58.65 & 38.88 & 43.43 & -24.01 \\
+\bottomrule
+\end{tabular}
+\end{table*}

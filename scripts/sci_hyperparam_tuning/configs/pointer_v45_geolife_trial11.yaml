@@ -1,0 +1,29 @@
+# Hyperparameter Tuning Config: pointer_v45_geolife_trial11
+# Model: pointer_v45, Dataset: geolife, Trial: 11
+# Hyperparameters: {'d_model': 128, 'nhead': 2, 'num_layers': 4, 'dim_feedforward': 128, 'dropout': 0.2, 'learning_rate': 0.0007, 'weight_decay': 5e-05, 'batch_size': 64, 'label_smoothing': 0.05, 'warmup_epochs': 3, 'trial_idx': 11, 'model_name': 'pointer_v45', 'dataset': 'geolife'}
+
+seed: 42
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+model:
+  d_model: 128
+  nhead: 2
+  num_layers: 4
+  dim_feedforward: 128
+  dropout: 0.2
+training:
+  batch_size: 64
+  num_epochs: 50
+  learning_rate: 0.0007
+  weight_decay: 5.0e-05
+  label_smoothing: 0.05
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 1.0e-06

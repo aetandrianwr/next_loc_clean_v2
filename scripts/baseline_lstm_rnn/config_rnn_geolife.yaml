@@ -1,0 +1,51 @@
+# RNN Baseline Model Configuration for GeoLife Dataset
+# Dataset: geolife_eps20_prev7
+# 
+# This baseline demonstrates the advantage of Pointer V45 over vanilla RNN:
+# - RNN uses only location and user embeddings (no temporal features)
+# - Vanilla RNN (Elman RNN) - simplest recurrent baseline
+#
+# Results:
+#   - Pointer V45: 53.94% Acc@1
+#   - RNN:         32.95% Acc@1
+#   - Improvement: 20.99 percentage points (63.7% relative improvement)
+#
+# The vanilla RNN performs similarly to LSTM on short sequences but struggles
+# with long-range dependencies.
+#
+# Usage:
+#   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+#   python scripts/baseline_lstm_rnn/train_baseline.py --config scripts/baseline_lstm_rnn/config_rnn_geolife.yaml
+
+seed: 42
+
+model_type: rnn
+
+# Data settings
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture (same as LSTM for fair comparison)
+model:
+  d_model: 64          # Embedding dimension
+  hidden_size: 128     # RNN hidden dimension
+  num_layers: 2        # Number of RNN layers
+  dropout: 0.2         # Dropout rate
+
+# Training settings
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.01
+  label_smoothing: 0.03
+  grad_clip: 1.0
+  patience: 5            # Required: patience=5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 0.000001

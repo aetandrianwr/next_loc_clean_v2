@@ -1,0 +1,19 @@
+{
+  "dataset": "geolife",
+  "dataset_name": "Geolife",
+  "seed": 42,
+  "num_samples": 3502,
+  "accuracy": 0.5139920045688178,
+  "gate_mean": 0.6267254609683224,
+  "gate_std": 0.22894114817034664,
+  "pointer_entropy_mean": 1.9763829708099365,
+  "timestamp": "2026-01-02T11:45:46.885681",
+  "model_config": {
+    "d_model": 96,
+    "nhead": 2,
+    "num_layers": 2,
+    "dim_feedforward": 192,
+    "dropout": 0.25
+  },
+  "num_layers": 2
+}

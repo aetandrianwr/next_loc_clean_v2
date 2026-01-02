@@ -1,0 +1,40 @@
+{
+  "diy": {
+    "avg_gate": 0.78719162940979,
+    "std_gate": 0.13658507168293,
+    "median_gate": 0.8251832127571106,
+    "min_gate": 0.10474134981632233,
+    "max_gate": 0.9717920422554016,
+    "overall_accuracy": 56.58150064683053,
+    "acc_target_in_history": 67.23375624759707,
+    "acc_target_not_in_history": 0.15274949083503053,
+    "pct_target_in_history": 84.12031047865459,
+    "avg_ptr_prob_on_target": 0.4799399673938751,
+    "avg_gen_prob_on_target": 0.005698147229850292,
+    "avg_ptr_prob_when_target_in_hist": 0.5705399513244629,
+    "avg_gen_prob_when_target_in_hist": 0.005244606174528599,
+    "avg_gate_when_correct": 0.8167750835418701,
+    "avg_gate_when_wrong": 0.7486396431922913,
+    "avg_gate_target_in_hist": 0.80296790599823,
+    "avg_gate_target_not_in_hist": 0.7036190032958984
+  },
+  "geolife": {
+    "avg_gate": 0.626725435256958,
+    "std_gate": 0.2289411425590515,
+    "median_gate": 0.6832947731018066,
+    "min_gate": 0.014801154844462872,
+    "max_gate": 0.9831657409667969,
+    "overall_accuracy": 51.39920045688178,
+    "acc_target_in_history": 61.26064735945486,
+    "acc_target_not_in_history": 0.3527336860670194,
+    "pct_target_in_history": 83.80925185608223,
+    "avg_ptr_prob_on_target": 0.4554872214794159,
+    "avg_gen_prob_on_target": 0.018839159980416298,
+    "avg_ptr_prob_when_target_in_hist": 0.5434808135032654,
+    "avg_gen_prob_when_target_in_hist": 0.0206916481256485,
+    "avg_gate_when_correct": 0.6464459300041199,
+    "avg_gate_when_wrong": 0.6058695316314697,
+    "avg_gate_target_in_hist": 0.636736273765564,
+    "avg_gate_target_not_in_hist": 0.5749057531356812
+  }
+}

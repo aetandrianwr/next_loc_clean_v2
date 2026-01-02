@@ -1,0 +1,42 @@
+{
+  "diy_recency": {
+    "total_samples": 12368,
+    "target_in_history_pct": 84.12031047865459,
+    "target_is_last_pct": 18.55595084087969,
+    "target_in_top3_recent_pct": 64.89327296248383,
+    "target_in_top5_recent_pct": 73.59314359637776,
+    "avg_target_position": 3.3668781237985392,
+    "median_target_position": 2.0,
+    "std_target_position": 4.442968367693664
+  },
+  "geolife_recency": {
+    "total_samples": 3502,
+    "target_in_history_pct": 83.80925185608223,
+    "target_is_last_pct": 27.184466019417474,
+    "target_in_top3_recent_pct": 65.53398058252428,
+    "target_in_top5_recent_pct": 73.72929754426042,
+    "avg_target_position": 3.331175468483816,
+    "median_target_position": 2.0,
+    "std_target_position": 4.558239350640628
+  },
+  "diy_return": {
+    "return_to_prev_prev_pct": 46.838615782664945,
+    "return_to_any_recent5_pct": 73.59314359637776
+  },
+  "geolife_return": {
+    "return_to_prev_prev_pct": 42.575671045117076,
+    "return_to_any_recent5_pct": 73.72929754426042
+  },
+  "diy_pred": {
+    "avg_recency_score": 0.43205894023662544,
+    "avg_frequency_score": 0.3264817822168668,
+    "avg_predictability_score": 0.20485771190176244,
+    "high_predictability_pct": 56.71086675291074
+  },
+  "geolife_pred": {
+    "avg_recency_score": 0.4754088465891381,
+    "avg_frequency_score": 0.34304554055821534,
+    "avg_predictability_score": 0.23202098525172585,
+    "high_predictability_pct": 59.88006853226727
+  }
+}

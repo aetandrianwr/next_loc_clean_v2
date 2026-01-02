@@ -1,0 +1,51 @@
+# LSTM Baseline Model Configuration for GeoLife Dataset
+# Dataset: geolife_eps20_prev7
+# 
+# This baseline is designed to show the advantage of Pointer V45's design:
+# - LSTM uses only location and user embeddings (no temporal features)
+# - Pointer V45 uses attention, pointer mechanism, and rich temporal features
+#
+# This demonstrates that:
+# 1. Pointer mechanism improves accuracy by copying from history
+# 2. Temporal features (time, weekday, recency, duration) are important
+# 3. Attention mechanism captures long-range dependencies better than LSTM
+#
+# Expected performance: Acc@1 ~25-28% (vs Pointer V45's ~54%)
+#
+# Usage:
+#   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
+#   python scripts/baseline_lstm_rnn/train_baseline.py --config scripts/baseline_lstm_rnn/config_lstm_geolife.yaml
+
+seed: 42
+
+model_type: lstm
+
+# Data settings (same as Pointer V45)
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture
+# Standard LSTM with location + user embeddings only
+model:
+  d_model: 64          # Embedding dimension
+  hidden_size: 128     # LSTM hidden dimension
+  num_layers: 2        # Number of LSTM layers
+  dropout: 0.2         # Dropout rate
+
+# Training settings (same as Pointer V45 for fair comparison)
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.001    # Standard learning rate for LSTM
+  weight_decay: 0.01
+  label_smoothing: 0.03
+  grad_clip: 1.0
+  patience: 5             # REQUIRED: patience=5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 0.000001

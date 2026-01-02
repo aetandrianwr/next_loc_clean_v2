@@ -1,0 +1,455 @@
+nohup: ignoring input
+============================================================
+SCIENTIFIC HYPERPARAMETER TUNING
+============================================================
+Base directory: /data/next_loc_clean_v2
+Max parallel jobs: 5
+Delay between jobs: 1.5s
+============================================================
+Total configs: 120
+Already completed: 0
+Remaining: 120
+============================================================
+
+[08:10:34] Starting: pointer_v45_geolife_trial00
+
+[08:10:36] Starting: pointer_v45_geolife_trial01
+
+[08:10:37] Starting: pointer_v45_geolife_trial02
+
+[08:10:39] Starting: pointer_v45_geolife_trial03
+
+[08:10:40] Starting: pointer_v45_geolife_trial04
+[08:11:11] DONE: pointer_v45_geolife_trial02 (Val Acc@1: 48.02%, Time: 0.6min)
+
+[08:11:12] Starting: pointer_v45_geolife_trial05
+[08:11:22] DONE: pointer_v45_geolife_trial04 (Val Acc@1: 45.86%, Time: 0.7min)
+
+[08:11:23] Starting: pointer_v45_geolife_trial06
+[08:11:32] DONE: pointer_v45_geolife_trial01 (Val Acc@1: 49.25%, Time: 0.9min)
+
+[08:11:34] Starting: pointer_v45_geolife_trial07
+[08:11:47] DONE: pointer_v45_geolife_trial03 (Val Acc@1: 45.62%, Time: 1.1min)
+[08:11:48] DONE: pointer_v45_geolife_trial00 (Val Acc@1: 46.37%, Time: 1.2min)
+
+[08:11:49] Starting: pointer_v45_geolife_trial08
+
+[08:11:50] Starting: pointer_v45_geolife_trial09
+[08:12:03] DONE: pointer_v45_geolife_trial07 (Val Acc@1: 44.96%, Time: 0.5min)
+
+[08:12:05] Starting: pointer_v45_geolife_trial10
+[08:12:30] DONE: pointer_v45_geolife_trial06 (Val Acc@1: 47.81%, Time: 1.1min)
+
+[08:12:31] Starting: pointer_v45_geolife_trial11
+[08:12:48] DONE: pointer_v45_geolife_trial05 (Val Acc@1: 47.21%, Time: 1.6min)
+
+[08:12:50] Starting: pointer_v45_geolife_trial12
+[08:13:04] DONE: pointer_v45_geolife_trial09 (Val Acc@1: 48.62%, Time: 1.2min)
+
+[08:13:06] Starting: pointer_v45_geolife_trial13
+[08:13:35] DONE: pointer_v45_geolife_trial11 (Val Acc@1: 44.27%, Time: 1.1min)
+
+[08:13:37] Starting: pointer_v45_geolife_trial14
+[08:13:44] DONE: pointer_v45_geolife_trial13 (Val Acc@1: 44.51%, Time: 0.6min)
+
+[08:13:46] Starting: pointer_v45_geolife_trial15
+[08:13:55] DONE: pointer_v45_geolife_trial10 (Val Acc@1: 47.33%, Time: 1.8min)
+
+[08:13:57] Starting: pointer_v45_geolife_trial16
+[08:13:58] DONE: pointer_v45_geolife_trial12 (Val Acc@1: 47.42%, Time: 1.1min)
+
+[08:13:59] Starting: pointer_v45_geolife_trial17
+Warning: Could not parse results from /data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/val_results.json: [Errno 2] No such file or directory: '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/val_results.json'
+Warning: Could not parse results from /data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/test_results.json: [Errno 2] No such file or directory: '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/test_results.json'
+Warning: Could not parse params from /data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/training.log: [Errno 2] No such file or directory: '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151359/training.log'
+[08:14:00] DONE: pointer_v45_geolife_trial08 (Val Acc@1: 0.00%, Time: 2.2min)
+
+[08:14:01] Starting: pointer_v45_geolife_trial18
+[08:14:03] DONE: pointer_v45_geolife_trial14 (Val Acc@1: 44.87%, Time: 0.4min)
+
+[08:14:04] Starting: pointer_v45_geolife_trial19
+[08:14:14] DONE: pointer_v45_geolife_trial15 (Val Acc@1: 45.86%, Time: 0.5min)
+
+[08:14:15] Starting: pointer_v45_diy_trial00
+[08:14:34] DONE: pointer_v45_geolife_trial16 (Val Acc@1: 47.81%, Time: 0.6min)
+
+[08:14:36] Starting: pointer_v45_diy_trial01
+[08:15:05] DONE: pointer_v45_geolife_trial18 (Val Acc@1: 47.90%, Time: 1.1min)
+
+[08:15:06] Starting: pointer_v45_diy_trial02
+[08:15:12] DONE: pointer_v45_geolife_trial17 (Val Acc@1: 47.96%, Time: 1.2min)
+
+[08:15:14] Starting: pointer_v45_diy_trial03
+[08:17:05] DONE: pointer_v45_geolife_trial19 (Val Acc@1: 46.85%, Time: 3.0min)
+
+[08:17:06] Starting: pointer_v45_diy_trial04
+[08:28:27] DONE: pointer_v45_diy_trial01 (Val Acc@1: 53.52%, Time: 13.9min)
+
+[08:28:29] Starting: pointer_v45_diy_trial05
+[08:35:45] DONE: pointer_v45_diy_trial02 (Val Acc@1: 54.46%, Time: 20.6min)
+
+[08:35:47] Starting: pointer_v45_diy_trial06
+[08:43:38] DONE: pointer_v45_diy_trial00 (Val Acc@1: 54.26%, Time: 29.4min)
+
+[08:43:39] Starting: pointer_v45_diy_trial07
+[08:44:37] DONE: pointer_v45_diy_trial03 (Val Acc@1: 54.15%, Time: 29.4min)
+
+[08:44:39] Starting: pointer_v45_diy_trial08
+[08:53:44] DONE: pointer_v45_diy_trial06 (Val Acc@1: 54.03%, Time: 18.0min)
+
+[08:53:46] Starting: pointer_v45_diy_trial09
+[08:55:30] DONE: pointer_v45_diy_trial05 (Val Acc@1: 54.86%, Time: 27.0min)
+
+[08:55:31] Starting: pointer_v45_diy_trial10
+[08:56:35] DONE: pointer_v45_diy_trial04 (Val Acc@1: 53.88%, Time: 39.5min)
+
+[08:56:36] Starting: pointer_v45_diy_trial11
+[09:11:36] DONE: pointer_v45_diy_trial10 (Val Acc@1: 54.00%, Time: 16.1min)
+
+[09:11:38] Starting: pointer_v45_diy_trial12
+[09:11:40] DONE: pointer_v45_diy_trial08 (Val Acc@1: 54.08%, Time: 27.0min)
+
+[09:11:41] Starting: pointer_v45_diy_trial13
+[09:19:18] DONE: pointer_v45_diy_trial07 (Val Acc@1: 54.72%, Time: 35.6min)
+
+[09:19:19] Starting: pointer_v45_diy_trial14
+[09:21:37] DONE: pointer_v45_diy_trial09 (Val Acc@1: 54.92%, Time: 27.8min)
+
+[09:21:38] Starting: pointer_v45_diy_trial15
+[09:27:31] DONE: pointer_v45_diy_trial11 (Val Acc@1: 53.54%, Time: 30.9min)
+
+[09:27:32] Starting: pointer_v45_diy_trial16
+[09:35:27] DONE: pointer_v45_diy_trial14 (Val Acc@1: 54.55%, Time: 16.1min)
+
+[09:35:28] Starting: pointer_v45_diy_trial17
+[09:37:58] DONE: pointer_v45_diy_trial12 (Val Acc@1: 54.88%, Time: 26.3min)
+
+[09:38:00] Starting: pointer_v45_diy_trial18
+[09:41:20] DONE: pointer_v45_diy_trial15 (Val Acc@1: 52.88%, Time: 19.7min)
+
+[09:41:21] Starting: pointer_v45_diy_trial19
+[09:44:12] DONE: pointer_v45_diy_trial13 (Val Acc@1: 53.70%, Time: 32.5min)
+
+[09:44:13] Starting: mhsa_geolife_trial00
+[09:47:42] DONE: mhsa_geolife_trial00 (Val Acc@1: 41.30%, Time: 3.5min)
+
+[09:47:44] Starting: mhsa_geolife_trial01
+[09:49:10] DONE: pointer_v45_diy_trial16 (Val Acc@1: 54.28%, Time: 21.6min)
+
+[09:49:12] Starting: mhsa_geolife_trial02
+[09:50:11] DONE: mhsa_geolife_trial02 (Val Acc@1: 37.07%, Time: 1.0min)
+
+[09:50:12] Starting: mhsa_geolife_trial03
+[09:52:16] DONE: mhsa_geolife_trial03 (Val Acc@1: 38.33%, Time: 2.1min)
+
+[09:52:18] Starting: mhsa_geolife_trial04
+[09:53:36] DONE: mhsa_geolife_trial01 (Val Acc@1: 36.86%, Time: 5.9min)
+
+[09:53:38] Starting: mhsa_geolife_trial05
+[09:53:52] DONE: mhsa_geolife_trial04 (Val Acc@1: 40.58%, Time: 1.6min)
+
+[09:53:54] Starting: mhsa_geolife_trial06
+[09:54:40] DONE: pointer_v45_diy_trial18 (Val Acc@1: 54.04%, Time: 16.7min)
+
+[09:54:41] Starting: mhsa_geolife_trial07
+[09:55:00] DONE: pointer_v45_diy_trial19 (Val Acc@1: 54.56%, Time: 13.7min)
+
+[09:55:02] Starting: mhsa_geolife_trial08
+[09:55:19] DONE: mhsa_geolife_trial05 (Val Acc@1: 40.01%, Time: 1.7min)
+
+[09:55:20] Starting: mhsa_geolife_trial09
+[09:56:17] DONE: mhsa_geolife_trial09 (Val Acc@1: 38.30%, Time: 0.9min)
+[09:56:17] DONE: mhsa_geolife_trial08 (Val Acc@1: 38.30%, Time: 1.3min)
+
+[09:56:19] Starting: mhsa_geolife_trial10
+
+[09:56:19] Starting: mhsa_geolife_trial11
+[09:56:36] DONE: mhsa_geolife_trial06 (Val Acc@1: 35.81%, Time: 2.7min)
+
+[09:56:37] Starting: mhsa_geolife_trial12
+[09:57:27] FAILED: mhsa_geolife_trial11
+  stderr: Traceback (most recent call last):
+  File "/data/next_loc_clean_v2/src/training/train_MHSA.py", line 637, in <module>
+    main()
+  File "/data/next_loc_clean_v2/src/training/train_MHSA.py", line 602, in main
+    model, val_performance = train_model(config, model, train_loader, val_loader, device, experiment_dir, log_file)
+  File "/data/next_loc_clean_v2/src/training/train_MHSA.py", line 490, in train_model
+    model.load_state_dict(torch.load(checkpoint_path))
+  File "/root/miniconda3/envs/mlenv
+
+[09:57:29] Starting: mhsa_geolife_trial13
+[09:57:49] DONE: mhsa_geolife_trial10 (Val Acc@1: 40.01%, Time: 1.5min)
+
+[09:57:51] Starting: mhsa_geolife_trial14
+[09:59:07] DONE: mhsa_geolife_trial12 (Val Acc@1: 38.30%, Time: 2.5min)
+
+[09:59:09] Starting: mhsa_geolife_trial15
+[09:59:16] DONE: mhsa_geolife_trial14 (Val Acc@1: 36.68%, Time: 1.4min)
+
+[09:59:18] Starting: mhsa_geolife_trial16
+[10:00:23] DONE: mhsa_geolife_trial07 (Val Acc@1: 41.39%, Time: 5.7min)
+
+[10:00:25] Starting: mhsa_geolife_trial17
+[10:00:29] DONE: mhsa_geolife_trial15 (Val Acc@1: 37.85%, Time: 1.3min)
+
+[10:00:31] Starting: mhsa_geolife_trial18
+[10:02:03] DONE: mhsa_geolife_trial16 (Val Acc@1: 38.36%, Time: 2.7min)
+
+[10:02:04] Starting: mhsa_geolife_trial19
+[10:02:06] DONE: mhsa_geolife_trial13 (Val Acc@1: 38.42%, Time: 4.6min)
+
+[10:02:08] Starting: mhsa_diy_trial00
+[10:02:38] DONE: mhsa_geolife_trial18 (Val Acc@1: 41.54%, Time: 2.1min)
+
+[10:02:40] Starting: mhsa_diy_trial01
+[10:05:17] DONE: mhsa_geolife_trial17 (Val Acc@1: 42.38%, Time: 4.9min)
+
+[10:05:19] Starting: mhsa_diy_trial02
+[10:05:33] DONE: mhsa_geolife_trial19 (Val Acc@1: 36.92%, Time: 3.5min)
+
+[10:05:34] Starting: mhsa_diy_trial03
+[10:10:09] DONE: pointer_v45_diy_trial17 (Val Acc@1: 53.90%, Time: 34.7min)
+
+[10:10:10] Starting: mhsa_diy_trial04
+[10:35:24] DONE: mhsa_diy_trial02 (Val Acc@1: 52.06%, Time: 30.1min)
+
+[10:35:25] Starting: mhsa_diy_trial05
+[10:35:36] DONE: mhsa_diy_trial01 (Val Acc@1: 51.72%, Time: 32.9min)
+
+[10:35:38] Starting: mhsa_diy_trial06
+[11:13:56] DONE: mhsa_diy_trial00 (Val Acc@1: 53.55%, Time: 71.8min)
+
+[11:13:58] Starting: mhsa_diy_trial07
+[11:54:35] DONE: mhsa_diy_trial06 (Val Acc@1: 53.38%, Time: 79.0min)
+
+[11:54:37] Starting: mhsa_diy_trial08
+[12:05:35] TIMEOUT: mhsa_diy_trial03
+
+[12:05:36] Starting: mhsa_diy_trial09
+[12:10:11] TIMEOUT: mhsa_diy_trial04
+
+[12:10:12] Starting: mhsa_diy_trial10
+[12:14:43] DONE: mhsa_diy_trial07 (Val Acc@1: 52.18%, Time: 60.8min)
+
+[12:14:44] Starting: mhsa_diy_trial11
+[12:32:17] DONE: mhsa_diy_trial10 (Val Acc@1: 52.10%, Time: 22.1min)
+
+[12:32:19] Starting: mhsa_diy_trial12
+[12:35:26] TIMEOUT: mhsa_diy_trial05
+
+[12:35:27] Starting: mhsa_diy_trial13
+[12:49:55] DONE: mhsa_diy_trial11 (Val Acc@1: 52.32%, Time: 35.2min)
+
+[12:49:56] Starting: mhsa_diy_trial14
+[12:53:34] DONE: mhsa_diy_trial08 (Val Acc@1: 52.84%, Time: 59.0min)
+
+[12:53:35] Starting: mhsa_diy_trial15
+[13:03:18] DONE: mhsa_diy_trial09 (Val Acc@1: 52.78%, Time: 57.7min)
+
+[13:03:20] Starting: mhsa_diy_trial16
+[13:12:12] DONE: mhsa_diy_trial12 (Val Acc@1: 52.32%, Time: 39.9min)
+
+[13:12:13] Starting: mhsa_diy_trial17
+[13:12:27] DONE: mhsa_diy_trial13 (Val Acc@1: 52.93%, Time: 37.0min)
+
+[13:12:28] Starting: mhsa_diy_trial18
+[13:28:34] DONE: mhsa_diy_trial15 (Val Acc@1: 51.67%, Time: 35.0min)
+
+[13:28:36] Starting: mhsa_diy_trial19
+[13:32:10] DONE: mhsa_diy_trial17 (Val Acc@1: 52.17%, Time: 19.9min)
+
+[13:32:11] Starting: lstm_geolife_trial00
+[13:34:50] DONE: lstm_geolife_trial00 (Val Acc@1: 40.58%, Time: 2.6min)
+
+[13:34:51] Starting: lstm_geolife_trial01
+[13:37:03] DONE: lstm_geolife_trial01 (Val Acc@1: 34.07%, Time: 2.2min)
+
+[13:37:05] Starting: lstm_geolife_trial02
+[13:37:33] DONE: mhsa_diy_trial16 (Val Acc@1: 52.24%, Time: 34.2min)
+
+[13:37:35] Starting: lstm_geolife_trial03
+[13:38:21] DONE: lstm_geolife_trial02 (Val Acc@1: 32.63%, Time: 1.3min)
+
+[13:38:22] Starting: lstm_geolife_trial04
+[13:40:03] DONE: lstm_geolife_trial04 (Val Acc@1: 33.41%, Time: 1.7min)
+
+[13:40:04] Starting: lstm_geolife_trial05
+[13:41:29] DONE: lstm_geolife_trial03 (Val Acc@1: 34.40%, Time: 3.9min)
+
+[13:41:31] Starting: lstm_geolife_trial06
+[13:41:54] DONE: lstm_geolife_trial05 (Val Acc@1: 33.62%, Time: 1.8min)
+
+[13:41:56] Starting: lstm_geolife_trial07
+[13:43:07] DONE: lstm_geolife_trial06 (Val Acc@1: 34.01%, Time: 1.6min)
+
+[13:43:09] Starting: lstm_geolife_trial08
+[13:43:38] DONE: lstm_geolife_trial07 (Val Acc@1: 33.47%, Time: 1.7min)
+
+[13:43:40] Starting: lstm_geolife_trial09
+[13:44:40] DONE: lstm_geolife_trial09 (Val Acc@1: 31.94%, Time: 1.0min)
+
+[13:44:42] Starting: lstm_geolife_trial10
+[13:46:16] DONE: lstm_geolife_trial08 (Val Acc@1: 39.47%, Time: 3.1min)
+
+[13:46:18] Starting: lstm_geolife_trial11
+[13:46:44] DONE: lstm_geolife_trial10 (Val Acc@1: 32.69%, Time: 2.0min)
+
+[13:46:45] Starting: lstm_geolife_trial12
+[13:47:48] DONE: lstm_geolife_trial12 (Val Acc@1: 32.81%, Time: 1.0min)
+
+[13:47:49] Starting: lstm_geolife_trial13
+[13:48:50] DONE: lstm_geolife_trial11 (Val Acc@1: 37.91%, Time: 2.5min)
+
+[13:48:52] Starting: lstm_geolife_trial14
+[13:51:24] DONE: lstm_geolife_trial13 (Val Acc@1: 34.97%, Time: 3.6min)
+
+[13:51:25] Starting: lstm_geolife_trial15
+[13:52:39] DONE: lstm_geolife_trial14 (Val Acc@1: 33.50%, Time: 3.8min)
+
+[13:52:41] Starting: lstm_geolife_trial16
+[13:53:33] DONE: lstm_geolife_trial15 (Val Acc@1: 36.44%, Time: 2.1min)
+
+[13:53:35] Starting: lstm_geolife_trial17
+[13:53:41] DONE: lstm_geolife_trial16 (Val Acc@1: 35.06%, Time: 1.0min)
+
+[13:53:42] Starting: lstm_geolife_trial18
+[13:54:51] DONE: lstm_geolife_trial17 (Val Acc@1: 33.32%, Time: 1.3min)
+
+[13:54:53] Starting: lstm_geolife_trial19
+[13:56:26] DONE: lstm_geolife_trial18 (Val Acc@1: 33.86%, Time: 2.7min)
+
+[13:56:28] Starting: lstm_diy_trial00
+[13:58:47] DONE: lstm_geolife_trial19 (Val Acc@1: 34.97%, Time: 3.9min)
+
+[13:58:48] Starting: lstm_diy_trial01
+[14:30:29] DONE: lstm_diy_trial01 (Val Acc@1: 51.50%, Time: 31.7min)
+
+[14:30:31] Starting: lstm_diy_trial02
+[14:32:18] DONE: lstm_diy_trial00 (Val Acc@1: 51.09%, Time: 35.8min)
+
+[14:32:19] Starting: lstm_diy_trial03
+[14:37:16] DONE: mhsa_diy_trial18 (Val Acc@1: 52.99%, Time: 84.8min)
+
+[14:37:17] Starting: lstm_diy_trial04
+[14:38:03] DONE: mhsa_diy_trial19 (Val Acc@1: 52.52%, Time: 69.5min)
+
+[14:38:05] Starting: lstm_diy_trial05
+[14:49:57] TIMEOUT: mhsa_diy_trial14
+
+[14:49:58] Starting: lstm_diy_trial06
+[15:15:50] DONE: lstm_diy_trial05 (Val Acc@1: 51.08%, Time: 37.8min)
+
+[15:15:52] Starting: lstm_diy_trial07
+[15:44:31] DONE: lstm_diy_trial04 (Val Acc@1: 50.63%, Time: 67.2min)
+
+[15:44:33] Starting: lstm_diy_trial08
+[15:53:55] DONE: lstm_diy_trial03 (Val Acc@1: 52.83%, Time: 81.6min)
+
+[15:53:57] Starting: lstm_diy_trial09
+[15:58:44] DONE: lstm_diy_trial06 (Val Acc@1: 52.92%, Time: 68.8min)
+
+[15:58:45] Starting: lstm_diy_trial10
+[16:07:59] DONE: lstm_diy_trial02 (Val Acc@1: 53.90%, Time: 97.5min)
+
+[16:08:01] Starting: lstm_diy_trial11
+[16:16:05] DONE: lstm_diy_trial08 (Val Acc@1: 41.90%, Time: 31.5min)
+
+[16:16:07] Starting: lstm_diy_trial12
+[16:36:28] DONE: lstm_diy_trial10 (Val Acc@1: 41.68%, Time: 37.7min)
+
+[16:36:29] Starting: lstm_diy_trial13
+[16:42:41] DONE: lstm_diy_trial09 (Val Acc@1: 52.69%, Time: 48.7min)
+
+[16:42:42] Starting: lstm_diy_trial14
+[17:14:22] DONE: lstm_diy_trial12 (Val Acc@1: 51.17%, Time: 58.2min)
+
+[17:14:23] Starting: lstm_diy_trial15
+[17:15:52] TIMEOUT: lstm_diy_trial07
+
+[17:15:54] Starting: lstm_diy_trial16
+[17:23:22] DONE: lstm_diy_trial14 (Val Acc@1: 51.19%, Time: 40.7min)
+
+[17:23:23] Starting: lstm_diy_trial17
+[17:41:10] DONE: lstm_diy_trial15 (Val Acc@1: 49.68%, Time: 26.8min)
+
+[17:41:12] Starting: lstm_diy_trial18
+[18:08:01] TIMEOUT: lstm_diy_trial11
+
+[18:08:03] Starting: lstm_diy_trial19
+[18:21:45] DONE: lstm_diy_trial17 (Val Acc@1: 52.63%, Time: 58.4min)
+[18:28:59] DONE: lstm_diy_trial19 (Val Acc@1: 52.24%, Time: 20.9min)
+[18:36:30] TIMEOUT: lstm_diy_trial13
+[18:37:35] DONE: lstm_diy_trial16 (Val Acc@1: 53.42%, Time: 81.7min)
+[18:45:25] DONE: lstm_diy_trial18 (Val Acc@1: 52.92%, Time: 64.2min)
+
+============================================================
+HYPERPARAMETER TUNING COMPLETE
+============================================================
+nohup: ignoring input
+============================================================
+SCIENTIFIC HYPERPARAMETER TUNING
+============================================================
+Base directory: /data/next_loc_clean_v2
+Max parallel jobs: 5
+Delay between jobs: 1.5s
+============================================================
+Total configs: 120
+Already completed: 111
+Remaining: 9
+============================================================
+
+[19:39:45] Starting: pointer_v45_geolife_trial08
+
+[19:39:47] Starting: mhsa_geolife_trial11
+
+[19:39:48] Starting: mhsa_diy_trial03
+
+[19:39:50] Starting: mhsa_diy_trial04
+
+[19:39:51] Starting: mhsa_diy_trial05
+[19:41:58] DONE: mhsa_geolife_trial11 (Val Acc@1: 41.42%, Time: 2.2min)
+
+[19:42:00] Starting: mhsa_diy_trial14
+[19:42:19] DONE: pointer_v45_geolife_trial08 (Val Acc@1: 47.48%, Time: 2.6min)
+
+[19:42:21] Starting: lstm_diy_trial07
+[21:12:29] DONE: lstm_diy_trial07 (Val Acc@1: 52.74%, Time: 90.1min)
+
+[21:12:31] Starting: lstm_diy_trial11
+[21:39:49] TIMEOUT: mhsa_diy_trial03
+[21:39:50] TIMEOUT: mhsa_diy_trial04
+
+[21:39:50] Starting: lstm_diy_trial13
+[21:39:52] TIMEOUT: mhsa_diy_trial05
+[21:41:39] DONE: mhsa_diy_trial14 (Val Acc@1: 51.89%, Time: 119.7min)
+[22:21:32] DONE: lstm_diy_trial11 (Val Acc@1: 52.04%, Time: 69.0min)
+[23:34:43] DONE: lstm_diy_trial13 (Val Acc@1: 53.64%, Time: 114.9min)
+
+============================================================
+HYPERPARAMETER TUNING COMPLETE
+============================================================
+nohup: ignoring input
+============================================================
+SCIENTIFIC HYPERPARAMETER TUNING
+============================================================
+Base directory: /data/next_loc_clean_v2
+Max parallel jobs: 5
+Delay between jobs: 1.5s
+============================================================
+Total configs: 120
+Already completed: 117
+Remaining: 3
+============================================================
+
+[23:40:38] Starting: mhsa_diy_trial03
+
+[23:40:39] Starting: mhsa_diy_trial04
+
+[23:40:41] Starting: mhsa_diy_trial05
+[01:17:08] DONE: mhsa_diy_trial04 (Val Acc@1: 53.69%, Time: 96.5min)
+[01:24:43] DONE: mhsa_diy_trial05 (Val Acc@1: 53.10%, Time: 104.0min)
+[01:40:38] TIMEOUT: mhsa_diy_trial03
+
+============================================================
+HYPERPARAMETER TUNING COMPLETE
+============================================================
