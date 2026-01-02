@@ -6,6 +6,8 @@ This directory contains comprehensive documentation for the **Pointer Network V4
 
 ### Quick Navigation
 
+#### Core Documentation (10 documents)
+
 | Document | Description | Read Time |
 |----------|-------------|-----------|
 | **[01_OVERVIEW.md](01_OVERVIEW.md)** | Executive summary, quick start, and introduction | 5 min |
@@ -18,6 +20,16 @@ This directory contains comprehensive documentation for the **Pointer Network V4
 | **[08_RESULTS_ANALYSIS.md](08_RESULTS_ANALYSIS.md)** | Results, ablation studies, interpretation | 15 min |
 | **[09_WALKTHROUGH_EXAMPLE.md](09_WALKTHROUGH_EXAMPLE.md)** | Line-by-line code walkthrough with examples | 20 min |
 | **[10_DIAGRAMS.md](10_DIAGRAMS.md)** | Visual diagrams at all detail levels | 10 min |
+
+#### Deep Dive Documentation (5 documents)
+
+| Document | Description | Read Time |
+|----------|-------------|-----------|
+| **[11_DEEP_TECHNICAL_ANALYSIS.md](11_DEEP_TECHNICAL_ANALYSIS.md)** | Mathematical foundations, information theory, gradient analysis | 30 min |
+| **[12_COMPLETE_DATA_FLOW.md](12_COMPLETE_DATA_FLOW.md)** | End-to-end data transformation with exact tensor shapes | 25 min |
+| **[13_WHY_THIS_ARCHITECTURE_WORKS.md](13_WHY_THIS_ARCHITECTURE_WORKS.md)** | Design rationale and justification for every choice | 20 min |
+| **[14_INTUITION_GUIDE.md](14_INTUITION_GUIDE.md)** | Non-technical explanation with analogies | 15 min |
+| **[15_COMPLETE_CODE_REFERENCE.md](15_COMPLETE_CODE_REFERENCE.md)** | Annotated source code line-by-line | 25 min |
 
 ---
 
@@ -79,25 +91,30 @@ next_loc_clean_v2/
 
 ## 🎯 Recommended Reading Order
 
-### For Quick Understanding
+### For Quick Understanding (30 min)
 1. [01_OVERVIEW.md](01_OVERVIEW.md) - Get the big picture
-2. [10_DIAGRAMS.md](10_DIAGRAMS.md) - Visual understanding
-3. [08_RESULTS_ANALYSIS.md](08_RESULTS_ANALYSIS.md) - See the results
+2. [14_INTUITION_GUIDE.md](14_INTUITION_GUIDE.md) - Non-technical understanding
+3. [10_DIAGRAMS.md](10_DIAGRAMS.md) - Visual understanding
 
-### For Implementation
+### For Implementation (1.5 hrs)
 1. [03_MODEL_ARCHITECTURE.md](03_MODEL_ARCHITECTURE.md) - Architecture details
 2. [04_COMPONENTS_DEEP_DIVE.md](04_COMPONENTS_DEEP_DIVE.md) - Component details
-3. [09_WALKTHROUGH_EXAMPLE.md](09_WALKTHROUGH_EXAMPLE.md) - Code walkthrough
+3. [15_COMPLETE_CODE_REFERENCE.md](15_COMPLETE_CODE_REFERENCE.md) - Annotated code
+4. [12_COMPLETE_DATA_FLOW.md](12_COMPLETE_DATA_FLOW.md) - Data transformations
 
-### For Research
+### For Research (2 hrs)
 1. [02_THEORY_BACKGROUND.md](02_THEORY_BACKGROUND.md) - Theoretical foundations
-2. [08_RESULTS_ANALYSIS.md](08_RESULTS_ANALYSIS.md) - Ablation studies
-3. [04_COMPONENTS_DEEP_DIVE.md](04_COMPONENTS_DEEP_DIVE.md) - Design justifications
+2. [11_DEEP_TECHNICAL_ANALYSIS.md](11_DEEP_TECHNICAL_ANALYSIS.md) - Mathematical analysis
+3. [13_WHY_THIS_ARCHITECTURE_WORKS.md](13_WHY_THIS_ARCHITECTURE_WORKS.md) - Design justification
+4. [08_RESULTS_ANALYSIS.md](08_RESULTS_ANALYSIS.md) - Ablation studies
 
-### For Training
+### For Training (45 min)
 1. [05_TRAINING_PIPELINE.md](05_TRAINING_PIPELINE.md) - Training process
 2. [07_CONFIGURATION_GUIDE.md](07_CONFIGURATION_GUIDE.md) - Configuration
 3. [06_EVALUATION_METRICS.md](06_EVALUATION_METRICS.md) - Metrics
+
+### Complete Deep Understanding (4+ hrs)
+Read all 15 documents in order for comprehensive knowledge.
 
 ---
 
@@ -128,6 +145,16 @@ See [07_CONFIGURATION_GUIDE.md](07_CONFIGURATION_GUIDE.md) for:
 
 ---
 
+## 📈 Documentation Statistics
+
+| Category | Documents | Total Size | Est. Reading Time |
+|----------|-----------|------------|-------------------|
+| Core Documentation | 10 | ~150 KB | 2.5 hours |
+| Deep Dive | 5 | ~90 KB | 2 hours |
+| **Total** | **15** | **~240 KB** | **4.5 hours** |
+
+---
+
 *Documentation created: January 2026*
-*Total pages: 10*
-*Estimated total reading time: ~2 hours*
+*Total documents: 15*
+*Estimated total reading time: ~4.5 hours*
