@@ -1,0 +1,47 @@
+# Config: lstm_geolife_h3r8
+# Model: lstm, Dataset: geolife_h3r8
+# Based on: lstm_geolife_trial13
+
+seed: 42
+data:
+  data_dir: data/geolife_h3r8/processed
+  dataset_prefix: geolife_h3r8_prev7
+  dataset: geolife
+  experiment_root: experiments
+training:
+  if_embed_user: true
+  if_embed_poi: false
+  if_embed_time: true
+  if_embed_duration: true
+  previous_day: 7
+  verbose: true
+  debug: false
+  batch_size: 32
+  print_step: 20
+  num_workers: 0
+  day_selection: default
+dataset_info:
+  total_loc_num: 902
+  total_user_num: 51
+embedding:
+  base_emb_size: 96
+  poi_original_size: 16
+model:
+  networkName: lstm
+  lstm_hidden_size: 128
+  lstm_num_layers: 2
+  lstm_dropout: 0.3
+  fc_dropout: 0.2
+optimiser:
+  optimizer: Adam
+  max_epoch: 100
+  lr: 0.001
+  weight_decay: 1.0e-06
+  beta1: 0.9
+  beta2: 0.999
+  momentum: 0.98
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1
