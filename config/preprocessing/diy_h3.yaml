@@ -1,0 +1,37 @@
+# DIY Dataset Configuration - H3 Version
+# Uses Uber H3 hexagonal grid for location clustering instead of DBSCAN
+
+dataset:
+  name: "diy"
+  h3_resolution: 8  # H3 resolution (0-15, higher = finer grid). Resolution 8 ~= 461m edge length
+  previous_day: [7]  # List of previous days for sequence generation
+
+preprocessing:
+  # H3 location clustering parameters
+  location:
+    num_samples: 2  # Minimum samples (staypoints) required in H3 cell to be valid location
+  
+  # Staypoint merging parameters
+  staypoint_merging:
+    max_time_gap: "1min"  # Maximum time gap for merging consecutive staypoints
+  
+  # User quality filter
+  quality_filter:
+    day_filter: 60  # Minimum tracking days
+    window_size: 10  # Sliding window size (weeks) for quality calculation
+    min_thres: 0.6  # Minimum quality threshold
+    mean_thres: 0.7  # Mean quality threshold
+  
+  # Duration truncation (in minutes)
+  max_duration: 2880  # 2 days - 1 (60 * 24 * 2)
+  
+  # Sequence generation
+  min_sequence_length: 3  # Minimum sequence length (history + target)
+  
+  # Train/validation/test split ratios (per user)
+  split:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+
+random_seed: 42
