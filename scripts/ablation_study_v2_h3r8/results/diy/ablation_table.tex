@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Ablation Study Results on DIY Dataset. Baseline Acc@1: 56.57\%. $\Delta$Acc@1 shows performance change relative to the full model.}}
+\label{tab:ablation_diy}
+\begin{tabular}{l|ccccc|c}
+\toprule
+\textbf{Model Variant} & \textbf{Acc@1} & \textbf{Acc@5} & \textbf{Acc@10} & \textbf{MRR} & \textbf{NDCG} & \textbf{$\Delta$Acc@1} \\
+\midrule
+w/o Generation Head & 57.41 & 81.80 & 84.48 & 67.88 & 71.92 & +0.84 \\
+w/o Position-from-End & 56.74 & 82.28 & 85.27 & 67.82 & 72.03 & +0.16 \\
+w/o Position Bias & 56.65 & 82.14 & 85.16 & 67.70 & 71.90 & +0.08 \\
+Single Transformer Layer & 56.65 & 81.90 & 85.04 & 67.58 & 71.78 & +0.08 \\
+\textbf{Complete model (baseline)} & \textbf{56.57} & 82.16 & 85.16 & 67.66 & 71.88 & — \\
+w/o User Embedding & 56.27 & 81.98 & 84.89 & 67.31 & 71.57 & -0.31 \\
+w/o Adaptive Gate (Fixed 0.5) & 56.08 & 81.90 & 85.28 & 67.22 & 71.56 & -0.49 \\
+w/o Temporal Embeddings & 55.95 & 82.03 & 85.24 & 67.24 & 71.56 & -0.62 \\
+w/o Pointer Mechanism & 51.90 & 75.59 & 78.27 & 62.21 & 66.05 & -4.67 \\
+\bottomrule
+\end{tabular}
+\end{table*}
