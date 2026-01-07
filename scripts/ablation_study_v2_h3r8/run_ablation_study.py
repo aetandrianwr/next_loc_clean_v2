@@ -64,12 +64,12 @@ ABLATION_TYPES = [
 # Dataset configurations
 DATASET_CONFIGS = {
     'geolife': {
-        'config_path': 'scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml',
-        'expected_acc1': 51.39,  # Expected Acc@1 for validation
+        'config_path': 'config/models/config_pointer_v45_geolife_h3r8.yaml',
+        'expected_acc1': 42.59,  # Expected Acc@1 for validation
     },
     'diy': {
-        'config_path': 'scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml',
-        'expected_acc1': 56.58,  # Expected Acc@1 for validation
+        'config_path': 'config/models/config_pointer_v45_diy_h3r8.yaml',
+        'expected_acc1': 44.41,  # Expected Acc@1 for validation
     },
 }
 
