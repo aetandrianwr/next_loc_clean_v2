@@ -1,0 +1,13 @@
+Training MHSA model
+Dataset: diy
+Config: /content/next_loc_clean_v2/config/models/config_MHSA_diy_h3r8.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=3518, val=234, test=289
+Total trainable parameters: 427365
+
+=== Epoch 1 ===
+Epoch 1, 1.4%	 loss: 7.943 acc@1: 0.06 mrr: 0.34, ndcg: 0.20, took: 3.40s
+Epoch 1, 2.8%	 loss: 7.939 acc@1: 0.00 mrr: 0.28, ndcg: 0.10, took: 2.15s
+Epoch 1, 4.3%	 loss: 7.941 acc@1: 0.06 mrr: 0.39, ndcg: 0.26, took: 2.17s

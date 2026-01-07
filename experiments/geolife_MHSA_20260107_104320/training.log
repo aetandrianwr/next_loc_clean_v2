@@ -1,0 +1,29 @@
+Training MHSA model
+Dataset: geolife
+Config: /content/next_loc_clean_v2/config/models/config_MHSA_geolife_h3r8.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=297, val=132, test=139
+Total trainable parameters: 244806
+
+=== Epoch 1 ===
+Epoch 1, 6.7%	 loss: 6.902 acc@1: 0.31 mrr: 1.03, ndcg: 0.74, took: 1.51s
+Epoch 1, 13.5%	 loss: 6.882 acc@1: 0.16 mrr: 0.79, ndcg: 0.50, took: 0.40s
+Epoch 1, 20.2%	 loss: 6.899 acc@1: 0.00 mrr: 0.61, ndcg: 0.39, took: 0.43s
+Epoch 1, 26.9%	 loss: 6.875 acc@1: 0.16 mrr: 0.91, ndcg: 0.65, took: 0.50s
+Epoch 1, 33.7%	 loss: 6.861 acc@1: 0.16 mrr: 0.97, ndcg: 0.61, took: 0.44s
+Epoch 1, 40.4%	 loss: 6.832 acc@1: 0.16 mrr: 1.17, ndcg: 0.95, took: 0.52s
+Epoch 1, 47.1%	 loss: 6.826 acc@1: 0.00 mrr: 0.92, ndcg: 0.57, took: 0.53s
+Epoch 1, 53.9%	 loss: 6.809 acc@1: 0.47 mrr: 1.32, ndcg: 0.97, took: 0.52s
+Epoch 1, 60.6%	 loss: 6.806 acc@1: 0.62 mrr: 1.69, ndcg: 1.43, took: 0.57s
+Epoch 1, 67.3%	 loss: 6.752 acc@1: 1.09 mrr: 2.58, ndcg: 2.55, took: 0.62s
+Epoch 1, 74.1%	 loss: 6.735 acc@1: 2.34 mrr: 4.21, ndcg: 4.25, took: 0.69s
+Epoch 1, 80.8%	 loss: 6.667 acc@1: 2.81 mrr: 4.78, ndcg: 4.88, took: 0.65s
+Epoch 1, 87.5%	 loss: 6.596 acc@1: 6.25 mrr: 9.12, ndcg: 9.54, took: 0.66s
+Epoch 1, 94.3%	 loss: 6.530 acc@1: 6.88 mrr: 10.12, ndcg: 10.83, took: 0.68s
+Validation - loss: 6.2498, acc@1: 14.16%, f1: 7.06%, mrr: 19.62%, ndcg: 21.27%
+Current learning rate: 0.000500
+
+=== Epoch 2 ===
+Epoch 2, 6.7%	 loss: 6.200 acc@1: 11.72 mrr: 16.71, ndcg: 18.03, took: 0.84s

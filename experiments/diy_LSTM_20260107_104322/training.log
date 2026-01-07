@@ -1,0 +1,11 @@
+Training LSTM model
+Dataset: diy
+Config: /content/next_loc_clean_v2/config/models/config_LSTM_diy_h3r8.yaml
+Device: cuda
+Seed: 42
+==================================================
+Data loaders: train=3518, val=234, test=289
+Total trainable parameters: 2230213
+
+=== Epoch 1 ===
+Epoch 1, 1.4%	 loss: 8.136 acc@1: 0.09 mrr: 0.41, ndcg: 0.25, took: 3.04s
