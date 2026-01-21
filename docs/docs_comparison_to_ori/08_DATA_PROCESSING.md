@@ -271,7 +271,7 @@ class Batcher(object):
 ### Proposed Code
 
 ```python
-# File: train_pointer_v45.py, lines 119-195
+# File: train_pgt.py, lines 119-195
 
 class NextLocationDataset(Dataset):
     """Dataset for next location prediction."""
@@ -553,7 +553,7 @@ class NextLocationDataset(Dataset):
 │                                                                              │
 │  The "vocabulary" is simply the location embedding:                         │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │  # pointer_v45.py, line 98                                          │   │
+│  │  # pgt.py, line 98                                          │   │
 │  │  self.location_embedding = nn.Embedding(num_locations, d_model)     │   │
 │  │                                                                       │   │
 │  │  # Example: 500 locations × 64 dims = 32,000 parameters             │   │
@@ -743,7 +743,7 @@ def example_generator(data_path, single_pass):
 # PROPOSED: Loading pickle files
 # ==============================================================================
 
-# File: train_pointer_v45.py, lines 260-285
+# File: train_pgt.py, lines 260-285
 
 def load_data(config: Dict) -> Tuple[Dataset, Dataset, Dataset]:
     """Load train, validation, and test datasets."""
@@ -767,7 +767,7 @@ def load_data(config: Dict) -> Tuple[Dataset, Dataset, Dataset]:
     
     return train_dataset, val_dataset, test_dataset
 
-# File: train_pointer_v45.py, lines 290-310
+# File: train_pgt.py, lines 290-310
 
 def create_dataloaders(train_dataset, val_dataset, test_dataset, config):
     """Create DataLoaders."""

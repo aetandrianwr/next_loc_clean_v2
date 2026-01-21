@@ -7,7 +7,7 @@
 ## 9.1 Finding #1: Pointer Mechanism is Fundamental
 
 ### Summary
-The pointer mechanism is the most critical component of PointerNetworkV45, contributing up to 46.7% relative improvement on GeoLife and 8.3% on DIY.
+The pointer mechanism is the most critical component of PointerGeneratorTransformer, contributing up to 46.7% relative improvement on GeoLife and 8.3% on DIY.
 
 ### Evidence
 ```

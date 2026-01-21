@@ -1,16 +1,16 @@
 # LSTM Baseline Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20_prev7
 # 
-# This baseline is designed to show the advantage of Pointer V45's design:
+# This baseline is designed to show the advantage of Pointer Generator Transformer's design:
 # - LSTM uses only location and user embeddings (no temporal features)
-# - Pointer V45 uses attention, pointer mechanism, and rich temporal features
+# - Pointer Generator Transformer uses attention, pointer mechanism, and rich temporal features
 #
 # This demonstrates that:
 # 1. Pointer mechanism improves accuracy by copying from history
 # 2. Temporal features (time, weekday, recency, duration) are important
 # 3. Attention mechanism captures long-range dependencies better than LSTM
 #
-# Expected performance: Acc@1 ~25-28% (vs Pointer V45's ~54%)
+# Expected performance: Acc@1 ~25-28% (vs Pointer Generator Transformer's ~54%)
 #
 # Usage:
 #   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
@@ -20,7 +20,7 @@ seed: 42
 
 model_type: lstm
 
-# Data settings (same as Pointer V45)
+# Data settings (same as Pointer Generator Transformer)
 data:
   data_dir: data/geolife_eps20/processed
   dataset_prefix: geolife_eps20_prev7
@@ -36,7 +36,7 @@ model:
   num_layers: 2        # Number of LSTM layers
   dropout: 0.2         # Dropout rate
 
-# Training settings (same as Pointer V45 for fair comparison)
+# Training settings (same as Pointer Generator Transformer for fair comparison)
 training:
   batch_size: 128
   num_epochs: 50

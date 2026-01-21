@@ -2,9 +2,9 @@
 
 ## Executive Summary
 
-This document describes the scientific hyperparameter tuning methodology and results for three next location prediction models: **Pointer V45** (proposed model), **MHSA** (baseline), and **LSTM** (baseline). The tuning was conducted on two datasets: **Geolife** and **DIY**, following rigorous PhD-level research standards.
+This document describes the scientific hyperparameter tuning methodology and results for three next location prediction models: **Pointer Generator Transformer** (proposed model), **MHSA** (baseline), and **LSTM** (baseline). The tuning was conducted on two datasets: **Geolife** and **DIY**, following rigorous PhD-level research standards.
 
-**Key Finding**: The proposed Pointer V45 model outperforms both baselines on both datasets, achieving 49.25% Acc@1 on Geolife and 54.92% Acc@1 on DIY.
+**Key Finding**: The proposed Pointer Generator Transformer model outperforms both baselines on both datasets, achieving 49.25% Acc@1 on Geolife and 54.92% Acc@1 on DIY.
 
 ---
 
@@ -22,7 +22,7 @@ Hyperparameter tuning is critical for fair model comparison in machine learning 
 ### 1.2 Research Questions
 
 1. What are the optimal hyperparameters for each model on each dataset?
-2. Does the proposed Pointer V45 model outperform baselines when all models are optimally tuned?
+2. Does the proposed Pointer Generator Transformer model outperform baselines when all models are optimally tuned?
 3. How does model performance vary across different datasets?
 
 ---
@@ -47,7 +47,7 @@ The search space was designed to be:
 - **Comprehensive**: Covers both architectural and optimization hyperparameters
 - **Practical**: Based on common ranges from literature and preliminary experiments
 
-#### Pointer V45 Search Space
+#### Pointer Generator Transformer Search Space
 
 ```python
 {
@@ -150,11 +150,11 @@ The search space was designed to be:
 
 | Model | Val Acc@1 | Test Acc@1* | Params | Best Config |
 |-------|-----------|-------------|--------|-------------|
-| **Pointer V45** | **49.25%** | TBD | 443,404 | trial01 |
+| **Pointer Generator Transformer** | **49.25%** | TBD | 443,404 | trial01 |
 | MHSA | 42.38% | TBD | 281,251 | trial17 |
 | LSTM | 40.58% | TBD | 467,683 | trial00 |
 
-**Pointer V45 (trial01)** hyperparameters:
+**Pointer Generator Transformer (trial01)** hyperparameters:
 ```yaml
 d_model: 96
 nhead: 2
@@ -178,11 +178,11 @@ warmup_epochs: 5
 
 | Model | Val Acc@1 | Test Acc@1* | Params | Best Config |
 |-------|-----------|-------------|--------|-------------|
-| **Pointer V45** | **54.92%** | TBD | 1,081,554 | trial09 |
+| **Pointer Generator Transformer** | **54.92%** | TBD | 1,081,554 | trial09 |
 | LSTM | 53.90% | TBD | 3,564,990 | trial02 |
 | MHSA | 53.69% | TBD | 797,982 | trial04 |
 
-**Pointer V45 (trial09)** hyperparameters:
+**Pointer Generator Transformer (trial09)** hyperparameters:
 ```yaml
 d_model: 128
 nhead: 4
@@ -202,16 +202,16 @@ warmup_epochs: 3
 
 **Key Observations**:
 
-1. **Pointer V45 Superiority**: The proposed model outperforms both baselines on both datasets
+1. **Pointer Generator Transformer Superiority**: The proposed model outperforms both baselines on both datasets
    - Geolife: +6.87% over MHSA, +8.67% over LSTM
    - DIY: +1.02% over LSTM, +1.23% over MHSA
 
 2. **Dataset Dependency**: Model ranking varies by dataset
-   - Geolife: Pointer V45 > MHSA > LSTM
-   - DIY: Pointer V45 > LSTM > MHSA
+   - Geolife: Pointer Generator Transformer > MHSA > LSTM
+   - DIY: Pointer Generator Transformer > LSTM > MHSA
    - This suggests different models excel at different data characteristics
 
-3. **Parameter Efficiency**: Pointer V45 achieves best results without requiring the most parameters
+3. **Parameter Efficiency**: Pointer Generator Transformer achieves best results without requiring the most parameters
    - On DIY, LSTM uses 3.3x more parameters but still underperforms
 
 4. **Hyperparameter Sensitivity**:
@@ -237,7 +237,7 @@ warmup_epochs: 3
 
 ### 4.1 Implications
 
-The results support the hypothesis that the proposed Pointer V45 architecture provides superior performance for next location prediction:
+The results support the hypothesis that the proposed Pointer Generator Transformer architecture provides superior performance for next location prediction:
 
 1. **Architectural Innovation**: The pointer mechanism effectively captures location dependencies
 2. **Generalization**: Consistent performance across different datasets
@@ -307,10 +307,10 @@ This hyperparameter tuning study demonstrates:
 
 1. **Scientific Rigor**: Systematic search with 120 trials following best practices
 2. **Fair Comparison**: All models tuned with equal compute budget
-3. **Clear Results**: Pointer V45 outperforms baselines on both datasets
+3. **Clear Results**: Pointer Generator Transformer outperforms baselines on both datasets
 4. **Reproducibility**: All configs, results, and code available
 
-The findings support the validity of the proposed Pointer V45 architecture for next location prediction tasks and provide optimized hyperparameters for future experiments.
+The findings support the validity of the proposed Pointer Generator Transformer architecture for next location prediction tasks and provide optimized hyperparameters for future experiments.
 
 ---
 

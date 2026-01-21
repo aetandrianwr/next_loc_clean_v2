@@ -2,7 +2,7 @@
 Visualization Script for Improvement Difference Analysis
 
 This script generates visualizations to illustrate the key findings
-about why Pointer V45 shows different improvements on Geolife vs DIY.
+about why Pointer Generator Transformer shows different improvements on Geolife vs DIY.
 
 Outputs:
 - Bar charts comparing key metrics
@@ -50,7 +50,7 @@ def load_data():
 
 
 def plot_performance_comparison(output_dir):
-    """Plot performance comparison between MHSA and Pointer V45."""
+    """Plot performance comparison between MHSA and Pointer Generator Transformer."""
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     
     # Plot 1: Absolute performance
@@ -62,7 +62,7 @@ def plot_performance_comparison(output_dir):
     pointer_accs = [GEOLIFE_POINTER_ACC, DIY_POINTER_ACC]
     
     bars1 = ax1.bar(x - width/2, mhsa_accs, width, label='MHSA (Baseline)', color='#3498db', alpha=0.8)
-    bars2 = ax1.bar(x + width/2, pointer_accs, width, label='Pointer V45 (Proposed)', color='#e74c3c', alpha=0.8)
+    bars2 = ax1.bar(x + width/2, pointer_accs, width, label='Pointer Generator Transformer (Proposed)', color='#e74c3c', alpha=0.8)
     
     ax1.set_xlabel('Dataset', fontsize=12)
     ax1.set_ylabel('Acc@1 (%)', fontsize=12)
@@ -101,7 +101,7 @@ def plot_performance_comparison(output_dir):
     geo_theoretical = 89.18
     diy_theoretical = 92.56
     
-    categories = ['MHSA', 'Pointer V45', 'Remaining\nPotential']
+    categories = ['MHSA', 'Pointer Generator Transformer', 'Remaining\nPotential']
     geo_values = [GEOLIFE_MHSA_ACC, GEOLIFE_POINTER_ACC - GEOLIFE_MHSA_ACC, geo_theoretical - GEOLIFE_POINTER_ACC]
     diy_values = [DIY_MHSA_ACC, DIY_POINTER_ACC - DIY_MHSA_ACC, diy_theoretical - DIY_POINTER_ACC]
     
@@ -124,7 +124,7 @@ def plot_performance_comparison(output_dir):
     
     # Custom legend
     colors = ['#3498db', '#e74c3c', '#95a5a6']
-    labels = ['MHSA Baseline', 'Pointer V45 Gain', 'Remaining Potential']
+    labels = ['MHSA Baseline', 'Pointer Generator Transformer Gain', 'Remaining Potential']
     patches = [mpatches.Patch(color=c, label=l, alpha=0.8) for c, l in zip(colors, labels)]
     ax2.legend(handles=patches, loc='upper right')
     
@@ -238,7 +238,7 @@ def plot_key_factors(geo_train, geo_test, diy_train, diy_test, output_dir):
     
     width = 0.35
     bars1 = ax4.bar(x - width/2, [geo_mhsa_util, diy_mhsa_util], width, label='MHSA', color='#3498db', alpha=0.8)
-    bars2 = ax4.bar(x + width/2, [geo_ptr_util, diy_ptr_util], width, label='Pointer V45', color='#e74c3c', alpha=0.8)
+    bars2 = ax4.bar(x + width/2, [geo_ptr_util, diy_ptr_util], width, label='Pointer Generator Transformer', color='#e74c3c', alpha=0.8)
     
     ax4.set_xlabel('Dataset')
     ax4.set_ylabel('% of Theoretical Potential')
@@ -285,7 +285,7 @@ def plot_root_cause_diagram(output_dir):
     ax.add_patch(rect1)
     ax.text(4, 8, 'GEOLIFE', fontsize=14, fontweight='bold', ha='center', color='#3498db')
     ax.text(4, 7.2, 'MHSA: 33.18%', fontsize=11, ha='center')
-    ax.text(4, 6.6, 'Pointer V45: 53.97%', fontsize=11, ha='center')
+    ax.text(4, 6.6, 'Pointer Generator Transformer: 53.97%', fontsize=11, ha='center')
     ax.text(4, 6.0, 'Improvement: +20.79pp', fontsize=12, ha='center', fontweight='bold', color='green')
     ax.text(4, 5.3, 'MHSA uses only 37.2% of potential', fontsize=10, ha='center', color='red')
     
@@ -294,7 +294,7 @@ def plot_root_cause_diagram(output_dir):
     ax.add_patch(rect2)
     ax.text(12, 8, 'DIY', fontsize=14, fontweight='bold', ha='center', color='#e74c3c')
     ax.text(12, 7.2, 'MHSA: 53.17%', fontsize=11, ha='center')
-    ax.text(12, 6.6, 'Pointer V45: 56.85%', fontsize=11, ha='center')
+    ax.text(12, 6.6, 'Pointer Generator Transformer: 56.85%', fontsize=11, ha='center')
     ax.text(12, 6.0, 'Improvement: +3.68pp', fontsize=12, ha='center', fontweight='bold', color='green')
     ax.text(12, 5.3, 'MHSA already uses 57.4% of potential', fontsize=10, ha='center', color='blue')
     

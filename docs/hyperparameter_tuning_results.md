@@ -11,9 +11,9 @@ This document tracks hyperparameter tuning experiments for various models.
 
 ---
 
-## PointerNetworkV45 Model
+## PointerGeneratorTransformer Model
 
-### Geolife Dataset Results (PointerNetworkV45)
+### Geolife Dataset Results (PointerGeneratorTransformer)
 
 | Config | d_model | nhead | layers | ff_dim | params | LR | Acc@1 | Acc@5 | MRR | Notes |
 |--------|---------|-------|--------|--------|--------|-----|-------|-------|-----|-------|
@@ -24,11 +24,11 @@ This document tracks hyperparameter tuning experiments for various models.
 | d64_L2_lowDropout | 64 | 4 | 2 | 128 | 253K | 6e-4 | 52.14% | 81.87% | 65.10% | Lower dropout |
 | d72_L2 | 72 | 4 | 2 | 144 | 295K | 6.5e-4 | 49.09% | 80.61% | 63.34% | Larger model |
 
-### Best Geolife Config (PointerNetworkV45): `geolife_baseline_d64_L2.yaml`
+### Best Geolife Config (PointerGeneratorTransformer): `geolife_baseline_d64_L2.yaml`
 - **Acc@1: 54.00%**
 - Parameters: 253K / 500K
 
-### DIY Dataset Results (PointerNetworkV45)
+### DIY Dataset Results (PointerGeneratorTransformer)
 
 | Config | d_model | nhead | layers | ff_dim | params | LR | Acc@1 | Acc@5 | MRR | Notes |
 |--------|---------|-------|--------|--------|--------|-----|-------|-------|-----|-------|
@@ -38,7 +38,7 @@ This document tracks hyperparameter tuning experiments for various models.
 | d144_L3_largerEmb | 144 | 4 | 3 | 288 | 2.77M | 7e-4 | 56.45% | 81.97% | 67.62% | Larger emb |
 | d128_L3_lowerLR | 128 | 4 | 3 | 256 | 2.4M | 6e-4 | 56.81% | 82.51% | 67.95% | Lower LR |
 
-### Best DIY Config (PointerNetworkV45): `diy_baseline_d128_L3.yaml`
+### Best DIY Config (PointerGeneratorTransformer): `diy_baseline_d128_L3.yaml`
 - **Acc@1: 56.89%**
 - Parameters: 2.4M / 3M
 
@@ -112,7 +112,7 @@ After extensive hyperparameter tuning with 15 different configurations (8 for Ge
 
 ## Key Insights
 
-### PointerNetworkV45 Model
+### PointerGeneratorTransformer Model
 1. **Geolife**: The baseline config (d=64, L=2, ff=128) is optimal - larger models overfit on this small dataset
 2. **DIY**: The baseline config (d=128, L=3, ff=256) is optimal - larger models don't improve
 3. More layers consistently lead to overfitting on both datasets

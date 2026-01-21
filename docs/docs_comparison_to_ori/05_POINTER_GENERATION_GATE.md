@@ -294,7 +294,7 @@ The proposed model uses a simpler but more expressive MLP:
 ### Proposed Code
 
 ```python
-# File: pointer_v45.py, lines 140-146
+# File: pgt.py, lines 140-146
 
 def __init__(self, ...):
     # ...
@@ -307,7 +307,7 @@ def __init__(self, ...):
         nn.Sigmoid()                        # Output in [0, 1]
     )
 
-# File: pointer_v45.py, lines 245-248
+# File: pgt.py, lines 245-248
 
 def forward(self, x, x_dict):
     # ... pointer and generation distributions ...
@@ -421,9 +421,9 @@ def _calc_final_dist(self, vocab_dists, attn_dists):
 # PROPOSED: Gate Calculation (PyTorch)
 # ==============================================================================
 
-# File: pointer_v45.py
+# File: pgt.py
 
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     def __init__(self, ...):
         # ...
         

@@ -141,7 +141,7 @@ python train_ablation.py --ablation no_generation_no_gate
 
 ### 12.3.1 Architecture Specifics
 
-**Limitation**: Ablations are for PointerNetworkV45 specifically.
+**Limitation**: Ablations are for PointerGeneratorTransformer specifically.
 
 **Implication**: Findings may not apply to:
 - Different pointer-generator architectures
@@ -317,7 +317,7 @@ def robust_ablation_study():
 
 ### What We Can Confidently Claim
 
-1. **Pointer mechanism is essential** for PointerNetworkV45 on location prediction
+1. **Pointer mechanism is essential** for PointerGeneratorTransformer on location prediction
 2. **Component importance varies** across datasets
 3. **Ablation study methodology works** for understanding models
 

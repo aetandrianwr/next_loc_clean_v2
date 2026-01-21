@@ -1,10 +1,10 @@
-# Pointer V45 Model Configuration for GeoLife Dataset
+# Pointer Generator Transformer Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20
 # 
 # Expected performance: Acc@1 ~54.00% on test set
 #
 # Usage:
-#   python src/training/train_pointer_v45.py --config config/models/config_pointer_v45_geolife.yaml
+#   python src/training/train_pgt.py --config config/models/config_pgt_geolife.yaml
 
 seed: 42
 

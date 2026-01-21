@@ -13,7 +13,7 @@
 
 ## Overview
 
-This document provides a comprehensive side-by-side comparison of all default configuration values between the Original Pointer-Generator (TensorFlow) and the Proposed PointerNetworkV45 (PyTorch).
+This document provides a comprehensive side-by-side comparison of all default configuration values between the Original Pointer-Generator (TensorFlow) and the Proposed PointerGeneratorTransformer (PyTorch).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -405,11 +405,11 @@ ORIGINAL_DEFAULTS = {
 ### Proposed: YAML Configuration File
 
 ```yaml
-# File: config/models/config_pointer_v45_geolife.yaml
+# File: config/models/config_pgt_geolife.yaml
 
 # Model Architecture
 model:
-  name: "PointerNetworkV45"
+  name: "PointerGeneratorTransformer"
   
   # Dimensions
   d_model: 64

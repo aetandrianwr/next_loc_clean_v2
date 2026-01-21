@@ -1,10 +1,10 @@
-# Attention Visualization Experiment for PointerNetworkV45
+# Attention Visualization Experiment for PointerGeneratorTransformer
 
 ## PhD Thesis - Nature Journal Standard Experiment Documentation
 
 **Author:** PhD Research Project  
 **Date:** January 2, 2026  
-**Model:** PointerNetworkV45 (Position-Aware Pointer Network)  
+**Model:** PointerGeneratorTransformer (Position-Aware Pointer Network)  
 **Datasets:** DIY Check-in Dataset, GeoLife GPS Trajectory Dataset
 
 ---
@@ -28,7 +28,7 @@
 
 ## Executive Summary
 
-This experiment provides a comprehensive visualization and analysis of the attention mechanisms in the PointerNetworkV45 model for next location prediction. The analysis follows Nature Journal standards for scientific rigor and reproducibility.
+This experiment provides a comprehensive visualization and analysis of the attention mechanisms in the PointerGeneratorTransformer model for next location prediction. The analysis follows Nature Journal standards for scientific rigor and reproducibility.
 
 ### Key Findings
 
@@ -116,9 +116,9 @@ This experiment provides a comprehensive visualization and analysis of the atten
 
 ## Model Architecture Analysis
 
-### PointerNetworkV45 Architecture
+### PointerGeneratorTransformer Architecture
 
-The PointerNetworkV45 model implements a hybrid pointer-generation architecture specifically designed for next location prediction:
+The PointerGeneratorTransformer model implements a hybrid pointer-generation architecture specifically designed for next location prediction:
 
 ```
 Input: Location Sequence [seq_len, batch_size]

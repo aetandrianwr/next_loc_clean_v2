@@ -1,6 +1,6 @@
 # Hyperparameter Tuning Config: pointer_v45_diy_trial03
-# Model: pointer_v45, Dataset: diy, Trial: 3
-# Hyperparameters: {'d_model': 128, 'nhead': 8, 'num_layers': 4, 'dim_feedforward': 128, 'dropout': 0.25, 'learning_rate': 0.001, 'weight_decay': 0.0005, 'batch_size': 64, 'label_smoothing': 0.01, 'warmup_epochs': 7, 'trial_idx': 3, 'model_name': 'pointer_v45', 'dataset': 'diy'}
+# Model: pgt, Dataset: diy, Trial: 3
+# Hyperparameters: {'d_model': 128, 'nhead': 8, 'num_layers': 4, 'dim_feedforward': 128, 'dropout': 0.25, 'learning_rate': 0.001, 'weight_decay': 0.0005, 'batch_size': 64, 'label_smoothing': 0.01, 'warmup_epochs': 7, 'trial_idx': 3, 'model_name': 'pgt', 'dataset': 'diy'}
 
 seed: 42
 data:

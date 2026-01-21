@@ -2,7 +2,7 @@
 Dataset Characteristics Analysis Script
 
 This script analyzes the fundamental characteristics of Geolife and DIY datasets
-to understand why the improvement from MHSA to Pointer V45 differs between datasets.
+to understand why the improvement from MHSA to Pointer Generator Transformer differs between datasets.
 
 Output: Generates tables and statistics about dataset properties.
 """

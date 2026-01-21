@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive Ablation Study Runner for Pointer Network V45.
+Comprehensive Ablation Study Runner for Pointer Generator Transformer.
 
 This script orchestrates a complete ablation study following Nature Journal standards.
 It runs multiple ablation experiments in parallel (3 at a time) to evaluate the
@@ -66,12 +66,12 @@ ABLATION_EXPERIMENTS = [
 # Dataset configurations
 DATASET_CONFIGS = {
     'geolife': {
-        'config_path': 'config/models/config_pointer_v45_geolife.yaml',
+        'config_path': 'config/models/config_pgt_geolife.yaml',
         'expected_acc1': 53.96,
         'description': 'GeoLife GPS Trajectory Dataset',
     },
     'diy': {
-        'config_path': 'config/models/config_pointer_v45_diy.yaml',
+        'config_path': 'config/models/config_pgt_diy.yaml',
         'expected_acc1': 56.88,
         'description': 'DIY Location Check-in Dataset',
     },
@@ -79,7 +79,7 @@ DATASET_CONFIGS = {
 
 # Ablation descriptions for documentation
 ABLATION_DESCRIPTIONS = {
-    'full_model': 'Complete Pointer V45 model with all components enabled',
+    'full_model': 'Complete Pointer Generator Transformer model with all components enabled',
     'no_user_emb': 'Model without user embedding (removes personalization)',
     'no_time_emb': 'Model without time-of-day embedding (removes circadian patterns)',
     'no_weekday_emb': 'Model without weekday embedding (removes weekly patterns)',
@@ -290,7 +290,7 @@ def generate_summary_report(geolife_results: Dict, diy_results: Dict, output_dir
     report_lines = []
     report_lines.append("=" * 120)
     report_lines.append("COMPREHENSIVE ABLATION STUDY REPORT")
-    report_lines.append("Pointer Network V45 for Next Location Prediction")
+    report_lines.append("Pointer Generator Transformer for Next Location Prediction")
     report_lines.append(f"Generated: {get_timestamp()}")
     report_lines.append("=" * 120)
     report_lines.append("")
@@ -495,7 +495,7 @@ def run_ablation_study(dataset: str = 'all', conda_env: str = 'mlenv'):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run comprehensive ablation study for Pointer V45 model"
+        description="Run comprehensive ablation study for Pointer Generator Transformer model"
     )
     parser.add_argument(
         "--dataset", 

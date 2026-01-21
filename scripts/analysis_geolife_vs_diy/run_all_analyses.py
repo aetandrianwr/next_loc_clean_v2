@@ -39,7 +39,7 @@ def main():
     print("=" * 70)
     print("""
 Research Question:
-Why does PointerV45 show a larger improvement over MHSA on Geolife (+20.78%)
+Why does PGT show a larger improvement over MHSA on Geolife (+20.78%)
 compared to DIY (+3.71%)?
 
 Analysis Approach:

@@ -113,9 +113,9 @@ def theoretical_ceiling_analysis(test, mhsa_acc, pointer_acc, name):
         "Not in History (%)": not_in_hist_pct,
         "Theoretical Max (%)": theoretical_max,
         "MHSA Actual (%)": mhsa_acc,
-        "Pointer V45 Actual (%)": pointer_acc,
+        "Pointer Generator Transformer Actual (%)": pointer_acc,
         "MHSA % of Theoretical": mhsa_acc / theoretical_max * 100,
-        "Pointer V45 % of Theoretical": pointer_acc / theoretical_max * 100,
+        "Pointer Generator Transformer % of Theoretical": pointer_acc / theoretical_max * 100,
         "Improvement Gap (pp)": pointer_acc - mhsa_acc,
         "Room Left (pp)": theoretical_max - pointer_acc,
     }
@@ -211,13 +211,13 @@ THEORETICAL CEILING ANALYSIS:
 
 Geolife:
   - MHSA captures only {geo_ceil['MHSA % of Theoretical']:.1f}% of theoretical potential
-  - Pointer V45 captures {geo_ceil['Pointer V45 % of Theoretical']:.1f}% of theoretical potential
+  - Pointer Generator Transformer captures {geo_ceil['Pointer Generator Transformer % of Theoretical']:.1f}% of theoretical potential
   - Improvement: +{geo_ceil['Improvement Gap (pp)']:.2f} percentage points
   - Room left: {geo_ceil['Room Left (pp)']:.2f} percentage points
 
 DIY:
   - MHSA already captures {diy_ceil['MHSA % of Theoretical']:.1f}% of theoretical potential
-  - Pointer V45 captures {diy_ceil['Pointer V45 % of Theoretical']:.1f}% of theoretical potential  
+  - Pointer Generator Transformer captures {diy_ceil['Pointer Generator Transformer % of Theoretical']:.1f}% of theoretical potential  
   - Improvement: +{diy_ceil['Improvement Gap (pp)']:.2f} percentage points
   - Room left: {diy_ceil['Room Left (pp)']:.2f} percentage points
 

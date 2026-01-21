@@ -1,7 +1,7 @@
 """
-Ablation Study Training Script for Pointer Network V45.
+Ablation Study Training Script for Pointer Generator Transformer.
 
-This script trains the PointerNetworkV45 model with specific component ablations
+This script trains the PointerGeneratorTransformer model with specific component ablations
 to evaluate the contribution of each component to overall model performance.
 
 Usage:
@@ -50,7 +50,7 @@ from tqdm import tqdm
 # Add parent directories to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from scripts.ablation_study.pointer_v45_ablation import PointerNetworkV45Ablation
+from scripts.ablation_study.pgt_ablation import PointerGeneratorTransformerAblation
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -63,7 +63,7 @@ from src.evaluation.metrics import (
 
 ABLATION_CONFIGS = {
     'full_model': {
-        'description': 'Full Pointer V45 Model',
+        'description': 'Full Pointer Generator Transformer Model',
         'config': {}  # All components enabled
     },
     'no_user_emb': {
@@ -606,7 +606,7 @@ def save_results(experiment_dir: str, config: Dict, val_perf: Dict, test_perf: D
 # =============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="Train Pointer V45 with ablation")
+    parser = argparse.ArgumentParser(description="Train Pointer Generator Transformer with ablation")
     parser.add_argument("--config", type=str, required=True, help="Path to config YAML file")
     parser.add_argument("--ablation", type=str, required=True, 
                         choices=list(ABLATION_CONFIGS.keys()),
@@ -659,7 +659,7 @@ def main():
     
     # Create model with ablation
     model_cfg = config['model']
-    model = PointerNetworkV45Ablation(
+    model = PointerGeneratorTransformerAblation(
         num_locations=info['num_locations'],
         num_users=info['num_users'],
         d_model=model_cfg.get('d_model', 128),
@@ -671,7 +671,7 @@ def main():
         ablation_config=ablation_config,
     )
     
-    print(f"\nModel: PointerNetworkV45 with Ablation")
+    print(f"\nModel: PointerGeneratorTransformer with Ablation")
     print(f"  Ablation: {model.get_ablation_summary()}")
     print(f"  Parameters: {model.count_parameters():,}")
     

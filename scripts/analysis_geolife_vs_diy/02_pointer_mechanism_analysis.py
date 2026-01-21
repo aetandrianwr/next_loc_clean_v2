@@ -1,7 +1,7 @@
 """
 Pointer Mechanism Effectiveness Analysis
 
-This script analyzes why the Pointer mechanism in PointerV45 is more effective 
+This script analyzes why the Pointer mechanism in PGT is more effective 
 on Geolife than DIY by examining:
 1. Copy vs Generate behavior
 2. Target location position patterns

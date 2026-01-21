@@ -1,4 +1,4 @@
-# Code Walkthrough: Proposed Model (PointerNetworkV45)
+# Code Walkthrough: Proposed Model (PointerGeneratorTransformer)
 
 ## Table of Contents
 1. [File Overview](#file-overview)
@@ -17,9 +17,9 @@
 ## File Overview
 
 ```
-File: /workspace/next_loc_clean_v2/src/models/proposed/pointer_v45.py
+File: /workspace/next_loc_clean_v2/src/models/proposed/pgt.py
 Total Lines: ~254
-Main Class: PointerNetworkV45
+Main Class: PointerGeneratorTransformer
 
 Purpose: Implements a pointer network with Transformer encoder for 
          next location prediction in mobility trajectories.
@@ -56,9 +56,9 @@ from typing import Dict, Optional, Tuple  # Type hints
 ### Lines 12-55: Constructor
 
 ```python
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     """
-    Pointer Network V45: A hybrid pointer-generator model for next location prediction.
+    Pointer Generator Transformer: A hybrid pointer-generator model for next location prediction.
     
     Key Features:
     - Multi-modal embeddings (location, user, time, weekday, duration, recency)
@@ -741,7 +741,7 @@ class PointerNetworkV45(nn.Module):
 
 ```python
 """
-Pointer Network V45: Next Location Prediction Model
+Pointer Generator Transformer: Next Location Prediction Model
 ====================================================
 
 This model combines:
@@ -766,7 +766,7 @@ import math
 from typing import Dict, Optional, Tuple
 
 
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     """Pointer Network for next location prediction."""
     
     def __init__(

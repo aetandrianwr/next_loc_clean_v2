@@ -200,8 +200,8 @@ The documentation also references an adapted implementation for next location pr
 
 | File | Description |
 |------|-------------|
-| `pointer_v45.py` | PyTorch implementation for location prediction |
-| `train_pointer_v45.py` | Training script for adapted model |
+| `pgt.py` | PyTorch implementation for location prediction |
+| `train_pgt.py` | Training script for adapted model |
 
 Key adaptations:
 - Transformer encoder (instead of LSTM)

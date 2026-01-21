@@ -68,8 +68,8 @@ class SummarizationModel(object):
 # ┌─────────────────────────────────────────────────────────────────────────┐
 # │  COMPARISON TO PROPOSED:                                                │
 # │                                                                         │
-# │  Proposed (pointer_v45.py):                                            │
-# │    class PointerNetworkV45(nn.Module):                                 │
+# │  Proposed (pgt.py):                                            │
+# │    class PointerGeneratorTransformer(nn.Module):                                 │
 # │        def __init__(self, num_locations, num_users, d_model=64, ...): │
 # │            super().__init__()                                          │
 # │                                                                         │

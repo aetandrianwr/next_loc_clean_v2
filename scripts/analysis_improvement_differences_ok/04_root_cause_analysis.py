@@ -2,7 +2,7 @@
 Root Cause Analysis: Why Different Improvements?
 
 This script brings together all analyses to provide a comprehensive
-explanation of why Pointer V45 shows +20.78pp improvement on Geolife
+explanation of why Pointer Generator Transformer shows +20.78pp improvement on Geolife
 but only +3.71pp on DIY.
 
 Key factors analyzed:
@@ -227,7 +227,7 @@ def comprehensive_comparison(data):
     
     metrics.append({
         "Category": "Model Performance",
-        "Metric": "Pointer V45 Acc@1 (%)",
+        "Metric": "Pointer Generator Transformer Acc@1 (%)",
         "Geolife": GEOLIFE_POINTER_ACC,
         "DIY": DIY_POINTER_ACC,
         "Ratio (DIY/Geo)": round(DIY_POINTER_ACC / GEOLIFE_POINTER_ACC, 2),
@@ -293,7 +293,7 @@ def main():
     summary = {
         "Metric": [
             "MHSA Acc@1",
-            "Pointer V45 Acc@1", 
+            "Pointer Generator Transformer Acc@1", 
             "Improvement",
             "Theoretical Max",
             "MHSA % of Theoretical",
@@ -360,7 +360,7 @@ def main():
 │  This means MHSA captures 57.4% of theoretical potential on DIY,            │
 │  but only 37.2% on Geolife.                                                 │
 │                                                                              │
-│  Pointer V45 brings both to ~60-61% of theoretical potential,               │
+│  Pointer Generator Transformer brings both to ~60-61% of theoretical potential,               │
 │  but starting from different baselines results in different gains.          │
 │                                                                              │
 ├─────────────────────────────────────────────────────────────────────────────┤

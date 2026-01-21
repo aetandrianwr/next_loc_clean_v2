@@ -43,7 +43,7 @@ We evaluate 9 model configurations, systematically testing each major component:
 ## 5.2 Variant 1: Full Model (Baseline)
 
 ### Description
-The complete PointerNetworkV45 model with all components enabled. This serves as the reference point for all comparisons.
+The complete PointerGeneratorTransformer model with all components enabled. This serves as the reference point for all comparisons.
 
 ### Configuration
 ```python
@@ -459,7 +459,7 @@ Minimal drop if:
 ### Component Enabling Logic
 
 ```python
-class PointerNetworkV45Ablation(nn.Module):
+class PointerGeneratorTransformerAblation(nn.Module):
     def __init__(self, ..., ablation_type='full'):
         # Feature flags based on ablation type
         self.use_user = ablation_type != 'no_user'

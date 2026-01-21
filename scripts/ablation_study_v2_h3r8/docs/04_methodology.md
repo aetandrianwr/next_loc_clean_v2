@@ -15,7 +15,7 @@ This ablation study follows the rigorous scientific method:
 │                     SCIENTIFIC METHOD                                │
 │                                                                      │
 │   1. OBSERVATION                                                     │
-│      PointerNetworkV45 achieves good performance                     │
+│      PointerGeneratorTransformer achieves good performance                     │
 │                           ↓                                          │
 │   2. QUESTION                                                        │
 │      Which components contribute to this performance?                │

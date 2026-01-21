@@ -1,12 +1,12 @@
 # 3. Model Architecture
 
-## Deep Dive into PointerNetworkV45
+## Deep Dive into PointerGeneratorTransformer
 
 ---
 
 ## 3.1 Overview
 
-PointerNetworkV45 is a hybrid neural network architecture designed for next location prediction. It combines:
+PointerGeneratorTransformer is a hybrid neural network architecture designed for next location prediction. It combines:
 
 1. **Transformer Encoder**: For sequence modeling
 2. **Pointer Mechanism**: For copying from historical locations
@@ -17,7 +17,7 @@ PointerNetworkV45 is a hybrid neural network architecture designed for next loca
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                           PointerNetworkV45                                   │
+│                           PointerGeneratorTransformer                                   │
 │                                                                               │
 │  ┌─────────────────────────────────────────────────────────────────────────┐ │
 │  │                         INPUT LAYER                                      │ │

@@ -342,7 +342,7 @@ The proposed encoder uses a **Transformer Encoder** with self-attention:
 ### Proposed Code Implementation
 
 ```python
-# File: pointer_v45.py, lines 117-130
+# File: pgt.py, lines 117-130
 def __init__(self, ...):
     # ... embeddings ...
     
@@ -361,7 +361,7 @@ def __init__(self, ...):
     )
     self.transformer = nn.TransformerEncoder(encoder_layer, num_layers)
 
-# File: pointer_v45.py, lines 150-170
+# File: pgt.py, lines 150-170
 def _create_pos_encoding(self, max_len: int, d_model: int) -> torch.Tensor:
     """Create sinusoidal positional encoding."""
     pe = torch.zeros(max_len, d_model)
@@ -371,7 +371,7 @@ def _create_pos_encoding(self, max_len: int, d_model: int) -> torch.Tensor:
     pe[:, 1::2] = torch.cos(position * div_term)
     return pe.unsqueeze(0)  # [1, max_len, d_model]
 
-# File: pointer_v45.py, lines 219-223 (forward pass)
+# File: pgt.py, lines 219-223 (forward pass)
 def forward(self, x, x_dict):
     # ... feature fusion ...
     
@@ -494,7 +494,7 @@ class SummarizationModel(object):
 # PROPOSED: Transformer Encoder (PyTorch)
 # ==============================================================================
 
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     def __init__(self, ...):
         # ...
         

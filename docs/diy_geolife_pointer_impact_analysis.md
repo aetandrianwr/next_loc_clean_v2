@@ -12,7 +12,7 @@
 
 ## Abstract
 
-This comprehensive scientific investigation explores the differential impact of the pointer (copy) mechanism in the PointerNetworkV45 model for next location prediction. Through ablation studies, the pointer mechanism was found to cause a 46.7% relative performance drop on GeoLife but only 8.3% on DIY dataset. This study employs rigorous descriptive analytics, diagnostic analytics, and model-based experiments to identify the root cause of this discrepancy.
+This comprehensive scientific investigation explores the differential impact of the pointer (copy) mechanism in the PointerGeneratorTransformer model for next location prediction. Through ablation studies, the pointer mechanism was found to cause a 46.7% relative performance drop on GeoLife but only 8.3% on DIY dataset. This study employs rigorous descriptive analytics, diagnostic analytics, and model-based experiments to identify the root cause of this discrepancy.
 
 **Key Finding:** The differential impact is not due to the pointer mechanism being more applicable or effective on GeoLife. Rather, it stems from the relative strength of the alternative generation head. GeoLife's smaller vocabulary (315 vs 1,713 unique targets) enables its generation head to achieve 12.19% accuracy versus DIY's 5.64%, making the GeoLife model less pointer-dependent and thus more affected when the pointer is removed.
 
@@ -37,7 +37,7 @@ This comprehensive scientific investigation explores the differential impact of 
 
 ### 1.1 Background
 
-The PointerNetworkV45 model combines two prediction mechanisms:
+The PointerGeneratorTransformer model combines two prediction mechanisms:
 1. **Pointer Mechanism**: Copies locations from the input sequence history
 2. **Generation Head**: Predicts over the full location vocabulary
 

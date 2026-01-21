@@ -1,6 +1,6 @@
 # Hyperparameter Tuning Config: pointer_v45_geolife_trial16
-# Model: pointer_v45, Dataset: geolife, Trial: 16
-# Hyperparameters: {'d_model': 96, 'nhead': 4, 'num_layers': 2, 'dim_feedforward': 128, 'dropout': 0.2, 'learning_rate': 0.001, 'weight_decay': 0.015, 'batch_size': 128, 'label_smoothing': 0.0, 'warmup_epochs': 7, 'trial_idx': 16, 'model_name': 'pointer_v45', 'dataset': 'geolife'}
+# Model: pgt, Dataset: geolife, Trial: 16
+# Hyperparameters: {'d_model': 96, 'nhead': 4, 'num_layers': 2, 'dim_feedforward': 128, 'dropout': 0.2, 'learning_rate': 0.001, 'weight_decay': 0.015, 'batch_size': 128, 'label_smoothing': 0.0, 'warmup_epochs': 7, 'trial_idx': 16, 'model_name': 'pgt', 'dataset': 'geolife'}
 
 seed: 42
 data:

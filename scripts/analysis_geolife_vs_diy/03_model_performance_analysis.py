@@ -1,7 +1,7 @@
 """
 Model Performance Deep Dive Analysis
 
-This script analyzes model performance differences between MHSA and PointerV45
+This script analyzes model performance differences between MHSA and PGT
 on both datasets to understand the improvement gap.
 
 Analysis includes:
@@ -296,7 +296,7 @@ def create_comprehensive_comparison():
     comparison = {
         'Factor': [
             'MHSA Baseline Accuracy',
-            'PointerV45 Accuracy',
+            'PGT Accuracy',
             'Actual Improvement',
             '---',
             'Target in History Ratio',
@@ -361,7 +361,7 @@ def create_comprehensive_comparison():
     
     # 1. Accuracy comparison
     ax1 = axes[0, 0]
-    models = ['MHSA', 'PointerV45']
+    models = ['MHSA', 'PGT']
     geo_accs = [33.18, 53.96]
     diy_accs = [53.17, 56.88]
     

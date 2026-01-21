@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Comprehensive Ablation Study Runner for Pointer Network V45.
+Comprehensive Ablation Study Runner for Pointer Generator Transformer.
 
 This script orchestrates a full ablation study following Nature Journal standards
 for scientific rigor and reproducibility. It runs multiple ablation experiments
 in parallel to systematically evaluate the contribution of each model component.
 
 Ablation Variants:
-1. Full Model (baseline) - Complete PointerNetworkV45
+1. Full Model (baseline) - Complete PointerGeneratorTransformer
 2. No Pointer Mechanism - Removes copy mechanism, only generation
 3. No Generation Head - Removes vocabulary prediction, only copying
 4. No Position Bias - Removes position bias in pointer attention
@@ -64,11 +64,11 @@ ABLATION_TYPES = [
 # Dataset configurations
 DATASET_CONFIGS = {
     'geolife': {
-        'config_path': 'config/models/config_pointer_v45_geolife_h3r8.yaml',
+        'config_path': 'config/models/config_pgt_geolife_h3r8.yaml',
         'expected_acc1': 42.59,  # Expected Acc@1 for validation
     },
     'diy': {
-        'config_path': 'config/models/config_pointer_v45_diy_h3r8.yaml',
+        'config_path': 'config/models/config_pgt_diy_h3r8.yaml',
         'expected_acc1': 44.41,  # Expected Acc@1 for validation
     },
 }
@@ -209,7 +209,7 @@ def generate_summary_report(all_results, output_dir):
     report = []
     report.append("=" * 80)
     report.append("ABLATION STUDY SUMMARY REPORT")
-    report.append("Pointer Network V45 - Next Location Prediction")
+    report.append("Pointer Generator Transformer - Next Location Prediction")
     report.append("=" * 80)
     report.append("")
     
@@ -395,7 +395,7 @@ def run_ablation_study(datasets=None, output_base_dir=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run comprehensive ablation study for Pointer V45")
+    parser = argparse.ArgumentParser(description="Run comprehensive ablation study for Pointer Generator Transformer")
     parser.add_argument("--dataset", type=str, choices=['geolife', 'diy', 'all'], default='all',
                        help="Dataset to run ablation on")
     parser.add_argument("--output_dir", type=str, default=None,

@@ -226,7 +226,7 @@ def _add_train_op(self):
 ### Proposed Code
 
 ```python
-# File: train_pointer_v45.py, lines 410-450
+# File: train_pgt.py, lines 410-450
 
 def train_epoch(self) -> float:
     """Train for one epoch."""
@@ -271,7 +271,7 @@ def train_epoch(self) -> float:
     
     return total_loss / num_batches
 
-# File: train_pointer_v45.py, lines 511-547
+# File: train_pgt.py, lines 511-547
 
 def train(self) -> Dict:
     """Full training loop."""
@@ -472,7 +472,7 @@ def train(self) -> Dict:
 # Adagrad handles this internally
 
 # PROPOSED: Manual warmup + cosine scheduling
-# File: train_pointer_v45.py, lines 372-378
+# File: train_pgt.py, lines 372-378
 
 def _get_lr(self, epoch: int) -> float:
     """Get learning rate with warmup and cosine decay."""
@@ -527,7 +527,7 @@ if hps.coverage:
 ### Proposed Loss
 
 ```python
-# File: train_pointer_v45.py, lines 334-337
+# File: train_pgt.py, lines 334-337
 
 # Cross-entropy with label smoothing
 self.criterion = nn.CrossEntropyLoss(
@@ -535,7 +535,7 @@ self.criterion = nn.CrossEntropyLoss(
     label_smoothing=0.03,        # Smooth labels for regularization
 )
 
-# During forward pass (pointer_v45.py, line 249)
+# During forward pass (pgt.py, line 249)
 # Model outputs log probabilities
 return torch.log(final_probs + 1e-10)
 
@@ -636,7 +636,7 @@ sv = tf.train.Supervisor(
 )
 
 # PROPOSED (Manual PyTorch)
-# File: train_pointer_v45.py, lines 572-598
+# File: train_pgt.py, lines 572-598
 
 def _save_checkpoint(self, filename: str):
     """Save model checkpoint."""

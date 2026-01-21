@@ -6,7 +6,7 @@
 
 ## 10.1 Executive Summary
 
-This comprehensive ablation study of PointerNetworkV45 for next location prediction has systematically evaluated the contribution of each architectural component across two datasets (GeoLife and DIY). Our findings reveal:
+This comprehensive ablation study of PointerGeneratorTransformer for next location prediction has systematically evaluated the contribution of each architectural component across two datasets (GeoLife and DIY). Our findings reveal:
 
 ### Primary Conclusion
 **The pointer mechanism is the foundational innovation** of the architecture, contributing 46.7% relative improvement on GeoLife and 8.3% on DIY. Without it, the model loses its primary advantage for predicting repetitive human mobility patterns.
@@ -184,7 +184,7 @@ The ablation reveals characteristics of human mobility:
 
 ### What We Learned
 
-The PointerNetworkV45 ablation study demonstrates that **architecture complexity does not always translate to performance**. The most sophisticated components (deep transformer, generation head, adaptive gate) contribute less than the conceptually simpler pointer mechanism.
+The PointerGeneratorTransformer ablation study demonstrates that **architecture complexity does not always translate to performance**. The most sophisticated components (deep transformer, generation head, adaptive gate) contribute less than the conceptually simpler pointer mechanism.
 
 ### What This Means
 

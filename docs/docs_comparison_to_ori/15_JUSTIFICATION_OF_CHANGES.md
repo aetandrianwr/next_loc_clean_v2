@@ -16,7 +16,7 @@
 
 ## Overview
 
-This document provides detailed justification for each significant design change from the original Pointer-Generator Network to the proposed PointerNetworkV45.
+This document provides detailed justification for each significant design change from the original Pointer-Generator Network to the proposed PointerGeneratorTransformer.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐

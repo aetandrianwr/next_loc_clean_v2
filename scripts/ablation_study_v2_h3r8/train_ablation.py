@@ -1,7 +1,7 @@
 """
-Training script for Ablation Study of Pointer Network V45.
+Training script for Ablation Study of Pointer Generator Transformer.
 
-This script trains ablation variants of the PointerNetworkV45 model
+This script trains ablation variants of the PointerGeneratorTransformer model
 for systematic component analysis.
 
 Usage:
@@ -45,7 +45,7 @@ from tqdm import tqdm
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
-from pointer_v45_ablation import PointerNetworkV45Ablation
+from pgt_ablation import PointerGeneratorTransformerAblation
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -503,7 +503,7 @@ def run_ablation_experiment(config_path: str, ablation_type: str, output_dir: st
     
     # Create model
     model_cfg = config['model']
-    model = PointerNetworkV45Ablation(
+    model = PointerGeneratorTransformerAblation(
         num_locations=info['num_locations'],
         num_users=info['num_users'],
         d_model=model_cfg.get('d_model', 128),
@@ -558,10 +558,10 @@ def run_ablation_experiment(config_path: str, ablation_type: str, output_dir: st
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Train ablation variant of Pointer V45")
+    parser = argparse.ArgumentParser(description="Train ablation variant of Pointer Generator Transformer")
     parser.add_argument("--config", type=str, required=True, help="Path to config YAML file")
     parser.add_argument("--ablation", type=str, required=True, 
-                       choices=PointerNetworkV45Ablation.VALID_ABLATIONS,
+                       choices=PointerGeneratorTransformerAblation.VALID_ABLATIONS,
                        help="Ablation type")
     parser.add_argument("--output_dir", type=str, default="scripts/ablation_study_v2/results",
                        help="Output directory for results")

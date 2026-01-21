@@ -1,6 +1,6 @@
 # Ablation Study Documentation - Table of Contents
 
-## PointerNetworkV45 Ablation Study for Next Location Prediction
+## PointerGeneratorTransformer Ablation Study for Next Location Prediction
 
 **Document Version:** 2.0  
 **Date:** January 2, 2026  
@@ -19,7 +19,7 @@ This comprehensive ablation study documentation is organized into the following 
 |---|----------|-------------|------|
 | 1 | **Introduction** | Background, motivation, objectives, and scope | [01_introduction.md](01_introduction.md) |
 | 2 | **Scripts Overview** | Detailed explanation of all scripts and code | [02_scripts_overview.md](02_scripts_overview.md) |
-| 3 | **Model Architecture** | Complete PointerNetworkV45 architecture analysis | [03_model_architecture.md](03_model_architecture.md) |
+| 3 | **Model Architecture** | Complete PointerGeneratorTransformer architecture analysis | [03_model_architecture.md](03_model_architecture.md) |
 | 4 | **Methodology** | Scientific methodology and experimental design | [04_methodology.md](04_methodology.md) |
 | 5 | **Ablation Design** | Detailed explanation of each ablation variant | [05_ablation_design.md](05_ablation_design.md) |
 | 6 | **Experimental Setup** | Datasets, hyperparameters, and training protocol | [06_experimental_setup.md](06_experimental_setup.md) |
@@ -60,7 +60,7 @@ This comprehensive ablation study documentation is organized into the following 
 | DIY | 56.58% | 56.57% | ✅ Validated |
 
 ### Most Critical Finding
-**The Pointer Mechanism is the cornerstone of PointerNetworkV45**, contributing:
+**The Pointer Mechanism is the cornerstone of PointerGeneratorTransformer**, contributing:
 - **46.7% relative improvement** on GeoLife
 - **8.3% relative improvement** on DIY
 
@@ -88,7 +88,7 @@ If you use this ablation study in your research, please cite:
 
 ```bibtex
 @misc{pointer_v45_ablation_2026,
-  title={Comprehensive Ablation Study of PointerNetworkV45 for Next Location Prediction},
+  title={Comprehensive Ablation Study of PointerGeneratorTransformer for Next Location Prediction},
   author={Ablation Study Framework},
   year={2026},
   note={Random Seed: 42, Patience: 5}

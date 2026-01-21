@@ -288,7 +288,7 @@ If publishing this ablation study:
    - Ablation study methodology
 
 3. Model Architecture
-   - PointerNetworkV45 description
+   - PointerGeneratorTransformer description
    - Component functions
 
 4. Ablation Methodology

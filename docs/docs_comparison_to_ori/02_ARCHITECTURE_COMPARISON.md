@@ -42,7 +42,7 @@ The original architecture follows a classic **encoder-decoder** paradigm with at
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Proposed PointerNetworkV45 (Next Location Prediction)
+### Proposed PointerGeneratorTransformer (Next Location Prediction)
 
 The proposed architecture is an **encoder-only** model with pointer-generation output:
 
@@ -109,7 +109,7 @@ embedding = tf.get_variable('embedding', [vsize, hps.emb_dim])
 emb_enc_inputs = tf.nn.embedding_lookup(embedding, self._enc_batch)
 
 # PROPOSED: Multiple embeddings combined
-# File: pointer_v45.py, lines 194-218
+# File: pgt.py, lines 194-218
 loc_emb = self.loc_emb(x)                    # [batch, seq, d_model]
 user_emb = self.user_emb(x_dict['user'])     # [batch, d_model]
 temporal = torch.cat([
@@ -144,7 +144,7 @@ cell_bw = tf.contrib.rnn.LSTMCell(self._hps.hidden_dim)
 encoder_outputs = tf.concat(axis=2, values=encoder_outputs)  # [batch, seq, 512]
 
 # PROPOSED: Transformer Encoder
-# File: pointer_v45.py, lines 120-130
+# File: pgt.py, lines 120-130
 encoder_layer = nn.TransformerEncoderLayer(
     d_model=d_model,
     nhead=nhead,
@@ -176,7 +176,7 @@ outputs, out_state, attn_dists, p_gens, coverage = attention_decoder(
 )
 
 # PROPOSED: No decoder - single output from encoder
-# File: pointer_v45.py, lines 226-228
+# File: pgt.py, lines 226-228
 batch_idx = torch.arange(batch_size, device=device)
 last_idx = (lengths - 1).clamp(min=0)
 context = encoded[batch_idx, last_idx]  # Extract last valid position
@@ -201,7 +201,7 @@ attn_dist *= enc_padding_mask  # Apply mask
 attn_dist /= tf.reduce_sum(attn_dist)  # Re-normalize
 
 # PROPOSED: Scaled Dot-Product Attention
-# File: pointer_v45.py, lines 230-236
+# File: pgt.py, lines 230-236
 query = self.pointer_query(context).unsqueeze(1)  # [batch, 1, d_model]
 keys = self.pointer_key(encoded)                   # [batch, seq, d_model]
 ptr_scores = torch.bmm(query, keys.transpose(1, 2)).squeeze(1) / math.sqrt(self.d_model)
@@ -226,7 +226,7 @@ with tf.variable_scope('calculate_pgen'):
     p_gen = tf.sigmoid(p_gen)
 
 # PROPOSED: gate calculation
-# File: pointer_v45.py, lines 140-146
+# File: pgt.py, lines 140-146
 self.ptr_gen_gate = nn.Sequential(
     nn.Linear(d_model, d_model // 2),
     nn.GELU(),
@@ -416,7 +416,7 @@ self.ptr_gen_gate = nn.Sequential(
 └─────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Detailed Architecture: Proposed PointerNetworkV45
+### Detailed Architecture: Proposed PointerGeneratorTransformer
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
@@ -595,12 +595,12 @@ The first visit (Home at position 1) has pos_from_end = 5
 
 | Component | Original Location | Proposed Location | Key Difference |
 |-----------|-------------------|-------------------|----------------|
-| Embedding | `model.py:209-214` | `pointer_v45.py:99-109` | Single vs Multi-modal |
-| Encoder | `model.py:76-94` | `pointer_v45.py:120-130` | BiLSTM vs Transformer |
-| Attention | `attention_decoder.py:79-129` | `pointer_v45.py:230-236` | Bahdanau vs Scaled Dot |
+| Embedding | `model.py:209-214` | `pgt.py:99-109` | Single vs Multi-modal |
+| Encoder | `model.py:76-94` | `pgt.py:120-130` | BiLSTM vs Transformer |
+| Attention | `attention_decoder.py:79-129` | `pgt.py:230-236` | Bahdanau vs Scaled Dot |
 | Decoder | `model.py:124-144` | N/A | Present vs Removed |
-| Gate | `attention_decoder.py:163-168` | `pointer_v45.py:140-146` | Linear vs MLP |
-| Output | `model.py:146-183` | `pointer_v45.py:239-249` | Extended vocab vs Fixed |
+| Gate | `attention_decoder.py:163-168` | `pgt.py:140-146` | Linear vs MLP |
+| Output | `model.py:146-183` | `pgt.py:239-249` | Extended vocab vs Fixed |
 
 ---
 

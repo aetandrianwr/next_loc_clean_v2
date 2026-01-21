@@ -1,4 +1,4 @@
-# Comprehensive Ablation Study of PointerNetworkV45 for Next Location Prediction
+# Comprehensive Ablation Study of PointerGeneratorTransformer for Next Location Prediction
 
 **Document Version:** 1.0  
 **Date:** January 2, 2026  
@@ -10,7 +10,7 @@
 
 ## Abstract
 
-This document presents a comprehensive ablation study of the PointerNetworkV45 model for next location prediction, following Nature Journal standards for scientific rigor and reproducibility. Through systematic removal of individual model components, we quantify the contribution of each architectural element to the overall prediction performance. Our analysis reveals that the pointer mechanism is the most critical component, contributing up to 46.7% relative improvement on the GeoLife dataset, while certain components like the generation head may be redundant for specific datasets.
+This document presents a comprehensive ablation study of the PointerGeneratorTransformer model for next location prediction, following Nature Journal standards for scientific rigor and reproducibility. Through systematic removal of individual model components, we quantify the contribution of each architectural element to the overall prediction performance. Our analysis reveals that the pointer mechanism is the most critical component, contributing up to 46.7% relative improvement on the GeoLife dataset, while certain components like the generation head may be redundant for specific datasets.
 
 ---
 
@@ -33,7 +33,7 @@ This document presents a comprehensive ablation study of the PointerNetworkV45 m
 
 ### 1.1 Background
 
-The PointerNetworkV45 model represents a state-of-the-art approach to next location prediction, combining multiple architectural innovations including:
+The PointerGeneratorTransformer model represents a state-of-the-art approach to next location prediction, combining multiple architectural innovations including:
 
 - **Pointer Mechanism**: Copy mechanism for selecting from historical locations
 - **Generation Head**: Full vocabulary prediction capability
@@ -84,11 +84,11 @@ We employ a **systematic component removal** methodology where each ablation var
 
 ## 3. Model Architecture Overview
 
-### 3.1 PointerNetworkV45 Architecture
+### 3.1 PointerGeneratorTransformer Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   PointerNetworkV45                          │
+│                   PointerGeneratorTransformer                          │
 ├─────────────────────────────────────────────────────────────┤
 │  Input: Location Sequence [seq_len × batch_size]             │
 │                                                              │
@@ -318,7 +318,7 @@ The pointer mechanism demonstrates overwhelming importance across both datasets:
 - **GeoLife**: 46.7% relative performance drop when removed
 - **DIY**: 8.3% relative performance drop when removed
 
-This finding validates the core hypothesis of the PointerNetworkV45 architecture: users tend to revisit previously visited locations, and the copy mechanism is essential for capturing this behavior.
+This finding validates the core hypothesis of the PointerGeneratorTransformer architecture: users tend to revisit previously visited locations, and the copy mechanism is essential for capturing this behavior.
 
 **Insight**: The larger impact on GeoLife (46.7% vs 8.3%) suggests that GeoLife users exhibit more repetitive mobility patterns compared to DIY users.
 
@@ -373,7 +373,7 @@ The adaptive gate shows moderate importance:
 
 ### 8.1 Essential Components
 
-Based on our ablation analysis, the following components are **essential** for PointerNetworkV45:
+Based on our ablation analysis, the following components are **essential** for PointerGeneratorTransformer:
 
 1. **Pointer Mechanism** (Critical)
    - Most important component by far
@@ -423,7 +423,7 @@ The ablation study reveals important dataset-dependent behaviors:
 
 ### 9.1 Summary
 
-This comprehensive ablation study of PointerNetworkV45 reveals:
+This comprehensive ablation study of PointerGeneratorTransformer reveals:
 
 1. **The pointer mechanism is the cornerstone** of the model's effectiveness, contributing up to 46.7% relative improvement on specific datasets.
 
@@ -549,7 +549,7 @@ w/o Pointer Mechanism & 51.90 & 75.59 & 78.27 & 62.21 & 66.05 & -4.67 \\
 
 ```
 scripts/ablation_study_v2/
-├── pointer_v45_ablation.py     # Ablation model variants
+├── pgt_ablation.py     # Ablation model variants
 ├── train_ablation.py           # Training script
 ├── run_ablation_study.py       # Main runner (parallel execution)
 ├── collect_results.py          # Results collection and analysis

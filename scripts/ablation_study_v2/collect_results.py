@@ -252,7 +252,7 @@ def main():
     report = []
     report.append("=" * 80)
     report.append("COMPREHENSIVE ABLATION STUDY REPORT")
-    report.append("Pointer Network V45 - Next Location Prediction")
+    report.append("Pointer Generator Transformer - Next Location Prediction")
     report.append("=" * 80)
     report.append(f"\nGenerated: {timestamp} (GMT+7)")
     report.append("Random Seed: 42")

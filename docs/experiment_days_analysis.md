@@ -44,7 +44,7 @@ Location prediction models inherently learn from historical patterns. When human
 - **DIY Dataset**: Urban mobility data with 12,368 test samples across 693 users and 7,038 unique locations
 - **Geolife Dataset**: GPS trajectory data with 3,502 test samples across 46 users and 1,187 unique locations
 
-**Model:** PointerNetworkV45 (Pre-trained on prev7 historical context)
+**Model:** PointerGeneratorTransformer (Pre-trained on prev7 historical context)
 - DIY model: 1,081,554 parameters
 - Geolife model: 443,404 parameters
 
@@ -294,5 +294,5 @@ If using this experiment in academic work, please cite the model architecture an
 ---
 
 *Experiment conducted: January 2, 2026*
-*Model: PointerNetworkV45*
+*Model: PointerGeneratorTransformer*
 *Random Seed: 42*

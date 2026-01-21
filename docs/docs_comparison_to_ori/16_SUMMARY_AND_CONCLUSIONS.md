@@ -20,7 +20,7 @@
 │                    EXECUTIVE SUMMARY                                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
-│  This documentation comprehensively compares the Proposed PointerNetworkV45 │
+│  This documentation comprehensively compares the Proposed PointerGeneratorTransformer │
 │  with the Original Pointer-Generator Network for text summarization.        │
 │                                                                              │
 │  ═══════════════════════════════════════════════════════════════════════   │
@@ -33,7 +33,7 @@
 │  • Parameters: ~47 million                                                  │
 │  • Key Innovation: Copy mechanism for OOV words                             │
 │                                                                              │
-│  PROPOSED MODEL (PointerNetworkV45)                                         │
+│  PROPOSED MODEL (PointerGeneratorTransformer)                                         │
 │  ───────────────────────────────────                                        │
 │  • Framework: PyTorch                                                       │
 │  • Task: Next Location Prediction (trajectory → location)                   │
@@ -457,7 +457,7 @@
 | 08 | [Data](08_DATA_PROCESSING.md) | Data pipeline | Batcher vs DataLoader, preprocessing |
 | 09 | [Loss/Metrics](09_LOSS_AND_METRICS.md) | Loss and evaluation | NLL vs CrossEntropy, ROUGE vs Acc@K |
 | 10 | [Config](10_DEFAULT_CONFIGURATION.md) | Default values | Side-by-side hyperparameter table |
-| 11 | [Proposed Code](11_CODE_WALKTHROUGH_PROPOSED.md) | Code analysis | Line-by-line pointer_v45.py |
+| 11 | [Proposed Code](11_CODE_WALKTHROUGH_PROPOSED.md) | Code analysis | Line-by-line pgt.py |
 | 12 | [Original Code](12_CODE_WALKTHROUGH_ORIGINAL.md) | Code analysis | Line-by-line model.py, attention_decoder.py |
 | 13 | [Math](13_MATHEMATICAL_FORMULATION.md) | Formulas | All equations in LaTeX style |
 | 14 | [Example](14_EXAMPLE_WALKTHROUGH.md) | Worked example | Alice's day trip with numbers |
@@ -551,7 +551,7 @@
 
 ## Conclusion
 
-This comprehensive documentation provides everything needed to understand the comparison between the Original Pointer-Generator Network and the Proposed PointerNetworkV45. The key contribution is demonstrating how a proven mechanism (pointer/copy) can be effectively adapted across domains while modernizing the architecture for improved efficiency and task appropriateness.
+This comprehensive documentation provides everything needed to understand the comparison between the Original Pointer-Generator Network and the Proposed PointerGeneratorTransformer. The key contribution is demonstrating how a proven mechanism (pointer/copy) can be effectively adapted across domains while modernizing the architecture for improved efficiency and task appropriateness.
 
 The documentation is suitable for:
 - **PhD thesis reference**: Complete mathematical formulations, code analysis, and justifications

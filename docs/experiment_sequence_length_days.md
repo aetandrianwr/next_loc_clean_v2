@@ -78,7 +78,7 @@ This study employs a controlled ablation methodology where:
 
 ### 2.3 Model Architecture
 
-**Model**: Pointer Network V45 (Position-Aware Hybrid Pointer-Generator)
+**Model**: Pointer Generator Transformer (Position-Aware Hybrid Pointer-Generator)
 
 | Hyperparameter | DIY | GeoLife |
 |---------------|-----|---------|
@@ -341,7 +341,7 @@ This study provides comprehensive empirical evidence that historical sequence le
 
 3. **Trade-offs exist**: Practitioners must balance accuracy requirements against computational and privacy constraints.
 
-4. **Generalizability**: The Pointer Network V45 model trained on 7-day sequences demonstrates robust generalization to shorter sequences.
+4. **Generalizability**: The Pointer Generator Transformer model trained on 7-day sequences demonstrates robust generalization to shorter sequences.
 
 These findings inform both model design decisions and practical deployment strategies for next location prediction systems.
 
@@ -349,9 +349,9 @@ These findings inform both model design decisions and practical deployment strat
 
 ## References
 
-1. Model Architecture: `src/models/proposed/pointer_v45.py`
+1. Model Architecture: `src/models/proposed/pgt.py`
 2. Evaluation Metrics: `src/evaluation/metrics.py`
-3. Training Script: `src/training/train_pointer_v45.py`
+3. Training Script: `src/training/train_pgt.py`
 
 ---
 

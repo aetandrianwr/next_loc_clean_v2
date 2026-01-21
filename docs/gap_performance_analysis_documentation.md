@@ -10,7 +10,7 @@
 
 ## Abstract
 
-This document presents a comprehensive scientific analysis explaining why the pointer mechanism in PointerNetworkV45 shows dramatically different impact on two mobility datasets: GeoLife (46.7% relative performance drop when removed) vs DIY (8.3% relative performance drop when removed). Through rigorous empirical analysis of mobility patterns, model behavior, and recency characteristics, we demonstrate that **GeoLife users exhibit significantly more repetitive and recency-focused mobility patterns**, making the copy mechanism essential for accurate predictions.
+This document presents a comprehensive scientific analysis explaining why the pointer mechanism in PointerGeneratorTransformer shows dramatically different impact on two mobility datasets: GeoLife (46.7% relative performance drop when removed) vs DIY (8.3% relative performance drop when removed). Through rigorous empirical analysis of mobility patterns, model behavior, and recency characteristics, we demonstrate that **GeoLife users exhibit significantly more repetitive and recency-focused mobility patterns**, making the copy mechanism essential for accurate predictions.
 
 ---
 
@@ -33,7 +33,7 @@ This document presents a comprehensive scientific analysis explaining why the po
 
 ### 1.1 Background
 
-In our previous ablation study of the PointerNetworkV45 model, we observed a striking difference in the importance of the pointer mechanism between two datasets:
+In our previous ablation study of the PointerGeneratorTransformer model, we observed a striking difference in the importance of the pointer mechanism between two datasets:
 
 | Dataset | Baseline Acc@1 | Without Pointer | Absolute Drop | Relative Drop |
 |---------|----------------|-----------------|---------------|---------------|
@@ -50,7 +50,7 @@ This study provides empirical evidence to **prove and back this statement** thro
 
 ### 1.3 Pointer Mechanism Overview
 
-The pointer mechanism in PointerNetworkV45:
+The pointer mechanism in PointerGeneratorTransformer:
 1. Attends to the input location sequence using learned attention
 2. Uses **position bias** to favor recent locations
 3. Copies location IDs directly from history to prediction

@@ -328,7 +328,7 @@ The proposed model uses scaled dot-product attention (from "Attention Is All You
 ### Proposed Code
 
 ```python
-# File: pointer_v45.py, lines 132-146
+# File: pgt.py, lines 132-146
 
 def __init__(self, ...):
     # Pointer mechanism layers
@@ -338,7 +338,7 @@ def __init__(self, ...):
     # Learnable position bias
     self.position_bias = nn.Parameter(torch.zeros(max_seq_len))
 
-# File: pointer_v45.py, lines 230-240
+# File: pgt.py, lines 230-240
 
 def forward(self, x, x_dict):
     # ... encoding ...
@@ -642,10 +642,10 @@ The position bias in the proposed model serves a similar purpose to the coverage
 ### Position Bias Implementation
 
 ```python
-# File: pointer_v45.py, line 135
+# File: pgt.py, line 135
 self.position_bias = nn.Parameter(torch.zeros(max_seq_len))
 
-# File: pointer_v45.py, lines 212-214, 234
+# File: pgt.py, lines 212-214, 234
 # Position from end calculation
 positions = torch.arange(seq_len, device=device).unsqueeze(0).expand(batch_size, -1)
 pos_from_end = torch.clamp(lengths.unsqueeze(1) - positions, 0, self.max_seq_len - 1)

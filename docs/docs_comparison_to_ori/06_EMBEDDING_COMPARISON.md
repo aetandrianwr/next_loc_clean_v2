@@ -209,7 +209,7 @@ The proposed model uses multiple embeddings for different feature types:
 ### Proposed Code
 
 ```python
-# File: pointer_v45.py, lines 98-114
+# File: pgt.py, lines 98-114
 
 def __init__(self, ...):
     super().__init__()
@@ -237,7 +237,7 @@ def __init__(self, ...):
     self.input_proj = nn.Linear(input_dim, d_model)
     self.input_norm = nn.LayerNorm(d_model)
 
-# File: pointer_v45.py, lines 194-219
+# File: pgt.py, lines 194-219
 
 def forward(self, x, x_dict):
     x = x.T  # Convert from [seq, batch] to [batch, seq]
@@ -463,7 +463,7 @@ num_users = 100
 d_model = 64
 
 # Definition
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     def __init__(self, ...):
         # Core embeddings (full dimension)
         self.loc_emb = nn.Embedding(num_locations, d_model, padding_idx=0)

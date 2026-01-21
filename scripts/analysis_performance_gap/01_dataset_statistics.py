@@ -2,7 +2,7 @@
 Dataset Statistics Analysis for Performance Gap Investigation.
 
 This script analyzes the statistical differences between Geolife and DIY datasets
-to help explain why PointerV45 shows larger improvement over MHSA baseline on Geolife
+to help explain why PGT shows larger improvement over MHSA baseline on Geolife
 (+20.78pp) compared to DIY (+3.71pp).
 
 Key hypotheses to investigate:
@@ -296,7 +296,7 @@ def main():
     print("=" * 80)
     print("DATASET STATISTICS ANALYSIS FOR PERFORMANCE GAP INVESTIGATION")
     print("=" * 80)
-    print("\nGoal: Understand why PointerV45 shows +20.78pp improvement on Geolife")
+    print("\nGoal: Understand why PGT shows +20.78pp improvement on Geolife")
     print("      but only +3.71pp improvement on DIY dataset.")
     print("=" * 80)
     

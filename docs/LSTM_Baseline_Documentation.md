@@ -66,7 +66,7 @@ The performance hierarchy matches expectations from the paper:
 
 | Model | Acc@1 | Acc@5 | MRR |
 |-------|-------|-------|-----|
-| Pointer V45 | ~54% | ~76% | ~65% |
+| Pointer Generator Transformer | ~54% | ~76% | ~65% |
 | MHSA | ~31% | ~56% | ~43% |
 | **LSTM Baseline** | ~30% | ~56% | ~42% |
 

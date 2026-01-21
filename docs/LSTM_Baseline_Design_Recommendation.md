@@ -1,6 +1,6 @@
 # Designing a Fair LSTM Baseline for Comparable Evaluation
 
-**Goal:** Establish clear performance hierarchy: **Pointer V45 > MHSA > LSTM**
+**Goal:** Establish clear performance hierarchy: **Pointer Generator Transformer > MHSA > LSTM**
 
 **Current Problem:** MHSA and LSTM are too close (0.65% average gap, LSTM wins on 2/8 configs)
 
@@ -10,7 +10,7 @@
 
 ### Test Set Acc@1 Results
 
-| Dataset | prev_day | Pointer V45 | MHSA | LSTM | Current Ranking | Expected? |
+| Dataset | prev_day | Pointer Generator Transformer | MHSA | LSTM | Current Ranking | Expected? |
 |---------|----------|-------------|------|------|-----------------|-----------|
 | DIY | 3 | 55.14% | 53.19% | 52.74% | Pointer > MHSA > LSTM | ✓ |
 | DIY | 7 | 56.49% | 53.08% | 52.86% | Pointer > MHSA > LSTM | ✓ |
@@ -23,7 +23,7 @@
 
 **Summary:**
 - Expected ranking achieved: **6/8 configurations (75%)**
-- Pointer V45 clearly dominates (+10.58% over MHSA, +11.22% over LSTM)
+- Pointer Generator Transformer clearly dominates (+10.58% over MHSA, +11.22% over LSTM)
 - **Problem:** MHSA and LSTM too close (+0.65% gap, not significant)
 
 ### Performance Gaps
@@ -229,7 +229,7 @@ done
 ### Step 3: Compare Results
 
 Generate comparison table:
-- Pointer V45 (best from tuning)
+- Pointer Generator Transformer (best from tuning)
 - MHSA (best from tuning)
 - LSTM Baseline (fixed config, no tuning)
 
@@ -263,7 +263,7 @@ Generate comparison table:
 **Section: Baseline Models**
 
 ```
-We compare our proposed Pointer V45 model against two baseline architectures:
+We compare our proposed Pointer Generator Transformer model against two baseline architectures:
 
 1. **MHSA (Multi-Head Self-Attention):** A transformer-based encoder model 
    with hyperparameters tuned via Optuna (20 trials per configuration).
@@ -276,7 +276,7 @@ We compare our proposed Pointer V45 model against two baseline architectures:
 
 This design allows us to fairly evaluate the contribution of:
 - Attention mechanisms (MHSA vs LSTM)
-- Pointer networks (Pointer V45 vs MHSA)
+- Pointer networks (Pointer Generator Transformer vs MHSA)
 ```
 
 ---
@@ -291,7 +291,7 @@ This design allows us to fairly evaluate the contribution of:
 
 ### Expected Outcome
 
-✓ **Clear hierarchy:** Pointer V45 > MHSA > LSTM (8/8 configs)  
+✓ **Clear hierarchy:** Pointer Generator Transformer > MHSA > LSTM (8/8 configs)  
 ✓ **Meaningful gaps:** MHSA +2-3% over LSTM baseline  
 ✓ **Fair comparison:** LSTM is reasonable but not over-optimized  
 ✓ **Reproducible:** Fixed hyperparameters, no expensive tuning  

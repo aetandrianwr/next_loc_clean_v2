@@ -1,10 +1,10 @@
-# Comprehensive Experimental Analysis of PointerNetworkV45 for Next Location Prediction
+# Comprehensive Experimental Analysis of PointerGeneratorTransformer for Next Location Prediction
 
 ## Executive Summary
 
-This document presents a comprehensive experimental analysis of the PointerNetworkV45 model for next location prediction. The experiments were conducted using pretrained checkpoints on two datasets: **Geolife** (urban mobility in Beijing) and **DIY** (larger-scale mobility dataset). All experiments use seed=42 for reproducibility and evaluate the model on test sets without any retraining.
+This document presents a comprehensive experimental analysis of the PointerGeneratorTransformer model for next location prediction. The experiments were conducted using pretrained checkpoints on two datasets: **Geolife** (urban mobility in Beijing) and **DIY** (larger-scale mobility dataset). All experiments use seed=42 for reproducibility and evaluate the model on test sets without any retraining.
 
-The PointerNetworkV45 model combines a Transformer encoder with a pointer-generator mechanism, adaptively blending predictions from the input sequence (pointer) and the full location vocabulary (generator).
+The PointerGeneratorTransformer model combines a Transformer encoder with a pointer-generator mechanism, adaptively blending predictions from the input sequence (pointer) and the full location vocabulary (generator).
 
 ---
 
@@ -30,7 +30,7 @@ The PointerNetworkV45 model combines a Transformer encoder with a pointer-genera
 
 ### Architecture
 
-The **PointerNetworkV45** is a hybrid neural network that combines:
+The **PointerGeneratorTransformer** is a hybrid neural network that combines:
 
 - **Location Embedding**: Maps location IDs to dense vectors
 - **User Embedding**: Captures user-specific mobility patterns
@@ -446,6 +446,6 @@ All visualizations are saved in the `results/` folder of each experiment directo
 ---
 
 *Generated on: 2025-12-29*
-*Model: PointerNetworkV45*
+*Model: PointerGeneratorTransformer*
 *Datasets: Geolife (eps20), DIY (eps50)*
 *Random Seed: 42*

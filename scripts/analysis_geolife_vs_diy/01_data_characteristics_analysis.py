@@ -2,7 +2,7 @@
 Data Characteristics Analysis: Geolife vs DIY Dataset
 
 This script analyzes the fundamental characteristics of both datasets to understand
-why the improvement from MHSA to PointerV45 is larger on Geolife (+20.78%) 
+why the improvement from MHSA to PGT is larger on Geolife (+20.78%) 
 than on DIY (+3.71%).
 
 Key Analysis Areas:
@@ -516,7 +516,7 @@ def create_summary_comparison(all_results):
    - DIY: {diy_target_ratio*100:.2f}%
    - Difference: {(geo_target_ratio - diy_target_ratio)*100:.2f}%
    
-   The Pointer mechanism in PointerV45 can ONLY help when the target location
+   The Pointer mechanism in PGT can ONLY help when the target location
    appears in the history sequence. This is the PRIMARY factor explaining the
    performance gap.
 

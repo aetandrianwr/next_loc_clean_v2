@@ -1,6 +1,6 @@
 # 1. Introduction to the Ablation Study
 
-## PointerNetworkV45 Ablation Study for Next Location Prediction
+## PointerGeneratorTransformer Ablation Study for Next Location Prediction
 
 ---
 
@@ -63,22 +63,22 @@ Predicting human mobility is difficult because:
 4. **Sparsity**: Most locations are visited only once or twice
 5. **Long-tail distribution**: A few locations are visited frequently, many rarely
 
-### Traditional Approaches vs. PointerNetworkV45
+### Traditional Approaches vs. PointerGeneratorTransformer
 
 | Approach | Method | Limitation |
 |----------|--------|------------|
 | Markov Chains | Transition probabilities | Cannot capture long-range dependencies |
 | RNN/LSTM | Sequential modeling | Struggles with very long sequences |
 | Transformer | Attention mechanism | Doesn't leverage repetitive patterns |
-| **PointerNetworkV45** | Pointer + Generation | Best of both worlds |
+| **PointerGeneratorTransformer** | Pointer + Generation | Best of both worlds |
 
 ---
 
-## 1.3 The PointerNetworkV45 Model
+## 1.3 The PointerGeneratorTransformer Model
 
 ### Core Innovation
 
-PointerNetworkV45 combines two prediction strategies:
+PointerGeneratorTransformer combines two prediction strategies:
 
 1. **Pointer Mechanism** (Copy): "I've seen this location before, I'll go there again"
 2. **Generation Head** (Create): "I'll predict any location from the vocabulary"
@@ -141,7 +141,7 @@ Before running experiments, we hypothesized:
 
 ### Primary Objectives
 
-1. **Validate** the PointerNetworkV45 architecture through systematic component analysis
+1. **Validate** the PointerGeneratorTransformer architecture through systematic component analysis
 2. **Quantify** the contribution of each component to prediction accuracy
 3. **Identify** essential vs. redundant components
 4. **Provide** actionable insights for model optimization
@@ -159,7 +159,7 @@ Before running experiments, we hypothesized:
 
 ### What We Study
 
-- **Model**: PointerNetworkV45 for next location prediction
+- **Model**: PointerGeneratorTransformer for next location prediction
 - **Components**: 8 architectural elements (see Ablation Design)
 - **Datasets**: GeoLife and DIY mobility datasets
 - **Metrics**: Acc@1, Acc@5, Acc@10, MRR, NDCG, F1, Loss

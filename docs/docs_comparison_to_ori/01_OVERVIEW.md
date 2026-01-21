@@ -3,7 +3,7 @@
 ## Document Index
 
 This documentation provides a complete A-to-Z comparison between:
-- **Proposed Model**: `PointerNetworkV45` (PyTorch) - Location: `src/models/proposed/pointer_v45.py`
+- **Proposed Model**: `PointerGeneratorTransformer` (PyTorch) - Location: `src/models/proposed/pgt.py`
 - **Original Model**: Pointer-Generator Network (TensorFlow) - Location: `pointer-generator/`
 
 ---
@@ -58,7 +58,7 @@ The original Pointer-Generator Network (See et al., 2017) was designed for **tex
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### What is the Proposed PointerNetworkV45?
+### What is the Proposed PointerGeneratorTransformer?
 
 The Proposed Model adapts the pointer-generator concept for **next location prediction**. Key adaptations:
 1. **Transformer encoder** instead of BiLSTM
@@ -88,7 +88,7 @@ The Proposed Model adapts the pointer-generator concept for **next location pred
 
 ## 🔄 High-Level Comparison Table
 
-| Aspect | Original Pointer-Generator | Proposed PointerNetworkV45 |
+| Aspect | Original Pointer-Generator | Proposed PointerGeneratorTransformer |
 |--------|---------------------------|---------------------------|
 | **Task Domain** | Text Summarization (NLP) | Next Location Prediction (Mobility) |
 | **Framework** | TensorFlow 1.x | PyTorch |

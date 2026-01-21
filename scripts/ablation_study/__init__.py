@@ -1,11 +1,11 @@
 """
-Ablation Study Package for Pointer Network V45.
+Ablation Study Package for Pointer Generator Transformer.
 
 This package provides tools for systematic ablation analysis of the
-Pointer Network V45 model for next location prediction.
+Pointer Generator Transformer model for next location prediction.
 
 Modules:
-    - pointer_v45_ablation: Model with configurable component ablation
+    - pgt_ablation: Model with configurable component ablation
     - train_ablation: Training script for individual ablation experiments
     - run_ablation_study: Main runner for comprehensive ablation study
 
@@ -17,7 +17,7 @@ Usage:
     python scripts/ablation_study/train_ablation.py --config <config> --ablation <name>
 """
 
-from .pointer_v45_ablation import PointerNetworkV45Ablation
+from .pgt_ablation import PointerGeneratorTransformerAblation
 from .train_ablation import ABLATION_CONFIGS
 
-__all__ = ['PointerNetworkV45Ablation', 'ABLATION_CONFIGS']
+__all__ = ['PointerGeneratorTransformerAblation', 'ABLATION_CONFIGS']

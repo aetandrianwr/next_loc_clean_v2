@@ -1,13 +1,13 @@
 # LSTM Baseline Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20_prev7
 # 
-# This baseline is designed for FAIR SCIENTIFIC COMPARISON with Pointer V45:
+# This baseline is designed for FAIR SCIENTIFIC COMPARISON with Pointer Generator Transformer:
 # - Same input features (location, user, time, weekday, duration, recency)
 # - Same embedding dimensions
 # - Same training procedure (optimizer, warmup+cosine LR, early stopping)
 # - Same evaluation metrics
 #
-# Expected performance: Acc@1 ~25-28% (significantly lower than Pointer V45's ~54%)
+# Expected performance: Acc@1 ~25-28% (significantly lower than Pointer Generator Transformer's ~54%)
 #
 # Usage:
 #   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
@@ -17,7 +17,7 @@ seed: 42
 
 model_type: lstm
 
-# Data settings (same as Pointer V45)
+# Data settings (same as Pointer Generator Transformer)
 data:
   data_dir: data/geolife_eps20/processed
   dataset_prefix: geolife_eps20_prev7
@@ -26,18 +26,18 @@ data:
   num_workers: 0
 
 # Model architecture
-# Designed to have comparable parameters to Pointer V45 for fair comparison
+# Designed to have comparable parameters to Pointer Generator Transformer for fair comparison
 model:
-  d_model: 64          # Same as Pointer V45 for Geolife
+  d_model: 64          # Same as Pointer Generator Transformer for Geolife
   hidden_size: 128     # LSTM hidden dimension
   num_layers: 2        # Number of LSTM layers
-  dropout: 0.15        # Same dropout as Pointer V45
+  dropout: 0.15        # Same dropout as Pointer Generator Transformer
 
-# Training settings (same as Pointer V45 for fair comparison)
+# Training settings (same as Pointer Generator Transformer for fair comparison)
 training:
   batch_size: 128
   num_epochs: 50
-  learning_rate: 0.00065  # Same as Pointer V45
+  learning_rate: 0.00065  # Same as Pointer Generator Transformer
   weight_decay: 0.015
   label_smoothing: 0.03
   grad_clip: 0.8

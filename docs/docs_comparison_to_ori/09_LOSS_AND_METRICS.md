@@ -581,7 +581,7 @@ def _coverage_loss(attn_dists, padding_mask):
     return _mask_and_avg(covlosses, padding_mask)
 
 # ==============================================================================
-# PROPOSED: Loss Calculation (train_pointer_v45.py, lines 334-337)
+# PROPOSED: Loss Calculation (train_pgt.py, lines 334-337)
 # ==============================================================================
 
 class TrainerV45:

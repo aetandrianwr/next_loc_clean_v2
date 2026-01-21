@@ -1,7 +1,7 @@
 # LSTM & RNN Baseline Models for Next Location Prediction
 
 This document provides comprehensive documentation for the LSTM and RNN baseline models
-designed for scientifically comparing with the Pointer Network V45 model.
+designed for scientifically comparing with the Pointer Generator Transformer model.
 
 ## Table of Contents
 
@@ -18,12 +18,12 @@ designed for scientifically comparing with the Pointer Network V45 model.
 ## Overview
 
 The LSTM and RNN baselines are designed to demonstrate the effectiveness of the proposed
-Pointer Network V45 model for next location prediction. These baselines use standard
-recurrent neural network architectures without the advanced features of Pointer V45.
+Pointer Generator Transformer model for next location prediction. These baselines use standard
+recurrent neural network architectures without the advanced features of Pointer Generator Transformer.
 
 ### Key Findings
 
-| Dataset   | Pointer V45 | LSTM Baseline | RNN Baseline | Improvement |
+| Dataset   | Pointer Generator Transformer | LSTM Baseline | RNN Baseline | Improvement |
 |-----------|-------------|---------------|--------------|-------------|
 | Geolife   | 53.94%      | 33.01%        | 32.95%       | +20.93pp    |
 | DIY       | 56.88%      | ~52-53%       | ~52-53%      | +4-5pp      |
@@ -40,19 +40,19 @@ recurrent neural network architectures without the advanced features of Pointer 
    tasks, including next location prediction.
 
 2. **Fair Comparison**: By comparing against LSTM/RNN, we can demonstrate the specific
-   advantages of Pointer V45:
+   advantages of Pointer Generator Transformer:
    - Pointer mechanism for copying from history
    - Attention mechanism for long-range dependencies
    - Rich temporal feature engineering
 
-3. **Ablation Study**: The baselines help understand which components of Pointer V45
+3. **Ablation Study**: The baselines help understand which components of Pointer Generator Transformer
    contribute most to its performance.
 
 ### Design Decisions for Fair Comparison
 
 1. **Input Features**:
    - Baselines: Location sequence + User ID only
-   - Pointer V45: Location + User + Time + Weekday + Duration + Recency + Position
+   - Pointer Generator Transformer: Location + User + Time + Weekday + Duration + Recency + Position
 
 2. **Architecture**:
    - Same embedding dimensions (d_model: 64)
@@ -126,9 +126,9 @@ Input: Location sequence [seq_len, batch_size]
 Output: Logits [batch_size, num_locations]
 ```
 
-### Key Differences from Pointer V45
+### Key Differences from Pointer Generator Transformer
 
-| Feature | LSTM/RNN Baseline | Pointer V45 |
+| Feature | LSTM/RNN Baseline | Pointer Generator Transformer |
 |---------|-------------------|-------------|
 | Location Embedding | ✓ | ✓ |
 | User Embedding | ✓ | ✓ |
@@ -150,7 +150,7 @@ Output: Logits [batch_size, num_locations]
 
 | Model | Acc@1 | Acc@5 | Acc@10 | MRR | NDCG |
 |-------|-------|-------|--------|-----|------|
-| **Pointer V45** | **53.94%** | **81.10%** | **84.38%** | **65.81%** | **70.21%** |
+| **Pointer Generator Transformer** | **53.94%** | **81.10%** | **84.38%** | **65.81%** | **70.21%** |
 | LSTM Baseline | 33.01% | 57.14% | 61.42% | 44.52% | 48.41% |
 | RNN Baseline | 32.95% | 56.42% | 58.97% | 43.61% | 47.17% |
 
@@ -160,7 +160,7 @@ Output: Logits [batch_size, num_locations]
 
 | Model | Acc@1 | Acc@5 | Acc@10 | MRR | NDCG |
 |-------|-------|-------|--------|-----|------|
-| **Pointer V45** | **56.88%** | **82.20%** | **86.14%** | **67.98%** | **72.30%** |
+| **Pointer Generator Transformer** | **56.88%** | **82.20%** | **86.14%** | **67.98%** | **72.30%** |
 | LSTM Baseline | ~52-53% | ~76% | ~79% | ~63% | ~67% |
 | RNN Baseline | 52.91% | 76.20% | 79.00% | 63.00% | 66.82% |
 
@@ -168,7 +168,7 @@ Output: Logits [batch_size, num_locations]
 
 ### Analysis
 
-1. **Geolife Dataset**: Pointer V45 shows massive improvement (~21 percentage points)
+1. **Geolife Dataset**: Pointer Generator Transformer shows massive improvement (~21 percentage points)
    over baselines. This suggests:
    - Temporal features are highly informative for this dataset
    - Pointer mechanism effectively copies from user history
@@ -177,7 +177,7 @@ Output: Logits [batch_size, num_locations]
 2. **DIY Dataset**: Smaller but consistent improvement (~4-5 percentage points).
    This suggests:
    - Strong location patterns in DIY make baseline performance high
-   - Pointer V45 still provides meaningful improvement
+   - Pointer Generator Transformer still provides meaningful improvement
    - Temporal features add less value when location patterns are dominant
 
 3. **LSTM vs RNN**: Very similar performance on both datasets, indicating:
@@ -251,16 +251,16 @@ python scripts/baseline_lstm_rnn/train_baseline.py \
     --config scripts/baseline_lstm_rnn/config_rnn_diy.yaml
 ```
 
-### Training Pointer V45 (for comparison)
+### Training Pointer Generator Transformer (for comparison)
 
 ```bash
 # Train on Geolife
-python src/training/train_pointer_v45.py \
-    --config config/models/config_pointer_v45_geolife.yaml
+python src/training/train_pgt.py \
+    --config config/models/config_pgt_geolife.yaml
 
 # Train on DIY
-python src/training/train_pointer_v45.py \
-    --config config/models/config_pointer_v45_diy.yaml
+python src/training/train_pgt.py \
+    --config config/models/config_pgt_diy.yaml
 ```
 
 ### Output Structure
@@ -305,8 +305,8 @@ next_loc_clean_v2/
 │
 ├── config/
 │   └── models/
-│       ├── config_pointer_v45_geolife.yaml
-│       └── config_pointer_v45_diy.yaml
+│       ├── config_pgt_geolife.yaml
+│       └── config_pgt_diy.yaml
 │
 ├── data/
 │   ├── geolife_eps20/processed/        # Geolife dataset
@@ -320,14 +320,14 @@ next_loc_clean_v2/
 
 ## Conclusion
 
-The LSTM and RNN baselines demonstrate that the Pointer Network V45 model provides
+The LSTM and RNN baselines demonstrate that the Pointer Generator Transformer model provides
 significant improvements over standard recurrent neural networks for next location
 prediction:
 
 1. **Geolife**: ~21 percentage points improvement in Acc@1
 2. **DIY**: ~4-5 percentage points improvement in Acc@1
 
-The advantages of Pointer V45 come from:
+The advantages of Pointer Generator Transformer come from:
 - **Pointer mechanism**: Effectively copies from user's location history
 - **Attention mechanism**: Captures long-range dependencies in sequences
 - **Rich temporal features**: Encodes time, weekday, duration, and recency

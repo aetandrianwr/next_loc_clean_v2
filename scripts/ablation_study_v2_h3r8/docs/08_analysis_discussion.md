@@ -63,7 +63,7 @@ Next prediction probabilities:
 
 ### 8.1.4 Implication
 
-**The pointer mechanism is the cornerstone innovation** of PointerNetworkV45. Without it, the model loses its primary advantage over traditional generation-only approaches.
+**The pointer mechanism is the cornerstone innovation** of PointerGeneratorTransformer. Without it, the model loses its primary advantage over traditional generation-only approaches.
 
 ---
 

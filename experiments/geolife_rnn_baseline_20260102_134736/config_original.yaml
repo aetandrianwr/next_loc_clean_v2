@@ -1,7 +1,7 @@
 # RNN Baseline Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20_prev7
 # 
-# This baseline is designed to show the advantage of Pointer V45's design:
+# This baseline is designed to show the advantage of Pointer Generator Transformer's design:
 # - RNN uses only location and user embeddings (no temporal features)
 # - Vanilla RNN (Elman RNN) - simplest recurrent baseline
 #
@@ -10,7 +10,7 @@
 # - Limited long-term dependency modeling
 # - No gating mechanism
 #
-# Expected performance: Acc@1 ~20-25% (lower than LSTM and much lower than Pointer V45)
+# Expected performance: Acc@1 ~20-25% (lower than LSTM and much lower than Pointer Generator Transformer)
 #
 # Usage:
 #   source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
@@ -20,7 +20,7 @@ seed: 42
 
 model_type: rnn
 
-# Data settings (same as Pointer V45)
+# Data settings (same as Pointer Generator Transformer)
 data:
   data_dir: data/geolife_eps20/processed
   dataset_prefix: geolife_eps20_prev7

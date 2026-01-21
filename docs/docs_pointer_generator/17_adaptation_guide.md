@@ -1,6 +1,6 @@
 # Adaptation Guide: From Text Summarization to Other Domains
 
-This guide explains how to adapt the pointer-generator architecture to domains beyond text summarization. We use next location prediction as a concrete example, referencing the implementation in `pointer_v45.py`.
+This guide explains how to adapt the pointer-generator architecture to domains beyond text summarization. We use next location prediction as a concrete example, referencing the implementation in `pgt.py`.
 
 ## Table of Contents
 1. [Understanding the Core Abstraction](#understanding-the-core-abstraction)
@@ -488,7 +488,7 @@ final_dist = gate * ptr_dist + (1 - gate) * gen_dist
 Here's the complete adapted implementation with annotations:
 
 ```python
-class PointerNetworkV45(nn.Module):
+class PointerGeneratorTransformer(nn.Module):
     """
     Pointer-Generator for Next Location Prediction.
     

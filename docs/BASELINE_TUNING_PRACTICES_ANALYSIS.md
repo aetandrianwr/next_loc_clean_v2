@@ -81,14 +81,14 @@
 
 ### Current Setup:
 ```
-✓ Pointer V45:  Tuned (20 trials × 8 configs = 160 experiments)
+✓ Pointer Generator Transformer:  Tuned (20 trials × 8 configs = 160 experiments)
 ✓ MHSA:         Tuned (20 trials × 8 configs = 160 experiments)  
 ✓ LSTM:         Tuned (20 trials × 8 configs = 160 experiments)
 ```
 
 ### Current Results:
 ```
-Pointer V45:  52.96% avg  ✓ Clearly best
+Pointer Generator Transformer:  52.96% avg  ✓ Clearly best
 MHSA:         42.38% avg  ≈ Nearly tied
 LSTM:         41.73% avg  ≈ Nearly tied (gap: 0.65%)
 ```
@@ -117,7 +117,7 @@ LSTM:         41.73% avg  ≈ Nearly tied (gap: 0.65%)
 - ✗ Weakens your narrative about architectural progression
 
 **How to present:**
-> "Against extensively tuned baselines, our Pointer V45 achieves 11% average improvement. Interestingly, we find that MHSA and LSTM achieve similar performance when both are optimized (42.38% vs 41.73%), suggesting that for next location prediction, both sequential and attention-based architectures have comparable capacity. However, our pointer mechanism provides substantial gains, demonstrating the value of explicit location selection."
+> "Against extensively tuned baselines, our Pointer Generator Transformer achieves 11% average improvement. Interestingly, we find that MHSA and LSTM achieve similar performance when both are optimized (42.38% vs 41.73%), suggesting that for next location prediction, both sequential and attention-based architectures have comparable capacity. However, our pointer mechanism provides substantial gains, demonstrating the value of explicit location selection."
 
 **Verdict:** Honest but weakens the "attention is valuable" story
 
@@ -160,19 +160,19 @@ LSTM:         41.73% avg  ≈ Nearly tied (gap: 0.65%)
 **Main Results Table:**
 | Model | Hyperparameter Tuning | DIY Avg | GeoLife Avg |
 |-------|----------------------|---------|-------------|
-| **Pointer V45** | Yes (Optuna, 20 trials) | **55.58%** | **50.33%** |
+| **Pointer Generator Transformer** | Yes (Optuna, 20 trials) | **55.58%** | **50.33%** |
 | MHSA | Yes (Optuna, 20 trials) | 51.86% | 32.90% |
 | LSTM (Optimized) | Yes (Optuna, 20 trials) | 51.85% | 31.61% |
 | LSTM (Standard) | No (fixed config) | ~49.5% | ~29.5% |
 
 **Discussion:**
-> "We evaluate our Pointer V45 model against both standard and optimized baselines to provide a comprehensive view of performance.
+> "We evaluate our Pointer Generator Transformer model against both standard and optimized baselines to provide a comprehensive view of performance.
 > 
 > **Standard Baseline:** The LSTM with fixed hyperparameters (2-layer, 64-hidden, lr=0.001) serves as a vanilla sequential baseline, achieving 49.5% average accuracy on DIY dataset.
 >
 > **Optimized Baselines:** With extensive hyperparameter tuning, both LSTM and MHSA achieve similar performance (51.85% vs 51.86%), suggesting that sequential and attention-based architectures have comparable capacity for next location prediction when optimized.
 >
-> **Pointer V45 Gains:** Our proposed model achieves substantial improvements:
+> **Pointer Generator Transformer Gains:** Our proposed model achieves substantial improvements:
 > - +3.7% over optimized LSTM (51.85% → 55.58%)
 > - +3.7% over optimized MHSA (51.86% → 55.58%)
 > - +6.1% over standard LSTM (49.5% → 55.58%)
@@ -259,7 +259,7 @@ LSTM:         41.73% avg  ≈ Nearly tied (gap: 0.65%)
 ### Section: Experimental Setup - Baseline Models
 
 ```
-We compare our proposed Pointer V45 model against two baseline architectures:
+We compare our proposed Pointer Generator Transformer model against two baseline architectures:
 
 1. LSTM: A vanilla sequential model with LSTM cells
 2. MHSA: A transformer-based encoder with multi-head self-attention
@@ -276,7 +276,7 @@ with TPE sampler (20 trials per dataset/history length combination) on
 the validation set. This ensures fair comparison against strong, 
 optimized baselines.
 
-Our proposed Pointer V45 model receives the same optimization budget 
+Our proposed Pointer Generator Transformer model receives the same optimization budget 
 as the baselines (20 trials per configuration).
 ```
 
@@ -287,7 +287,7 @@ Table X: Test Set Performance (Acc@1)
 
 Model              | DIY (avg) | GeoLife (avg) | Overall
 -------------------|-----------|---------------|----------
-Pointer V45*       | 55.58%    | 50.33%        | 52.96%
+Pointer Generator Transformer*       | 55.58%    | 50.33%        | 52.96%
 MHSA*             | 51.86%    | 32.90%        | 42.38%
 LSTM (Optimized)* | 51.85%    | 31.61%        | 41.73%
 LSTM (Standard)   | 49.5%     | 29.5%         | 39.5%
@@ -302,7 +302,7 @@ Our results reveal several interesting findings:
 
 1. Architectural Progression: Comparing against standard LSTM baseline 
    shows clear benefits of attention mechanisms (MHSA: +2.9%) and 
-   pointer networks (Pointer V45: +13.5%).
+   pointer networks (Pointer Generator Transformer: +13.5%).
 
 2. Optimization Impact: With extensive hyperparameter tuning, LSTM 
    achieves performance nearly identical to MHSA (51.85% vs 51.86%, 
@@ -311,7 +311,7 @@ Our results reveal several interesting findings:
    representational capacity when optimized.
 
 3. Pointer Mechanism Value: Despite strong optimized baselines, our 
-   Pointer V45 model achieves substantial gains (+3.7% over both tuned 
+   Pointer Generator Transformer model achieves substantial gains (+3.7% over both tuned 
    MHSA and LSTM). This demonstrates that explicit pointer-based 
    location selection provides value beyond architectural differences 
    between sequential and attention-based models.

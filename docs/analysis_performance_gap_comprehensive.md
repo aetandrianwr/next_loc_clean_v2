@@ -2,15 +2,15 @@
 
 ## Research Question
 
-**Why does the Pointer V45 model show a +20.78% improvement over the MHSA baseline in the Geolife dataset, but only a +3.71% improvement in the DIY dataset?**
+**Why does the Pointer Generator Transformer model show a +20.78% improvement over the MHSA baseline in the Geolife dataset, but only a +3.71% improvement in the DIY dataset?**
 
 ---
 
 ## Executive Summary
 
-The performance difference between Geolife and DIY datasets when comparing MHSA baseline to Pointer V45 is primarily explained by **how much the MHSA baseline already captures the "copy from history" pattern** that the Pointer mechanism explicitly enables.
+The performance difference between Geolife and DIY datasets when comparing MHSA baseline to Pointer Generator Transformer is primarily explained by **how much the MHSA baseline already captures the "copy from history" pattern** that the Pointer mechanism explicitly enables.
 
-| Dataset | MHSA Acc@1 | Pointer V45 Acc@1 | Improvement |
+| Dataset | MHSA Acc@1 | Pointer Generator Transformer Acc@1 | Improvement |
 |---------|------------|-------------------|-------------|
 | Geolife | 33.18% | 53.97% | **+20.79%** |
 | DIY | 53.17% | 56.85% | **+3.68%** |
@@ -116,7 +116,7 @@ The most compelling evidence comes from analyzing how much of the "copy potentia
                             Geolife         DIY
 Copy-bound:                 83.81%          84.12%
 MHSA achieves:              33.18%          53.17%
-Pointer V45 achieves:       53.97%          56.85%
+Pointer Generator Transformer achieves:       53.97%          56.85%
 
 MHSA utilization:           39.59%          63.21%
 Pointer utilization:        64.40%          67.58%
@@ -126,7 +126,7 @@ Improvement efficiency:     41.06%          11.89%
 
 **Key Evidence**:
 - The improvement efficiency (actual improvement / potential improvement) is **41%** for Geolife but only **12%** for DIY
-- This directly explains why Pointer V45 shows larger gains in Geolife
+- This directly explains why Pointer Generator Transformer shows larger gains in Geolife
 
 ### 3.2 Improvement Room Analysis
 
@@ -144,7 +144,7 @@ The ratio of actual-to-potential improvement:
 - Geolife: 20.79 / 50.63 = **41%** of potential captured
 - DIY: 3.68 / 30.95 = **12%** of potential captured
 
-This suggests that while Pointer V45 is effective in both datasets, it captures less of the remaining potential in DIY because the patterns MHSA couldn't learn are genuinely harder.
+This suggests that while Pointer Generator Transformer is effective in both datasets, it captures less of the remaining potential in DIY because the patterns MHSA couldn't learn are genuinely harder.
 
 ### 3.3 User Behavior Pattern Analysis
 
@@ -173,7 +173,7 @@ Both models use Transformer encoders, but:
 - Generation head predicting over full vocabulary
 - Learns global location patterns
 
-**Pointer V45 (Proposed)**:
+**Pointer Generator Transformer (Proposed)**:
 - Transformer encoder + Pointer mechanism
 - Gate to blend pointer (copy) and generation distributions
 - Explicitly learns when to copy from history
@@ -187,7 +187,7 @@ The pointer mechanism provides **explicit copying capability** that MHSA must le
 3. **More concentrated targets**: Higher target-in-history rate with consistent patterns
 4. **Lower user diversity**: Fewer unique locations per user means generation head is more effective
 
-### 4.3 Why Pointer V45 Excels in Geolife
+### 4.3 Why Pointer Generator Transformer Excels in Geolife
 
 1. **Complex user-specific patterns**: More unique locations per user require explicit copying
 2. **MHSA struggles**: Only 40% copy-bound utilization leaves large gap

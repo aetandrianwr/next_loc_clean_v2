@@ -1,8 +1,8 @@
-# Performance Gap Analysis: Why PointerV45 Shows Different Improvement Levels on Geolife vs DIY
+# Performance Gap Analysis: Why PGT Shows Different Improvement Levels on Geolife vs DIY
 
 ## Executive Summary
 
-This document analyzes why the proposed **PointerV45 model** shows a **+20.78 percentage point (pp)** improvement over the baseline MHSA on the **Geolife dataset**, but only a **+3.71 pp** improvement on the **DIY dataset**.
+This document analyzes why the proposed **PGT model** shows a **+20.78 percentage point (pp)** improvement over the baseline MHSA on the **Geolife dataset**, but only a **+3.71 pp** improvement on the **DIY dataset**.
 
 **Key Finding:** The difference is NOT due to the pointer mechanism failing on DIY. Rather, it's because:
 1. DIY is an inherently easier prediction task with highly concentrated location patterns
@@ -16,7 +16,7 @@ This document analyzes why the proposed **PointerV45 model** shows a **+20.78 pe
 | Metric | Geolife | DIY | Difference |
 |--------|---------|-----|------------|
 | MHSA Baseline Acc@1 | 33.18% | 53.17% | +20.0pp |
-| PointerV45 Acc@1 | 53.96% | 56.88% | +2.9pp |
+| PGT Acc@1 | 53.96% | 56.88% | +2.9pp |
 | **Improvement** | **+20.78pp** | **+3.71pp** | - |
 
 **Observation:** The DIY baseline is already 20 percentage points higher than Geolife. This immediately suggests that DIY is an easier prediction task.
@@ -137,7 +137,7 @@ DIY:
 The diagram shows:
 - DIY's MHSA baseline already extends much further (53.2% vs 33.2%)
 - Less remaining space for pointer improvement on DIY
-- PointerV45 achieves 41% of potential on Geolife, 12% on DIY
+- PGT achieves 41% of potential on Geolife, 12% on DIY
 
 ---
 
@@ -150,7 +150,7 @@ The diagram shows:
 3. **User behavior is more routine on DIY** - 68.8% of visits to top-2 locations per user
 4. **Pointer mechanism potential is similar** - ~84% copyable on both, but overlap differs
 
-### What This Means for PointerV45
+### What This Means for PGT
 
 The pointer mechanism IS effective on both datasets. However:
 - On **Geolife**: The model provides substantial value (41% efficiency) because the baseline misses many "copy-from-history" opportunities
@@ -158,7 +158,7 @@ The pointer mechanism IS effective on both datasets. However:
 
 ### Recommendation
 
-When evaluating PointerV45's effectiveness:
+When evaluating PGT's effectiveness:
 1. Consider the baseline difficulty of the dataset
 2. Look at improvement efficiency (achieved/potential) rather than absolute improvement
 3. Recognize that highly routine datasets naturally have less room for improvement
@@ -186,7 +186,7 @@ Results are saved to `scripts/analysis_performance_gap/results/`.
 | Metric | Geolife | DIY | What It Means |
 |--------|---------|-----|---------------|
 | MHSA Acc@1 | 33.18% | 53.17% | DIY is easier for baseline |
-| PointerV45 Acc@1 | 53.96% | 56.88% | Final performance |
+| PGT Acc@1 | 53.96% | 56.88% | Final performance |
 | Improvement | +20.78pp | +3.71pp | Absolute improvement |
 | Top-1 Location Share | 22.8% | 32.4% | DIY more concentrated |
 | Pointer Hit Rate | 83.8% | 84.1% | Similar copyable samples |

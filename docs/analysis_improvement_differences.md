@@ -2,9 +2,9 @@
 
 ## Summary
 
-This document provides a comprehensive analysis of why the Pointer V45 model shows significantly different improvements over the MHSA baseline when applied to the Geolife and DIY datasets.
+This document provides a comprehensive analysis of why the Pointer Generator Transformer model shows significantly different improvements over the MHSA baseline when applied to the Geolife and DIY datasets.
 
-| Dataset | MHSA Acc@1 | Pointer V45 Acc@1 | Improvement |
+| Dataset | MHSA Acc@1 | Pointer Generator Transformer Acc@1 | Improvement |
 |---------|------------|-------------------|-------------|
 | Geolife | 33.18% | 53.97% | **+20.79pp** |
 | DIY | 53.17% | 56.85% | **+3.68pp** |
@@ -28,7 +28,7 @@ This document provides a comprehensive analysis of why the Pointer V45 model sho
 ## 1. Executive Summary
 
 ### The Question
-Why does Pointer V45 achieve +20.79 percentage points improvement on Geolife but only +3.68 percentage points on DIY?
+Why does Pointer Generator Transformer achieve +20.79 percentage points improvement on Geolife but only +3.68 percentage points on DIY?
 
 ### The Answer
 **The root cause is NOT that the pointer mechanism works better on Geolife, but rather that the MHSA baseline already performs well on DIY, leaving less room for improvement.**
@@ -166,14 +166,14 @@ When the target IS in history, where is it located?
 | Target in History | 83.81% | 84.12% |
 | Theoretical Maximum | **89.18%** | **92.56%** |
 | MHSA Actual | 33.18% | 53.17% |
-| Pointer V45 Actual | 53.97% | 56.85% |
+| Pointer Generator Transformer Actual | 53.97% | 56.85% |
 | **MHSA % of Theoretical** | **37.2%** | **57.4%** |
 | **Pointer % of Theoretical** | **60.5%** | **61.4%** |
 
 **Evidence File**: `results/03_theoretical_ceiling.csv`
 
 **Critical Insight**: 
-- Pointer V45 achieves similar theoretical utilization on both datasets (~60-61%)
+- Pointer Generator Transformer achieves similar theoretical utilization on both datasets (~60-61%)
 - The difference in improvement is because MHSA starts at very different utilization levels
 
 ---
@@ -186,11 +186,11 @@ When the target IS in history, where is it located?
 Theoretical Potential Utilization:
 
 Geolife:  |████████████-------------------------------------| 37.2%  (MHSA)
-Pointer:  |████████████████████████████████████-------------| 60.5%  (Pointer V45)
+Pointer:  |████████████████████████████████████-------------| 60.5%  (Pointer Generator Transformer)
 Gap:      |            ████████████████████████             | +20.79pp improvement
 
 DIY:      |█████████████████████████████████-----------------| 57.4%  (MHSA)
-Pointer:  |███████████████████████████████████████-----------| 61.4%  (Pointer V45)
+Pointer:  |███████████████████████████████████████-----------| 61.4%  (Pointer Generator Transformer)
 Gap:      |                                 ████             | +3.68pp improvement
 ```
 
@@ -213,7 +213,7 @@ Gap:      |                                 ████             | +3.68pp i
 3. **More rare targets**: 29.24% of test targets are rare vs 9.49% for DIY
 4. **More unseen targets**: 22.96% of test targets have zero training samples vs 3.92% for DIY
 
-### 5.4 Why Pointer V45 Helps More on Geolife
+### 5.4 Why Pointer Generator Transformer Helps More on Geolife
 
 The pointer mechanism helps by:
 1. **Directly copying from sequence**: Instead of generating from learned patterns, it points to history
@@ -273,7 +273,7 @@ On DIY, MHSA already captures most of the "easy" patterns, leaving only the hard
 
 1. **DIY has more predictable patterns** that MHSA can already learn effectively
 2. **MHSA already captures 57.4%** of DIY's theoretical potential vs only 37.2% for Geolife
-3. **Pointer V45 brings both datasets to similar utilization** (~60-61% of theoretical potential)
+3. **Pointer Generator Transformer brings both datasets to similar utilization** (~60-61% of theoretical potential)
 4. **Starting from different baselines** results in different absolute improvements
 
 ### 7.2 Implications
@@ -302,7 +302,7 @@ On DIY, MHSA already captures most of the "easy" patterns, leaving only the hard
 - Experiments: `experiments/geolife_MHSA_20251228_230813`, `experiments/diy_MHSA_20251226_192959`
 - Architecture: Standard Transformer Encoder with self-attention
 
-**Pointer V45**:
+**Pointer Generator Transformer**:
 - Experiments: `experiments/geolife_pointer_v45_20251229_*`, `experiments/diy_pointer_v45_20251229_*`  
 - Architecture: Transformer Encoder + Pointer mechanism + Generation head with adaptive gate
 

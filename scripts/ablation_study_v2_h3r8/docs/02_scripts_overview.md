@@ -28,7 +28,7 @@ scripts/ablation_study_v2/
 │       ├── ablation_results.csv
 │       ├── ablation_table.tex
 │       └── ablation_diy_{variant}_{timestamp}/
-├── pointer_v45_ablation.py         # Ablation model variants
+├── pgt_ablation.py         # Ablation model variants
 ├── train_ablation.py               # Training script
 ├── run_ablation_study.py           # Main orchestrator
 └── collect_results.py              # Results analyzer
@@ -36,17 +36,17 @@ scripts/ablation_study_v2/
 
 ---
 
-## 2.2 Script 1: pointer_v45_ablation.py
+## 2.2 Script 1: pgt_ablation.py
 
 ### Purpose
-This script defines the `PointerNetworkV45Ablation` class, which is a modified version of the original model that can selectively disable specific components.
+This script defines the `PointerGeneratorTransformerAblation` class, which is a modified version of the original model that can selectively disable specific components.
 
 ### Key Features
 
 ```python
-class PointerNetworkV45Ablation(nn.Module):
+class PointerGeneratorTransformerAblation(nn.Module):
     """
-    Ablation variant of PointerNetworkV45.
+    Ablation variant of PointerGeneratorTransformer.
     
     Supports selective component disabling via ablation_type parameter.
     """
@@ -116,17 +116,17 @@ def forward(self, x, x_dict):
 ### Usage Example
 
 ```python
-from pointer_v45_ablation import PointerNetworkV45Ablation
+from pgt_ablation import PointerGeneratorTransformerAblation
 
 # Create full model (baseline)
-model_full = PointerNetworkV45Ablation(
+model_full = PointerGeneratorTransformerAblation(
     num_locations=1000,
     num_users=100,
     ablation_type='full'  # All components enabled
 )
 
 # Create model without pointer mechanism
-model_no_pointer = PointerNetworkV45Ablation(
+model_no_pointer = PointerGeneratorTransformerAblation(
     num_locations=1000,
     num_users=100,
     ablation_type='no_pointer'  # Pointer disabled
@@ -536,9 +536,9 @@ python -c "from src.evaluation.metrics import calculate_correct_total_prediction
 ```bash
 # Test ablation model creation
 python -c "
-from scripts.ablation_study_v2.pointer_v45_ablation import PointerNetworkV45Ablation
-for abl in PointerNetworkV45Ablation.VALID_ABLATIONS:
-    model = PointerNetworkV45Ablation(100, 10, ablation_type=abl)
+from scripts.ablation_study_v2.pointer_v45_ablation import PointerGeneratorTransformerAblation
+for abl in PointerGeneratorTransformerAblation.VALID_ABLATIONS:
+    model = PointerGeneratorTransformerAblation(100, 10, ablation_type=abl)
     print(f'{abl}: {model.count_parameters():,} params')
 "
 ```

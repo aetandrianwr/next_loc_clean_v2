@@ -1,16 +1,16 @@
-# Performance Gap Analysis V2: From Pointer V45 Model Perspective
+# Performance Gap Analysis V2: From Pointer Generator Transformer Model Perspective
 
 ## Research Question
 
-**Why does Pointer V45 achieve +20.79% improvement over MHSA baseline in Geolife but only +3.68% improvement in DIY?**
+**Why does Pointer Generator Transformer achieve +20.79% improvement over MHSA baseline in Geolife but only +3.68% improvement in DIY?**
 
-**Focus**: This analysis examines the question from the **proposed model (Pointer V45)** perspective, analyzing each model component.
+**Focus**: This analysis examines the question from the **proposed model (Pointer Generator Transformer)** perspective, analyzing each model component.
 
 ---
 
 ## Executive Summary
 
-| Dataset | MHSA Baseline | Pointer V45 | Improvement |
+| Dataset | MHSA Baseline | Pointer Generator Transformer | Improvement |
 |---------|---------------|-------------|-------------|
 | Geolife | 33.18% | 53.97% | **+20.79%** |
 | DIY | 53.17% | 56.85% | **+3.68%** |
@@ -21,7 +21,7 @@
 
 ## Table of Contents
 
-1. [Pointer V45 Architecture Overview](#1-pointer-v45-architecture-overview)
+1. [Pointer Generator Transformer Architecture Overview](#1-pointer-v45-architecture-overview)
 2. [Component-by-Component Analysis](#2-component-by-component-analysis)
 3. [Root Cause Explanation](#3-root-cause-explanation)
 4. [Evidence Summary](#4-evidence-summary)
@@ -30,12 +30,12 @@
 
 ---
 
-## 1. Pointer V45 Architecture Overview
+## 1. Pointer Generator Transformer Architecture Overview
 
 ### 1.1 Model Architecture
 
 ```
-Pointer V45 Architecture:
+Pointer Generator Transformer Architecture:
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Input Sequence                             │
 │               Location + User + Temporal Features               │
@@ -168,7 +168,7 @@ Yet DIY shows SMALLER improvement (+3.68% vs +20.79%)
 
 ### 3.2 Root Cause: Baseline Saturation
 
-The key insight is that **improvement = what Pointer V45 adds BEYOND the baseline**.
+The key insight is that **improvement = what Pointer Generator Transformer adds BEYOND the baseline**.
 
 ```
 Improvement Ceiling Analysis:
@@ -177,7 +177,7 @@ Copy-bound (target in history):     83.81%          84.12%
 MHSA Baseline achieves:             33.18%          53.17%
 Room for improvement:               50.63%          30.95%
 
-Pointer V45 achieves:               53.97%          56.85%
+Pointer Generator Transformer achieves:               53.97%          56.85%
 Actual improvement:                 20.79%          3.68%
 
 Improvement efficiency:             41.06%          11.89%
@@ -186,7 +186,7 @@ Improvement efficiency:             41.06%          11.89%
 **Explanation**:
 1. **DIY's MHSA baseline already achieves 53.17%** - capturing most simple patterns
 2. **Geolife's MHSA baseline only achieves 33.18%** - struggling with complex patterns
-3. **Pointer V45's explicit copy mechanism helps more when implicit learning fails**
+3. **Pointer Generator Transformer's explicit copy mechanism helps more when implicit learning fails**
 
 ### 3.3 Why MHSA Succeeds Implicitly in DIY
 
@@ -238,21 +238,21 @@ DIY:
 
 ### 5.1 Summary of Findings
 
-The Pointer V45 model's improvement difference (+20.79% Geolife vs +3.68% DIY) is explained by:
+The Pointer Generator Transformer model's improvement difference (+20.79% Geolife vs +3.68% DIY) is explained by:
 
 1. **Baseline Saturation**: MHSA already achieves 53.17% in DIY vs 33.18% in Geolife
 2. **Pattern Complexity**: Geolife has complex patterns that require explicit pointer; DIY has simple patterns MHSA can learn implicitly
 3. **Improvement Ceiling**: Geolife has 51% room for improvement vs DIY's 31%
 
-### 5.2 When Does Pointer V45 Excel?
+### 5.2 When Does Pointer Generator Transformer Excel?
 
-**Pointer V45 provides large improvements when:**
+**Pointer Generator Transformer provides large improvements when:**
 - Baseline MHSA struggles with copy behavior (< 40% utilization of copy-bound)
 - User behavior is diverse and user-specific
 - Patterns are too complex for implicit attention learning
 - There is significant gap between baseline and copy-bound
 
-**Pointer V45 provides smaller improvements when:**
+**Pointer Generator Transformer provides smaller improvements when:**
 - Baseline MHSA already captures copy patterns well (> 60% utilization)
 - User behavior is simple and repetitive
 - Standard attention can implicitly learn copying
@@ -260,7 +260,7 @@ The Pointer V45 model's improvement difference (+20.79% Geolife vs +3.68% DIY) i
 
 ### 5.3 Practical Implications
 
-Before deploying Pointer V45, analyze:
+Before deploying Pointer Generator Transformer, analyze:
 1. **MHSA baseline performance** vs theoretical copy-bound
 2. **User behavior diversity** (unique locations per user)
 3. **Pattern complexity** (can simple attention capture it?)
@@ -320,5 +320,5 @@ Results are saved in `scripts/analysis_performance_gap_v2/results/`:
 ---
 
 *Analysis conducted: December 29, 2025*
-*Focus: Pointer V45 Model Component Analysis*
+*Focus: Pointer Generator Transformer Model Component Analysis*
 *Analysis scripts: `/data/next_loc_clean_v2/scripts/analysis_performance_gap_v2/`*
