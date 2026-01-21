@@ -53,7 +53,7 @@ next_loc_clean_v2/
 ├── src/
 │   ├── models/
 │   │   └── proposed/
-│   │       └── pointer_v45.py          # Model architecture
+│   │       └── pgt.py          # Model architecture
 │   ├── evaluation/
 │   │   └── metrics.py                   # Evaluation metrics
 │   └── data/
@@ -113,7 +113,7 @@ Example: `pointer_v45_diy_trial09.yaml`
 
 ```yaml
 # Hyperparameter Tuning Config: pointer_v45_diy_trial09
-# Model: pointer_v45, Dataset: diy, Trial: 9
+# Model: pgt, Dataset: diy, Trial: 9
 
 seed: 42
 
@@ -337,7 +337,7 @@ def load_model(config, checkpoint_path, device):
     num_users = max(all_users) + 1
     
     # Initialize model
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=num_locations,
         num_users=num_users,
         d_model=config['model']['d_model'],

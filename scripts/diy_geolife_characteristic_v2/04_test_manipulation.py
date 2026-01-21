@@ -48,16 +48,16 @@ from publication_style import (
 )
 setup_publication_style()
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
-from src.training.train_pointer_v45 import NextLocationDataset, collate_fn, set_seed
+from src.models.proposed.pgt import PointerGeneratorTransformer
+from src.training.train_pgt import NextLocationDataset, collate_fn, set_seed
 from src.evaluation.metrics import calculate_correct_total_prediction, get_performance_dict
 
 BASE_DIR = Path(__file__).parent.parent.parent
 OUTPUT_DIR = Path(__file__).parent / "results"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-DIY_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml"
-GEOLIFE_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml"
+DIY_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pgt_diy_trial09.yaml"
+GEOLIFE_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pgt_geolife_trial01.yaml"
 DIY_CHECKPOINT = BASE_DIR / "experiments/diy_pointer_v45_20260101_155348/checkpoints/best.pt"
 GEOLIFE_CHECKPOINT = BASE_DIR / "experiments/geolife_pointer_v45_20260101_151038/checkpoints/best.pt"
 DIY_TEST_PATH = BASE_DIR / "data/diy_eps50/processed/diy_eps50_prev7_test.pk"
@@ -134,7 +134,7 @@ def load_model(checkpoint_path, config_path, device, max_seq_len_override=None):
     num_locations = max(all_locs) + 1
     num_users = max(all_users) + 1
     
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=num_locations,
         num_users=num_users,
         d_model=config['model'].get('d_model', 128),

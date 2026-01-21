@@ -25,7 +25,7 @@ This section presents the diagnostic analysis using trained models to understand
 
 ### Model Extension
 
-For this analysis, we extend the base `PointerNetworkV45` model with a `PointerNetworkV45WithDiagnostics` class that returns:
+For this analysis, we extend the base `PointerGeneratorTransformer` model with a `PointerGeneratorTransformerWithDiagnostics` class that returns:
 - Gate values per sample
 - Pointer attention distribution
 - Pointer-only prediction distribution

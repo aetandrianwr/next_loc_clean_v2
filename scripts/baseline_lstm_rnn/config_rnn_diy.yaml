@@ -1,12 +1,12 @@
 # RNN Baseline Model Configuration for DIY Dataset
 # Dataset: diy_eps50_prev7
 # 
-# This baseline demonstrates the advantage of Pointer V45 over vanilla RNN:
+# This baseline demonstrates the advantage of Pointer Generator Transformer over vanilla RNN:
 # - RNN uses only location and user embeddings (no temporal features)
 # - Vanilla RNN (Elman RNN) - simplest recurrent baseline
 #
 # Results:
-#   - Pointer V45: 56.88% Acc@1
+#   - Pointer Generator Transformer: 56.88% Acc@1
 #   - RNN:         52.91% Acc@1
 #   - Improvement: 3.97 percentage points (7.5% relative improvement)
 #

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive Attention Visualization Experiment for PointerNetworkV45 (V2).
+Comprehensive Attention Visualization Experiment for PointerGeneratorTransformer (V2).
 
 This experiment provides Nature Journal-standard scientific analysis of attention
 mechanisms in the Pointer Network model for next location prediction.
@@ -153,8 +153,8 @@ warnings.filterwarnings('ignore')
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
-from src.training.train_pointer_v45 import NextLocationDataset, collate_fn, set_seed
+from src.models.proposed.pgt import PointerGeneratorTransformer
+from src.training.train_pgt import NextLocationDataset, collate_fn, set_seed
 from scripts.attention_visualization_v2.attention_extractor import (
     AttentionExtractor,
     extract_batch_attention,
@@ -184,7 +184,7 @@ def setup_classic_axes(ax):
 EXPERIMENT_CONFIGS = {
     'diy': {
         'experiment_dir': '/data/next_loc_clean_v2/experiments/diy_pointer_v45_20260101_155348',
-        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml',
+        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_diy_trial09.yaml',
         'test_data': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_test.pk',
         'train_data': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_train.pk',
         'dataset_name': 'DIY',
@@ -192,7 +192,7 @@ EXPERIMENT_CONFIGS = {
     },
     'geolife': {
         'experiment_dir': '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151038',
-        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml',
+        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_geolife_trial01.yaml',
         'test_data': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_test.pk',
         'train_data': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_train.pk',
         'dataset_name': 'Geolife',
@@ -214,7 +214,7 @@ def load_model_and_data(config: Dict, device: torch.device) -> Tuple[nn.Module, 
         device: Torch device
         
     Returns:
-        model: Loaded PointerNetworkV45 model
+        model: Loaded PointerGeneratorTransformer model
         test_loader: DataLoader for test set
         info: Dataset information
     """
@@ -242,7 +242,7 @@ def load_model_and_data(config: Dict, device: torch.device) -> Tuple[nn.Module, 
     
     # Create model with exact config from checkpoint
     model_cfg = checkpoint.get('config', {}).get('model', model_config['model'])
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=info['num_locations'],
         num_users=info['num_users'],
         d_model=model_cfg.get('d_model', 128),
@@ -1007,7 +1007,7 @@ def run_experiment(dataset: str, seed: int = 42):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description='Run attention visualization experiment for PointerNetworkV45'
+        description='Run attention visualization experiment for PointerGeneratorTransformer'
     )
     parser.add_argument(
         '--dataset', type=str, required=True,

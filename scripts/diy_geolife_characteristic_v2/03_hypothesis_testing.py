@@ -55,23 +55,23 @@ from publication_style import (
 )
 setup_publication_style()
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
-from src.training.train_pointer_v45 import NextLocationDataset, collate_fn, set_seed
+from src.models.proposed.pgt import PointerGeneratorTransformer
+from src.training.train_pgt import NextLocationDataset, collate_fn, set_seed
 from src.evaluation.metrics import calculate_correct_total_prediction, get_performance_dict
 
 BASE_DIR = Path(__file__).parent.parent.parent
 OUTPUT_DIR = Path(__file__).parent / "results"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-DIY_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml"
-GEOLIFE_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml"
+DIY_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pgt_diy_trial09.yaml"
+GEOLIFE_CONFIG = BASE_DIR / "scripts/sci_hyperparam_tuning/configs/pgt_geolife_trial01.yaml"
 DIY_CHECKPOINT = BASE_DIR / "experiments/diy_pointer_v45_20260101_155348/checkpoints/best.pt"
 GEOLIFE_CHECKPOINT = BASE_DIR / "experiments/geolife_pointer_v45_20260101_151038/checkpoints/best.pt"
 
 SEED = 42
 
 
-class PointerNetworkV45WithComponents(PointerNetworkV45):
+class PointerGeneratorTransformerWithComponents(PointerGeneratorTransformer):
     """Model with component-wise output for experiments."""
     
     def forward_components(self, x: torch.Tensor, x_dict: dict):
@@ -159,7 +159,7 @@ def load_model_and_data(checkpoint_path, config_path, device):
     with open(test_path, 'rb') as f:
         test_raw = pickle.load(f)
     
-    model = PointerNetworkV45WithComponents(
+    model = PointerGeneratorTransformerWithComponents(
         num_locations=max(train_ds.num_locations, test_ds.num_locations),
         num_users=max(train_ds.num_users, test_ds.num_users),
         d_model=config['model'].get('d_model', 128),

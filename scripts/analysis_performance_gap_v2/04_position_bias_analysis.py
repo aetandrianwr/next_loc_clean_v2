@@ -1,7 +1,7 @@
 """
-Pointer V45 Component Analysis - Script 4: Position Bias Effectiveness
+Pointer Generator Transformer Component Analysis - Script 4: Position Bias Effectiveness
 
-This script analyzes the Position Bias component of Pointer V45:
+This script analyzes the Position Bias component of Pointer Generator Transformer:
     ptr_scores = ptr_scores + self.position_bias[pos_from_end]
 
 The position bias helps the model learn that:

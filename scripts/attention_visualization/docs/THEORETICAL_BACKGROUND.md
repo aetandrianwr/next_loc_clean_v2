@@ -2,7 +2,7 @@
 
 ## Deep Dive into the Mathematical and Conceptual Foundations
 
-This document provides an in-depth theoretical treatment of the attention mechanisms used in the PointerNetworkV45 model for next location prediction.
+This document provides an in-depth theoretical treatment of the attention mechanisms used in the PointerGeneratorTransformer model for next location prediction.
 
 ---
 
@@ -50,7 +50,7 @@ Where $f(q, k_i)$ is a compatibility function (scoring how well query matches ke
 | Scaled Dot-Product | $\frac{q^T k_i}{\sqrt{d_k}}$ | Prevents gradient vanishing |
 | Bilinear | $q^T W k_i$ | Learnable transformation |
 
-**PointerNetworkV45 uses scaled dot-product attention** with an additional learned position bias.
+**PointerGeneratorTransformer uses scaled dot-product attention** with an additional learned position bias.
 
 ### 1.4 Softmax Temperature
 
@@ -93,7 +93,7 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
 2. Different heads can capture different types of relationships
 3. Increases model capacity without proportional parameter increase
 
-### 2.3 Multi-Head Configuration in PointerNetworkV45
+### 2.3 Multi-Head Configuration in PointerGeneratorTransformer
 
 | Dataset | d_model | nhead | head_dim |
 |---------|---------|-------|----------|
@@ -125,7 +125,7 @@ Output
 ```
 
 **Pre-Norm vs Post-Norm**:
-- PointerNetworkV45 uses Pre-Norm (LayerNorm before attention)
+- PointerGeneratorTransformer uses Pre-Norm (LayerNorm before attention)
 - Pre-Norm provides more stable training gradients
 - Allows for better learning in deeper networks
 
@@ -165,7 +165,7 @@ Where:
 - $d_i$: Decoder hidden state at step $i$
 - $C_i$: The pointer selection at step $i$
 
-### 3.3 Pointer Mechanism in PointerNetworkV45
+### 3.3 Pointer Mechanism in PointerGeneratorTransformer
 
 The model uses a simplified dot-product formulation:
 
@@ -279,7 +279,7 @@ $$PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)$$
 
 ### 5.2 Position-from-End Embedding
 
-PointerNetworkV45 adds a **learned** position-from-end embedding:
+PointerGeneratorTransformer adds a **learned** position-from-end embedding:
 
 $$\text{pos\_from\_end} = \text{length} - \text{position}$$
 
@@ -438,7 +438,7 @@ The gate mechanism allows the model to adapt to these categories automatically.
 
 ## Summary
 
-The theoretical foundations of PointerNetworkV45's attention mechanisms combine:
+The theoretical foundations of PointerGeneratorTransformer's attention mechanisms combine:
 
 1. **Transformer self-attention**: Captures dependencies between all historical positions
 2. **Pointer attention**: Directly copies from history for repetitive patterns

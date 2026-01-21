@@ -38,7 +38,7 @@ from torch.nn.utils.rnn import pad_sequence
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 
 # Plotting
 import matplotlib
@@ -214,7 +214,7 @@ def collate_fn(batch):
     return x_batch, y_batch, x_dict_batch, raw_samples
 
 
-class PointerNetworkV45WithAnalysis(PointerNetworkV45):
+class PointerGeneratorTransformerWithAnalysis(PointerGeneratorTransformer):
     """Extended model that returns analysis information."""
     
     def forward_with_analysis(self, x: torch.Tensor, x_dict: dict) -> Tuple[torch.Tensor, dict]:
@@ -295,7 +295,7 @@ class PointerNetworkV45WithAnalysis(PointerNetworkV45):
         return log_probs, analysis
 
 
-def load_model(config_path: str, checkpoint_path: str, dataset_info: dict, device: torch.device, max_seq_len_override: int = None) -> PointerNetworkV45WithAnalysis:
+def load_model(config_path: str, checkpoint_path: str, dataset_info: dict, device: torch.device, max_seq_len_override: int = None) -> PointerGeneratorTransformerWithAnalysis:
     """Load trained model from checkpoint."""
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
@@ -308,7 +308,7 @@ def load_model(config_path: str, checkpoint_path: str, dataset_info: dict, devic
     num_locations = checkpoint['model_state_dict']['loc_emb.weight'].shape[0]
     num_users = checkpoint['model_state_dict']['user_emb.weight'].shape[0]
     
-    model = PointerNetworkV45WithAnalysis(
+    model = PointerGeneratorTransformerWithAnalysis(
         num_locations=num_locations,
         num_users=num_users,
         d_model=model_cfg.get('d_model', 128),
@@ -775,8 +775,8 @@ def main():
     diy_test_path = PROJECT_ROOT / 'data' / 'diy_eps50' / 'processed' / 'diy_eps50_prev7_test.pk'
     geolife_test_path = PROJECT_ROOT / 'data' / 'geolife_eps20' / 'processed' / 'geolife_eps20_prev7_test.pk'
     
-    diy_config = PROJECT_ROOT / 'scripts' / 'sci_hyperparam_tuning' / 'configs' / 'pointer_v45_diy_trial09.yaml'
-    geolife_config = PROJECT_ROOT / 'scripts' / 'sci_hyperparam_tuning' / 'configs' / 'pointer_v45_geolife_trial01.yaml'
+    diy_config = PROJECT_ROOT / 'scripts' / 'sci_hyperparam_tuning' / 'configs' / 'pgt_diy_trial09.yaml'
+    geolife_config = PROJECT_ROOT / 'scripts' / 'sci_hyperparam_tuning' / 'configs' / 'pgt_geolife_trial01.yaml'
     
     diy_checkpoint = PROJECT_ROOT / 'experiments' / 'diy_pointer_v45_20260101_155348' / 'checkpoints' / 'best.pt'
     geolife_checkpoint = PROJECT_ROOT / 'experiments' / 'geolife_pointer_v45_20260101_151038' / 'checkpoints' / 'best.pt'

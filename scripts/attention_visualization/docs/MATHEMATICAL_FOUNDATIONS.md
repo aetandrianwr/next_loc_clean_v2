@@ -207,7 +207,7 @@ Each attention head operates in an independent $d_k$-dimensional subspace of the
 
 ### 5.1 Pointer Attention Computation
 
-In PointerNetworkV45, the pointer mechanism computes:
+In PointerGeneratorTransformer, the pointer mechanism computes:
 
 **Step 1: Context Extraction**
 $$\mathbf{c} = \mathbf{H}[b, L_b - 1, :] \quad \text{(last valid position)}$$
@@ -399,7 +399,7 @@ $$\begin{pmatrix} PE_{pos+k, 2i} \\ PE_{pos+k, 2i+1} \end{pmatrix} = \begin{pmat
 
 ### 8.3 Position-from-End Embedding
 
-In PointerNetworkV45, an additional learnable embedding based on position from sequence end:
+In PointerGeneratorTransformer, an additional learnable embedding based on position from sequence end:
 $$\text{pos\_from\_end}_i = L - i$$
 
 This is a **learnable** embedding, unlike sinusoidal encoding.
@@ -452,7 +452,7 @@ $$\frac{\partial \mathcal{L}}{\partial \theta_{\text{gen}}} = (1-g) \cdot \frac{
 
 **Problem**: With many layers, gradients can vanish or explode.
 
-**Solutions implemented in PointerNetworkV45**:
+**Solutions implemented in PointerGeneratorTransformer**:
 1. **Residual connections**: $\mathbf{X}_{l+1} = \mathbf{X}_l + \text{Sublayer}(\mathbf{X}_l)$
 2. **Pre-norm**: $\text{Sublayer}(\text{LayerNorm}(\mathbf{X}_l))$
 3. **Scaled attention**: Division by $\sqrt{d_k}$

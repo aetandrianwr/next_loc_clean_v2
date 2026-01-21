@@ -22,7 +22,7 @@
 │                                                                           │
 │  ┌─────────────────────┐                                                  │
 │  │ hyperparam_search_  │  Defines search spaces for all models            │
-│  │   space.py          │  POINTER_V45_SEARCH_SPACE, MHSA_SEARCH_SPACE,   │
+│  │   space.py          │  PGT_SEARCH_SPACE, MHSA_SEARCH_SPACE,   │
 │  └──────────┬──────────┘  LSTM_SEARCH_SPACE                              │
 │             │                                                             │
 │             ▼                                                             │
@@ -99,10 +99,10 @@ DATASET_CONFIGS = {
 
 Each model has a dedicated function to translate hyperparameters into the appropriate YAML structure:
 
-**Pointer V45 Configuration:**
+**Pointer Generator Transformer Configuration:**
 ```python
 def generate_pointer_v45_config(hp_config: dict, dataset: str) -> dict:
-    """Generate Pointer V45 YAML config from hyperparameters."""
+    """Generate Pointer Generator Transformer YAML config from hyperparameters."""
     ds_cfg = DATASET_CONFIGS[dataset]
     
     return {
@@ -184,13 +184,13 @@ def main():
     config_dir.mkdir(parents=True, exist_ok=True)
     
     generators = {
-        'pointer_v45': generate_pointer_v45_config,
+        'pgt': generate_pointer_v45_config,
         'mhsa': generate_mhsa_config,
         'lstm': generate_lstm_config,
     }
     
     all_configs = []
-    for model_name in ['pointer_v45', 'mhsa', 'lstm']:
+    for model_name in ['pgt', 'mhsa', 'lstm']:
         for dataset in ['geolife', 'diy']:
             hp_configs = generate_all_configs(model_name, dataset, num_trials=20)
             
@@ -227,7 +227,7 @@ BASE_DIR = Path(__file__).parent.parent.parent  # Repository root
 
 ```python
 TRAINING_SCRIPTS = {
-    'pointer_v45': 'src/training/train_pointer_v45.py',
+    'pgt': 'src/training/train_pgt.py',
     'mhsa': 'src/training/train_MHSA.py',
     'lstm': 'src/training/train_LSTM.py',
 }
@@ -401,7 +401,7 @@ Each results CSV file contains these columns:
 | Column | Type | Description |
 |--------|------|-------------|
 | config_name | str | e.g., "pointer_v45_geolife_trial01" |
-| model_name | str | "pointer_v45", "mhsa", or "lstm" |
+| model_name | str | "pgt", "mhsa", or "lstm" |
 | dataset | str | "geolife" or "diy" |
 | trial_idx | int | 0-19 |
 | num_params | int | Model parameter count |
@@ -442,7 +442,7 @@ def find_best_configs(results_df):
     """Find best configuration for each model-dataset by Val Acc@1."""
     best_configs = {}
     
-    for model in ['pointer_v45', 'mhsa', 'lstm']:
+    for model in ['pgt', 'mhsa', 'lstm']:
         for dataset in ['geolife', 'diy']:
             subset = results_df[
                 (results_df['model_name'] == model) & 

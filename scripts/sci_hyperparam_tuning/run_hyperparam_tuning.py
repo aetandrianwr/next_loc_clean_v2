@@ -42,7 +42,7 @@ CONFIGS_DIR = SCRIPTS_DIR / 'configs'
 
 # Training scripts
 TRAINING_SCRIPTS = {
-    'pointer_v45': 'src/training/train_pointer_v45.py',
+    "pgt": 'src/training/train_pgt.py',
     'mhsa': 'src/training/train_MHSA.py',
     'lstm': 'src/training/train_LSTM.py',
 }
@@ -98,7 +98,7 @@ class ResultsLogger:
     def _init_csv_files(self):
         """Initialize CSV files with headers if they don't exist."""
         for split in ['val', 'test']:
-            for model in ['pointer_v45', 'mhsa', 'lstm']:
+            for model in ["pgt", 'mhsa', 'lstm']:
                 for dataset in ['geolife', 'diy']:
                     csv_path = self.results_dir / f'{model}_{dataset}_{split}_results.csv'
                     if not csv_path.exists():
@@ -126,7 +126,7 @@ def parse_num_params_from_log(log_path: str, model_name: str) -> int:
             log_content = f.read()
         
         # Different models print params differently
-        if model_name == 'pointer_v45':
+        if model_name == "pgt":
             # Look for "Model parameters: XXX" or "Parameters: XXX"
             match = re.search(r'(?:Model\s+)?[Pp]arameters:\s*([\d,]+)', log_content)
         else:
@@ -155,7 +155,7 @@ def find_experiment_dir(experiments_root: Path, config_name: str, model_name: st
                         dataset: str, start_time: float) -> Optional[str]:
     """Find the experiment directory created after start_time."""
     model_suffix = {
-        'pointer_v45': 'pointer_v45',
+        "pgt": "pgt",
         'mhsa': 'MHSA',
         'lstm': 'LSTM',
     }[model_name]

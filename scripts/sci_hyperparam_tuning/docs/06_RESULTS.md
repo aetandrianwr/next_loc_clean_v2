@@ -18,19 +18,19 @@
 
 | Dataset | Model | Val Acc@1 | Val Acc@5 | Val Acc@10 | MRR | Parameters |
 |---------|-------|-----------|-----------|------------|-----|------------|
-| **Geolife** | **Pointer V45** | **49.25%** | 76.42% | 81.94% | 61.30% | 443,404 |
+| **Geolife** | **Pointer Generator Transformer** | **49.25%** | 76.42% | 81.94% | 61.30% | 443,404 |
 | Geolife | MHSA | 42.38% | 62.21% | 65.78% | 51.35% | 281,251 |
 | Geolife | LSTM | 40.58% | 62.60% | 66.44% | 50.58% | 467,683 |
-| **DIY** | **Pointer V45** | **54.92%** | 79.65% | 82.87% | 65.65% | 1,081,554 |
+| **DIY** | **Pointer Generator Transformer** | **54.92%** | 79.65% | 82.87% | 65.65% | 1,081,554 |
 | DIY | LSTM | 53.90% | 78.05% | 82.45% | 64.52% | 3,564,990 |
 | DIY | MHSA | 53.69% | 77.79% | 82.05% | 64.21% | 797,982 |
 
 ### Key Findings
 
-1. ✅ **Pointer V45 wins on both datasets** with the highest Val Acc@1
+1. ✅ **Pointer Generator Transformer wins on both datasets** with the highest Val Acc@1
 2. 📊 **Larger performance gap on Geolife** (+6.87% over MHSA, +8.67% over LSTM)
 3. 📈 **Competitive performance on DIY** (+1.02% over LSTM, +1.23% over MHSA)
-4. 🎯 **Pointer V45 is most consistent** with lowest variance across trials
+4. 🎯 **Pointer Generator Transformer is most consistent** with lowest variance across trials
 
 ---
 
@@ -48,7 +48,7 @@
 
 ### Validation Results by Trial
 
-#### Pointer V45 on Geolife
+#### Pointer Generator Transformer on Geolife
 
 | Trial | Val Acc@1 | Val Acc@5 | MRR | Parameters | Key Hyperparameters |
 |-------|-----------|-----------|-----|------------|---------------------|
@@ -98,7 +98,7 @@
 ### Performance Distribution (Geolife)
 
 ```
-Pointer V45  [44.27% ████████████████████████████████████ 49.25%]
+Pointer Generator Transformer  [44.27% ████████████████████████████████████ 49.25%]
                      Mean: 46.80%, Std: 1.39%
 
 MHSA         [35.81% ████████████████████████████ 42.38%]
@@ -109,7 +109,7 @@ LSTM         [31.94% ███████████████████�
 ```
 
 **Observations**:
-- Pointer V45 has the **narrowest range** (most consistent)
+- Pointer Generator Transformer has the **narrowest range** (most consistent)
 - LSTM has the **widest range** (most sensitive to hyperparameters)
 - All models show substantial variance, justifying the need for tuning
 
@@ -131,13 +131,13 @@ LSTM         [31.94% ███████████████████�
 
 | Model | Best Val Acc@1 | Mean | Std | Range |
 |-------|----------------|------|-----|-------|
-| **Pointer V45** | **54.92%** | 54.16% | 0.51% | [52.88%, 54.92%] |
+| **Pointer Generator Transformer** | **54.92%** | 54.16% | 0.51% | [52.88%, 54.92%] |
 | LSTM | 53.90% | 51.09% | 3.28% | [41.68%, 53.90%] |
 | MHSA | 53.69% | 52.55% | 0.59% | [51.67%, 53.69%] |
 
 ### Best Configurations
 
-#### Pointer V45 on DIY (Best: trial09)
+#### Pointer Generator Transformer on DIY (Best: trial09)
 
 ```yaml
 model:
@@ -206,7 +206,7 @@ optimiser:
 
 | Rank | Geolife | DIY |
 |------|---------|-----|
-| 1 | Pointer V45 (+8.67%) | Pointer V45 (+1.23%) |
+| 1 | Pointer Generator Transformer (+8.67%) | Pointer Generator Transformer (+1.23%) |
 | 2 | MHSA (+1.80%) | LSTM (+0.21%) |
 | 3 | LSTM | MHSA |
 
@@ -215,7 +215,7 @@ optimiser:
 ```
                     Geolife                     DIY
                     
-Pointer V45    ████████████████████ 49.25%    ████████████████████████ 54.92%
+Pointer Generator Transformer    ████████████████████ 49.25%    ████████████████████████ 54.92%
                                                
 MHSA           ██████████████████ 42.38%      ███████████████████████ 53.69%
                     
@@ -246,7 +246,7 @@ Gap:           ▼ 8.67%                        ▼ 1.23%
 
 Based on variance analysis across trials:
 
-#### Pointer V45
+#### Pointer Generator Transformer
 
 | Hyperparameter | Impact | Optimal Range |
 |----------------|--------|---------------|
@@ -282,7 +282,7 @@ Based on variance analysis across trials:
 ```
 Optimal Learning Rates:
 
-Pointer V45:  1e-4      3e-4     [5e-4=====1e-3]
+Pointer Generator Transformer:  1e-4      3e-4     [5e-4=====1e-3]
               |---------|---------|====OPTIMAL====|
 
 MHSA:                   |         [1e-3]
@@ -303,15 +303,15 @@ LSTM:                            [       2e-3    ]
 
 | Model | Dataset | Avg Time/Trial | Min | Max |
 |-------|---------|----------------|-----|-----|
-| Pointer V45 | Geolife | 1.2 min | 0.4 min | 3.0 min |
-| Pointer V45 | DIY | 24.3 min | 13.7 min | 39.5 min |
+| Pointer Generator Transformer | Geolife | 1.2 min | 0.4 min | 3.0 min |
+| Pointer Generator Transformer | DIY | 24.3 min | 13.7 min | 39.5 min |
 | MHSA | Geolife | 2.5 min | 1.0 min | 5.9 min |
 | MHSA | DIY | 52.4 min | 19.9 min | 119.7 min |
 | LSTM | Geolife | 2.0 min | 1.0 min | 3.9 min |
 | LSTM | DIY | 54.2 min | 20.9 min | 97.5 min |
 
 **Observations**:
-- Pointer V45 is fastest per epoch (efficient architecture)
+- Pointer Generator Transformer is fastest per epoch (efficient architecture)
 - DIY takes ~20x longer than Geolife (more data)
 - MHSA and LSTM have similar training times
 
@@ -321,11 +321,11 @@ Based on early stopping patterns:
 
 | Model | Avg Epochs to Best | Early Stop Rate |
 |-------|-------------------|-----------------|
-| Pointer V45 | 12-15 | 85% |
+| Pointer Generator Transformer | 12-15 | 85% |
 | MHSA | 15-20 | 70% |
 | LSTM | 20-30 | 60% |
 
-**Interpretation**: Pointer V45 converges fastest, LSTM needs most epochs.
+**Interpretation**: Pointer Generator Transformer converges fastest, LSTM needs most epochs.
 
 ---
 
@@ -339,7 +339,7 @@ Using t-distribution with 19 degrees of freedom:
 
 | Model | Mean Acc@1 | 95% CI |
 |-------|------------|--------|
-| Pointer V45 | 46.80% | [46.15%, 47.45%] |
+| Pointer Generator Transformer | 46.80% | [46.15%, 47.45%] |
 | MHSA | 38.99% | [38.10%, 39.88%] |
 | LSTM | 34.66% | [33.62%, 35.70%] |
 
@@ -347,26 +347,26 @@ Using t-distribution with 19 degrees of freedom:
 
 | Model | Mean Acc@1 | 95% CI |
 |-------|------------|--------|
-| Pointer V45 | 54.16% | [53.92%, 54.40%] |
+| Pointer Generator Transformer | 54.16% | [53.92%, 54.40%] |
 | LSTM | 51.09% | [49.56%, 52.62%] |
 | MHSA | 52.55% | [52.27%, 52.83%] |
 
 ### Statistical Significance
 
 **Paired t-test for Geolife (best vs second-best)**:
-- Pointer V45 vs MHSA: p < 0.001 ✓ Significant
+- Pointer Generator Transformer vs MHSA: p < 0.001 ✓ Significant
 - MHSA vs LSTM: p < 0.01 ✓ Significant
 
 **Paired t-test for DIY (best vs second-best)**:
-- Pointer V45 vs LSTM: p < 0.05 ✓ Significant
+- Pointer Generator Transformer vs LSTM: p < 0.05 ✓ Significant
 - LSTM vs MHSA: p > 0.1 Not significant
 
 ### Effect Size (Cohen's d)
 
 | Comparison | Geolife | DIY |
 |------------|---------|-----|
-| Pointer V45 vs MHSA | 4.69 (Very Large) | 2.92 (Very Large) |
-| Pointer V45 vs LSTM | 6.51 (Very Large) | 1.84 (Large) |
+| Pointer Generator Transformer vs MHSA | 4.69 (Very Large) | 2.92 (Very Large) |
+| Pointer Generator Transformer vs LSTM | 6.51 (Very Large) | 1.84 (Large) |
 | MHSA vs LSTM | 2.11 (Large) | 0.79 (Medium) |
 
 ---
@@ -375,14 +375,14 @@ Using t-distribution with 19 degrees of freedom:
 
 ### Main Results
 
-1. **Pointer V45 is the best model** on both datasets
-2. **Geolife**: Pointer V45 > MHSA > LSTM (significant gaps)
-3. **DIY**: Pointer V45 ≈ LSTM > MHSA (close competition)
-4. **Pointer V45 is most robust** (lowest variance across hyperparameters)
+1. **Pointer Generator Transformer is the best model** on both datasets
+2. **Geolife**: Pointer Generator Transformer > MHSA > LSTM (significant gaps)
+3. **DIY**: Pointer Generator Transformer ≈ LSTM > MHSA (close competition)
+4. **Pointer Generator Transformer is most robust** (lowest variance across hyperparameters)
 
 ### Recommendations
 
-1. **Use Pointer V45** for next location prediction tasks
+1. **Use Pointer Generator Transformer** for next location prediction tasks
 2. **Tune learning rate carefully** (most impactful hyperparameter)
 3. **Start with moderate model size** (d_model=96-128)
 4. **Use strong regularization** (dropout=0.2-0.25)

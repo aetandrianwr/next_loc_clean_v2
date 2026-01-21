@@ -120,7 +120,7 @@ weekday = compute_y_weekday(sample)  # Returns 4 (Friday)
 
 #### `load_model(dataset_key: str, device: torch.device) -> nn.Module`
 
-Load a pre-trained PointerNetworkV45 model from checkpoint.
+Load a pre-trained PointerGeneratorTransformer model from checkpoint.
 
 **Parameters:**
 - `dataset_key` (str): Dataset identifier ('diy' or 'geolife')

@@ -371,7 +371,7 @@ Creates four-panel analysis showing why pointer benefits GeoLife more.
 
 ### 3.1 Purpose
 
-Analyzes trained PointerNetworkV45 models to understand how they use the pointer mechanism on each dataset.
+Analyzes trained PointerGeneratorTransformer models to understand how they use the pointer mechanism on each dataset.
 
 ### 3.2 Custom Dataset Class
 
@@ -395,7 +395,7 @@ class NextLocationDataset(Dataset):
 ### 3.3 Extended Model Class
 
 ```python
-class PointerNetworkV45WithAnalysis(PointerNetworkV45):
+class PointerGeneratorTransformerWithAnalysis(PointerGeneratorTransformer):
     """Extended model that returns analysis information."""
     
     def forward_with_analysis(self, x, x_dict):
@@ -484,7 +484,7 @@ def load_model(config_path, checkpoint_path, dataset_info, device, max_seq_len_o
         device: torch.device
     
     Returns:
-        PointerNetworkV45WithAnalysis: Loaded model in eval mode
+        PointerGeneratorTransformerWithAnalysis: Loaded model in eval mode
     """
 ```
 
@@ -902,7 +902,7 @@ import yaml                 # Config file parsing
 ### 8.6 Project-Specific
 
 ```python
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 ```
 
 ---
@@ -958,10 +958,10 @@ print(f"Entropy: {entropy:.4f} bits")
 
 ```python
 import torch
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 
 # Load model (simplified)
-model = PointerNetworkV45(num_locations=1000, num_users=100)
+model = PointerGeneratorTransformer(num_locations=1000, num_users=100)
 model.load_state_dict(torch.load('checkpoint.pt')['model_state_dict'])
 model.eval()
 

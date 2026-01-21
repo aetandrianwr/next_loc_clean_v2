@@ -3,7 +3,7 @@
 Cross-Dataset Comparison for Attention Visualization Experiment.
 
 This script generates comparative visualizations and tables between
-the DIY and Geolife datasets for the PointerNetworkV45 model.
+the DIY and Geolife datasets for the PointerGeneratorTransformer model.
 
 Scientific Purpose:
 ===================

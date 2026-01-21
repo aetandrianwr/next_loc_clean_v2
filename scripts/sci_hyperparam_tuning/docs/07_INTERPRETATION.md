@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Key Findings Summary](#key-findings-summary)
-2. [Why Does Pointer V45 Win?](#why-does-pointer-v45-win)
+2. [Why Does Pointer Generator Transformer Win?](#why-does-pointer-v45-win)
 3. [Dataset-Specific Insights](#dataset-specific-insights)
 4. [Hyperparameter Insights](#hyperparameter-insights)
 5. [Limitations](#limitations)
@@ -16,28 +16,28 @@
 
 ### Primary Finding
 
-> **Pointer V45 consistently outperforms both baseline models (MHSA and LSTM) on both Geolife and DIY datasets when all models are fairly tuned with equal computational budget.**
+> **Pointer Generator Transformer consistently outperforms both baseline models (MHSA and LSTM) on both Geolife and DIY datasets when all models are fairly tuned with equal computational budget.**
 
 ### Quantitative Summary
 
 | Dataset | Winner | Improvement over 2nd | Improvement over 3rd |
 |---------|--------|---------------------|---------------------|
-| Geolife | Pointer V45 | +6.87% vs MHSA | +8.67% vs LSTM |
-| DIY | Pointer V45 | +1.02% vs LSTM | +1.23% vs MHSA |
+| Geolife | Pointer Generator Transformer | +6.87% vs MHSA | +8.67% vs LSTM |
+| DIY | Pointer Generator Transformer | +1.02% vs LSTM | +1.23% vs MHSA |
 
 ### Statistical Confidence
 
-- **Geolife**: High confidence (p < 0.001) that Pointer V45 is superior
-- **DIY**: Moderate confidence (p < 0.05) that Pointer V45 is superior
+- **Geolife**: High confidence (p < 0.001) that Pointer Generator Transformer is superior
+- **DIY**: Moderate confidence (p < 0.05) that Pointer Generator Transformer is superior
 - Effect sizes range from Large to Very Large
 
 ---
 
-## Why Does Pointer V45 Win?
+## Why Does Pointer Generator Transformer Win?
 
 ### 1. Copy Mechanism Advantage
 
-The pointer mechanism allows Pointer V45 to **copy locations directly from the input sequence**. This is particularly effective for next location prediction because:
+The pointer mechanism allows Pointer Generator Transformer to **copy locations directly from the input sequence**. This is particularly effective for next location prediction because:
 
 **Human Mobility is Repetitive**:
 ```
@@ -55,7 +55,7 @@ The **copy prior** significantly reduces the effective output space for common p
 
 ### 2. Position Bias for Recency
 
-The learned position bias in Pointer V45 encourages attending to recent locations:
+The learned position bias in Pointer Generator Transformer encourages attending to recent locations:
 
 ```python
 # Position bias makes recent locations more likely to be copied
@@ -83,9 +83,9 @@ This adaptive mechanism handles both cases effectively.
 
 ### 4. Pre-Norm Transformer with GELU
 
-Pointer V45 uses modern Transformer best practices:
+Pointer Generator Transformer uses modern Transformer best practices:
 
-| Feature | Pointer V45 | MHSA Baseline |
+| Feature | Pointer Generator Transformer | MHSA Baseline |
 |---------|-------------|---------------|
 | Normalization | Pre-norm | Post-norm |
 | Activation | GELU | ReLU |
@@ -102,14 +102,14 @@ $$\text{GELU}(x) = x \cdot \Phi(x) \approx 0.5x(1 + \tanh[\sqrt{2/\pi}(x + 0.044
 
 ### 5. Rich Temporal Embeddings
 
-Pointer V45 uses **5 temporal embedding types**:
+Pointer Generator Transformer uses **5 temporal embedding types**:
 1. Time of day (96 slots)
 2. Day of week (7 days)
 3. Recency (days ago)
 4. Duration (visit length)
 5. Position from end (sequence position)
 
-The **position-from-end embedding** is unique to Pointer V45 and helps the pointer mechanism understand relative recency.
+The **position-from-end embedding** is unique to Pointer Generator Transformer and helps the pointer mechanism understand relative recency.
 
 ---
 
@@ -144,7 +144,7 @@ The **position-from-end embedding** is unique to Pointer V45 and helps the point
 ```
                            Copy Benefit
                               ↑
-                    High  │  Pointer V45
+                    High  │  Pointer Generator Transformer
                           │  dominates
         Geolife     ●     │
                           │
@@ -165,7 +165,7 @@ The **position-from-end embedding** is unique to Pointer V45 and helps the point
 
 **Learning Rate is Critical**:
 All models show high sensitivity to learning rate. Optimal ranges:
-- Pointer V45: 3e-4 to 1e-3
+- Pointer Generator Transformer: 3e-4 to 1e-3
 - MHSA: ~1e-3
 - LSTM: 1e-3 to 2e-3
 
@@ -175,7 +175,7 @@ All models show high sensitivity to learning rate. Optimal ranges:
 
 ### Model-Specific Findings
 
-**Pointer V45**:
+**Pointer Generator Transformer**:
 - **Best with moderate size**: d_model=96-128, not maximum
 - **Shallow works well**: 2-3 layers sufficient
 - **Label smoothing helps**: 0.01-0.03 optimal
@@ -192,7 +192,7 @@ All models show high sensitivity to learning rate. Optimal ranges:
 
 ### Surprising Findings
 
-1. **Pointer V45 best config uses only 2 layers** (not maximum)
+1. **Pointer Generator Transformer best config uses only 2 layers** (not maximum)
 2. **LSTM best config uses only 1 layer** (not maximum)
 3. **Smaller batch sizes (64) often outperform larger (256)**
 4. **Weight decay range can be very wide** without major impact
@@ -210,7 +210,7 @@ All models show high sensitivity to learning rate. Optimal ranges:
 
 ### Model Limitations
 
-1. **Pointer V45 assumes repetition**: Less effective for novel locations
+1. **Pointer Generator Transformer assumes repetition**: Less effective for novel locations
 2. **Computational overhead**: Pointer mechanism adds complexity
 3. **Vocabulary scaling**: Generation head grows with vocabulary
 
@@ -266,11 +266,11 @@ All models show high sensitivity to learning rate. Optimal ranges:
 
 ### Summary Statement
 
-> This comprehensive hyperparameter tuning study demonstrates that **Pointer V45 is the superior architecture for next location prediction** across both tested datasets. The advantage stems from its hybrid pointer-generation mechanism that effectively exploits the repetitive nature of human mobility while maintaining the ability to predict novel locations.
+> This comprehensive hyperparameter tuning study demonstrates that **Pointer Generator Transformer is the superior architecture for next location prediction** across both tested datasets. The advantage stems from its hybrid pointer-generation mechanism that effectively exploits the repetitive nature of human mobility while maintaining the ability to predict novel locations.
 
 ### Specific Conclusions
 
-1. **Pointer V45 achieves state-of-the-art performance**
+1. **Pointer Generator Transformer achieves state-of-the-art performance**
    - 49.25% Val Acc@1 on Geolife (best overall)
    - 54.92% Val Acc@1 on DIY (best overall)
 
@@ -288,7 +288,7 @@ All models show high sensitivity to learning rate. Optimal ranges:
    - Learning rate is most critical parameter
    - Default hyperparameters often suboptimal
 
-5. **Pointer V45 is most robust**
+5. **Pointer Generator Transformer is most robust**
    - Lowest variance across hyperparameter configurations
    - Works well across different dataset characteristics
 
@@ -296,15 +296,15 @@ All models show high sensitivity to learning rate. Optimal ranges:
 
 | Scenario | Recommended Model | Reason |
 |----------|-------------------|--------|
-| General next location prediction | Pointer V45 | Best overall performance |
+| General next location prediction | Pointer Generator Transformer | Best overall performance |
 | Limited compute budget | MHSA | Competitive, faster to tune |
-| Very large vocabulary | Pointer V45 with larger d_model | Generation head needs capacity |
-| Strong recency patterns | Pointer V45 | Copy mechanism excels |
+| Very large vocabulary | Pointer Generator Transformer with larger d_model | Generation head needs capacity |
+| Strong recency patterns | Pointer Generator Transformer | Copy mechanism excels |
 | Highly diverse locations | Consider ensemble | Combine pointer + generation |
 
 ### Final Verdict
 
-**Pointer V45 should be the default choice for next location prediction tasks.** The combination of a pointer mechanism for repetitive patterns, an adaptive gate for novel predictions, and modern Transformer architecture provides a robust and effective solution validated through rigorous hyperparameter tuning.
+**Pointer Generator Transformer should be the default choice for next location prediction tasks.** The combination of a pointer mechanism for repetitive patterns, an adaptive gate for novel predictions, and modern Transformer architecture provides a robust and effective solution validated through rigorous hyperparameter tuning.
 
 ---
 

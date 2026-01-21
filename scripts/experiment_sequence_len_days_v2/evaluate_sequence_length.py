@@ -54,7 +54,7 @@ from tqdm import tqdm
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -64,14 +64,14 @@ from src.evaluation.metrics import (
 EXPERIMENT_CONFIG = {
     'diy': {
         'checkpoint_path': '/data/next_loc_clean_v2/experiments/diy_pointer_v45_20260101_155348/checkpoints/best.pt',
-        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml',
+        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_diy_trial09.yaml',
         'test_data_path': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_test.pk',
         'train_data_path': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_train.pk',
         'dataset_name': 'DIY',
     },
     'geolife': {
         'checkpoint_path': '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151038/checkpoints/best.pt',
-        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml',
+        'config_path': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_geolife_trial01.yaml',
         'test_data_path': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_test.pk',
         'train_data_path': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_train.pk',
         'dataset_name': 'GeoLife',
@@ -278,7 +278,7 @@ def load_model(
     config: Dict,
     dataset_info: Dict,
     device: torch.device
-) -> PointerNetworkV45:
+) -> PointerGeneratorTransformer:
     """Load model from checkpoint."""
     model_cfg = config['model']
     
@@ -288,7 +288,7 @@ def load_model(
     # Infer max_seq_len from checkpoint (position_bias has shape [max_seq_len])
     checkpoint_max_seq_len = checkpoint['model_state_dict']['position_bias'].shape[0]
     
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=dataset_info['num_locations'],
         num_users=dataset_info['num_users'],
         d_model=model_cfg.get('d_model', 128),

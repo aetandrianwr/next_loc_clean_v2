@@ -14,7 +14,7 @@ This directory contains comprehensive documentation for the Scientific Hyperpara
 | **[02_METHODOLOGY.md](02_METHODOLOGY.md)** | Scientific Methodology | Theoretical foundation, experimental design, random search strategy |
 | **[03_SEARCH_SPACE.md](03_SEARCH_SPACE.md)** | Search Space Design | Complete hyperparameter definitions for all models |
 | **[04_IMPLEMENTATION.md](04_IMPLEMENTATION.md)** | Implementation Details | Code walkthrough, system architecture, parallel execution |
-| **[05_MODELS.md](05_MODELS.md)** | Model Architectures | Pointer V45, MHSA, and LSTM architecture details |
+| **[05_MODELS.md](05_MODELS.md)** | Model Architectures | Pointer Generator Transformer, MHSA, and LSTM architecture details |
 | **[06_RESULTS.md](06_RESULTS.md)** | Results Analysis | Comprehensive experimental results and statistics |
 | **[07_INTERPRETATION.md](07_INTERPRETATION.md)** | Interpretation | Analysis, insights, limitations, and conclusions |
 | **[08_USAGE.md](08_USAGE.md)** | Usage Guide | How to run experiments, customize, and analyze results |
@@ -40,26 +40,26 @@ Start with: [04_IMPLEMENTATION.md](04_IMPLEMENTATION.md) → [05_MODELS.md](05_M
 
 | Dataset | Best Model | Val Acc@1 | Parameters |
 |---------|------------|-----------|------------|
-| **Geolife** | Pointer V45 | **49.25%** | 443,404 |
-| **DIY** | Pointer V45 | **54.92%** | 1,081,554 |
+| **Geolife** | Pointer Generator Transformer | **49.25%** | 443,404 |
+| **DIY** | Pointer Generator Transformer | **54.92%** | 1,081,554 |
 
 ### Performance Comparison
 
 ```
 Geolife Dataset:
-Pointer V45  ████████████████████████████████████ 49.25%  (+8.67% vs LSTM)
+Pointer Generator Transformer  ████████████████████████████████████ 49.25%  (+8.67% vs LSTM)
 MHSA         ████████████████████████████ 42.38%
 LSTM         ██████████████████████████ 40.58%
 
 DIY Dataset:
-Pointer V45  ████████████████████████████████████ 54.92%  (+1.23% vs MHSA)
+Pointer Generator Transformer  ████████████████████████████████████ 54.92%  (+1.23% vs MHSA)
 LSTM         ███████████████████████████████████ 53.90%
 MHSA         ███████████████████████████████████ 53.69%
 ```
 
 ### Conclusion
 
-> **Pointer V45 consistently outperforms both baseline models (MHSA and LSTM) on all tested datasets when fairly tuned with equal computational budget.**
+> **Pointer Generator Transformer consistently outperforms both baseline models (MHSA and LSTM) on all tested datasets when fairly tuned with equal computational budget.**
 
 ---
 
@@ -67,7 +67,7 @@ MHSA         ██████████████████████�
 
 | Aspect | Detail |
 |--------|--------|
-| **Models Compared** | Pointer V45, MHSA, LSTM |
+| **Models Compared** | Pointer Generator Transformer, MHSA, LSTM |
 | **Datasets** | Geolife (46 users, 1,187 locations), DIY (693 users, 7,038 locations) |
 | **Tuning Method** | Random Search (Bergstra & Bengio, 2012) |
 | **Trials Per Model** | 20 |

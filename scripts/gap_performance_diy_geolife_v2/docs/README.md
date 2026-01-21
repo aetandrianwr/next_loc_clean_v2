@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This documentation provides a comprehensive analysis framework for understanding **why the pointer mechanism in the PointerNetworkV45 model has dramatically different impacts on two human mobility datasets**: DIY (8.3% relative accuracy drop when pointer is removed) vs GeoLife (46.7% relative accuracy drop). This 5.6× difference in impact is scientifically significant and reveals fundamental differences in human mobility patterns between the two datasets.
+This documentation provides a comprehensive analysis framework for understanding **why the pointer mechanism in the PointerGeneratorTransformer model has dramatically different impacts on two human mobility datasets**: DIY (8.3% relative accuracy drop when pointer is removed) vs GeoLife (46.7% relative accuracy drop). This 5.6× difference in impact is scientifically significant and reveals fundamental differences in human mobility patterns between the two datasets.
 
 **Key Finding**: GeoLife users exhibit significantly more repetitive and recency-dependent mobility patterns compared to DIY users, making the copy/pointer mechanism essential for accurate next-location prediction on GeoLife data.
 
@@ -27,11 +27,11 @@ This documentation provides a comprehensive analysis framework for understanding
 
 ### 1.1 Research Question
 
-**Primary Question**: Why does removing the pointer mechanism from the PointerNetworkV45 model cause a 46.7% relative accuracy drop on GeoLife but only an 8.3% drop on DIY?
+**Primary Question**: Why does removing the pointer mechanism from the PointerGeneratorTransformer model cause a 46.7% relative accuracy drop on GeoLife but only an 8.3% drop on DIY?
 
 ### 1.2 Background Context
 
-The PointerNetworkV45 is a hybrid neural network architecture for next-location prediction that combines:
+The PointerGeneratorTransformer is a hybrid neural network architecture for next-location prediction that combines:
 - **Pointer Mechanism**: Directly copies locations from the input history
 - **Generation Head**: Generates predictions over the full location vocabulary
 - **Adaptive Gate**: Learns to blend pointer and generation distributions
@@ -75,7 +75,7 @@ Pointer-Generator networks (See et al., 2017) combine two prediction strategies:
 
 ### 2.2 Position Bias in Pointer Mechanism
 
-The PointerNetworkV45 includes a **position bias** term that favors recent positions:
+The PointerGeneratorTransformer includes a **position bias** term that favors recent positions:
 
 ```
 ptr_scores = (Q * K^T) / sqrt(d_model) + position_bias[pos_from_end]
@@ -288,7 +288,7 @@ python scripts/gap_performance_diy_geolife_v2/run_all_experiments.py
    - Identifies where pointer helps most
 
 **Model Loading** (Lines 298-328):
-- Loads PointerNetworkV45 with analysis extensions
+- Loads PointerGeneratorTransformer with analysis extensions
 - Extracts intermediate values during forward pass
 
 ### 5.4 Recency Pattern Analysis: `analyze_recency_patterns.py`
@@ -859,7 +859,7 @@ This figure is crucial for understanding the mechanism. Panel 1 shows GeoLife's 
 1. **Sample Size Imbalance**: DIY (12,368) vs GeoLife (3,502)
 2. **User Count Imbalance**: DIY (692) vs GeoLife (45)
 3. **Epsilon Difference**: DIY (50) vs GeoLife (20) affects spatial granularity
-4. **Single Model Version**: Only PointerNetworkV45 analyzed
+4. **Single Model Version**: Only PointerGeneratorTransformer analyzed
 
 ---
 

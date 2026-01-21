@@ -89,8 +89,8 @@ This directory contains comprehensive documentation for the **Zipf's Law Locatio
 ## 🔗 Related Files
 
 - **Analysis Scripts**: `../zipf_location_frequency_analysis.py`, `../compare_datasets.py`
-- **Proposed Model**: `/workspace/next_loc_clean_v2/src/models/proposed/pointer_v45.py`
-- **Training Script**: `/workspace/next_loc_clean_v2/src/training/train_pointer_v45.py`
+- **Proposed Model**: `/workspace/next_loc_clean_v2/src/models/proposed/pgt.py`
+- **Training Script**: `/workspace/next_loc_clean_v2/src/training/train_pgt.py`
 
 ---
 

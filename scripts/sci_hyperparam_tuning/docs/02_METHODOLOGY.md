@@ -125,7 +125,7 @@ the important parameter!        important parameter explored!
 
 | Factor | Values | Description |
 |--------|--------|-------------|
-| Models | Pointer V45, MHSA, LSTM | 3 architectures to compare |
+| Models | Pointer Generator Transformer, MHSA, LSTM | 3 architectures to compare |
 | Datasets | Geolife, DIY | 2 mobility datasets |
 | Trials | 20 per model-dataset | Random search iterations |
 | Total | 120 experiments | 3 × 2 × 20 = 120 |
@@ -178,10 +178,10 @@ def sample_hyperparameters(search_space, seed):
 
 The `random.choice()` function samples uniformly from the discrete set of values defined in the search space.
 
-### Example: Pointer V45 Configuration Generation
+### Example: Pointer Generator Transformer Configuration Generation
 
 ```python
-POINTER_V45_SEARCH_SPACE = {
+PGT_SEARCH_SPACE = {
     # Architecture
     'd_model': [64, 96, 128],           # Model dimension
     'nhead': [2, 4, 8],                  # Attention heads
@@ -205,7 +205,7 @@ POINTER_V45_SEARCH_SPACE = {
 
 | Model | Parameters | Possible Combinations |
 |-------|------------|----------------------|
-| Pointer V45 | 10 | 816,480 |
+| Pointer Generator Transformer | 10 | 816,480 |
 | MHSA | 9 | 20,736 |
 | LSTM | 10 | 41,472 |
 
@@ -222,12 +222,12 @@ With only 20 trials per model-dataset, we sample ~0.002% to ~0.1% of the search 
 | Maximum Epochs | 50 | Sufficient for convergence |
 | Early Stopping Patience | 5 | Prevent overfitting |
 | Minimum Epochs | 8 | Ensure learning before early stop |
-| Gradient Clipping | 0.8 | Pointer V45 only, stabilize training |
+| Gradient Clipping | 0.8 | Pointer Generator Transformer only, stabilize training |
 | Mixed Precision | Yes | Faster training, less memory |
 
 ### Learning Rate Schedule
 
-**Pointer V45**: Warmup + Cosine Annealing
+**Pointer Generator Transformer**: Warmup + Cosine Annealing
 ```
 LR
 ^

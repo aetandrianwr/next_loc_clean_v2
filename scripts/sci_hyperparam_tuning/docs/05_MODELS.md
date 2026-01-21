@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Pointer V45 (Proposed Model)](#pointer-v45-proposed-model)
+2. [Pointer Generator Transformer (Proposed Model)](#pointer-v45-proposed-model)
 3. [MHSA (Transformer Baseline)](#mhsa-transformer-baseline)
 4. [LSTM (Recurrent Baseline)](#lstm-recurrent-baseline)
 5. [Architecture Comparison](#architecture-comparison)
@@ -17,7 +17,7 @@ This project compares three deep learning architectures for next location predic
 
 | Model | Type | Key Feature | Paper Reference |
 |-------|------|-------------|-----------------|
-| **Pointer V45** | Hybrid | Pointer mechanism + Generation | Vinyals et al., 2015 |
+| **Pointer Generator Transformer** | Hybrid | Pointer mechanism + Generation | Vinyals et al., 2015 |
 | **MHSA** | Transformer | Multi-head self-attention | Vaswani et al., 2017 |
 | **LSTM** | Recurrent | Sequential hidden state | Hochreiter & Schmidhuber, 1997 |
 
@@ -28,13 +28,13 @@ All models share the same input format:
 
 ---
 
-## Pointer V45 (Proposed Model)
+## Pointer Generator Transformer (Proposed Model)
 
 ### Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    POINTER V45 ARCHITECTURE                      │
+│                    POINTER GENERATOR TRANSFORMER ARCHITECTURE                      │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  INPUT                                                          │
@@ -284,9 +284,9 @@ class MHSA(nn.Module):
         self.fc = nn.Linear(d_input, total_loc_num)
 ```
 
-### Differences from Pointer V45
+### Differences from Pointer Generator Transformer
 
-| Aspect | MHSA | Pointer V45 |
+| Aspect | MHSA | Pointer Generator Transformer |
 |--------|------|-------------|
 | Normalization | Post-norm | Pre-norm |
 | Activation | ReLU | GELU |
@@ -406,7 +406,7 @@ class LSTMModel(nn.Module):
 
 ### Feature Comparison Table
 
-| Feature | Pointer V45 | MHSA | LSTM |
+| Feature | Pointer Generator Transformer | MHSA | LSTM |
 |---------|-------------|------|------|
 | **Core Mechanism** | Transformer + Pointer | Transformer | LSTM |
 | **Attention** | Self + Pointer | Self only | None |
@@ -419,7 +419,7 @@ class LSTMModel(nn.Module):
 
 ### Theoretical Advantages
 
-**Pointer V45**:
+**Pointer Generator Transformer**:
 - Can copy from input (good for repeat locations)
 - Position bias helps with recency patterns
 - GELU activation for smoother gradients
@@ -428,7 +428,7 @@ class LSTMModel(nn.Module):
 **MHSA**:
 - Standard well-tested architecture
 - Good for capturing long-range dependencies
-- Simpler than Pointer V45
+- Simpler than Pointer Generator Transformer
 
 **LSTM**:
 - Strong sequential inductive bias
@@ -443,7 +443,7 @@ class LSTMModel(nn.Module):
 
 | Model | Parameters | Best Val Acc@1 |
 |-------|------------|----------------|
-| Pointer V45 | 251,476 - 813,252 | 49.25% |
+| Pointer Generator Transformer | 251,476 - 813,252 | 49.25% |
 | MHSA | 112,547 - 545,027 | 42.38% |
 | LSTM | 467,683 - 599,779 | 40.58% |
 
@@ -451,7 +451,7 @@ class LSTMModel(nn.Module):
 
 | Model | Parameters | Best Val Acc@1 |
 |-------|------------|----------------|
-| Pointer V45 | 1,081,554 - 1,747,874 | 54.92% |
+| Pointer Generator Transformer | 1,081,554 - 1,747,874 | 54.92% |
 | MHSA | 797,982 - 835,230 | 53.69% |
 | LSTM | 1,762,478 - 3,564,990 | 53.90% |
 
@@ -460,16 +460,16 @@ class LSTMModel(nn.Module):
 $$\text{Efficiency} = \frac{\text{Accuracy}}{\text{Parameters (millions)}}$$
 
 **Geolife**:
-- Pointer V45: 49.25 / 0.443 = **111.2** acc/M params
+- Pointer Generator Transformer: 49.25 / 0.443 = **111.2** acc/M params
 - MHSA: 42.38 / 0.281 = **150.8** acc/M params
 - LSTM: 40.58 / 0.468 = **86.7** acc/M params
 
 **DIY**:
-- Pointer V45: 54.92 / 1.082 = **50.8** acc/M params
+- Pointer Generator Transformer: 54.92 / 1.082 = **50.8** acc/M params
 - MHSA: 53.69 / 0.798 = **67.3** acc/M params
 - LSTM: 53.90 / 3.565 = **15.1** acc/M params
 
-While MHSA is more parameter-efficient on Geolife, Pointer V45 achieves the highest absolute accuracy on both datasets.
+While MHSA is more parameter-efficient on Geolife, Pointer Generator Transformer achieves the highest absolute accuracy on both datasets.
 
 ---
 

@@ -34,7 +34,7 @@ This comprehensive documentation suite provides a complete understanding of the 
 
 | Document | Description | Target Audience |
 |----------|-------------|-----------------|
-| [08_MODEL_JUSTIFICATION.md](08_MODEL_JUSTIFICATION.md) | How results support the Pointer Network V45 model | PhD students, Reviewers |
+| [08_MODEL_JUSTIFICATION.md](08_MODEL_JUSTIFICATION.md) | How results support the Pointer Generator Transformer model | PhD students, Reviewers |
 
 ### Part V: Supplementary Materials
 
@@ -88,15 +88,15 @@ analysis_returner/
 
 ### Proposed Model (for justification)
 ```
-src/models/proposed/pointer_v45.py      # Pointer Network V45 architecture
-src/training/train_pointer_v45.py       # Training script
+src/models/proposed/pgt.py      # Pointer Generator Transformer architecture
+src/training/train_pgt.py       # Training script
 ```
 
 ---
 
 ## 🔬 Research Context
 
-This analysis supports the development and justification of the **Pointer Network V45** model for next location prediction. The key insight is:
+This analysis supports the development and justification of the **Pointer Generator Transformer** model for next location prediction. The key insight is:
 
 > **Human mobility exhibits strong returner behavior** - people frequently return to previously visited locations, especially at ~24-hour intervals (daily routines).
 
@@ -143,7 +143,7 @@ Throughout this documentation:
 | Documentation Version | 1.0.0 |
 | Last Updated | January 2026 |
 | Analysis Scripts | v1.0, v2.0 |
-| Proposed Model | Pointer Network V45 |
+| Proposed Model | Pointer Generator Transformer |
 
 ---
 

@@ -1,5 +1,5 @@
 2026-01-07 03:44:21,946 - INFO - ============================================================
-2026-01-07 03:44:21,946 - INFO - POINTER V45 - Training Started
+2026-01-07 03:44:21,946 - INFO - POINTER GENERATOR TRANSFORMER - Training Started
 2026-01-07 03:44:21,946 - INFO - ============================================================
 2026-01-07 03:44:21,946 - INFO - Model config: {'d_model': 64, 'nhead': 4, 'num_layers': 2, 'dim_feedforward': 128, 'dropout': 0.2}
 2026-01-07 03:44:21,946 - INFO - Training config: {'batch_size': 256, 'num_epochs': 50, 'learning_rate': 0.001, 'weight_decay': 5e-05, 'label_smoothing': 0.0, 'grad_clip': 0.8, 'patience': 5, 'min_epochs': 8, 'warmup_epochs': 5, 'use_amp': True, 'min_lr': 1e-06}
@@ -9,7 +9,7 @@
 Using device: cuda
 Experiment directory: experiments/geolife_pointer_v45_20260107_104418
 ============================================================
-POINTER V45 - Clean & Lean
+POINTER GENERATOR TRANSFORMER - Clean & Lean
 ============================================================
 Dataset: geolife
 Device: cuda
@@ -22,7 +22,7 @@ Loading data...
   Train: 9526, Val: 4217, Test: 4425
   Data loaders: train=38, val=17, test=18
 
-Model: PointerNetworkV45
+Model: PointerGeneratorTransformer
   d_model: 64
   nhead: 4
   num_layers: 2
@@ -790,7 +790,7 @@ Eval test: 100%|██████████| 18/18 [00:00<00:00, 24.46it/s]
 2026-01-07 03:44:53,607 - INFO - ============================================================
 
 ============================================================
-POINTER V45 RESULTS - GEOLIFE
+POINTER GENERATOR TRANSFORMER RESULTS - GEOLIFE
 ============================================================
 Acc@1:  42.60%
 Acc@5:  69.88%

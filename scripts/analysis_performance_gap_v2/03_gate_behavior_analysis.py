@@ -1,5 +1,5 @@
 """
-Pointer V45 Component Analysis - Script 3: Gate Behavior Analysis
+Pointer Generator Transformer Component Analysis - Script 3: Gate Behavior Analysis
 
 This script analyzes the Pointer-Generation Gate behavior:
 1. When should the gate prefer pointer? (target in history, rare)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Automation script for training, evaluating, and tuning PointerNetworkV45
+Automation script for training, evaluating, and tuning PointerGeneratorTransformer
 across different previous days configurations.
 
 This script:
@@ -189,7 +189,7 @@ def run_training(job: dict, job_id: int, conda_env: str = "mlenv") -> dict:
     )
     
     # Build command
-    train_script = str(PROJECT_ROOT / "src" / "training" / "train_pointer_v45.py")
+    train_script = str(PROJECT_ROOT / "src" / "training" / "train_pgt.py")
     cmd = f"source ~/miniconda3/etc/profile.d/conda.sh && conda activate {conda_env} && python {train_script} --config {config_path}"
     
     # Run training
@@ -363,7 +363,7 @@ def run_worker(job_queue: Queue, worker_id: int, val_csv_path: str, test_csv_pat
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run prev_days analysis for Pointer V45")
+    parser = argparse.ArgumentParser(description="Run prev_days analysis for Pointer Generator Transformer")
     parser.add_argument("--max_epochs", type=int, default=50, help="Maximum epochs per training")
     parser.add_argument("--parallel", type=int, default=3, help="Number of parallel training sessions")
     parser.add_argument("--delay", type=float, default=5.0, help="Delay between parallel starts (seconds)")
@@ -382,7 +382,7 @@ def main():
     total_jobs = len(jobs)
     
     print("=" * 60)
-    print("PREV DAYS ANALYSIS - PointerNetworkV45")
+    print("PREV DAYS ANALYSIS - PointerGeneratorTransformer")
     print("=" * 60)
     print(f"Total jobs: {total_jobs}")
     print(f"Previous days: {PREV_DAYS}")

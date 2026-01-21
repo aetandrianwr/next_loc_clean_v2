@@ -111,7 +111,7 @@ ls data/diy_eps50/processed/diy_eps50_prev7_test.pk
 ls data/geolife_eps20/processed/geolife_eps20_prev7_test.pk
 ```
 
-### "Import error for pointer_v45"
+### "Import error for pgt"
 
 Add project root to Python path:
 ```bash

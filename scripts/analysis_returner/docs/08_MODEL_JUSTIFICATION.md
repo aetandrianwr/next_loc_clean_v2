@@ -1,18 +1,18 @@
-# Model Justification: Connecting Analysis to Pointer Network V45
+# Model Justification: Connecting Analysis to Pointer Generator Transformer
 
 ## 1. Executive Summary
 
-This document provides a comprehensive justification for the **Pointer Network V45** model architecture based on the empirical findings from the return probability analysis. It demonstrates how each analysis result directly supports specific design choices in the proposed model.
+This document provides a comprehensive justification for the **Pointer Generator Transformer** model architecture based on the empirical findings from the return probability analysis. It demonstrates how each analysis result directly supports specific design choices in the proposed model.
 
 ### 1.1 Central Thesis
 
-> **The Pointer Network V45 architecture is empirically justified by the observation that ~80% of human next-location visits are returns to previously visited locations, with strong 24-hour periodicity in return times.**
+> **The Pointer Generator Transformer architecture is empirically justified by the observation that ~80% of human next-location visits are returns to previously visited locations, with strong 24-hour periodicity in return times.**
 
 ---
 
 ## 2. Overview of Proposed Model
 
-### 2.1 Pointer Network V45 Architecture
+### 2.1 Pointer Generator Transformer Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -92,7 +92,7 @@ Average     ~68-80%        Returns dominate predictions
 The high return rate directly justifies the **Pointer Mechanism**:
 
 ```python
-# From pointer_v45.py (lines 230-240)
+# From pgt.py (lines 230-240)
 # Pointer attention computes attention over input sequence
 query = self.pointer_query(context).unsqueeze(1)
 keys = self.pointer_key(encoded)
@@ -136,7 +136,7 @@ Geolife Peaks: 24h, 48h, 72h, 96h (multiple daily intervals)
 The 24-hour periodicity justifies **Temporal Embeddings**:
 
 ```python
-# From pointer_v45.py (lines 103-106)
+# From pgt.py (lines 103-106)
 # Temporal embeddings capture time-of-day and day-of-week patterns
 self.time_emb = nn.Embedding(97, d_model // 4)      # 96 intervals (15-min) + padding
 self.weekday_emb = nn.Embedding(8, d_model // 4)    # 7 days + padding
@@ -183,7 +183,7 @@ Interpretation: Recent locations are more likely to be revisited
 The recency effect justifies **Position-from-End Embedding**:
 
 ```python
-# From pointer_v45.py (lines 109, 211-214)
+# From pgt.py (lines 109, 211-214)
 # Position from end captures "how recent" each location is
 self.pos_from_end_emb = nn.Embedding(max_seq_len + 1, d_model // 4)
 
@@ -231,7 +231,7 @@ Observed vs Random Walk:
 The non-random behavior justifies using **Deep Learning** over simple models:
 
 ```python
-# From pointer_v45.py (lines 120-130)
+# From pgt.py (lines 120-130)
 # Transformer encoder learns complex patterns
 encoder_layer = nn.TransformerEncoderLayer(
     d_model=d_model,
@@ -285,7 +285,7 @@ Average     ~20-30%            Model must handle new locations
 The non-returner cases justify the **Generation Head**:
 
 ```python
-# From pointer_v45.py (lines 138-139)
+# From pgt.py (lines 138-139)
 # Generation head predicts over FULL vocabulary
 self.gen_head = nn.Linear(d_model, num_locations)
 
@@ -330,7 +330,7 @@ User Types (from literature + our data):
 Variable rates justify the **Pointer-Generation Gate**:
 
 ```python
-# From pointer_v45.py (lines 141-146)
+# From pgt.py (lines 141-146)
 # Adaptive gate learns when to point vs generate
 self.ptr_gen_gate = nn.Sequential(
     nn.Linear(d_model, d_model // 2),
@@ -500,7 +500,7 @@ Based on analysis findings, we predict:
 - *Evidence*: Non-returner rate of 16.46% in DIY
 
 **Conclusion**: A hybrid Pointer-Generator architecture with temporal features is justified
-- *Design*: Pointer Network V45 implements exactly these requirements
+- *Design*: Pointer Generator Transformer implements exactly these requirements
 
 ### 6.2 Publication-Ready Statement
 
@@ -510,13 +510,13 @@ Based on analysis findings, we predict:
 
 ## 7. Connection to Training Script
 
-### 7.1 train_pointer_v45.py Integration
+### 7.1 train_pgt.py Integration
 
-The training script (`train_pointer_v45.py`) implements training for the justified architecture:
+The training script (`train_pgt.py`) implements training for the justified architecture:
 
 ```python
 # Model instantiation uses analysis-informed defaults
-model = PointerNetworkV45(
+model = PointerGeneratorTransformer(
     num_locations=info['num_locations'],
     num_users=info['num_users'],
     d_model=model_cfg.get('d_model', 128),          # Sufficient for patterns
@@ -567,7 +567,7 @@ This analysis provides:
 
 ### 8.3 Final Statement
 
-> The Pointer Network V45 architecture is not an arbitrary design choice, but an empirically-justified response to observed patterns in human mobility. Each component directly addresses a specific finding from our return probability analysis, resulting in a model that is both theoretically motivated and practically effective.
+> The Pointer Generator Transformer architecture is not an arbitrary design choice, but an empirically-justified response to observed patterns in human mobility. Each component directly addresses a specific finding from our return probability analysis, resulting in a model that is both theoretically motivated and practically effective.
 
 ---
 

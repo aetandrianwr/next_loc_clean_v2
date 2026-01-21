@@ -3,7 +3,7 @@
 Hyperparameter Tuning via Grid Search for Next Location Prediction Models.
 
 This script performs grid search hyperparameter tuning for:
-1. Pointer V45 (Proposed Model)
+1. Pointer Generator Transformer (Proposed Model)
 2. MHSA (Multi-Head Self-Attention)
 3. LSTM
 
@@ -15,14 +15,14 @@ Features:
 - Model selection flag to choose which model to tune
 
 Usage:
-    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 2 --num_workers 2 --limit 6 --model pointer_v45 # Test run
+    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 2 --num_workers 2 --limit 6 --model pgt # Test run
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 # Full run
-    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --model pointer_v45  # Only PointerV45
+    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --model pgt  # Only PGT
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --model MHSA  # Only MHSA
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --model LSTM  # Only LSTM
     
     A100
-    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 20 --model pointer_v45 --delay 1
+    python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 20 --model pgt --delay 1
     
     A100
     python scripts/ht_grid_search/run_grid_search_v4.py --max_epochs 50 --num_workers 20 --model MHSA --delay 1
@@ -67,7 +67,7 @@ csv_lock = threading.Lock()
 @dataclass
 class TrainingJob:
     """Represents a single training job."""
-    model_type: str  # pointer_v45, MHSA, LSTM
+    model_type: str  # pgt, MHSA, LSTM
     dataset: str     # diy, geolife
     prev_days: int
     params: Dict[str, Any]
@@ -92,7 +92,7 @@ def load_metadata(dataset: str, prev_days: int) -> Dict:
         return json.load(f)
 
 
-def create_pointer_v45_config(
+def create_pgt_config(
     dataset: str, 
     prev_days: int, 
     d_model: int, 
@@ -104,7 +104,7 @@ def create_pointer_v45_config(
     seed: int = 42,
     patience: int = 5
 ) -> Tuple[str, Dict]:
-    """Create config for Pointer V45 model."""
+    """Create config for Pointer Generator Transformer model."""
     metadata = load_metadata(dataset, prev_days)
     
     if dataset == "diy":
@@ -146,7 +146,7 @@ def create_pointer_v45_config(
     }
     
     # Generate unique config filename
-    config_name = f"pointer_v45_{dataset}_prev{prev_days}_d{d_model}_h{n_head}_l{num_layer}_ff{ff_dim}_lr{lr}.yaml"
+    config_name = f"pgt_{dataset}_prev{prev_days}_d{d_model}_h{n_head}_l{num_layer}_ff{ff_dim}_lr{lr}.yaml"
     config_path = CONFIG_HT_DIR / config_name
     
     return str(config_path), config
@@ -321,7 +321,7 @@ def calculate_weight_score(model_type: str, params: Dict) -> int:
     Calculate weight score for balancing workload.
     Higher score = heavier computation.
     """
-    if model_type == "pointer_v45":
+    if model_type == "pgt":
         score = params["d_model"] * params["num_layer"] * params["ff_dim"] // 1000
     elif model_type == "MHSA":
         score = params["base_emb_size"] * params["num_layer"] * params["ff_dim"] // 1000
@@ -338,12 +338,12 @@ def generate_all_jobs(max_epochs: int, seed: int = 42, patience: int = 5) -> Dic
     prev_days_list = [3, 7, 10, 14]
     
     jobs = {
-        "pointer_v45": [],
+        "pgt": [],
         "MHSA": [],
         "LSTM": []
     }
     
-    # Pointer V45 search space
+    # Pointer Generator Transformer search space
     pointer_space = {
         "d_model": [32, 64, 128],
         "n_head": [2, 4, 8],
@@ -368,19 +368,19 @@ def generate_all_jobs(max_epochs: int, seed: int = 42, patience: int = 5) -> Dic
                     "ff_dim": ff_dim,
                     "lr": lr
                 }
-                config_path, config = create_pointer_v45_config(
+                config_path, config = create_pgt_config(
                     dataset, prev_days, d_model, n_head, num_layer, ff_dim, lr, max_epochs, seed, patience
                 )
                 
                 job = TrainingJob(
-                    model_type="pointer_v45",
+                    model_type="pgt",
                     dataset=dataset,
                     prev_days=prev_days,
                     params=params,
                     config_path=config_path,
-                    weight_score=calculate_weight_score("pointer_v45", params)
+                    weight_score=calculate_weight_score("pgt", params)
                 )
-                jobs["pointer_v45"].append(job)
+                jobs["pgt"].append(job)
     
     # MHSA search space
     mhsa_space = {
@@ -474,8 +474,8 @@ def run_training_job(job: TrainingJob, job_idx: int) -> Dict:
     """Run a single training job and return results."""
     
     # Determine training script
-    if job.model_type == "pointer_v45":
-        script = "src/training/train_pointer_v45.py"
+    if job.model_type == "pgt":
+        script = "src/training/train_pgt.py"
     elif job.model_type == "MHSA":
         script = "src/training/train_MHSA.py"
     else:
@@ -569,7 +569,7 @@ def parse_results(experiment_dir: str) -> Tuple[Dict, Dict, int]:
             import re
             
             # Extract num_params - try different formats
-            # Pointer V45 format: "Model parameters: X"
+            # Pointer Generator Transformer format: "Model parameters: X"
             params_match = re.search(r"Model parameters:\s*([\d,]+)", log_content)
             if params_match:
                 num_params = int(params_match.group(1).replace(",", ""))
@@ -593,7 +593,7 @@ def get_csv_headers(model_type: str) -> List[str]:
         "config_path", "experiment_path", "dataset", "prev_days"
     ]
     
-    if model_type == "pointer_v45":
+    if model_type == "pgt":
         param_headers = ["d_model", "n_head", "num_layer", "ff_dim", "lr"]
     elif model_type == "MHSA":
         param_headers = ["base_emb_size", "n_head", "num_layer", "ff_dim", "lr"]
@@ -715,8 +715,8 @@ def run_queue_based_pool(
     
     # Create and save all config files first
     for job in jobs:
-        if model_type == "pointer_v45":
-            _, config = create_pointer_v45_config(
+        if model_type == "pgt":
+            _, config = create_pgt_config(
                 job.dataset, job.prev_days, 
                 job.params["d_model"], job.params["n_head"], 
                 job.params["num_layer"], job.params["ff_dim"], 
@@ -781,8 +781,8 @@ def main():
     parser.add_argument("--delay", type=float, default=5.0, help="Delay between parallel job starts (seconds)")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--patience", type=int, default=5, help="Early stopping patience")
-    parser.add_argument("--model", type=str, default="all", choices=["all", "pointer_v45", "MHSA", "LSTM"],
-                        help="Model to tune: 'pointer_v45', 'MHSA', 'LSTM', or 'all' (default: all)")
+    parser.add_argument("--model", type=str, default="all", choices=["all", "pgt", "MHSA", "LSTM"],
+                        help="Model to tune: "pgt", 'MHSA', 'LSTM', or 'all' (default: all)")
     parser.add_argument("--limit", type=int, default=0, help="Limit number of jobs per model (0=no limit, for testing)")
     parser.add_argument("--dataset", type=str, default="all", choices=["all", "diy", "geolife"],
                         help="Dataset to tune (default: all)")
@@ -823,8 +823,8 @@ def main():
     # Timestamp for result files
     timestamp = get_timestamp()
     
-    # Run models in order: PointerV45 -> MHSA -> LSTM
-    models_to_run = ["pointer_v45", "MHSA", "LSTM"] if args.model == "all" else [args.model]
+    # Run models in order: PGT -> MHSA -> LSTM
+    models_to_run = ["pgt", "MHSA", "LSTM"] if args.model == "all" else [args.model]
     
     for model_type in models_to_run:
         if model_type not in all_jobs:

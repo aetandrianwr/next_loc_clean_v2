@@ -159,7 +159,7 @@ class NextLocationDataset(Dataset):
 ### 2.2 Extended Model with Analysis (Lines 217-295)
 
 ```python
-class PointerNetworkV45WithAnalysis(PointerNetworkV45):
+class PointerGeneratorTransformerWithAnalysis(PointerGeneratorTransformer):
     def forward_with_analysis(self, x, x_dict):
         # ... standard forward pass ...
         
@@ -191,7 +191,7 @@ def load_model(config_path, checkpoint_path, dataset_info, device):
     num_locations = checkpoint['model_state_dict']['loc_emb.weight'].shape[0]
     
     # Create and load model
-    model = PointerNetworkV45WithAnalysis(
+    model = PointerGeneratorTransformerWithAnalysis(
         num_locations=num_locations,
         num_users=num_users,
         max_seq_len=pos_bias_shape,

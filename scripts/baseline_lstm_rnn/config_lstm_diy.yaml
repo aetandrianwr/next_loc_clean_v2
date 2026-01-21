@@ -1,12 +1,12 @@
 # LSTM Baseline Model Configuration for DIY Dataset
 # Dataset: diy_eps50_prev7
 # 
-# This baseline demonstrates the advantage of Pointer V45 over standard LSTM:
+# This baseline demonstrates the advantage of Pointer Generator Transformer over standard LSTM:
 # - LSTM uses only location and user embeddings (no temporal features)
-# - Pointer V45 uses attention, pointer mechanism, and rich temporal features
+# - Pointer Generator Transformer uses attention, pointer mechanism, and rich temporal features
 #
 # Results:
-#   - Pointer V45: 56.88% Acc@1
+#   - Pointer Generator Transformer: 56.88% Acc@1
 #   - LSTM:        ~52-53% Acc@1
 #   - Improvement: ~4-5 percentage points (7-9% relative improvement)
 #

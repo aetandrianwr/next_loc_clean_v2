@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Search Space Philosophy](#search-space-philosophy)
-2. [Pointer V45 Search Space](#pointer-v45-search-space)
+2. [Pointer Generator Transformer Search Space](#pointer-v45-search-space)
 3. [MHSA Search Space](#mhsa-search-space)
 4. [LSTM Search Space](#lstm-search-space)
 5. [Parameter Interactions](#parameter-interactions)
@@ -40,12 +40,12 @@ learning_rate: LogUniform(1e-4, 1e-3)  # infinite values
 
 ---
 
-## Pointer V45 Search Space
+## Pointer Generator Transformer Search Space
 
 ### Complete Definition
 
 ```python
-POINTER_V45_SEARCH_SPACE = {
+PGT_SEARCH_SPACE = {
     # ========== Architecture Hyperparameters ==========
     'd_model': [64, 96, 128],           # Model dimension
     'nhead': [2, 4, 8],                  # Number of attention heads
@@ -139,7 +139,7 @@ MHSA_SEARCH_SPACE = {
 }
 ```
 
-### Key Differences from Pointer V45
+### Key Differences from Pointer Generator Transformer
 
 1. **Simpler Learning Rate Range**: Only 3 values (MHSA is known to prefer higher LR)
 2. **Lower Weight Decay Range**: MHSA tends to overfit less
@@ -313,18 +313,18 @@ weight_decay: [1e-5, 5e-5, 1e-4, 5e-4, 1e-3, 0.01, 0.015]
 Extended range because:
 - Some models benefit from very light regularization (1e-5)
 - Others need strong regularization (0.01-0.015)
-- Pointer V45's pointer mechanism may need specific regularization
+- Pointer Generator Transformer's pointer mechanism may need specific regularization
 
 ### Search Space Size Calculation
 
 | Model | Formula | Total Combinations |
 |-------|---------|-------------------|
-| Pointer V45 | 3×3×3×3×4×5×7×3×4×3 | **816,480** |
+| Pointer Generator Transformer | 3×3×3×3×4×5×7×3×4×3 | **816,480** |
 | MHSA | 4×3×2×3×4×3×3×4×3 | **20,736** |
 | LSTM | 4×3×3×3×4×3×3×4×3 | **41,472** |
 
 With 20 trials per model-dataset, we explore:
-- Pointer V45: 0.002% of search space
+- Pointer Generator Transformer: 0.002% of search space
 - MHSA: 0.096% of search space
 - LSTM: 0.048% of search space
 
@@ -337,7 +337,7 @@ This is sufficient because:
 
 ## Summary Tables
 
-### Pointer V45 Summary
+### Pointer Generator Transformer Summary
 
 | Category | Parameters | Total Values |
 |----------|------------|--------------|

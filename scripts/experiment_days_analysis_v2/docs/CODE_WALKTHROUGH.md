@@ -82,7 +82,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 **Purpose**: Add project root to Python path for importing custom modules. This allows `from src.models...` imports regardless of where the script is run from.
 
 ```python
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -288,7 +288,7 @@ def load_model(dataset_key: str, device: torch.device):
 **Purpose**: Determine vocabulary sizes by scanning training data. The +1 accounts for 0-indexing and the padding token.
 
 ```python
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=num_locations,
         num_users=num_users,
         d_model=model_cfg['d_model'],

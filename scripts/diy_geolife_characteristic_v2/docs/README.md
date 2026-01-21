@@ -138,7 +138,7 @@ python scripts/diy_geolife_characteristic_v2/04_test_manipulation.py
 
 If using this analysis, please cite:
 - The DIY and GeoLife datasets appropriately
-- The PointerNetworkV45 model architecture
+- The PointerGeneratorTransformer model architecture
 - This analysis documentation
 
 ---

@@ -9,13 +9,13 @@
     dropout: 0.1
     label_smoothing: 0.0
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 0
     warmup_epochs: 3
     weight_decay: 0.01
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 0
 - config_name: pointer_v45_geolife_trial01
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml
@@ -28,13 +28,13 @@
     dropout: 0.25
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 2
     trial_idx: 1
     warmup_epochs: 5
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 1
 - config_name: pointer_v45_geolife_trial02
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial02.yaml
@@ -47,13 +47,13 @@
     dropout: 0.2
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 2
     warmup_epochs: 5
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 2
 - config_name: pointer_v45_geolife_trial03
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial03.yaml
@@ -66,13 +66,13 @@
     dropout: 0.25
     label_smoothing: 0.0
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 3
     warmup_epochs: 5
     weight_decay: 0.01
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 3
 - config_name: pointer_v45_geolife_trial04
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial04.yaml
@@ -85,13 +85,13 @@
     dropout: 0.25
     label_smoothing: 0.03
     learning_rate: 0.0003
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 4
     warmup_epochs: 7
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 4
 - config_name: pointer_v45_geolife_trial05
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial05.yaml
@@ -104,13 +104,13 @@
     dropout: 0.1
     label_smoothing: 0.05
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 2
     trial_idx: 5
     warmup_epochs: 7
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 5
 - config_name: pointer_v45_geolife_trial06
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial06.yaml
@@ -123,13 +123,13 @@
     dropout: 0.2
     label_smoothing: 0.05
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 2
     trial_idx: 6
     warmup_epochs: 3
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 6
 - config_name: pointer_v45_geolife_trial07
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial07.yaml
@@ -142,13 +142,13 @@
     dropout: 0.15
     label_smoothing: 0.01
     learning_rate: 0.0007
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 4
     trial_idx: 7
     warmup_epochs: 3
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 7
 - config_name: pointer_v45_geolife_trial08
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial08.yaml
@@ -161,13 +161,13 @@
     dropout: 0.2
     label_smoothing: 0.05
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 4
     trial_idx: 8
     warmup_epochs: 7
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 8
 - config_name: pointer_v45_geolife_trial09
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial09.yaml
@@ -180,13 +180,13 @@
     dropout: 0.15
     label_smoothing: 0.01
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 4
     trial_idx: 9
     warmup_epochs: 3
     weight_decay: 0.015
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 9
 - config_name: pointer_v45_geolife_trial10
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial10.yaml
@@ -199,13 +199,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.0003
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 4
     trial_idx: 10
     warmup_epochs: 7
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 10
 - config_name: pointer_v45_geolife_trial11
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial11.yaml
@@ -218,13 +218,13 @@
     dropout: 0.2
     label_smoothing: 0.05
     learning_rate: 0.0007
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 4
     trial_idx: 11
     warmup_epochs: 3
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 11
 - config_name: pointer_v45_geolife_trial12
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial12.yaml
@@ -237,13 +237,13 @@
     dropout: 0.1
     label_smoothing: 0.05
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 2
     trial_idx: 12
     warmup_epochs: 7
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 12
 - config_name: pointer_v45_geolife_trial13
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial13.yaml
@@ -256,13 +256,13 @@
     dropout: 0.1
     label_smoothing: 0.0
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 4
     trial_idx: 13
     warmup_epochs: 5
     weight_decay: 0.01
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 13
 - config_name: pointer_v45_geolife_trial14
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial14.yaml
@@ -275,13 +275,13 @@
     dropout: 0.1
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 3
     trial_idx: 14
     warmup_epochs: 3
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 14
 - config_name: pointer_v45_geolife_trial15
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial15.yaml
@@ -294,13 +294,13 @@
     dropout: 0.15
     label_smoothing: 0.03
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 3
     trial_idx: 15
     warmup_epochs: 5
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 15
 - config_name: pointer_v45_geolife_trial16
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial16.yaml
@@ -313,13 +313,13 @@
     dropout: 0.2
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 16
     warmup_epochs: 7
     weight_decay: 0.015
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 16
 - config_name: pointer_v45_geolife_trial17
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial17.yaml
@@ -332,13 +332,13 @@
     dropout: 0.2
     label_smoothing: 0.05
     learning_rate: 0.0003
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 17
     warmup_epochs: 7
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 17
 - config_name: pointer_v45_geolife_trial18
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial18.yaml
@@ -351,13 +351,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 3
     trial_idx: 18
     warmup_epochs: 5
     weight_decay: 0.015
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 18
 - config_name: pointer_v45_geolife_trial19
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial19.yaml
@@ -370,13 +370,13 @@
     dropout: 0.25
     label_smoothing: 0.01
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 19
     warmup_epochs: 3
     weight_decay: 0.0001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 19
 - config_name: pointer_v45_diy_trial00
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial00.yaml
@@ -389,13 +389,13 @@
     dropout: 0.1
     label_smoothing: 0.03
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 4
     trial_idx: 0
     warmup_epochs: 7
     weight_decay: 5.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 0
 - config_name: pointer_v45_diy_trial01
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial01.yaml
@@ -408,13 +408,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.0007
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 2
     trial_idx: 1
     warmup_epochs: 5
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 1
 - config_name: pointer_v45_diy_trial02
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial02.yaml
@@ -427,13 +427,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 2
     warmup_epochs: 5
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 2
 - config_name: pointer_v45_diy_trial03
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial03.yaml
@@ -446,13 +446,13 @@
     dropout: 0.25
     label_smoothing: 0.01
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 4
     trial_idx: 3
     warmup_epochs: 7
     weight_decay: 0.0005
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 3
 - config_name: pointer_v45_diy_trial04
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial04.yaml
@@ -465,13 +465,13 @@
     dropout: 0.15
     label_smoothing: 0.01
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 4
     trial_idx: 4
     warmup_epochs: 5
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 4
 - config_name: pointer_v45_diy_trial05
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial05.yaml
@@ -484,13 +484,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 3
     trial_idx: 5
     warmup_epochs: 3
     weight_decay: 0.0005
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 5
 - config_name: pointer_v45_diy_trial06
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial06.yaml
@@ -503,13 +503,13 @@
     dropout: 0.2
     label_smoothing: 0.01
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 4
     trial_idx: 6
     warmup_epochs: 7
     weight_decay: 0.0005
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 6
 - config_name: pointer_v45_diy_trial07
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial07.yaml
@@ -522,13 +522,13 @@
     dropout: 0.15
     label_smoothing: 0.03
     learning_rate: 0.0003
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 4
     trial_idx: 7
     warmup_epochs: 7
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 7
 - config_name: pointer_v45_diy_trial08
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial08.yaml
@@ -541,13 +541,13 @@
     dropout: 0.2
     label_smoothing: 0.0
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 3
     trial_idx: 8
     warmup_epochs: 3
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 8
 - config_name: pointer_v45_diy_trial09
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml
@@ -560,13 +560,13 @@
     dropout: 0.2
     label_smoothing: 0.05
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 9
     warmup_epochs: 7
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 9
 - config_name: pointer_v45_diy_trial10
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial10.yaml
@@ -579,13 +579,13 @@
     dropout: 0.1
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 4
     trial_idx: 10
     warmup_epochs: 5
     weight_decay: 0.0005
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 10
 - config_name: pointer_v45_diy_trial11
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial11.yaml
@@ -598,13 +598,13 @@
     dropout: 0.15
     label_smoothing: 0.03
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 3
     trial_idx: 11
     warmup_epochs: 5
     weight_decay: 0.0001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 11
 - config_name: pointer_v45_diy_trial12
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial12.yaml
@@ -617,13 +617,13 @@
     dropout: 0.25
     label_smoothing: 0.01
     learning_rate: 0.0003
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 2
     trial_idx: 12
     warmup_epochs: 5
     weight_decay: 0.0001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 12
 - config_name: pointer_v45_diy_trial13
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial13.yaml
@@ -636,13 +636,13 @@
     dropout: 0.25
     label_smoothing: 0.05
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 13
     warmup_epochs: 3
     weight_decay: 0.0001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 13
 - config_name: pointer_v45_diy_trial14
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial14.yaml
@@ -655,13 +655,13 @@
     dropout: 0.15
     label_smoothing: 0.0
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 3
     trial_idx: 14
     warmup_epochs: 3
     weight_decay: 0.0001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 14
 - config_name: pointer_v45_diy_trial15
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial15.yaml
@@ -674,13 +674,13 @@
     dropout: 0.2
     label_smoothing: 0.01
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 15
     warmup_epochs: 3
     weight_decay: 0.01
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 15
 - config_name: pointer_v45_diy_trial16
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial16.yaml
@@ -693,13 +693,13 @@
     dropout: 0.15
     label_smoothing: 0.03
     learning_rate: 0.0005
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 8
     num_layers: 3
     trial_idx: 16
     warmup_epochs: 3
     weight_decay: 1.0e-05
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 16
 - config_name: pointer_v45_diy_trial17
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial17.yaml
@@ -712,13 +712,13 @@
     dropout: 0.1
     label_smoothing: 0.0
     learning_rate: 0.0001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 3
     trial_idx: 17
     warmup_epochs: 5
     weight_decay: 0.01
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 17
 - config_name: pointer_v45_diy_trial18
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial18.yaml
@@ -731,13 +731,13 @@
     dropout: 0.25
     label_smoothing: 0.03
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 2
     num_layers: 3
     trial_idx: 18
     warmup_epochs: 5
     weight_decay: 0.001
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 18
 - config_name: pointer_v45_diy_trial19
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial19.yaml
@@ -750,13 +750,13 @@
     dropout: 0.15
     label_smoothing: 0.01
     learning_rate: 0.001
-    model_name: pointer_v45
+    model_name: pgt
     nhead: 4
     num_layers: 2
     trial_idx: 19
     warmup_epochs: 5
     weight_decay: 0.0005
-  model_name: pointer_v45
+  model_name: pgt
   trial_idx: 19
 - config_name: mhsa_geolife_trial00
   config_path: /data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/mhsa_geolife_trial00.yaml

@@ -282,7 +282,7 @@ This directly supports the Pointer Network architecture:
 
 ### 8.2 Design Justification
 
-The Pointer Network V45 model includes:
+The Pointer Generator Transformer model includes:
 
 1. **Pointer Mechanism**: Copies locations from user history (justified by high return rate)
 2. **Position-from-End Embedding**: Encodes recency (recent locations more likely to be revisited)

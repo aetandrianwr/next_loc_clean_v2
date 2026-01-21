@@ -79,7 +79,7 @@ python scripts/sci_hyperparam_tuning/run_final_evaluation.py
 
 ```bash
 # Train a single model with specific config
-python src/training/train_pointer_v45.py \
+python src/training/train_pgt.py \
     --config scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml
 ```
 
@@ -96,8 +96,8 @@ python scripts/sci_hyperparam_tuning/generate_configs.py
 **What it does**:
 - Creates `configs/` directory
 - Generates 120 YAML configuration files:
-  - 20 for Pointer V45 on Geolife
-  - 20 for Pointer V45 on DIY
+  - 20 for Pointer Generator Transformer on Geolife
+  - 20 for Pointer Generator Transformer on DIY
   - 20 for MHSA on Geolife
   - 20 for MHSA on DIY
   - 20 for LSTM on Geolife
@@ -193,7 +193,7 @@ Edit `hyperparam_search_space.py`:
 
 ```python
 # Add new learning rate values
-POINTER_V45_SEARCH_SPACE = {
+PGT_SEARCH_SPACE = {
     'learning_rate': [1e-4, 2e-4, 3e-4, 5e-4, 7e-4, 1e-3],  # Added 2e-4
     # ...
 }
@@ -241,7 +241,7 @@ with open('my_custom_config.yaml', 'w') as f:
 ### Running with Custom Config
 
 ```bash
-python src/training/train_pointer_v45.py --config my_custom_config.yaml
+python src/training/train_pgt.py --config my_custom_config.yaml
 ```
 
 ---
@@ -255,7 +255,7 @@ import pandas as pd
 import numpy as np
 
 # Load all validation results
-models = ['pointer_v45', 'mhsa', 'lstm']
+models = ['pgt', 'mhsa', 'lstm']
 datasets = ['geolife', 'diy']
 
 all_results = []
@@ -283,7 +283,7 @@ def get_best_config(model, dataset):
     return df.loc[best_idx]
 
 # Example usage
-best = get_best_config('pointer_v45', 'geolife')
+best = get_best_config('pgt', 'geolife')
 print(f"Best trial: {best['config_name']}")
 print(f"Val Acc@1: {best['acc_at_1']:.2f}%")
 ```
@@ -307,7 +307,7 @@ def analyze_hyperparameter_importance(model, dataset, param_name):
     return grouped.sort_values('mean', ascending=False)
 
 # Example: Learning rate importance
-print(analyze_hyperparameter_importance('pointer_v45', 'geolife', 'learning_rate'))
+print(analyze_hyperparameter_importance('pgt', 'geolife', 'learning_rate'))
 ```
 
 ---
@@ -337,7 +337,7 @@ ModuleNotFoundError: No module named 'src'
 **Solution**: Ensure you're in the correct directory
 ```bash
 cd /data/next_loc_clean_v2
-python src/training/train_pointer_v45.py --config ...
+python src/training/train_pgt.py --config ...
 ```
 
 #### 3. Data File Not Found
@@ -381,7 +381,7 @@ print(df.head())
 Before running full hyperparameter tuning:
 ```bash
 # Test with a single configuration
-python src/training/train_pointer_v45.py \
+python src/training/train_pgt.py \
     --config scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial00.yaml
 ```
 
@@ -458,7 +458,7 @@ tail -f scripts/sci_hyperparam_tuning/tuning_log.txt
 # Analyze results
 python -c "
 import pandas as pd
-for m in ['pointer_v45', 'mhsa', 'lstm']:
+for m in ['pgt', 'mhsa', 'lstm']:
     for d in ['geolife', 'diy']:
         df = pd.read_csv(f'scripts/sci_hyperparam_tuning/results/{m}_{d}_val_results.csv')
         df = df[df['status']=='SUCCESS']

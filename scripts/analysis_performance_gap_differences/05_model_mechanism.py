@@ -329,7 +329,7 @@ def main():
     
     # Actual results (from user's description)
     actual_results = {
-        'Model': ['MHSA (Baseline)', 'PointerV45 (Proposed)', 'Improvement'],
+        'Model': ['MHSA (Baseline)', 'PGT (Proposed)', 'Improvement'],
         'Geolife Acc@1': ['33.18%', '53.96%', '+20.78%'],
         'DIY Acc@1': ['53.17%', '56.88%', '+3.71%']
     }
@@ -350,7 +350,7 @@ def main():
             'MHSA Baseline Acc@1',
             'Oracle Pointer Upper Bound',
             'Max Improvement Potential',
-            'Actual PointerV45 Acc@1',
+            'Actual PGT Acc@1',
             'Actual Improvement',
             'Improvement Realization Rate'
         ],
@@ -423,7 +423,7 @@ def main():
     x = np.arange(len(categories))
     width = 0.25
     ax3.bar(x - width, baseline, width, label='MHSA Baseline', color='lightgray')
-    ax3.bar(x, pointer, width, label='PointerV45', color='steelblue')
+    ax3.bar(x, pointer, width, label='PGT', color='steelblue')
     ax3.bar(x + width, oracle, width, label='Oracle Pointer', color='lightgreen', alpha=0.7)
     ax3.set_ylabel('Accuracy (%)')
     ax3.set_title('Model Performance Comparison')

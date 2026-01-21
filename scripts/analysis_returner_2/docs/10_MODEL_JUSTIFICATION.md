@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document explains how the **Zipf's Law analysis of location visit frequency** provides empirical justification for the **PointerNetworkV45** architecture used in next-location prediction. The key argument is:
+This document explains how the **Zipf's Law analysis of location visit frequency** provides empirical justification for the **PointerGeneratorTransformer** architecture used in next-location prediction. The key argument is:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -15,7 +15,7 @@ This document explains how the **Zipf's Law analysis of location visit frequency
 │                          → POINTER MECHANISM can copy from history      │
 │                          → Naturally matches Zipf distribution          │
 │                                                                          │
-│  ARCHITECTURE CHOICE:    PointerNetworkV45 with:                        │
+│  ARCHITECTURE CHOICE:    PointerGeneratorTransformer with:                        │
 │                          1. Pointer mechanism (attend to history)       │
 │                          2. Position bias (favor recent)                │
 │                          3. Generation head (handle rare locations)     │
@@ -113,7 +113,7 @@ Problem: Most locations never visited!    Advantage: Focus on user's locations!
 **Model Component:** `self.position_bias` adds learnable bias based on position from end.
 
 ```python
-# From pointer_v45.py lines 134-135:
+# From pgt.py lines 134-135:
 self.position_bias = nn.Parameter(torch.zeros(max_seq_len))
 
 # Applied at line 234:
@@ -151,7 +151,7 @@ ptr_scores = ptr_scores + self.position_bias[pos_from_end]
 **Model Component:** `self.gen_head = nn.Linear(d_model, num_locations)` predicts over full vocabulary.
 
 ```python
-# From pointer_v45.py line 138:
+# From pgt.py line 138:
 self.gen_head = nn.Linear(d_model, num_locations)
 
 # Applied at line 243:
@@ -192,7 +192,7 @@ gen_probs = F.softmax(self.gen_head(context), dim=-1)
 **Model Component:** `self.ptr_gen_gate` learns when to use pointer vs. generation.
 
 ```python
-# From pointer_v45.py lines 141-146:
+# From pgt.py lines 141-146:
 self.ptr_gen_gate = nn.Sequential(
     nn.Linear(d_model, d_model // 2),
     nn.GELU(),
@@ -339,7 +339,7 @@ Result: Best of both worlds, matches human mobility!
 
 ### 5.1 Code-to-Insight Mapping
 
-| Code (pointer_v45.py) | Zipf Insight | Line # |
+| Code (pgt.py) | Zipf Insight | Line # |
 |----------------------|--------------|--------|
 | `self.loc_emb` | Learn location representations | 99 |
 | `self.user_emb` | User-specific patterns | 100 |
@@ -354,7 +354,7 @@ Result: Best of both worlds, matches human mobility!
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                    PointerNetworkV45 ARCHITECTURE                        │
+│                    PointerGeneratorTransformer ARCHITECTURE                        │
 │                                                                          │
 │  INPUT                                                                   │
 │  ─────                                                                   │
@@ -430,7 +430,7 @@ THESIS CHAPTER STRUCTURE
    → Position bias enhances recency effect
 
 4. ARCHITECTURE DESIGN
-   "We propose PointerNetworkV45 with four key components"
+   "We propose PointerGeneratorTransformer with four key components"
    → Pointer: handles 60-80% (frequent locations)
    → Generation: handles 20-40% (long tail)
    → Position bias: favors recent
@@ -456,7 +456,7 @@ our pointer-based architecture, which can directly attend to
 the user's location history."
 
 "The observed Zipf distribution provides empirical justification 
-for the pointer mechanism in PointerNetworkV45. Since most 
+for the pointer mechanism in PointerGeneratorTransformer. Since most 
 next-locations appear in the user's recent history, a model 
 that can copy from this history is naturally well-suited to 
 the task."
@@ -495,14 +495,14 @@ hybrid pointer-generation architecture."
 │                                                                          │
 │  STEP 4: RESULT                                                         │
 │  ─────────────                                                          │
-│  PointerNetworkV45 is theoretically justified by Zipf's Law!           │
+│  PointerGeneratorTransformer is theoretically justified by Zipf's Law!           │
 │                                                                          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### 7.2 Final Take-Away
 
-**The Zipf's Law analysis provides rigorous empirical justification for the PointerNetworkV45 architecture.** The model is not just an arbitrary design choice—it is directly motivated by the fundamental statistical properties of human mobility.
+**The Zipf's Law analysis provides rigorous empirical justification for the PointerGeneratorTransformer architecture.** The model is not just an arbitrary design choice—it is directly motivated by the fundamental statistical properties of human mobility.
 
 ---
 

@@ -3,7 +3,7 @@
 Hyperparameter Tuning Script using Optuna with TPE Sampler and Hyperband Pruner.
 
 This script performs hyperparameter optimization for:
-- Pointer V45 (proposed model) 
+- Pointer Generator Transformer (proposed model) 
 - MHSA (Multi-Head Self-Attention)
 - LSTM
 
@@ -12,7 +12,7 @@ Usage:
     source ~/miniconda3/etc/profile.d/conda.sh && conda activate mlenv
     
     # Run hyperparameter tuning:
-    python scripts/ht_optuna/run_optuna_ht.py --model pointer_v45 --n_jobs 10
+    python scripts/ht_optuna/run_optuna_ht.py --model pgt --n_jobs 10
     python scripts/ht_optuna/run_optuna_ht.py --model MHSA --n_jobs 10
     python scripts/ht_optuna/run_optuna_ht.py --model LSTM --n_jobs 8
     python scripts/ht_optuna/run_optuna_ht.py --model all --n_jobs 4
@@ -70,7 +70,7 @@ DATASETS = {
 
 # Search spaces for each model
 SEARCH_SPACES = {
-    "pointer_v45": {
+    "pgt": {
         "d_model": [32, 64, 128],
         "nhead": [2, 4, 8],
         "num_layers": [2, 4, 8],
@@ -95,9 +95,9 @@ SEARCH_SPACES = {
 
 # Base config paths
 BASE_CONFIGS = {
-    "pointer_v45": {
-        "diy": "config/models/config_pointer_v45_diy.yaml",
-        "geolife": "config/models/config_pointer_v45_geolife.yaml",
+    "pgt": {
+        "diy": "config/models/config_pgt_diy.yaml",
+        "geolife": "config/models/config_pgt_geolife.yaml",
     },
     "MHSA": {
         "diy": "config/models/config_MHSA_diy.yaml",
@@ -111,7 +111,7 @@ BASE_CONFIGS = {
 
 # Training scripts
 TRAINING_SCRIPTS = {
-    "pointer_v45": "src/training/train_pointer_v45.py",
+    "pgt": "src/training/train_pgt.py",
     "MHSA": "src/training/train_MHSA.py",
     "LSTM": "src/training/train_LSTM.py",
 }
@@ -133,7 +133,7 @@ def load_metadata(dataset: str, prev_day: int) -> Dict:
         return json.load(f)
 
 
-def create_pointer_v45_config(
+def create_pgt_config(
     dataset: str,
     prev_day: int,
     d_model: int,
@@ -143,7 +143,7 @@ def create_pointer_v45_config(
     lr: float,
     trial_id: int,
 ) -> str:
-    """Create a config file for Pointer V45 model."""
+    """Create a config file for Pointer Generator Transformer model."""
     import uuid
     
     metadata = load_metadata(dataset, prev_day)
@@ -187,7 +187,7 @@ def create_pointer_v45_config(
     }
     
     # Generate config filename with timestamp and uuid to avoid conflicts
-    config_name = f"optuna_pointer_v45_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}_{unique_id}.yaml"
+    config_name = f"optuna_pgt_{dataset}_prev{prev_day}_t{trial_id}_{timestamp}_{unique_id}.yaml"
     config_path = CONFIG_DIR / config_name
     
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -465,7 +465,7 @@ def append_results_to_csv(
     ]
     
     # Parameter columns based on model
-    if model_name == "pointer_v45":
+    if model_name == "pgt":
         param_columns = ["d_model", "nhead", "num_layers", "dim_feedforward", "lr"]
     elif model_name == "MHSA":
         param_columns = ["base_emb_size", "nhead", "num_encoder_layers", "dim_feedforward", "lr"]
@@ -533,14 +533,14 @@ def create_objective(
         
         search_space = SEARCH_SPACES[model_name]
         
-        if model_name == "pointer_v45":
+        if model_name == "pgt":
             d_model = trial.suggest_categorical("d_model", search_space["d_model"])
             nhead = trial.suggest_categorical("nhead", search_space["nhead"])
             num_layers = trial.suggest_categorical("num_layers", search_space["num_layers"])
             dim_feedforward = trial.suggest_categorical("dim_feedforward", search_space["dim_feedforward"])
             lr = trial.suggest_categorical("lr", search_space["lr"])
             
-            config_path = create_pointer_v45_config(
+            config_path = create_pgt_config(
                 dataset=dataset,
                 prev_day=prev_day,
                 d_model=d_model,
@@ -738,8 +738,8 @@ def main():
         "--model",
         type=str,
         required=True,
-        choices=["pointer_v45", "MHSA", "LSTM", "all"],
-        help="Model to tune (pointer_v45, MHSA, LSTM, or all)",
+        choices=["pgt", "MHSA", "LSTM", "all"],
+        help="Model to tune (pgt, MHSA, LSTM, or all)",
     )
     parser.add_argument(
         "--n_jobs",
@@ -766,8 +766,8 @@ def main():
     
     # Run tuning
     if args.model == "all":
-        # Run in order: pointer_v45 -> MHSA -> LSTM
-        for model in ["pointer_v45", "MHSA", "LSTM"]:
+        # Run in order: pgt -> MHSA -> LSTM
+        for model in ["pgt", "MHSA", "LSTM"]:
             run_hyperparameter_tuning(
                 model_name=model,
                 n_jobs=args.n_jobs,

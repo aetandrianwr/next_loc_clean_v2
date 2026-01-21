@@ -2,7 +2,7 @@
 Hyperparameter Search Space Definition for Scientific Hyperparameter Tuning.
 
 This module defines the hyperparameter search spaces for all three models:
-- Pointer V45 (Proposed Model)
+- Pointer Generator Transformer (Proposed Model)
 - MHSA (Baseline)
 - LSTM (Baseline)
 
@@ -34,10 +34,10 @@ def set_seed(seed: int = RANDOM_SEED):
 
 
 # =============================================================================
-# Pointer V45 Search Space
+# Pointer Generator Transformer Search Space
 # =============================================================================
 
-POINTER_V45_SEARCH_SPACE = {
+PGT_SEARCH_SPACE = {
     # Architecture hyperparameters
     'd_model': [64, 96, 128],
     'nhead': [2, 4, 8],
@@ -119,7 +119,7 @@ def generate_all_configs(model_name: str, dataset: str, num_trials: int = NUM_TR
     Generate all hyperparameter configurations for a model-dataset pair.
     
     Args:
-        model_name: One of 'pointer_v45', 'mhsa', 'lstm'
+        model_name: One of "pgt", 'mhsa', 'lstm'
         dataset: One of 'geolife', 'diy'
         num_trials: Number of configurations to generate
         base_seed: Base seed for reproducibility
@@ -128,7 +128,7 @@ def generate_all_configs(model_name: str, dataset: str, num_trials: int = NUM_TR
         List of hyperparameter configurations
     """
     search_space = {
-        'pointer_v45': POINTER_V45_SEARCH_SPACE,
+        "pgt": PGT_SEARCH_SPACE,
         'mhsa': MHSA_SEARCH_SPACE,
         'lstm': LSTM_SEARCH_SPACE,
     }[model_name]
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     # Test generation
     set_seed(RANDOM_SEED)
     
-    for model in ['pointer_v45', 'mhsa', 'lstm']:
+    for model in ["pgt", 'mhsa', 'lstm']:
         for dataset in ['geolife', 'diy']:
             configs = generate_all_configs(model, dataset, num_trials=3)
             print(f"\n{model.upper()} on {dataset}:")

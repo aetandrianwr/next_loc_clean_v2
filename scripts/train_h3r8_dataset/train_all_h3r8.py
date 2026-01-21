@@ -2,7 +2,7 @@
 """
 Training script to run all 6 model-dataset combinations for h3r8 datasets.
 
-Models: PointerV45, MHSA, LSTM
+Models: PGT, MHSA, LSTM
 Datasets: diy_h3r8, geolife_h3r8
 
 Runs all 6 training sessions in parallel with 2-second delays.
@@ -29,8 +29,8 @@ RESULTS_DIR = Path(__file__).parent
 # Training configurations
 TRAINING_CONFIGS = [
     # (model_name, dataset, config_file, training_script)
-    ("pointer_v45", "diy_h3r8", "config_pointer_v45_diy_h3r8.yaml", "src/training/train_pointer_v45.py"),
-    ("pointer_v45", "geolife_h3r8", "config_pointer_v45_geolife_h3r8.yaml", "src/training/train_pointer_v45.py"),
+    ("pgt", "diy_h3r8", "config_pgt_diy_h3r8.yaml", "src/training/train_pgt.py"),
+    ("pgt", "geolife_h3r8", "config_pgt_geolife_h3r8.yaml", "src/training/train_pgt.py"),
     ("MHSA", "diy_h3r8", "config_MHSA_diy_h3r8.yaml", "src/training/train_MHSA.py"),
     ("MHSA", "geolife_h3r8", "config_MHSA_geolife_h3r8.yaml", "src/training/train_MHSA.py"),
     ("LSTM", "diy_h3r8", "config_LSTM_diy_h3r8.yaml", "src/training/train_LSTM.py"),
@@ -136,7 +136,7 @@ def find_experiment_dir(model_name: str, dataset: str) -> Path:
     Find the latest experiment directory for a model-dataset combination.
     
     Args:
-        model_name: Name of the model (pointer_v45, MHSA, LSTM)
+        model_name: Name of the model (pgt, MHSA, LSTM)
         dataset: Name of the dataset (diy_h3r8, geolife_h3r8)
     
     Returns:
@@ -349,7 +349,7 @@ def main():
     """Main entry point."""
     print("\n" + "=" * 60)
     print("H3R8 Dataset Training Script")
-    print("Models: PointerV45, MHSA, LSTM")
+    print("Models: PGT, MHSA, LSTM")
     print("Datasets: diy_h3r8, geolife_h3r8")
     print("=" * 60 + "\n")
     

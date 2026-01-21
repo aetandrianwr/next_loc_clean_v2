@@ -100,8 +100,8 @@ def main():
     print("\n" + "="*80)
     print("INITIAL OBSERVATION (What user reported)")
     print("="*80)
-    print(f"Geolife: MHSA={model_results['geolife']['mhsa']}% → PointerV45={model_results['geolife']['pointer']}% (Improvement: +{model_results['geolife']['improvement']}%)")
-    print(f"DIY:     MHSA={model_results['diy']['mhsa']}% → PointerV45={model_results['diy']['pointer']}% (Improvement: +{model_results['diy']['improvement']}%)")
+    print(f"Geolife: MHSA={model_results['geolife']['mhsa']}% → PGT={model_results['geolife']['pointer']}% (Improvement: +{model_results['geolife']['improvement']}%)")
+    print(f"DIY:     MHSA={model_results['diy']['mhsa']}% → PGT={model_results['diy']['pointer']}% (Improvement: +{model_results['diy']['improvement']}%)")
     print(f"Question: Why is Geolife improvement 5.6x larger than DIY?")
     
     print("\n" + "="*80)
@@ -169,7 +169,7 @@ def main():
             'Avg Targets per User',
             'Most Freq Heuristic Acc (%)',
             'MHSA Baseline (%)',
-            'PointerV45 (%)',
+            'PGT (%)',
             'Actual Improvement (%)',
             'Improvement Potential (%)',
             'Realization Rate (%)'
@@ -264,7 +264,7 @@ is primarily because:
     oracles = [geo_target_in_history, diy_target_in_history]
     
     bars1 = ax1.bar(x - width, baselines, width, label='MHSA Baseline', color='lightgray')
-    bars2 = ax1.bar(x, pointers, width, label='PointerV45', color='steelblue')
+    bars2 = ax1.bar(x, pointers, width, label='PGT', color='steelblue')
     bars3 = ax1.bar(x + width, oracles, width, label='Oracle (Target in History)', color='lightgreen')
     
     ax1.set_ylabel('Accuracy (%)')

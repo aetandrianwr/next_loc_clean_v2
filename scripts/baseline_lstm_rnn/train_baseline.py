@@ -3,10 +3,10 @@ Training script for LSTM and RNN Baseline Models.
 
 This script handles training and evaluation of LSTM and RNN baseline models
 for next location prediction. It is designed to be scientifically comparable
-with the Pointer Network V45 model.
+with the Pointer Generator Transformer model.
 
 Key Design Decisions for Fair Comparison:
-- Same data loading and preprocessing as train_pointer_v45.py
+- Same data loading and preprocessing as train_pgt.py
 - Same evaluation metrics from src/evaluation/metrics.py
 - Same training procedure (optimizer, warmup + cosine LR schedule, early stopping)
 - Same experiment directory structure
@@ -307,7 +307,7 @@ class BaselineTrainer:
     
     Features:
     - Mixed precision training (AMP)
-    - Warmup + Cosine LR schedule (same as Pointer V45)
+    - Warmup + Cosine LR schedule (same as Pointer Generator Transformer)
     - Early stopping on validation loss
     - Gradient clipping
     - Comprehensive logging
@@ -340,13 +340,13 @@ class BaselineTrainer:
         # Extract training config
         train_cfg = config['training']
         
-        # Loss function (same as Pointer V45)
+        # Loss function (same as Pointer Generator Transformer)
         self.criterion = nn.CrossEntropyLoss(
             ignore_index=0,
             label_smoothing=train_cfg.get('label_smoothing', 0.03),
         )
         
-        # Optimizer (same as Pointer V45)
+        # Optimizer (same as Pointer Generator Transformer)
         self.optimizer = optim.AdamW(
             model.parameters(),
             lr=train_cfg.get('learning_rate', 3e-4),
@@ -355,7 +355,7 @@ class BaselineTrainer:
             eps=1e-9,
         )
         
-        # Learning rate schedule parameters (same as Pointer V45)
+        # Learning rate schedule parameters (same as Pointer Generator Transformer)
         self.num_epochs = train_cfg.get('num_epochs', 50)
         self.warmup_epochs = train_cfg.get('warmup_epochs', 5)
         self.base_lr = train_cfg.get('learning_rate', 3e-4)
@@ -365,7 +365,7 @@ class BaselineTrainer:
         self.use_amp = train_cfg.get('use_amp', True)
         self.scaler = torch.cuda.amp.GradScaler() if self.use_amp else None
         
-        # Gradient clipping (same as Pointer V45)
+        # Gradient clipping (same as Pointer Generator Transformer)
         self.grad_clip = train_cfg.get('grad_clip', 0.8)
         
         # Early stopping
@@ -380,7 +380,7 @@ class BaselineTrainer:
         self._setup_logging()
     
     def _get_lr(self, epoch: int) -> float:
-        """Get learning rate with warmup and cosine decay (same as Pointer V45)."""
+        """Get learning rate with warmup and cosine decay (same as Pointer Generator Transformer)."""
         if epoch < self.warmup_epochs:
             return self.base_lr * (epoch + 1) / self.warmup_epochs
         

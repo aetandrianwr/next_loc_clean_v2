@@ -1,10 +1,10 @@
 """
-Pointer V45 Component Analysis - Script 5: Final Summary from Model Perspective
+Pointer Generator Transformer Component Analysis - Script 5: Final Summary from Model Perspective
 
 This script consolidates all findings and explains the performance gap
-from the POINTER V45 MODEL's perspective.
+from the POINTER GENERATOR TRANSFORMER MODEL's perspective.
 
-Key Question: Why does Pointer V45 improve +20.79% in Geolife but only +3.68% in DIY?
+Key Question: Why does Pointer Generator Transformer improve +20.79% in Geolife but only +3.68% in DIY?
 Focus: What model components contribute to this difference?
 """
 
@@ -39,15 +39,15 @@ def generate_summary(output_dir):
     diy_pos = load_json(os.path.join(output_dir, "diy_position_analysis.json"))
     
     print("=" * 70)
-    print("POINTER V45 PERFORMANCE GAP ANALYSIS - MODEL PERSPECTIVE")
+    print("POINTER GENERATOR TRANSFORMER PERFORMANCE GAP ANALYSIS - MODEL PERSPECTIVE")
     print("=" * 70)
     
     print("\n[RESEARCH QUESTION]")
-    print("Why does Pointer V45 achieve +20.79% improvement in Geolife")
+    print("Why does Pointer Generator Transformer achieve +20.79% improvement in Geolife")
     print("but only +3.68% improvement in DIY over MHSA baseline?")
     
     print("\n[PERFORMANCE RESULTS]")
-    print("  Dataset    MHSA      Pointer V45   Improvement")
+    print("  Dataset    MHSA      Pointer Generator Transformer   Improvement")
     print("  -------    ----      -----------   -----------")
     print("  Geolife    33.18%    53.97%        +20.79%")
     print("  DIY        53.17%    56.85%        +3.68%")
@@ -200,7 +200,7 @@ yet shows smaller improvement. This is because:
 1. BASELINE SATURATION
    - DIY's simple, repetitive patterns allow MHSA to already achieve 53.17%
    - Geolife's complex patterns limit MHSA to only 33.18%
-   - Pointer V45's additional capability provides less "lift" in DIY
+   - Pointer Generator Transformer's additional capability provides less "lift" in DIY
 
 2. PATTERN COMPLEXITY
    - Geolife: Diverse user behavior, complex patterns → MHSA struggles
@@ -210,11 +210,11 @@ yet shows smaller improvement. This is because:
 3. IMPROVEMENT CEILING
    - Geolife: MHSA at 33.18%, ceiling ~84% → 51% room for improvement
    - DIY: MHSA at 53.17%, ceiling ~84% → 31% room for improvement
-   - Pointer V45 captures 20.79/51 = 41% of potential in Geolife
-   - Pointer V45 captures 3.68/31 = 12% of potential in DIY
+   - Pointer Generator Transformer captures 20.79/51 = 41% of potential in Geolife
+   - Pointer Generator Transformer captures 3.68/31 = 12% of potential in DIY
 
 KEY INSIGHT:
-The Pointer V45 model's advantage comes from EXPLICIT copy capability.
+The Pointer Generator Transformer model's advantage comes from EXPLICIT copy capability.
 When the baseline MHSA can already learn copying IMPLICITLY (like in DIY),
 the explicit pointer mechanism provides less additional value.
 
@@ -234,8 +234,8 @@ The pointer mechanism provides less benefit when:
     # Save summary
     summary_data = {
         "analysis_date": datetime.now().isoformat(),
-        "focus": "Pointer V45 Model Component Analysis",
-        "research_question": "Why does Pointer V45 achieve +20.79% improvement in Geolife but only +3.68% in DIY?",
+        "focus": "Pointer Generator Transformer Model Component Analysis",
+        "research_question": "Why does Pointer Generator Transformer achieve +20.79% improvement in Geolife but only +3.68% in DIY?",
         "performance": {
             "geolife": {"mhsa": 33.18, "pointer": 53.97, "improvement": 20.79},
             "diy": {"mhsa": 53.17, "pointer": 56.85, "improvement": 3.68},
@@ -269,7 +269,7 @@ The pointer mechanism provides less benefit when:
             "Pattern complexity: Geolife has complex patterns MHSA cannot learn implicitly",
             "Improvement ceiling: Less room for improvement in DIY (31% vs 51%)",
         ],
-        "key_insight": "The Pointer V45 model excels when baseline MHSA struggles with implicit copy learning. In DIY, simple patterns allow MHSA to capture copy behavior implicitly, reducing Pointer V45's additional value.",
+        "key_insight": "The Pointer Generator Transformer model excels when baseline MHSA struggles with implicit copy learning. In DIY, simple patterns allow MHSA to capture copy behavior implicitly, reducing Pointer Generator Transformer's additional value.",
     }
     
     output_path = os.path.join(output_dir, "FINAL_MODEL_PERSPECTIVE_SUMMARY.json")

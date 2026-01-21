@@ -1,6 +1,6 @@
 # Scientific Hyperparameter Tuning
 
-This directory contains all scripts, configurations, and results for the scientific hyperparameter tuning experiments conducted on three models (Pointer V45, MHSA, LSTM) across two datasets (Geolife and DIY).
+This directory contains all scripts, configurations, and results for the scientific hyperparameter tuning experiments conducted on three models (Pointer Generator Transformer, MHSA, LSTM) across two datasets (Geolife and DIY).
 
 ## Overview
 
@@ -50,7 +50,7 @@ sci_hyperparam_tuning/
 
 Each model has a carefully designed search space that includes both architectural and optimization hyperparameters:
 
-**Pointer V45 (Proposed Model)**:
+**Pointer Generator Transformer (Proposed Model)**:
 - Architecture: d_model, nhead, num_layers, dim_feedforward, dropout
 - Optimization: learning_rate, weight_decay, batch_size, label_smoothing, warmup_epochs
 
@@ -134,22 +134,22 @@ python scripts/sci_hyperparam_tuning/run_final_evaluation.py
 ### Best Hyperparameters (by Val Acc@1)
 
 **Geolife Dataset**:
-- **Pointer V45**: 49.25% (config: pointer_v45_geolife_trial01, params: 443,404)
+- **Pointer Generator Transformer**: 49.25% (config: pointer_v45_geolife_trial01, params: 443,404)
 - **MHSA**: 42.38% (config: mhsa_geolife_trial17, params: 281,251)
 - **LSTM**: 40.58% (config: lstm_geolife_trial00, params: 467,683)
 
 **DIY Dataset**:
-- **Pointer V45**: 54.92% (config: pointer_v45_diy_trial09, params: 1,081,554)
+- **Pointer Generator Transformer**: 54.92% (config: pointer_v45_diy_trial09, params: 1,081,554)
 - **LSTM**: 53.90% (config: lstm_diy_trial02, params: 3,564,990)
 - **MHSA**: 53.69% (config: mhsa_diy_trial04, params: 797,982)
 
 ### Key Findings
 
-1. **Pointer V45 outperforms baselines** on both datasets, validating the proposed architecture
+1. **Pointer Generator Transformer outperforms baselines** on both datasets, validating the proposed architecture
 2. **Performance ranking varies by dataset**:
-   - Geolife: Pointer V45 > MHSA > LSTM
-   - DIY: Pointer V45 > LSTM > MHSA
-3. **Model complexity**: Pointer V45 achieves best results with moderate parameter counts
+   - Geolife: Pointer Generator Transformer > MHSA > LSTM
+   - DIY: Pointer Generator Transformer > LSTM > MHSA
+3. **Model complexity**: Pointer Generator Transformer achieves best results with moderate parameter counts
 
 ## Reproducibility
 

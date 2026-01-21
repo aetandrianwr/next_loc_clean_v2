@@ -1,6 +1,6 @@
 # 06. Model Architecture
 
-## PointerNetworkV45 - Deep Dive
+## PointerGeneratorTransformer - Deep Dive
 
 ---
 
@@ -19,7 +19,7 @@
 
 ### 1.1 High-Level Design
 
-PointerNetworkV45 is a **Transformer-based Pointer-Generator Network** designed for next location prediction. It combines three key mechanisms:
+PointerGeneratorTransformer is a **Transformer-based Pointer-Generator Network** designed for next location prediction. It combines three key mechanisms:
 
 1. **Pointer Mechanism**: Attends to input sequence locations and "points" to likely candidates
 2. **Generation Head**: Predicts over the full location vocabulary
@@ -27,7 +27,7 @@ PointerNetworkV45 is a **Transformer-based Pointer-Generator Network** designed 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                       PointerNetworkV45                              │
+│                       PointerGeneratorTransformer                              │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │  Input Sequence                                                      │

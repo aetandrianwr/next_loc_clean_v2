@@ -57,7 +57,7 @@ The training objective function: $\mathcal{L} = -\log P(y_{true})$. Measures how
 The dimensionality of the model's internal representations. All embeddings and hidden states have this dimension. DIY uses d_model=64; Geolife uses d_model=96.
 
 ### Decoder
-The part of a sequence-to-sequence model that generates output. In PointerNetworkV45, the pointer mechanism and generation head together form the decoder.
+The part of a sequence-to-sequence model that generates output. In PointerGeneratorTransformer, the pointer mechanism and generation head together form the decoder.
 
 ### Diagonal (in attention)
 In self-attention heatmaps, the diagonal represents each position attending to itself. Strong diagonal patterns indicate self-attention is important.
@@ -73,7 +73,7 @@ How long a user stayed at a location. One of the temporal features encoded in th
 A learned vector representation of a discrete input (like a location ID or user ID). Embeddings map categorical data to continuous vectors.
 
 ### Encoder
-The part of the model that processes the input sequence. In PointerNetworkV45, this is the Transformer encoder that produces contextualized representations.
+The part of the model that processes the input sequence. In PointerGeneratorTransformer, this is the Transformer encoder that produces contextualized representations.
 
 ### Entropy
 See [Attention Entropy](#attention-entropy). In information theory, entropy measures uncertainty or randomness in a probability distribution.
@@ -151,7 +151,7 @@ In attention heatmaps, the position being attended TO (usually on x-axis).
 ## L
 
 ### Layer
-A single processing unit in the neural network. PointerNetworkV45 uses 2 transformer encoder layers.
+A single processing unit in the neural network. PointerGeneratorTransformer uses 2 transformer encoder layers.
 
 ### LayerNorm (Layer Normalization)
 A normalization technique that normalizes across features for each sample: $\text{LN}(x) = \gamma \cdot \frac{x - \mu}{\sigma} + \beta$.
@@ -207,7 +207,7 @@ Probability distribution over locations derived from pointer attention by scatte
 ### Pointer Network
 A neural network architecture that can output pointers to input positions rather than generating from a fixed vocabulary.
 
-### PointerNetworkV45
+### PointerGeneratorTransformer
 The specific model architecture used in this experiment, combining transformer encoder with pointer mechanism and generation head.
 
 ### Position Bias

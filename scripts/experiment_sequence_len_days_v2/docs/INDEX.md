@@ -17,7 +17,7 @@ Welcome to the comprehensive documentation for the **Sequence Length Days Experi
 | 3 | [Theoretical Foundation](./03_theoretical_foundation.md) | Scientific basis, human mobility theory, mathematical foundations | 15 min |
 | 4 | [Experimental Methodology](./04_experimental_methodology.md) | Research design, controls, and scientific approach | 12 min |
 | 5 | [Technical Implementation](./05_technical_implementation.md) | Code walkthrough, scripts, and execution details | 20 min |
-| 6 | [Model Architecture](./06_model_architecture.md) | PointerNetworkV45 deep dive, components, and design | 18 min |
+| 6 | [Model Architecture](./06_model_architecture.md) | PointerGeneratorTransformer deep dive, components, and design | 18 min |
 | 7 | [Datasets](./07_datasets.md) | DIY and GeoLife dataset details, statistics, preprocessing | 12 min |
 | 8 | [Evaluation Metrics](./08_evaluation_metrics.md) | Acc@k, MRR, NDCG, F1, Loss - formulas and interpretation | 15 min |
 | 9 | [Results & Analysis](./09_results_and_analysis.md) | Complete experimental results with statistical analysis | 20 min |
@@ -109,7 +109,7 @@ experiment_sequence_len_days_v2/
 
 ## 🔗 Related Resources
 
-- **Model Code**: `src/models/proposed/pointer_v45.py`
+- **Model Code**: `src/models/proposed/pgt.py`
 - **Evaluation Metrics**: `src/evaluation/metrics.py`
 - **Experiment Configs**: `scripts/sci_hyperparam_tuning/configs/`
 - **Pre-trained Checkpoints**: `experiments/*/checkpoints/best.pt`

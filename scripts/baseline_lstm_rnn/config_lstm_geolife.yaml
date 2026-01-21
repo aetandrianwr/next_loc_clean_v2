@@ -1,12 +1,12 @@
 # LSTM Baseline Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20_prev7
 # 
-# This baseline demonstrates the advantage of Pointer V45 over standard LSTM:
+# This baseline demonstrates the advantage of Pointer Generator Transformer over standard LSTM:
 # - LSTM uses only location and user embeddings (no temporal features)
-# - Pointer V45 uses attention, pointer mechanism, and rich temporal features
+# - Pointer Generator Transformer uses attention, pointer mechanism, and rich temporal features
 #
 # Results:
-#   - Pointer V45: 53.94% Acc@1
+#   - Pointer Generator Transformer: 53.94% Acc@1
 #   - LSTM:        33.01% Acc@1
 #   - Improvement: 20.93 percentage points (63.4% relative improvement)
 #

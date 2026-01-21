@@ -1,0 +1,29 @@
+# Hyperparameter Tuning Config: pointer_v45_geolife_trial09
+# Model: pgt, Dataset: geolife, Trial: 9
+# Hyperparameters: {'d_model': 128, 'nhead': 4, 'num_layers': 4, 'dim_feedforward': 128, 'dropout': 0.15, 'learning_rate': 0.0005, 'weight_decay': 0.015, 'batch_size': 64, 'label_smoothing': 0.01, 'warmup_epochs': 3, 'trial_idx': 9, 'model_name': 'pgt', 'dataset': 'geolife'}
+
+seed: 42
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 4
+  dim_feedforward: 128
+  dropout: 0.15
+training:
+  batch_size: 64
+  num_epochs: 50
+  learning_rate: 0.0005
+  weight_decay: 0.015
+  label_smoothing: 0.01
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 3
+  use_amp: true
+  min_lr: 1.0e-06

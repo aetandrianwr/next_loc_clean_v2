@@ -78,7 +78,7 @@ This finding has **critical implications for next-location prediction models**:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-This is **exactly** what our proposed PointerNetworkV45 model does!
+This is **exactly** what our proposed PointerGeneratorTransformer model does!
 
 ---
 
@@ -149,7 +149,7 @@ This analysis:
 1. **Replicates** Figure 2d from González et al. (2008) Nature paper
 2. **Validates** Zipf's Law on two independent GPS trajectory datasets
 3. **Provides** quantitative evidence for pointer mechanism design
-4. **Supports** the design of PointerNetworkV45 model architecture
+4. **Supports** the design of PointerGeneratorTransformer model architecture
 
 ---
 

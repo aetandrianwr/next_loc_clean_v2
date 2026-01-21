@@ -23,7 +23,7 @@ This document provides detailed technical documentation for all code files in th
 ### 1.1 Purpose
 
 The attention visualization module provides tools to:
-- Extract attention weights from trained PointerNetworkV45 models
+- Extract attention weights from trained PointerGeneratorTransformer models
 - Analyze attention patterns across samples and datasets
 - Generate publication-quality visualizations
 - Create statistical summaries and comparison tables
@@ -63,10 +63,10 @@ The attention visualization module provides tools to:
 
 ```python
 """
-Attention Extraction Module for PointerNetworkV45.
+Attention Extraction Module for PointerGeneratorTransformer.
 
 This module provides comprehensive attention extraction capabilities for
-the Pointer Network V45 model. It extracts multiple types of attention:
+the Pointer Generator Transformer model. It extracts multiple types of attention:
 
 1. **Transformer Self-Attention**: Captures relationships between positions
    in the input sequence through multi-head self-attention.
@@ -90,10 +90,10 @@ Scientific Significance:
 ```python
 class AttentionExtractor:
     """
-    Extracts and processes attention weights from PointerNetworkV45.
+    Extracts and processes attention weights from PointerGeneratorTransformer.
     
     Attributes:
-        model (nn.Module): The PointerNetworkV45 model instance
+        model (nn.Module): The PointerGeneratorTransformer model instance
         device (torch.device): Device for computation (cuda/cpu)
         hooks (List): List of registered forward hooks
         attention_weights (Dict): Captured attention weights
@@ -114,11 +114,11 @@ def __init__(self, model: nn.Module, device: torch.device):
     Initialize the attention extractor.
     
     Args:
-        model: PointerNetworkV45 model instance (must be on device)
+        model: PointerGeneratorTransformer model instance (must be on device)
         device: Torch device (cuda/cpu) for computations
     
     Example:
-        model = PointerNetworkV45(...)
+        model = PointerGeneratorTransformer(...)
         model = model.to(device)
         extractor = AttentionExtractor(model, device)
     """
@@ -292,7 +292,7 @@ def compute_attention_statistics(
 
 ```python
 """
-Comprehensive Attention Visualization Experiment for PointerNetworkV45.
+Comprehensive Attention Visualization Experiment for PointerGeneratorTransformer.
 
 This experiment provides Nature Journal-standard scientific analysis of attention
 mechanisms in the Pointer Network model for next location prediction.
@@ -360,7 +360,7 @@ def load_model_and_data(
         device: Torch device for model
         
     Returns:
-        model: Loaded PointerNetworkV45 model in eval mode
+        model: Loaded PointerGeneratorTransformer model in eval mode
         test_loader: DataLoader for test set (batch_size=64)
         info: Dictionary with:
             - num_locations: Total unique locations
@@ -659,7 +659,7 @@ def run_experiment(dataset: str, seed: int = 42):
 Cross-Dataset Comparison for Attention Visualization Experiment.
 
 This script generates comparative visualizations and tables between
-the DIY and Geolife datasets for the PointerNetworkV45 model.
+the DIY and Geolife datasets for the PointerGeneratorTransformer model.
 
 Scientific Purpose:
 ===================
@@ -845,7 +845,7 @@ from datetime import datetime
 
 ```python
 # Model
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 
 # Training utilities
 from src.training.train_pointer_v45 import NextLocationDataset, collate_fn, set_seed

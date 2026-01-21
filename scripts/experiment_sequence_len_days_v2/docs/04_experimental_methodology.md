@@ -48,7 +48,7 @@ This is a **controlled ablation study** that systematically varies one factor (t
 #### Control Variables (Held Constant)
 | Variable | Value | Why Controlled |
 |----------|-------|----------------|
-| Model architecture | PointerNetworkV45 | Isolate data effect |
+| Model architecture | PointerGeneratorTransformer | Isolate data effect |
 | Model weights | Pre-trained on prev7 | Same model for all |
 | Hyperparameters | Fixed (from tuning) | No confounding |
 | Random seed | 42 | Reproducibility |
@@ -447,7 +447,7 @@ def set_seed(seed=42):
 
 ### Methodological Limitations
 
-1. **Single model architecture**: Results specific to PointerNetworkV45
+1. **Single model architecture**: Results specific to PointerGeneratorTransformer
 2. **Fixed hyperparameters**: Model optimized for prev7 only
 3. **Limited window range**: Only 1-7 days tested
 

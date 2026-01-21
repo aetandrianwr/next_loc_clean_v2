@@ -54,7 +54,7 @@ from scipy import stats
 # Add parent directory for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -73,7 +73,7 @@ CONFIGS = {
         'test_path': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_test.pk',
         'train_path': '/data/next_loc_clean_v2/data/diy_eps50/processed/diy_eps50_prev7_train.pk',
         'checkpoint': '/data/next_loc_clean_v2/experiments/diy_pointer_v45_20260101_155348/checkpoints/best.pt',
-        'config': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_diy_trial09.yaml',
+        'config': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_diy_trial09.yaml',
         'model_config': {
             'd_model': 64,
             'nhead': 4,
@@ -87,7 +87,7 @@ CONFIGS = {
         'test_path': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_test.pk',
         'train_path': '/data/next_loc_clean_v2/data/geolife_eps20/processed/geolife_eps20_prev7_train.pk',
         'checkpoint': '/data/next_loc_clean_v2/experiments/geolife_pointer_v45_20260101_151038/checkpoints/best.pt',
-        'config': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pointer_v45_geolife_trial01.yaml',
+        'config': '/data/next_loc_clean_v2/scripts/sci_hyperparam_tuning/configs/pgt_geolife_trial01.yaml',
         'model_config': {
             'd_model': 96,
             'nhead': 2,
@@ -260,7 +260,7 @@ def load_model(dataset_key: str, device: torch.device):
     
     # Create model with correct max_seq_len
     model_cfg = config['model_config']
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=num_locations,
         num_users=num_users,
         d_model=model_cfg['d_model'],

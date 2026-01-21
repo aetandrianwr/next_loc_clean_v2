@@ -428,7 +428,7 @@ def explain_prediction(attention_weights, locations, gate):
 
 ### 7.5 Model Architecture Dependency
 
-**Issue**: Results are specific to PointerNetworkV45.
+**Issue**: Results are specific to PointerGeneratorTransformer.
 
 **Implication**: Different architectures might show different attention patterns while achieving similar accuracy.
 

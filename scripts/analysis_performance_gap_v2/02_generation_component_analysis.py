@@ -1,7 +1,7 @@
 """
-Pointer V45 Component Analysis - Script 2: Generation Head Effectiveness
+Pointer Generator Transformer Component Analysis - Script 2: Generation Head Effectiveness
 
-This script analyzes the Generation Head component of Pointer V45:
+This script analyzes the Generation Head component of Pointer Generator Transformer:
 1. When does the generation head need to work? (target NOT in history)
 2. How hard are these generation tasks? (rare vs common targets)
 3. What characteristics make generation easier/harder?

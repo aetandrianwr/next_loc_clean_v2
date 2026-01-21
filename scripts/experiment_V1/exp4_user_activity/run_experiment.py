@@ -25,7 +25,7 @@ import seaborn as sns
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 from src.evaluation.metrics import calculate_correct_total_prediction, get_performance_dict
 from sklearn.metrics import f1_score
 
@@ -62,7 +62,7 @@ def load_model(checkpoint_path, config, device):
     # Infer max_seq_len from checkpoint
     max_seq_len = checkpoint['model_state_dict']['position_bias'].shape[0]
     
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=metadata['total_loc_num'],
         num_users=metadata['total_user_num'],
         d_model=model_cfg.get('d_model', 128),

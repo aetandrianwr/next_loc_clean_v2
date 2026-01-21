@@ -14,7 +14,7 @@ This guide provides step-by-step instructions to run the attention visualization
 - CUDA (optional, for GPU acceleration)
 
 ### Required Data
-- Trained PointerNetworkV45 model checkpoint
+- Trained PointerGeneratorTransformer model checkpoint
 - Processed test dataset (pickle format)
 - Model configuration file (YAML format)
 

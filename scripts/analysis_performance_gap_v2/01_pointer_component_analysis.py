@@ -1,15 +1,15 @@
 """
-Pointer V45 Component Analysis - Script 1: Pointer vs Generation Effectiveness
+Pointer Generator Transformer Component Analysis - Script 1: Pointer vs Generation Effectiveness
 
-This script analyzes WHY the Pointer V45 model's improvement differs between datasets
+This script analyzes WHY the Pointer Generator Transformer model's improvement differs between datasets
 by focusing on the model's internal mechanisms:
 1. Pointer mechanism effectiveness
 2. Generation head effectiveness  
 3. Gate behavior (how the model blends pointer and generation)
 
-Key Question: Why does Pointer V45 achieve +20.79% improvement in Geolife but only +3.68% in DIY?
+Key Question: Why does Pointer Generator Transformer achieve +20.79% improvement in Geolife but only +3.68% in DIY?
 
-Focus: The PROPOSED MODEL (Pointer V45) perspective
+Focus: The PROPOSED MODEL (Pointer Generator Transformer) perspective
 """
 
 import os

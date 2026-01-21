@@ -231,7 +231,7 @@ If 3 days provides sufficient accuracy:
 ✅ **Included**:
 - Temporal window from 1 to 7 days
 - Two real-world datasets (DIY, GeoLife)
-- One well-tuned model architecture (PointerNetworkV45)
+- One well-tuned model architecture (PointerGeneratorTransformer)
 - Multiple evaluation metrics (Acc@k, MRR, NDCG, F1, Loss)
 - Detailed statistical analysis
 - Publication-quality visualizations

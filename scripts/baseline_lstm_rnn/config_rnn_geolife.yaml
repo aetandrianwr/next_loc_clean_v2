@@ -1,12 +1,12 @@
 # RNN Baseline Model Configuration for GeoLife Dataset
 # Dataset: geolife_eps20_prev7
 # 
-# This baseline demonstrates the advantage of Pointer V45 over vanilla RNN:
+# This baseline demonstrates the advantage of Pointer Generator Transformer over vanilla RNN:
 # - RNN uses only location and user embeddings (no temporal features)
 # - Vanilla RNN (Elman RNN) - simplest recurrent baseline
 #
 # Results:
-#   - Pointer V45: 53.94% Acc@1
+#   - Pointer Generator Transformer: 53.94% Acc@1
 #   - RNN:         32.95% Acc@1
 #   - Improvement: 20.99 percentage points (63.7% relative improvement)
 #

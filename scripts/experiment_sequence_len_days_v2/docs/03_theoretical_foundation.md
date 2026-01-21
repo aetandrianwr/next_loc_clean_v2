@@ -403,7 +403,7 @@ Let:
 - $\theta$ be model parameters
 
 The model computes:
-$$P_\theta(y | x) = \text{PointerNetworkV45}(x; \theta)$$
+$$P_\theta(y | x) = \text{PointerGeneratorTransformer}(x; \theta)$$
 
 ### 8.2 Filtering Function
 

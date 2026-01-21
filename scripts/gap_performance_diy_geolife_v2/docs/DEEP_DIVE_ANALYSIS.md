@@ -2,7 +2,7 @@
 
 ## A Comprehensive Scientific Investigation
 
-This document provides an exhaustive, in-depth analysis of why the pointer mechanism in the PointerNetworkV45 model shows dramatically different impacts when removed from two human mobility datasets: **DIY (8.3% relative accuracy drop)** versus **GeoLife (46.7% relative accuracy drop)**. This 5.6× difference requires careful scientific explanation.
+This document provides an exhaustive, in-depth analysis of why the pointer mechanism in the PointerGeneratorTransformer model shows dramatically different impacts when removed from two human mobility datasets: **DIY (8.3% relative accuracy drop)** versus **GeoLife (46.7% relative accuracy drop)**. This 5.6× difference requires careful scientific explanation.
 
 ---
 
@@ -12,7 +12,7 @@ This document provides an exhaustive, in-depth analysis of why the pointer mecha
 
 ### 1.1 What We Observed
 
-In ablation studies conducted on the PointerNetworkV45 model, we systematically removed components to measure their contribution. The results were striking:
+In ablation studies conducted on the PointerGeneratorTransformer model, we systematically removed components to measure their contribution. The results were striking:
 
 **DIY Dataset Ablation Results:**
 ```
@@ -50,15 +50,15 @@ We hypothesize that **GeoLife users exhibit fundamentally different mobility pat
 
 ---
 
-## Chapter 2: The PointerNetworkV45 Architecture
+## Chapter 2: The PointerGeneratorTransformer Architecture
 
 ### 2.1 Conceptual Overview
 
-The PointerNetworkV45 is a hybrid neural network that combines two prediction strategies:
+The PointerGeneratorTransformer is a hybrid neural network that combines two prediction strategies:
 
 ```
                     ┌─────────────────────────────────────────────┐
-                    │         PointerNetworkV45 Architecture       │
+                    │         PointerGeneratorTransformer Architecture       │
                     └─────────────────────────────────────────────┘
                                          │
                     ┌────────────────────┴────────────────────┐

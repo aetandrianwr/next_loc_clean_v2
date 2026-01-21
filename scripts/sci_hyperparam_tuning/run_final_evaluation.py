@@ -35,7 +35,7 @@ CONFIGS_DIR = SCRIPTS_DIR / 'configs'
 
 # Training scripts
 TRAINING_SCRIPTS = {
-    'pointer_v45': 'src/training/train_pointer_v45.py',
+    "pgt": 'src/training/train_pgt.py',
     'mhsa': 'src/training/train_MHSA.py',
     'lstm': 'src/training/train_LSTM.py',
 }
@@ -66,7 +66,7 @@ def find_best_configs(results_df: pd.DataFrame) -> Dict[str, Dict]:
     """Find the best configuration for each model-dataset pair based on Val Acc@1."""
     best_configs = {}
     
-    for model in ['pointer_v45', 'mhsa', 'lstm']:
+    for model in ["pgt", 'mhsa', 'lstm']:
         for dataset in ['geolife', 'diy']:
             key = f"{model}_{dataset}"
             
@@ -117,7 +117,7 @@ def parse_num_params_from_log(log_path: str, model_name: str) -> int:
         with open(log_path, 'r') as f:
             log_content = f.read()
         
-        if model_name == 'pointer_v45':
+        if model_name == "pgt":
             match = re.search(r'(?:Model\s+)?[Pp]arameters:\s*([\d,]+)', log_content)
         else:
             match = re.search(r'Total trainable parameters:\s*([\d,]+)', log_content)
@@ -133,7 +133,7 @@ def find_experiment_dir(experiments_root: Path, model_name: str,
                         dataset: str, start_time: float) -> Optional[str]:
     """Find the experiment directory created after start_time."""
     model_suffix = {
-        'pointer_v45': 'pointer_v45',
+        "pgt": "pgt",
         'mhsa': 'MHSA',
         'lstm': 'LSTM',
     }[model_name]
@@ -300,7 +300,7 @@ def generate_results_tables(final_results: Dict[str, Dict]):
         print(f"{'Model':<15} {'Params':<12} {'Acc@1':<15} {'Acc@5':<15} {'Acc@10':<15} {'MRR':<15}")
         print("-" * 90)
         
-        for model in ['pointer_v45', 'mhsa', 'lstm']:
+        for model in ["pgt", 'mhsa', 'lstm']:
             key = f"{model}_{dataset}"
             if key not in final_results:
                 print(f"{model:<15} N/A")

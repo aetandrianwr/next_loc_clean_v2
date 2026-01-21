@@ -155,7 +155,7 @@ def analyze_prediction_headroom(test_data, name, actual_mhsa_acc, actual_pointer
     print(f"PREDICTION HEADROOM ANALYSIS: {name}")
     print(f"{'='*70}")
     print(f"\n  MHSA Baseline Accuracy:      {actual_mhsa_acc:.2f}%")
-    print(f"  Pointer V45 Accuracy:        {actual_pointer_acc:.2f}%")
+    print(f"  Pointer Generator Transformer Accuracy:        {actual_pointer_acc:.2f}%")
     print(f"  Improvement Achieved:        +{actual_pointer_acc - actual_mhsa_acc:.2f}pp")
     print(f"\n  Pointer Oracle (upper bound): {pointer_oracle_acc:.2f}%")
     print(f"  Perfect Accuracy:             {perfect:.2f}%")
@@ -235,7 +235,7 @@ def main():
     print("BASELINE SATURATION ANALYSIS")
     print("=" * 80)
     print("\nAnalyzing whether DIY dataset shows baseline saturation,")
-    print("which would explain limited improvement from PointerV45.")
+    print("which would explain limited improvement from PGT.")
     print("=" * 80)
     
     # Paths
@@ -252,8 +252,8 @@ def main():
     diy_test = load_dataset(diy_dir, diy_prefix, "test")
     
     # Actual model results (from experiments)
-    # Geolife: MHSA 33.18%, PointerV45 53.96% (improvement: +20.78pp)
-    # DIY: MHSA 53.17%, PointerV45 56.88% (improvement: +3.71pp)
+    # Geolife: MHSA 33.18%, PGT 53.96% (improvement: +20.78pp)
+    # DIY: MHSA 53.17%, PGT 56.88% (improvement: +3.71pp)
     geolife_mhsa = 33.18
     geolife_pointer = 53.96  # Using best available result approximation
     diy_mhsa = 53.17
@@ -287,7 +287,7 @@ def main():
     print(f"│ Metric                           │  Geolife     │  DIY         │")
     print(f"├─────────────────────────────────────────────────────────────────────┤")
     print(f"│ MHSA Baseline Acc@1 (%)          │  {geolife_mhsa:>10.2f}  │  {diy_mhsa:>10.2f}  │")
-    print(f"│ PointerV45 Acc@1 (%)             │  {geolife_pointer:>10.2f}  │  {diy_pointer:>10.2f}  │")
+    print(f"│ PGT Acc@1 (%)             │  {geolife_pointer:>10.2f}  │  {diy_pointer:>10.2f}  │")
     print(f"│ Improvement (pp)                 │  {geolife_pointer-geolife_mhsa:>10.2f}  │  {diy_pointer-diy_mhsa:>10.2f}  │")
     print(f"├─────────────────────────────────────────────────────────────────────┤")
     print(f"│ Per-User Freq Baseline (%)       │  {geo_freq['user_baseline']:>10.2f}  │  {diy_freq['user_baseline']:>10.2f}  │")

@@ -1,0 +1,39 @@
+# Pointer Generator Transformer Model Configuration for GeoLife Dataset
+# Dataset: geolife_eps20
+# 
+# Expected performance: Acc@1 ~54.00% on test set
+#
+# Usage:
+#   python src/training/train_pgt.py --config config/models/config_pgt_geolife.yaml
+
+seed: 42
+
+# Data settings
+data:
+  data_dir: data/geolife_eps20/processed
+  dataset_prefix: geolife_eps20_prev7
+  dataset: geolife
+  experiment_root: experiments
+  num_workers: 0
+
+# Model architecture
+model:
+  d_model: 64
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 128
+  dropout: 0.15
+
+# Training settings
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.00065  # Key: LR=6.5e-4 is optimal
+  weight_decay: 0.015
+  label_smoothing: 0.03
+  grad_clip: 0.8
+  patience: 5
+  min_epochs: 8
+  warmup_epochs: 5
+  use_amp: true
+  min_lr: 0.000001

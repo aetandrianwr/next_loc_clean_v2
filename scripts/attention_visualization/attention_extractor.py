@@ -1,8 +1,8 @@
 """
-Attention Extraction Module for PointerNetworkV45.
+Attention Extraction Module for PointerGeneratorTransformer.
 
 This module provides comprehensive attention extraction capabilities for
-the Pointer Network V45 model. It extracts multiple types of attention:
+the Pointer Generator Transformer model. It extracts multiple types of attention:
 
 1. **Transformer Self-Attention**: Captures relationships between positions
    in the input sequence through multi-head self-attention.
@@ -33,7 +33,7 @@ import numpy as np
 
 class AttentionExtractor:
     """
-    Extracts and processes attention weights from PointerNetworkV45.
+    Extracts and processes attention weights from PointerGeneratorTransformer.
     
     This class hooks into the model to capture:
     - Multi-head self-attention weights from transformer layers
@@ -51,7 +51,7 @@ class AttentionExtractor:
         Initialize the attention extractor.
         
         Args:
-            model: PointerNetworkV45 model instance
+            model: PointerGeneratorTransformer model instance
             device: Torch device (cuda/cpu)
         """
         self.model = model

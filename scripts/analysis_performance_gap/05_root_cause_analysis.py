@@ -127,7 +127,7 @@ def analyze_performance_breakdown(data, name, mhsa_acc, pointer_acc):
     print(f"PERFORMANCE BREAKDOWN: {name}")
     print(f"{'='*70}")
     print(f"\n  MHSA Accuracy:                 {mhsa_acc:.2f}%")
-    print(f"  Pointer V45 Accuracy:          {pointer_acc:.2f}%")
+    print(f"  Pointer Generator Transformer Accuracy:          {pointer_acc:.2f}%")
     print(f"  Improvement:                   +{pointer_acc - mhsa_acc:.2f}pp")
     print(f"\n  Pointer Hit Rate:              {pointer_hit:.2f}%")
     print(f"  (% of samples where target is in history)")
@@ -196,8 +196,8 @@ def main():
     print("=" * 80)
     
     # Actual results from experiments
-    # Geolife: MHSA 33.18%, PointerV45 ~48% (best result), improvement ~15pp
-    # DIY: MHSA 53.17%, PointerV45 ~56% (best result), improvement ~3pp
+    # Geolife: MHSA 33.18%, PGT ~48% (best result), improvement ~15pp
+    # DIY: MHSA 53.17%, PGT ~56% (best result), improvement ~3pp
     geolife_mhsa = 33.18
     geolife_pointer = 53.96
     diy_mhsa = 53.17
@@ -244,7 +244,7 @@ def main():
 │                                    │  GEOLIFE     │  DIY         │ DELTA   │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │ MHSA Baseline Acc@1                │  {geolife_mhsa:>10.2f}% │  {diy_mhsa:>10.2f}% │ {diy_mhsa-geolife_mhsa:>+6.1f}pp │
-│ PointerV45 Acc@1                   │  {geolife_pointer:>10.2f}% │  {diy_pointer:>10.2f}% │ {diy_pointer-geolife_pointer:>+6.1f}pp │
+│ PGT Acc@1                   │  {geolife_pointer:>10.2f}% │  {diy_pointer:>10.2f}% │ {diy_pointer-geolife_pointer:>+6.1f}pp │
 │ Improvement                        │  {geolife_pointer-geolife_mhsa:>+10.2f}pp │  {diy_pointer-diy_mhsa:>+10.2f}pp │         │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │ Top-1 Location Dominance           │  {geo_dominant['top1_share']:>10.1f}% │  {diy_dominant['top1_share']:>10.1f}% │ {diy_dominant['top1_share']-geo_dominant['top1_share']:>+6.1f}pp │
@@ -301,7 +301,7 @@ It's because:
 3. Pointer mechanism's benefit overlaps with what MHSA already captures
 4. There's simply less room for improvement when baseline is already at 53%
 
-The PointerV45 model achieves 41% of its theoretical improvement potential on
+The PGT model achieves 41% of its theoretical improvement potential on
 Geolife, but only 12% on DIY. This is because the "easy wins" from frequency-
 based prediction are already captured by MHSA on DIY.
 

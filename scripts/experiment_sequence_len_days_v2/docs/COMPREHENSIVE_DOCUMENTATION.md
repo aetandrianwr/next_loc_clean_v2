@@ -307,7 +307,7 @@ python visualize_results.py
 
 ## 6. Model Architecture
 
-### 6.1 PointerNetworkV45 Overview
+### 6.1 PointerGeneratorTransformer Overview
 
 The model is a **Transformer-based Pointer Network** with a hybrid pointer-generation mechanism.
 

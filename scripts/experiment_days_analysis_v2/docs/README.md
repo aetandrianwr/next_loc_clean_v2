@@ -238,9 +238,9 @@ The GeoLife dataset is a publicly available GPS trajectory dataset from Microsof
 
 ## 6. Model Architecture
 
-### 6.1 PointerNetworkV45 Overview
+### 6.1 PointerGeneratorTransformer Overview
 
-The experiment uses **PointerNetworkV45**, a position-aware pointer network designed for next location prediction.
+The experiment uses **PointerGeneratorTransformer**, a position-aware pointer network designed for next location prediction.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -927,7 +927,7 @@ All metrics (Acc@1, Acc@5, Acc@10, MRR, NDCG, F1) show consistent patterns:
 
 1. **Sample Size for t-test**: Only 5 weekday and 2 weekend data points per dataset limits statistical power.
 
-2. **Single Model Architecture**: Results are for PointerNetworkV45; other models may show different patterns.
+2. **Single Model Architecture**: Results are for PointerGeneratorTransformer; other models may show different patterns.
 
 3. **Geographic Limitation**: Datasets from specific regions may not generalize globally.
 

@@ -1,8 +1,8 @@
-# Attention Visualization for PointerNetworkV45
+# Attention Visualization for PointerGeneratorTransformer
 
 ## Comprehensive Documentation for Next Location Prediction Attention Analysis
 
-This documentation provides a complete, scientifically rigorous explanation of the attention visualization experiment for the PointerNetworkV45 model used in next location prediction. It covers theoretical foundations, technical implementation, experimental results, and detailed interpretation of all generated visualizations and tables.
+This documentation provides a complete, scientifically rigorous explanation of the attention visualization experiment for the PointerGeneratorTransformer model used in next location prediction. It covers theoretical foundations, technical implementation, experimental results, and detailed interpretation of all generated visualizations and tables.
 
 ---
 
@@ -25,7 +25,7 @@ This documentation provides a complete, scientifically rigorous explanation of t
 
 ### 1.1 Purpose
 
-This experiment analyzes the internal attention mechanisms of the PointerNetworkV45 model to understand **how** the model makes next location predictions. By extracting and visualizing attention weights, we gain interpretability into:
+This experiment analyzes the internal attention mechanisms of the PointerGeneratorTransformer model to understand **how** the model makes next location predictions. By extracting and visualizing attention weights, we gain interpretability into:
 
 - Which historical locations the model considers important
 - How the model balances between copying from history vs. generating from vocabulary
@@ -117,7 +117,7 @@ $$H = -\sum_i p_i \log(p_i)$$
 
 ## 3. Model Architecture
 
-### 3.1 PointerNetworkV45 Overview
+### 3.1 PointerGeneratorTransformer Overview
 
 The model architecture consists of several key components:
 
@@ -188,7 +188,7 @@ The `AttentionExtractor` class (`attention_extractor.py`) provides comprehensive
 ```python
 class AttentionExtractor:
     """
-    Extracts and processes attention weights from PointerNetworkV45.
+    Extracts and processes attention weights from PointerGeneratorTransformer.
     
     Captures:
     - Multi-head self-attention weights from transformer layers
@@ -244,7 +244,7 @@ def _compute_self_attention(self, x, attn_module, mask):
 
 The experiment (`run_attention_experiment.py`) follows this pipeline:
 
-1. **Load Model**: Load trained PointerNetworkV45 checkpoint
+1. **Load Model**: Load trained PointerGeneratorTransformer checkpoint
 2. **Extract Attention**: Process all test samples
 3. **Compute Statistics**: Aggregate metrics across samples
 4. **Select Best Samples**: Choose 10 high-confidence correct predictions

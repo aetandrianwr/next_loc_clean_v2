@@ -13,7 +13,7 @@
 
 ## Introduction
 
-This documentation provides a comprehensive guide to the **Scientific Hyperparameter Tuning** experiments conducted for next location prediction models. The goal is to fairly compare three deep learning architectures—**Pointer V45** (proposed model), **Multi-Head Self-Attention (MHSA)**, and **LSTM** (baseline models)—across two mobility datasets: **Geolife** and **DIY**.
+This documentation provides a comprehensive guide to the **Scientific Hyperparameter Tuning** experiments conducted for next location prediction models. The goal is to fairly compare three deep learning architectures—**Pointer Generator Transformer** (proposed model), **Multi-Head Self-Attention (MHSA)**, and **LSTM** (baseline models)—across two mobility datasets: **Geolife** and **DIY**.
 
 Hyperparameter tuning is a critical step in machine learning research. Without proper tuning, model comparisons can be misleading because poorly-tuned models may underperform due to suboptimal configurations rather than fundamental architectural limitations. This project implements a rigorous, reproducible hyperparameter tuning methodology following best practices from the machine learning research community.
 
@@ -82,7 +82,7 @@ Following **Bergstra & Bengio (2012)**, we adopt **Random Search** over grid sea
 
 ### Primary Objectives
 
-1. **Fair Model Comparison**: Tune all three models (Pointer V45, MHSA, LSTM) with equal effort
+1. **Fair Model Comparison**: Tune all three models (Pointer Generator Transformer, MHSA, LSTM) with equal effort
 2. **Reproducibility**: All experiments use fixed seeds and logged configurations
 3. **Scientific Rigor**: Follow established hyperparameter tuning methodology
 4. **Comprehensive Analysis**: Report not just best results, but variance across trials
@@ -117,7 +117,7 @@ Following **Bergstra & Bengio (2012)**, we adopt **Random Search** over grid sea
 
 ### Scientific Contributions
 
-1. **Validated Pointer V45 Architecture**: Demonstrated consistent superiority over baselines
+1. **Validated Pointer Generator Transformer Architecture**: Demonstrated consistent superiority over baselines
 2. **Dataset-Specific Insights**: Different performance gaps on Geolife vs. DIY
 3. **Hyperparameter Sensitivity Analysis**: Identified critical hyperparameters
 
@@ -176,7 +176,7 @@ sci_hyperparam_tuning/
 
 | Rank | Model | Val Acc@1 | Parameters | Improvement |
 |------|-------|-----------|------------|-------------|
-| 🥇 1 | **Pointer V45** | **49.25%** | 443,404 | - |
+| 🥇 1 | **Pointer Generator Transformer** | **49.25%** | 443,404 | - |
 | 🥈 2 | MHSA | 42.38% | 281,251 | +6.87% |
 | 🥉 3 | LSTM | 40.58% | 467,683 | +8.67% |
 
@@ -184,11 +184,11 @@ sci_hyperparam_tuning/
 
 | Rank | Model | Val Acc@1 | Parameters | Improvement |
 |------|-------|-----------|------------|-------------|
-| 🥇 1 | **Pointer V45** | **54.92%** | 1,081,554 | - |
+| 🥇 1 | **Pointer Generator Transformer** | **54.92%** | 1,081,554 | - |
 | 🥈 2 | LSTM | 53.90% | 3,564,990 | +1.02% |
 | 🥉 3 | MHSA | 53.69% | 797,982 | +1.23% |
 
-**Key Finding**: Pointer V45 consistently outperforms both baselines across all datasets and metrics, validating the proposed architecture's effectiveness.
+**Key Finding**: Pointer Generator Transformer consistently outperforms both baselines across all datasets and metrics, validating the proposed architecture's effectiveness.
 
 ---
 

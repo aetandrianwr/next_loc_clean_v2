@@ -355,7 +355,7 @@ Based on results, the optimal prediction strategy is:
 3. **Consider time of day**: 24-hour periodicity matters
 4. **Fallback to generation**: For ~20% new location visits
 
-This directly maps to the **Pointer Network V45** architecture.
+This directly maps to the **Pointer Generator Transformer** architecture.
 
 ---
 

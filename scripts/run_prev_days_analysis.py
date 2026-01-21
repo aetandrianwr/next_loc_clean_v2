@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Automation script for training, evaluating, and tuning Pointer V45 model
+Automation script for training, evaluating, and tuning Pointer Generator Transformer model
 across different previous days configurations.
 
 This script:

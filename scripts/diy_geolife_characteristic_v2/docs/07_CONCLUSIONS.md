@@ -271,7 +271,7 @@ For GeoLife:
    - Different preprocessing could change conclusions
 
 2. **One model architecture**
-   - PointerNetworkV45 specifically
+   - PointerGeneratorTransformer specifically
    - Other pointer-generator variants may behave differently
 
 3. **Correlation vs Causation**

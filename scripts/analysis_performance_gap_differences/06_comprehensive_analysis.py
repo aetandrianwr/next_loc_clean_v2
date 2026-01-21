@@ -229,7 +229,7 @@ def main():
     summary_data['Interpretation'].append('DIY baseline already higher')
     
     summary_data['Category'].append('Model Results')
-    summary_data['Metric'].append('PointerV45 Acc@1')
+    summary_data['Metric'].append('PGT Acc@1')
     summary_data['Geolife'].append(f"{model_results['geolife']['pointer_acc1']:.2f}%")
     summary_data['DIY'].append(f"{model_results['diy']['pointer_acc1']:.2f}%")
     summary_data['Interpretation'].append('Final performance')
@@ -270,7 +270,7 @@ def main():
     
     # 1. Main comparison: Performance and Key Factors
     ax1 = fig.add_subplot(2, 2, 1)
-    categories = ['MHSA\nBaseline', 'PointerV45', 'Target in\nHistory (%)']
+    categories = ['MHSA\nBaseline', 'PGT', 'Target in\nHistory (%)']
     geo_vals = [model_results['geolife']['mhsa_acc1'], model_results['geolife']['pointer_acc1'], 
                 geo_metrics['target_in_history_rate_test']]
     diy_vals = [model_results['diy']['mhsa_acc1'], model_results['diy']['pointer_acc1'],

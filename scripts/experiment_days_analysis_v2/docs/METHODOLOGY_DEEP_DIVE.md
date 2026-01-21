@@ -178,7 +178,7 @@ Test data is stored as pickle files containing lists of dictionaries:
 
 ## 3. Model Architecture Deep Dive
 
-### 3.1 PointerNetworkV45 Architecture
+### 3.1 PointerGeneratorTransformer Architecture
 
 ```
                          INPUT
@@ -666,7 +666,7 @@ diff run1/diy_days_results.json run2/diy_days_results.json
 - Users who tracked more may have different behavior
 
 **3. Model Dependency:**
-- Results are specific to PointerNetworkV45
+- Results are specific to PointerGeneratorTransformer
 - Other architectures may show different day patterns
 - Hyperparameter choices affect baseline performance
 

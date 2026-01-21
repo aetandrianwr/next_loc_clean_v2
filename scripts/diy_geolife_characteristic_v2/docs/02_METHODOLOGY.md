@@ -86,7 +86,7 @@ GeoLife Train: data/geolife_eps20/processed/geolife_eps20_prev7_train.pk
 
 ## Model Architecture
 
-### PointerNetworkV45
+### PointerGeneratorTransformer
 
 The model is a transformer-based pointer-generator network with the following components:
 

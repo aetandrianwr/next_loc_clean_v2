@@ -35,7 +35,7 @@ from tqdm import tqdm
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.proposed.pointer_v45 import PointerNetworkV45
+from src.models.proposed.pgt import PointerGeneratorTransformer
 from src.evaluation.metrics import (
     calculate_correct_total_prediction,
     get_performance_dict,
@@ -203,7 +203,7 @@ def get_dataloaders(config: Dict) -> Tuple[DataLoader, DataLoader, DataLoader, D
 
 
 class TrainerV45:
-    """Trainer for PointerNetworkV45 model."""
+    """Trainer for PointerGeneratorTransformer model."""
     
     def __init__(
         self,
@@ -288,7 +288,7 @@ class TrainerV45:
         self.logger = logging.getLogger(__name__)
         
         self.logger.info("=" * 60)
-        self.logger.info("POINTER V45 - Training Started")
+        self.logger.info("POINTER GENERATOR TRANSFORMER - Training Started")
         self.logger.info("=" * 60)
         self.logger.info(f"Model config: {self.config.get('model', {})}")
         self.logger.info(f"Training config: {self.config.get('training', {})}")
@@ -473,7 +473,7 @@ class TrainerV45:
         self.logger.info(f"Loaded checkpoint from epoch {checkpoint['epoch']}")
 
 
-def init_experiment_dir(config: Dict, dataset_name: str, job_id: str, model_name: str = "pointer_v45") -> str:
+def init_experiment_dir(config: Dict, dataset_name: str, job_id: str, model_name: str = "pgt") -> str:
     """Create experiment directory with unique job ID."""
     experiment_root = config['data'].get('experiment_root', 'experiments')
     
@@ -514,7 +514,7 @@ def save_results(experiment_dir: str, config: Dict, val_perf: Dict, test_perf: D
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Train Pointer V45 model - single job")
+    parser = argparse.ArgumentParser(description="Train Pointer Generator Transformer model - single job")
     parser.add_argument("--config", type=str, required=True, help="Path to config YAML file")
     parser.add_argument("--job_id", type=str, required=True, help="Unique job identifier")
     args = parser.parse_args()
@@ -534,11 +534,11 @@ def main():
         metadata = json.load(f)
     dataset_name = metadata["dataset_name"]
     
-    experiment_dir = init_experiment_dir(config, dataset_name, args.job_id, "pointer_v45")
+    experiment_dir = init_experiment_dir(config, dataset_name, args.job_id, "pgt")
     print(f"Experiment directory: {experiment_dir}")
     
     print("=" * 60)
-    print(f"POINTER V45 - Job: {args.job_id}")
+    print(f"POINTER GENERATOR TRANSFORMER - Job: {args.job_id}")
     print("=" * 60)
     print(f"Dataset: {dataset_name}")
     print(f"Device: {device}")
@@ -553,7 +553,7 @@ def main():
     print(f"  Train: {info['train_size']}, Val: {info['val_size']}, Test: {info['test_size']}")
     
     model_cfg = config['model']
-    model = PointerNetworkV45(
+    model = PointerGeneratorTransformer(
         num_locations=info['num_locations'],
         num_users=info['num_users'],
         d_model=model_cfg.get('d_model', 128),
@@ -565,7 +565,7 @@ def main():
     )
     
     num_params = model.count_parameters()
-    print(f"\nModel: PointerNetworkV45")
+    print(f"\nModel: PointerGeneratorTransformer")
     print(f"  d_model: {model_cfg.get('d_model', 128)}")
     print(f"  nhead: {model_cfg.get('nhead', 4)}")
     print(f"  num_layers: {model_cfg.get('num_layers', 3)}")
@@ -589,7 +589,7 @@ def main():
     save_results(experiment_dir, config, val_metrics, test_metrics, args.config, num_params)
     
     print(f"\n" + "=" * 60)
-    print(f"POINTER V45 RESULTS - {dataset_name.upper()}")
+    print(f"POINTER GENERATOR TRANSFORMER RESULTS - {dataset_name.upper()}")
     print("=" * 60)
     print(f"Acc@1:  {test_metrics['acc@1']:.2f}%")
     print(f"Acc@5:  {test_metrics['acc@5']:.2f}%")

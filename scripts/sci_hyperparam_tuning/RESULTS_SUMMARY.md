@@ -18,31 +18,31 @@
 
 | Rank | Model | Val Acc@1 | Params | Trial |
 |------|-------|-----------|--------|-------|
-| 🥇 1 | **Pointer V45** | **49.25%** | 443,404 | trial01 |
+| 🥇 1 | **Pointer Generator Transformer** | **49.25%** | 443,404 | trial01 |
 | 🥈 2 | MHSA | 42.38% | 281,251 | trial17 |
 | 🥉 3 | LSTM | 40.58% | 467,683 | trial00 |
 
-**Performance Gap**: Pointer V45 is +6.87% better than MHSA, +8.67% better than LSTM
+**Performance Gap**: Pointer Generator Transformer is +6.87% better than MHSA, +8.67% better than LSTM
 
 ### DIY Dataset
 
 | Rank | Model | Val Acc@1 | Params | Trial |
 |------|-------|-----------|--------|-------|
-| 🥇 1 | **Pointer V45** | **54.92%** | 1,081,554 | trial09 |
+| 🥇 1 | **Pointer Generator Transformer** | **54.92%** | 1,081,554 | trial09 |
 | 🥈 2 | LSTM | 53.90% | 3,564,990 | trial02 |
 | 🥉 3 | MHSA | 53.69% | 797,982 | trial04 |
 
-**Performance Gap**: Pointer V45 is +1.02% better than LSTM, +1.23% better than MHSA
+**Performance Gap**: Pointer Generator Transformer is +1.02% better than LSTM, +1.23% better than MHSA
 
 ## Key Findings
 
-1. ✅ **Pointer V45 outperforms both baselines on both datasets**
+1. ✅ **Pointer Generator Transformer outperforms both baselines on both datasets**
    - Validates the proposed architecture
    - Achieves best results with moderate parameter counts
 
 2. 📊 **Performance ranking varies by dataset**:
-   - Geolife: Pointer V45 >> MHSA > LSTM
-   - DIY: Pointer V45 ≈ LSTM ≈ MHSA (all competitive)
+   - Geolife: Pointer Generator Transformer >> MHSA > LSTM
+   - DIY: Pointer Generator Transformer ≈ LSTM ≈ MHSA (all competitive)
 
 3. 🎯 **Hyperparameter insights**:
    - Learning rate is critical for all models
@@ -98,12 +98,12 @@ Fixed seed: 42, all configs saved, results logged to CSV.
 
 The hyperparameter tuning successfully demonstrated that:
 
-1. ✅ **Pointer V45 is superior** to both baseline models across datasets
+1. ✅ **Pointer Generator Transformer is superior** to both baseline models across datasets
 2. ✅ **Fair comparison** achieved through systematic hyperparameter search
 3. ✅ **PhD-level rigor** with 120 trials following scientific best practices
 4. ✅ **Reproducible** with all configs and results saved
 
-**Final Verdict**: The proposed Pointer V45 model achieves state-of-the-art performance for next location prediction, outperforming MHSA and LSTM baselines when all models are optimally tuned.
+**Final Verdict**: The proposed Pointer Generator Transformer model achieves state-of-the-art performance for next location prediction, outperforming MHSA and LSTM baselines when all models are optimally tuned.
 
 ---
 

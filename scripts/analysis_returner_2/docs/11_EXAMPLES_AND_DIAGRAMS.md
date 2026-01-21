@@ -531,7 +531,7 @@ The straight line on log-log = Zipf's Law!
 ║                                  │                                     ║
 ║                                  ▼                                     ║
 ║  ┌─────────────────────────────────────────────────────────────────┐  ║
-║  │  MODEL ARCHITECTURE: PointerNetworkV45                          │  ║
+║  │  MODEL ARCHITECTURE: PointerGeneratorTransformer                          │  ║
 ║  │                                                                 │  ║
 ║  │  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐          │  ║
 ║  │  │   POINTER   │   │ GENERATION  │   │    GATE     │          │  ║

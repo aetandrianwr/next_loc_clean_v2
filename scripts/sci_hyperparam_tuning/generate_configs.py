@@ -2,7 +2,7 @@
 Configuration Generator for Hyperparameter Tuning.
 
 This script generates YAML configuration files for each hyperparameter trial.
-It creates configs for all three models (Pointer V45, MHSA, LSTM) on both datasets
+It creates configs for all three models (Pointer Generator Transformer, MHSA, LSTM) on both datasets
 (Geolife and DIY).
 
 Usage:
@@ -43,8 +43,8 @@ DATASET_CONFIGS = {
 }
 
 
-def generate_pointer_v45_config(hp_config: dict, dataset: str) -> dict:
-    """Generate Pointer V45 YAML config from hyperparameters."""
+def generate_pgt_config(hp_config: dict, dataset: str) -> dict:
+    """Generate Pointer Generator Transformer YAML config from hyperparameters."""
     ds_cfg = DATASET_CONFIGS[dataset]
     
     return {
@@ -203,7 +203,7 @@ def main():
     
     # Config generators by model
     generators = {
-        'pointer_v45': generate_pointer_v45_config,
+        "pgt": generate_pgt_config,
         'mhsa': generate_mhsa_config,
         'lstm': generate_lstm_config,
     }
@@ -211,7 +211,7 @@ def main():
     # Generate configs for all model-dataset combinations
     all_configs = []
     
-    for model_name in ['pointer_v45', 'mhsa', 'lstm']:
+    for model_name in ["pgt", 'mhsa', 'lstm']:
         for dataset in ['geolife', 'diy']:
             hp_configs = generate_all_configs(model_name, dataset, num_trials=NUM_TRIALS)
             
