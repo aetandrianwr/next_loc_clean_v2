@@ -1,9 +1,9 @@
-# Geolife Dataset Configuration
-# Parameters: epsilon (for DBSCAN), previous_day (list, for sequence generation)
+# Geolife Dataset Configuration - H3 Version
+# Uses Uber H3 hexagonal grid for location clustering instead of DBSCAN
 
 dataset:
   name: "geolife"
-  epsilon: 20  # DBSCAN epsilon for location clustering (in meters)
+  h3_resolution: 8  # H3 resolution (0-15, higher = finer grid). Resolution 8 ~= 461m edge length
   previous_day: [3, 7, 10, 14]  # List of previous days for sequence generation
 
 preprocessing:
@@ -14,11 +14,9 @@ preprocessing:
     time_threshold: 30   # Time threshold in minutes
     activity_time_threshold: 25  # Activity flag threshold in minutes
   
-  # Location clustering parameters
+  # H3 location clustering parameters
   location:
-    num_samples: 2  # Minimum samples for DBSCAN
-    distance_metric: "haversine"
-    agg_level: "dataset"
+    num_samples: 2  # Minimum samples (staypoints) required in H3 cell to be valid location
   
   # User quality filter
   quality_filter:
